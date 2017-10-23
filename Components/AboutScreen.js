@@ -4,11 +4,10 @@ import {
   Text,
   View,
 } from 'react-native'
-import { connect } from 'react-redux'
 import { Images } from '../Themes'
 import styles from './Styles/AboutScreenStyle'
 
-class AboutScreen extends React.Component {
+export default class AboutScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'General Info',
     tabBarIcon: ({ focused }) => (
@@ -24,15 +23,3 @@ class AboutScreen extends React.Component {
       )
   }
 }
-
-const mapStateToProps = (state) => {
-  return {
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(AboutScreen)
