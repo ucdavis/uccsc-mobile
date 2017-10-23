@@ -1,6 +1,7 @@
-import '../Config'
+import './Config'
 // import PushConfig from '../Config/PushConfig'
-import DebugConfig from '../Config/DebugConfig'
+// import DebugConfig from './Config/DebugConfig'
+import { Font } from 'expo';
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import RootContainer from './Containers/RootContainer'
@@ -28,7 +29,23 @@ const store = createStore()
  */
 export default class App extends Component {
 
+  state = {
+    fontLoaded: false,
+  };
+
+  async componentDidMount() {
+    await Font.loadAsync({
+      'Montserrat-Light': require('./Fonts/Montserrat-Light.ttf'),
+      'Montserrat-SemiBold': require('./Fonts/Montserrat-SemiBold.ttf'),
+      'Montserrat-Medium': require('./Fonts/Montserrat-Medium.ttf'),
+    });
+
+    this.setState({ fontLoaded: true });
+  }
+
   render () {
+    if (!this.state.fontLoaded) return null;
+
     return (
       <Provider store={store}>
         <RootContainer />
