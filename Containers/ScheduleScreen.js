@@ -6,11 +6,11 @@ import {
 } from 'react-native'
 import { connect } from 'react-redux'
 import { Images } from '../Themes'
-import styles from './Styles/AboutScreenStyle'
+import styles from './Styles/ScheduleScreenStyles'
 
-class AboutScreen extends React.Component {
+class ScheduleScreen extends React.Component {
   static navigationOptions = {
-    tabBarLabel: 'General Info',
+    tabBarLabel: 'Schedule',
     tabBarIcon: ({ focused }) => (
       <Image source={focused ? Images.activeInfoIcon : Images.inactiveInfoIcon} />
     )
@@ -19,7 +19,7 @@ class AboutScreen extends React.Component {
   render () {
     return (
         <View style={styles.container}>
-          <Text style={styles.sectionText}>About Screen</Text>
+          <Text style={styles.sectionText}>Schedule Screen</Text>
         </View>
       )
   }
@@ -35,4 +35,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AboutScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(ScheduleScreen)

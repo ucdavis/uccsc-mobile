@@ -3,6 +3,7 @@ import { View, StatusBar } from 'react-native'
 import { connect } from 'react-redux'
 // import StartupActions from '../Redux/StartupRedux'
 // import ReduxPersist from '../Config/ReduxPersist'
+import ReduxNavigation from '../Navigation/ReduxNavigation'
 import styles from './Styles/RootContainerStyles'
 
 class RootContainer extends Component {
