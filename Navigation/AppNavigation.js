@@ -1,7 +1,7 @@
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation'
 import AboutScreen from '../Components/AboutScreen'
 import ScheduleScreen from '../Containers/ScheduleScreen'
-import styles from './Styles/NavigationStyles'
+import styles from './styles/NavigationStyles'
 
 const TabNav = TabNavigator({
   Schedule: { screen: ScheduleScreen },
