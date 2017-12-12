@@ -4,9 +4,10 @@ import { ApplicationStyles, Colors, Fonts, Metrics } from '../../Themes/'
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'black'
+    
   },
+  listContent: {
+    paddingTop: Metrics.baseMargin,
+    paddingBottom: Metrics.baseMargin * 8,
+  }
 })
