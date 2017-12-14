@@ -49,6 +49,13 @@ class ScheduleScreen extends React.Component {
     return scheduleWithHeaders;
   }
 
+  onEventPress = (item) => {
+    const { navigation, setSelectedEvent } = this.props;
+
+    setSelectedEvent(item);
+    navigation.navigate('TalkDetail');
+  }
+
   renderItem = ({item}) => {
 
     if (item.isHeader) {
@@ -67,6 +74,7 @@ class ScheduleScreen extends React.Component {
         title={item.title}
         start={item.time}
         duration={item.duration}
+        onPress={() => this.onEventPress(item)}
       />
     );
   }
@@ -100,6 +108,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getScheduleUpdates: () => dispatch(ScheduleActions.getScheduleUpdates()),
+    setSelectedEvent: data => dispatch(ScheduleActions.setSelectedEvent(data)),
   }
 }
 
