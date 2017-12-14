@@ -9,5 +9,14 @@ export default StyleSheet.create({
   listContent: {
     paddingTop: Metrics.baseMargin,
     paddingBottom: Metrics.baseMargin * 8,
-  }
+  },
+  headerContainer: {
+    flex: 1,
+    paddingTop: Metrics.doubleBaseMargin,
+    paddingBottom: Metrics.doubleBaseMargin,
+    backgroundColor: Colors.snow,    
+  },
+  headerTime: {
+    textAlign: 'center'
+  },
 })
