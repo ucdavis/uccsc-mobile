@@ -10,7 +10,7 @@ import { Images } from '../Themes'
 import ScheduleActions from '../Redux/ScheduleRedux'
 import Talk from '../Components/Talk'
 import styles from './Styles/ScheduleScreenStyles'
-import { GroupBy, FindIndexAll } from '../Utils/Array';
+import { GroupBy, FindIndexAll, Sum } from '../Utils/Array';
 
 class ScheduleScreen extends React.Component {
   static navigationOptions = {
@@ -54,6 +54,25 @@ class ScheduleScreen extends React.Component {
 
     setSelectedEvent(item);
     navigation.navigate('TalkDetail');
+  }
+
+  getItemLayout = (data, index) => {
+    const item = data[index]
+    const itemLength = (item, index) => {
+      if (item.isHeader) {
+        return 60;
+      }
+
+      if (item.type === 'talk') {
+        // use best guess for variable height rows
+        return 138 + (1.002936 * item.title.length + 6.77378)
+      }
+      
+      return 154;
+    }
+    const length = itemLength(item)
+    const offset = Sum(data.slice(0, index).map(itemLength))
+    return { length, offset, index }
   }
 
   renderItem = ({item}) => {

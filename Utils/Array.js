@@ -18,3 +18,9 @@ export function FindIndexAll(array, selector) {
         return prev;
     }, []);
 }
+
+export function Sum(array) {
+    return array.reduce((prev, item) => {
+        return prev + item;
+    }, 0)
+}
