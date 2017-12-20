@@ -1,6 +1,8 @@
 import './Config'
+import './Config/ReactotronConfig'
+
 // import PushConfig from '../Config/PushConfig'
-// import DebugConfig from './Config/DebugConfig'
+import DebugConfig from './Config/DebugConfig'
 import { Font } from 'expo';
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
@@ -27,7 +29,7 @@ const store = createStore()
  *
  * We separate like this to play nice with React Native's hot reloading.
  */
-export default class App extends Component {
+class App extends Component {
 
   state = {
     fontLoaded: false,
@@ -55,9 +57,11 @@ export default class App extends Component {
 }
 
 // Add cool reactotron overlay feature
-// const exportedApp = DebugConfig.useReactotron
-//   ? (console as any).tron.overlay(App)
-//   : App
+const exportedApp = DebugConfig.useReactotron
+  ? console.tron.overlay(App)
+  : App
 
 // Add codepush
 // export default codePush(exportedApp)
+
+export default exportedApp

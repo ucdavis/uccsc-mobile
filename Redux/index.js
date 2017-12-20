@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux'
 import configureStore from './CreateStore'
-// import rootSaga from '../Sagas/'
 import AppNavigation from '../Navigation/AppNavigation'
 
 const navReducer = (state, action) => {
@@ -12,8 +11,8 @@ export default () => {
   /* ------------- Assemble The Reducers ------------- */
   const rootReducer = combineReducers({
     nav: navReducer,
+    schedule: require('./ScheduleRedux').reducer,
   })
 
   return configureStore(rootReducer)
-  // return configureStore(rootReducer, rootSaga)
 }

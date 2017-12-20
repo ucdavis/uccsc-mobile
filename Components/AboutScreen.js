@@ -4,6 +4,7 @@ import {
   Text,
   View,
 } from 'react-native'
+import { MaterialIcons } from '@expo/vector-icons';
 import { Images } from '../Themes'
 import styles from './Styles/AboutScreenStyle'
 
@@ -11,7 +12,7 @@ export default class AboutScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'General Info',
     tabBarIcon: ({ focused }) => (
-      <Image source={focused ? Images.activeInfoIcon : Images.inactiveInfoIcon} />
+      <MaterialIcons name="map" size={24} color="white" />
     )
   }
 

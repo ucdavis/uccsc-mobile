@@ -1,10 +1,20 @@
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation'
 import AboutScreen from '../Components/AboutScreen'
 import ScheduleScreen from '../Containers/ScheduleScreen'
-import styles from './Styles/NavigationStyles'
+import TalkDetailScreen from '../Containers/TalkDetailScreen'
+import styles from './styles/NavigationStyles'
+
+const ScheduleStack = StackNavigator({
+  Home: { screen: ScheduleScreen },
+  TalkDetail: { screen: TalkDetailScreen }
+}, {
+  headerMode: 'none',
+  initialRouteName: 'Home',
+  cardStyle: styles.card
+});
 
 const TabNav = TabNavigator({
-  Schedule: { screen: ScheduleScreen },
+  Schedule: { screen: ScheduleStack },
   About: { screen: AboutScreen }
 }, {
   key: 'Schedule',
