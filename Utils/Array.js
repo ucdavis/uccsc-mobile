@@ -1,5 +1,5 @@
 export function GroupBy(array, selector) {
-    return array.reduce((prev, item) => {
+    const grouped = array.reduce((prev, item) => {
         const key = selector(item);
         if (key in prev) {
             prev[key].push(item);
@@ -7,7 +7,14 @@ export function GroupBy(array, selector) {
             prev[key] = [ item ];
         }
         return prev;
-    }, {})
+    }, {});
+
+    return Object.keys(grouped).map((key) => {
+        return {
+            key,
+            values: grouped[key]
+        }
+    });
 }
 
 export function FindIndexAll(array, selector) {
