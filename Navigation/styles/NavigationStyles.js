@@ -3,9 +3,9 @@ import { Colors } from '../../Themes/'
 
 export default StyleSheet.create({
   tabBar: {
-    height: 54,
+    height: 65,
     paddingTop: 5,
-    paddingBottom: 1,
+    paddingBottom: 5,
     paddingHorizontal: 28,
     borderTopWidth: 1,
     borderTopColor: 'rgba(255,255,255,0.3)',
@@ -13,7 +13,7 @@ export default StyleSheet.create({
   },
   tabBarLabel: {
     fontFamily: 'Montserrat-Medium',
-    fontSize: 9,
+    fontSize: 16,
     letterSpacing: 0,
     color: Colors.snow
   },

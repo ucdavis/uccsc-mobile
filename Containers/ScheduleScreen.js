@@ -5,6 +5,7 @@ import {
   View,
   FlatList
 } from 'react-native'
+import { MaterialIcons } from '@expo/vector-icons';
 import { connect } from 'react-redux'
 import { Images } from '../Themes'
 import ScheduleActions from '../Redux/ScheduleRedux'
@@ -16,7 +17,7 @@ class ScheduleScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Schedule',
     tabBarIcon: ({ focused }) => (
-      <Image source={focused ? Images.activeInfoIcon : Images.inactiveInfoIcon} />
+      <MaterialIcons name="schedule" size={24} color="white" />
     )
   }
 

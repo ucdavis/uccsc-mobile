@@ -8,6 +8,7 @@ import {
   Image,
   TouchableOpacity
 } from "react-native";
+import { MaterialIcons } from '@expo/vector-icons';
 import TalkInfo from '../Components/TalkInfo';
 import { Images } from '../Themes'
 import { connect } from "react-redux";
@@ -17,11 +18,7 @@ class TalkDetail extends React.Component {
   static navigationOptions = {
     tabBarLabel: "Schedule",
     tabBarIcon: ({ focused }) => (
-      <Image
-        source={
-          focused ? Images.activeScheduleIcon : Images.inactiveScheduleIcon
-        }
-      />
+      <MaterialIcons name="schedule" size={24} color="white" />
     )
   };
 
