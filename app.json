@@ -2,7 +2,7 @@
   "expo": {
     "name": "UCCSC Mobile",
     "slug": "uccsc-mobile-2018",
-    "sdkVersion": "23.0.0",
+    "sdkVersion": "24.0.0",
     "privacy": "public"
   }
 }
