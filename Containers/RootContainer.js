@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 // import ReduxPersist from '../Config/ReduxPersist'
 import ReduxNavigation from '../Navigation/ReduxNavigation'
 import styles from './Styles/RootContainerStyles'
+import { registerForPushNotificationsAsync } from '../Services/PushNotifications';
 
 class RootContainer extends Component {
   componentDidMount () {
@@ -12,6 +13,9 @@ class RootContainer extends Component {
     // if (!ReduxPersist.active) {
     //   this.props.startup()
     // }
+
+    await registerForPushNotificationsAsync();
+
   }
 
   render () {
