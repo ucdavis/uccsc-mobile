@@ -8,6 +8,7 @@ import NotificationActions from '../Redux/NotificationRedux'
 import ReduxNavigation from '../Navigation/ReduxNavigation'
 import styles from './Styles/RootContainerStyles'
 import { registerForPushNotificationsAsync } from '../Services/PushNotifications';
+import NotificationsBar from '../Components/NotificationsBar';
 
 class RootContainer extends Component {
   async componentDidMount () {
@@ -32,10 +33,16 @@ class RootContainer extends Component {
   };
 
   render () {
+    const { notifications, clearNotifications } = this.props;
+    
     return (
       <View style={styles.applicationView}>
         <View style={styles.statusBarPadder} />
         <StatusBar barStyle='light-content' />
+        <NotificationsBar
+          notifications={notifications}
+          clearNotifications={clearNotifications}
+        />
         <ReduxNavigation />
       </View>
     )
