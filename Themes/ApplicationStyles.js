@@ -2,7 +2,7 @@ import Fonts from './Fonts'
 import Metrics from './Metrics'
 import Colors from './Colors'
 
-const ApplicationStyles: ApplicationStylesType = {
+const ApplicationStyles = {
   screen: {
     mainContainer: {
       flex: 1,
