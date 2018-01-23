@@ -1,14 +1,13 @@
 import './Config'
 import './Config/ReactotronConfig'
 
-// import PushConfig from '../Config/PushConfig'
 import DebugConfig from './Config/DebugConfig'
 import { Font } from 'expo';
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import RootContainer from './Containers/RootContainer'
 import createStore from './Redux'
-// import codePush from 'react-native-code-push'
+
 
 // Allow layoutanimations for android
 // import { UIManager } from 'NativeModules'
@@ -17,12 +16,9 @@ import createStore from './Redux'
 // create our store
 const store = createStore()
 
-// Configure push notifications, passing store's dispatch
-// PushConfig.configure(store.dispatch)
-
 /**
- * Provides an entry point into our application.  Both index.ios.js and index.android.js
- * call this component first.
+ * Provides an entry point into our application.
+ * Expo will call this component first.
  *
  * We create our Redux store here, put it into a provider and then bring in our
  * RootContainer.
@@ -33,6 +29,7 @@ class App extends Component {
 
   state = {
     fontLoaded: false,
+    notification: null,
   };
 
   async componentDidMount() {
@@ -41,7 +38,7 @@ class App extends Component {
       'Montserrat-SemiBold': require('./Fonts/Montserrat-SemiBold.ttf'),
       'Montserrat-Medium': require('./Fonts/Montserrat-Medium.ttf'),
     });
-
+    
     this.setState({ fontLoaded: true });
   }
 
@@ -60,8 +57,5 @@ class App extends Component {
 const exportedApp = DebugConfig.useReactotron
   ? console.tron.overlay(App)
   : App
-
-// Add codepush
-// export default codePush(exportedApp)
 
 export default exportedApp

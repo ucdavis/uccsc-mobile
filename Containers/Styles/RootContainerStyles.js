@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native'
+import {Constants} from 'expo';
 import {Fonts, Metrics, Colors} from '../../Themes/'
 
 export default StyleSheet.create({
@@ -20,5 +21,9 @@ export default StyleSheet.create({
     width: 200,
     height: 200,
     alignSelf: 'center'
-  }
+  },
+  statusBarPadder: {
+    height: Constants.statusBarHeight,
+    backgroundColor: Colors.background
+  },
 })
