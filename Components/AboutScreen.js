@@ -12,7 +12,7 @@ export default class AboutScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'General Info',
     tabBarIcon: ({ focused }) => (
-      <MaterialIcons name="map" size={24} color="white" />
+      <MaterialIcons name="map" size={24} color="black" />
     )
   }
 

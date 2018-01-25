@@ -14,7 +14,11 @@ export default StyleSheet.create({
     flex: 1,
     paddingTop: Metrics.doubleBaseMargin,
     paddingBottom: Metrics.doubleBaseMargin,
-    backgroundColor: Colors.snow,    
+    backgroundColor: Colors.background,
+    shadowRadius: 20,
+    shadowColor: 'black',
+    shadowOpacity: 0.8,
+    elevation: 20,
   },
   headerTime: {
     textAlign: 'center'

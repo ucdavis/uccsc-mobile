@@ -8,9 +8,11 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     paddingVertical: 13,
     paddingHorizontal: Metrics.doubleBaseMargin,
-    borderBottomLeftRadius: Metrics.cardRadius,
-    borderBottomRightRadius: Metrics.cardRadius,
-    backgroundColor: Colors.silver
+    backgroundColor: Colors.snow,
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(0,0,0,0.2)',
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(0,0,0,0.2)',
   },
   details: {
     flex: 1,

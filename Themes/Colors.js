@@ -1,7 +1,7 @@
 import {Platform} from 'react-native'
 
 const colors = {
-  background: '#1F0808',
+  background: '#F4F4F4',
   clear: 'rgba(0,0,0,0)',
   facebook: '#3b5998',
   transparent: 'rgba(0,0,0,0)',
@@ -21,6 +21,14 @@ const colors = {
   eggplant: '#251a34',
   border: '#483F53',
   banner: '#5F3E63',
+
+  blue: '#018EAA',
+  darkBlue1: '#008099',
+
+  green: '#78BE20',
+  darkGreen1: '#6CAB1C',
+
+  darkPurple1: '#7D4A80',
 
   snow: 'white',
   red: '#E64044',

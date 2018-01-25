@@ -7,19 +7,19 @@ export default StyleSheet.create({
       width: 0,
       height: 0
     },
-    shadowRadius: 20,
+    shadowRadius: 10,
     shadowColor: 'black',
     shadowOpacity: 0.8,
-    elevation: 20,
-    backgroundColor: 'black'
+    elevation: 10,
+    backgroundColor: Colors.background
   },
   dayToggle: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
     paddingTop: Metrics.doubleBaseMargin,
-    height: 85,
-    backgroundColor: Colors.clear
+    height: 80,
+    backgroundColor: Colors.blue,
   },
   inactiveDay: {
     backgroundColor: Colors.clear,
