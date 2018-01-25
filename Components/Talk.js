@@ -8,6 +8,13 @@ import {
 } from "react-native";
 import TalkInfo from "./TalkInfo";
 import styles from "./Styles/TalkStyle";
+import { Colors } from '../Themes/'
+
+const themeColors = [
+  Colors.darkGreen1,
+  Colors.darkBlue1,
+  Colors.darkPurple1
+];
 
 export default class Talk extends React.Component {
   constructor(props) {
@@ -41,9 +48,15 @@ export default class Talk extends React.Component {
       transform: [{ scale: this.state.animatedSize }]
     }
 
+    const themeColor = themeColors[(title || '').length % themeColors.length]
+
     const containerStyles = [
       styles.container,
-      animatedStyle
+      animatedStyle,
+      {
+        borderTopWidth: 15,
+        borderTopColor: themeColor
+      }
     ]
 
     return (
@@ -55,8 +68,8 @@ export default class Talk extends React.Component {
         <Animated.View style={containerStyles}>
           <View style={styles.info}>
             <View style={styles.infoText}>
-              <Text style={styles.name}>{name}</Text>
               <Text style={styles.title}>{title}</Text>
+              <Text style={styles.name}>{name}</Text>
             </View>
             <Image style={styles.avatar} source={{ uri: avatarURL }} />
           </View>
