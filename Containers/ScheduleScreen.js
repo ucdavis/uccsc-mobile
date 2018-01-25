@@ -20,7 +20,7 @@ class ScheduleScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Schedule',
     tabBarIcon: ({ focused }) => (
-      <MaterialIcons name="schedule" size={24} color="white" />
+      <MaterialIcons name="schedule" size={24} color="black" />
     )
   }
 
