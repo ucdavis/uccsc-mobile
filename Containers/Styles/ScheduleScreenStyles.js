@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Platform } from 'react-native'
 import { ApplicationStyles, Colors, Fonts, Metrics } from '../../Themes/'
 
 export default StyleSheet.create({
@@ -6,21 +6,50 @@ export default StyleSheet.create({
   container: {
     
   },
-  listContent: {
-    paddingTop: Metrics.baseMargin,
-    paddingBottom: Metrics.baseMargin * 8,
-  },
   headerContainer: {
-    flex: 1,
-    paddingTop: Metrics.doubleBaseMargin,
-    paddingBottom: Metrics.doubleBaseMargin,
-    backgroundColor: Colors.background,
-    shadowRadius: 20,
-    shadowColor: 'black',
-    shadowOpacity: 0.8,
-    elevation: 20,
+    justifyContent: 'flex-start',
+    alignItems: 'stretch',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    overflow: 'hidden',
+    height: 150,
+    zIndex: 10
   },
-  headerTime: {
-    textAlign: 'center'
+  headerBackground: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    width: '100%',
   },
+  headerLogoContainer: {
+    justifyContent: 'flex-start',
+    alignItems: 'stretch',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    width: '100%',
+    zIndex: 20,
+    paddingTop: Platform.OS === 'ios' ? 28 : 38
+  },
+  headerLogo: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    width: '100%',
+  },
+  dayToggle: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    zIndex: 20
+  },
+  listContent: {
+    paddingBottom: Metrics.baseMargin * 8,
+  }
 })
