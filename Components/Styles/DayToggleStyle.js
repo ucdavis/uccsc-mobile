@@ -10,14 +10,13 @@ export default StyleSheet.create({
     shadowRadius: 10,
     shadowColor: 'black',
     shadowOpacity: 0.8,
-    elevation: 10,
+    elevation: 20,
     backgroundColor: Colors.background
   },
   dayToggle: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    paddingTop: Metrics.doubleBaseMargin,
     height: 80,
     backgroundColor: Colors.blue,
   },
