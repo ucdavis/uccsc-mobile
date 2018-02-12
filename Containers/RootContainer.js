@@ -37,7 +37,6 @@ class RootContainer extends Component {
     
     return (
       <View style={styles.applicationView}>
-        <View style={styles.statusBarPadder} />
         <StatusBar barStyle='light-content' />
         <NotificationsBar
           notifications={notifications}
