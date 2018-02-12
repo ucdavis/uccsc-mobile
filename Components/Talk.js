@@ -26,6 +26,27 @@ export default class Talk extends React.Component {
     }
   }
 
+  shouldComponentUpdate(nextProps) {
+    const { name, title, avatarURL, start, duration } = this.props;
+    if (nextProps.name !== name) {
+      return true;
+    }
+    if (nextProps.title !== title) {
+      return true;
+    }
+    if (nextProps.avatarURL !== avatarURL) {
+      return true;
+    }
+    if (nextProps.start !== start) {
+      return true;
+    }
+    if (nextProps.duration !== duration) {
+      return true;
+    }
+
+    return false;
+  }
+
   handlePressIn = () => {
     Animated.spring(this.state.animatedSize, {
       toValue: 1.05,
