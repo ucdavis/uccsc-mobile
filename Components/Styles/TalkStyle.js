@@ -5,7 +5,10 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     marginVertical: Metrics.baseMargin,
-    marginHorizontal: Metrics.doubleBaseMargin
+    marginHorizontal: Metrics.doubleBaseMargin,
+    shadowRadius: 5,
+    shadowColor: 'black',
+    shadowOpacity: 0.8,
   },
   currentDay: {
     marginLeft: 16,
@@ -31,8 +34,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: Metrics.doubleBaseMargin,
-    borderTopLeftRadius: Metrics.cardRadius,
-    borderTopRightRadius: Metrics.cardRadius,
     backgroundColor: Colors.snow
   },
   infoText: {
@@ -64,8 +65,6 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     paddingVertical: 13,
     paddingHorizontal: Metrics.doubleBaseMargin,
-    borderBottomLeftRadius: Metrics.cardRadius,
-    borderBottomRightRadius: Metrics.cardRadius,
     backgroundColor: Colors.silver
   },
   details: {

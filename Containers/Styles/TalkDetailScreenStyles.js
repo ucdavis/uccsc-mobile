@@ -6,7 +6,11 @@ export default StyleSheet.create({
   container: {
     marginTop: 101,
     marginBottom: Metrics.doubleBaseMargin,
-    marginHorizontal: Metrics.doubleBaseMargin
+    marginHorizontal: Metrics.doubleBaseMargin,
+    shadowRadius: 5,
+    shadowColor: 'black',
+    shadowOpacity: 0.8,
+    elevation: 20,
   },
   backButton: {
     position: 'absolute',
