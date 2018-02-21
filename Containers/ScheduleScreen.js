@@ -100,6 +100,10 @@ class ScheduleScreen extends React.Component {
     const isCurrentDay = this.isActiveCurrentDay(currentTime, activeDay)
 
     this.setState({ activeDay, isCurrentDay }, () => {
+      if (!this.scheduleList) {
+        return;
+      }
+
       if (isCurrentDay) {
         // Scroll to active
         // const headersIndices = FindIndexAll(schedule, i => i.isHeader);
