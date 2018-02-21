@@ -41,11 +41,11 @@ class ScheduleScreen extends React.Component {
   constructor(props) {
     super(props)
 
-    const { schedule, currentTime } = props
-    const activeDay = 0
-    const isCurrentDay = this.isActiveCurrentDay(currentTime, activeDay)
+    const { schedule, currentTime } = props;
+    const activeDay = 0;
+    const isCurrentDay = this.isActiveCurrentDay(currentTime, activeDay);
 
-    const eventsByDay = this.buildScheduleList(schedule)
+    const eventsByDay = this.buildScheduleList(schedule);
 
     this.state = {
       activeDay,
@@ -97,8 +97,8 @@ class ScheduleScreen extends React.Component {
   }
 
   setActiveDay = (activeDay) => {
-    const { currentTime } = this.props
-    const { eventsByDay } = this.state
+    const { currentTime } = this.props;
+    const { eventsByDay } = this.state;
     const isCurrentDay = this.isActiveCurrentDay(currentTime, activeDay)
 
     this.setState({ activeDay, isCurrentDay }, () => {
@@ -109,11 +109,10 @@ class ScheduleScreen extends React.Component {
         // this.scheduleList.scrollToIndex({index, animated: false})
       } else {
         // Scroll to top
-        // console.log(this.scheduleList);
-        this.scheduleList.getNode().scrollToLocation({sectionIndex: 0, itemIndex: 0, viewPosition: 1, animated: true})
+        this.scheduleList.getNode().scrollToLocation({ sectionIndex: 0, itemIndex: 0, viewPosition: 1, animated: true });
         // this.scheduleList.getNode().scrollTo({y: 0, animated: false})
       }
-    })
+    });
   }
 
   getItemLayout = GetItemLayout({
@@ -127,19 +126,19 @@ class ScheduleScreen extends React.Component {
     },
     getSectionHeaderHeight: () => 60,
   });
-  
+
   renderHeader = () => {
     // move container up with scroll
     const headerTranslate = this.state.scrollY.interpolate({
       inputRange: [0, HEADER_SCROLL_DISTANCE],
       outputRange: [0, -HEADER_SCROLL_DISTANCE],
       extrapolateLeft: 'extend',
-      extrapolateRight: 'clamp'
+      extrapolateRight: 'clamp',
     });
 
     const headerStyle = [
       styles.headerContainer,
-      { 
+      {
         height: HEADER_MAX_HEIGHT,
         transform: [{ translateY: headerTranslate }] 
       }];
@@ -223,26 +222,26 @@ class ScheduleScreen extends React.Component {
       styles.dayToggle,
       {
         opacity: opacity,
-      }
+      },
     ];
 
     return (
       <Animated.View style={dayToggleStyle}>
         <DayToggle
-          activeDay={this.state.activeDay} 
+          activeDay={this.state.activeDay}
           onPressIn={this.setActiveDay}
         />
       </Animated.View>
     )
   }
 
-  renderSectionHeader = ({section}) => {
+  renderSectionHeader = ({ section }) => {
     return (
       <ScheduleSectionHeader time={section.time} />
     )
   }
 
-  renderItem = ({item}) => {
+  renderItem = ({ item }) => {
     return (
       <Talk
         type={item.type}

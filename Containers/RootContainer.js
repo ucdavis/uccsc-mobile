@@ -1,17 +1,18 @@
-import React, { Component } from 'react'
-import { View, StatusBar } from 'react-native'
-import { connect } from 'react-redux'
-import { Notifications } from 'expo'
-// import StartupActions from '../Redux/StartupRedux'
-import NotificationActions from '../Redux/NotificationRedux'
-// import ReduxPersist from '../Config/ReduxPersist'
-import ReduxNavigation from '../Navigation/ReduxNavigation'
-import styles from './Styles/RootContainerStyles'
+import React, { Component } from 'react';
+import { View, StatusBar } from 'react-native';
+import { connect } from 'react-redux';
+import { Notifications } from 'expo';
+// import StartupActions from '../Redux/StartupRedux';
+import NotificationActions from '../Redux/NotificationRedux';
+import ScheduleActions from '../Redux/ScheduleRedux';
+// import ReduxPersist from '../Config/ReduxPersist';
+import ReduxNavigation from '../Navigation/ReduxNavigation';
+import styles from './Styles/RootContainerStyles';
 import { registerForPushNotificationsAsync } from '../Services/PushNotifications';
 import NotificationsBar from '../Components/NotificationsBar';
 
 class RootContainer extends Component {
-  async componentDidMount () {
+  async componentDidMount() {
     // if redux persist is not active fire startup action
     // if (!ReduxPersist.active) {
     //   this.props.startup()
@@ -32,9 +33,9 @@ class RootContainer extends Component {
     addNotification(notification);
   };
 
-  render () {
+  render() {
     const { notifications, clearNotifications } = this.props;
-    
+
     return (
       <View style={styles.applicationView}>
         <StatusBar barStyle='light-content' />
@@ -59,4 +60,4 @@ const mapDispatchToProps = (dispatch) => ({
   clearNotifications: () => dispatch(NotificationActions.clearNotifications())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(RootContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(RootContainer);
