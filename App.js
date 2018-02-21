@@ -1,12 +1,12 @@
-import './Config'
-import './Config/ReactotronConfig'
+import './Config';
+import './Config/ReactotronConfig';
 
-import DebugConfig from './Config/DebugConfig'
-import { Font } from 'expo';
-import React, { Component } from 'react'
-import { Provider } from 'react-redux'
-import RootContainer from './Containers/RootContainer'
-import createStore from './Redux'
+import DebugConfig from './Config/DebugConfig';
+import { Font } from 'expo';;
+import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import RootContainer from './Containers/RootContainer';
+import createStore from './Redux';
 
 
 // Allow layoutanimations for android
@@ -42,7 +42,7 @@ class App extends Component {
     this.setState({ fontLoaded: true });
   }
 
-  render () {
+  render() {
     if (!this.state.fontLoaded) return null;
 
     return (
@@ -56,6 +56,6 @@ class App extends Component {
 // Add cool reactotron overlay feature
 const exportedApp = DebugConfig.useReactotron
   ? console.tron.overlay(App)
-  : App
+  : App;
 
-export default exportedApp
+export default exportedApp;
