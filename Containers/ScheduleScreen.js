@@ -56,12 +56,10 @@ class ScheduleScreen extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.schedule != nextProps.schedule) {
-
-      const { activeDay } = this.state
-      const eventsByDay = this.buildScheduleList(schedule)
-
-      this.setState({ eventsByDay })
+    if (this.props.schedule !== nextProps.schedule) {
+      const { activeDay } = this.state;
+      const eventsByDay = this.buildScheduleList(nextProps.schedule)
+      this.setState({ eventsByDay });
     }
   }
 
