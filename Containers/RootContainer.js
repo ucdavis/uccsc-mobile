@@ -11,8 +11,11 @@ import styles from './Styles/RootContainerStyles';
 import { registerForPushNotificationsAsync } from '../Services/PushNotifications';
 import NotificationsBar from '../Components/NotificationsBar';
 
+import { getSchedule } from '../Services/Api';
+
 class RootContainer extends Component {
   async componentDidMount() {
+    const { updateSchedule } = this.props;
     // if redux persist is not active fire startup action
     // if (!ReduxPersist.active) {
     //   this.props.startup()
@@ -26,6 +29,10 @@ class RootContainer extends Component {
     // this function will fire on the next tick after the app starts
     // with the notification data.
     this._notificationSubscription = Notifications.addListener(this._handleNotification);
+
+    // fetch schedule updates
+    const schedule = await getSchedule();
+    updateSchedule(schedule);
   }
 
   _handleNotification = (notification) => {
@@ -57,7 +64,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   // startup: () => dispatch(StartupActions.startup()),
   addNotification: (notification) => dispatch(NotificationActions.addNotification(notification)),
-  clearNotifications: () => dispatch(NotificationActions.clearNotifications())
-})
+  clearNotifications: () => dispatch(NotificationActions.clearNotifications()),
+  updateSchedule: (schedule) => dispatch(ScheduleActions.updateSchedule(schedule)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(RootContainer);
