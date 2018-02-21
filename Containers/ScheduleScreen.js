@@ -257,38 +257,48 @@ class ScheduleScreen extends React.Component {
     );
   }
 
-  render () {
-    const { activeDay, eventsByDay } = this.state;
-    const data = eventsByDay[activeDay];
+  renderList(data) {
+    if (!data || !data.length) {
+      return null;
+    }
 
     const listContentStyle = [
       styles.listContent,
-      { 
+      {
         marginTop: HEADER_MIN_HEIGHT,
-        paddingTop: HEADER_SCROLL_DISTANCE
-      }
-    ]
+        paddingTop: HEADER_SCROLL_DISTANCE,
+      },
+    ];
 
     return (
-        <View style={styles.container}>
-          { this.renderHeader() }
-          <AnimatedSectionList
-            renderItem={this.renderItem}
-            renderSectionHeader={this.renderSectionHeader}
-            sections={data}
-            keyExtractor={(item, idx) => idx}
-            contentContainerStyle={listContentStyle}
-            getItemLayout={this.getItemLayout}
-            stickySectionHeadersEnabled={true}
-            scrollEventThrottle={1}
-            onScroll={Animated.event(
-              [{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }],
-              { useNativeDriver: true }
-            )}
-            ref={(r) => this.scheduleList = r}
-          />
-        </View>
-      )
+      <AnimatedSectionList
+        renderItem={this.renderItem}
+        renderSectionHeader={this.renderSectionHeader}
+        sections={data}
+        keyExtractor={(item, idx) => idx}
+        contentContainerStyle={listContentStyle}
+        getItemLayout={this.getItemLayout}
+        stickySectionHeadersEnabled={true}
+        scrollEventThrottle={1}
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }],
+          { useNativeDriver: true }
+        )}
+        ref={(r) => this.scheduleList = r}
+      />
+    );
+  }
+
+  render() {
+    const { activeDay, eventsByDay } = this.state;
+    const data = eventsByDay[activeDay];
+
+    return (
+      <View style={styles.container}>
+        { this.renderHeader() }
+        { this.renderList(data) }
+      </View>
+    );
   }
 }
 
