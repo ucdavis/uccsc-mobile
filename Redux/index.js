@@ -1,11 +1,11 @@
-import { combineReducers } from 'redux'
-import configureStore from './CreateStore'
-import AppNavigation from '../Navigation/AppNavigation'
+import { combineReducers } from 'redux';
+import configureStore from './CreateStore';
+import AppNavigation from '../Navigation/AppNavigation';
 
 const navReducer = (state, action) => {
-  const newState = AppNavigation.router.getStateForAction(action, state)
-  return newState || state
-}
+  const newState = AppNavigation.router.getStateForAction(action, state);
+  return newState || state;
+};
 
 export default () => {
   /* ------------- Assemble The Reducers ------------- */
@@ -13,7 +13,7 @@ export default () => {
     nav: navReducer,
     schedule: require('./ScheduleRedux').reducer,
     notifications: require('./NotificationRedux').reducer,
-  })
+  });
 
-  return configureStore(rootReducer)
-}
+  return configureStore(rootReducer);
+};

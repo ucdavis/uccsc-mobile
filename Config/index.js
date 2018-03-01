@@ -1,6 +1,7 @@
-import { NativeModules, Text } from 'react-native';
-import DebugConfig from './DebugConfig';
+import { Text } from 'react-native';
 import AppConfig from './AppConfig';
+import DebugConfig from './DebugConfig';
+import ReduxPersistConfig from './ReduxPersistConfig';
 
 // Allow/disallow font-scaling in app
 Text.defaultProps.allowFontScaling = AppConfig.allowTextFontScaling;

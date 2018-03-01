@@ -5,6 +5,7 @@ import DebugConfig from './Config/DebugConfig';
 import { Font } from 'expo';
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 import RootContainer from './Containers/RootContainer';
 import createStore from './Redux';
 
@@ -13,7 +14,7 @@ import createStore from './Redux';
 // commented out because it currently causes errors :/
 // UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
 // create our store
-const store = createStore();
+const { store, persistor } = createStore();
 
 /**
  * Provides an entry point into our application.
@@ -52,7 +53,9 @@ class App extends Component {
 
     return (
       <Provider store={store}>
-        <RootContainer />
+        <PersistGate loading={null} persistor={persistor}>
+          <RootContainer />
+        </PersistGate>
       </Provider>
     );
   }

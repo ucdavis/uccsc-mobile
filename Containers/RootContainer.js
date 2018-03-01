@@ -5,7 +5,7 @@ import { Notifications } from 'expo';
 // import StartupActions from '../Redux/StartupRedux';
 import NotificationActions from '../Redux/NotificationRedux';
 import ScheduleActions from '../Redux/ScheduleRedux';
-// import ReduxPersist from '../Config/ReduxPersist';
+import ReduxPersistConfig from '../Config/ReduxPersistConfig';
 import ReduxNavigation from '../Navigation/ReduxNavigation';
 import styles from './Styles/RootContainerStyles';
 import { registerForPushNotificationsAsync } from '../Services/PushNotifications';
@@ -17,9 +17,9 @@ class RootContainer extends Component {
   async componentDidMount() {
     const { updateSchedule } = this.props;
     // if redux persist is not active fire startup action
-    // if (!ReduxPersist.active) {
-    //   this.props.startup()
-    // }
+    if (!ReduxPersistConfig.active) {
+      this.props.startup();
+    }
 
     // fetch schedule updates
     const schedule = await getSchedule();
@@ -62,7 +62,7 @@ const mapStateToProps = (state) => ({
 
 // wraps dispatch to create nicer functions to call within our component
 const mapDispatchToProps = (dispatch) => ({
-  // startup: () => dispatch(StartupActions.startup()),
+  startup: () => dispatch(StartupActions.startup()),
   addNotification: (notification) => dispatch(NotificationActions.addNotification(notification)),
   clearNotifications: () => dispatch(NotificationActions.clearNotifications()),
   updateSchedule: (schedule) => dispatch(ScheduleActions.updateSchedule(schedule)),

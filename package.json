@@ -28,6 +28,7 @@
     "reactotron-react-native": "^1.13.2",
     "reactotron-redux": "^1.13.0",
     "redux": "^3.7.2",
+    "redux-persist": "^5.9.1",
     "reduxsauce": "^0.7.0",
     "seamless-immutable": "^7.1.2"
   }
