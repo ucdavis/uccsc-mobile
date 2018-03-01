@@ -21,6 +21,10 @@ class RootContainer extends Component {
     //   this.props.startup()
     // }
 
+    // fetch schedule updates
+    const schedule = await getSchedule();
+    updateSchedule(schedule);
+
     await registerForPushNotificationsAsync();
 
     // Handle notifications that are received or selected while the app
@@ -29,10 +33,6 @@ class RootContainer extends Component {
     // this function will fire on the next tick after the app starts
     // with the notification data.
     this._notificationSubscription = Notifications.addListener(this._handleNotification);
-
-    // fetch schedule updates
-    const schedule = await getSchedule();
-    updateSchedule(schedule);
   }
 
   _handleNotification = (notification) => {
