@@ -2,19 +2,18 @@ import './Config';
 import './Config/ReactotronConfig';
 
 import DebugConfig from './Config/DebugConfig';
-import { Font } from 'expo';;
+import { Font } from 'expo';
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import RootContainer from './Containers/RootContainer';
 import createStore from './Redux';
-
 
 // Allow layoutanimations for android
 // import { UIManager } from 'NativeModules'
 // commented out because it currently causes errors :/
 // UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
 // create our store
-const store = createStore()
+const store = createStore();
 
 /**
  * Provides an entry point into our application.
@@ -33,12 +32,18 @@ class App extends Component {
   };
 
   async componentDidMount() {
+    if (DebugConfig.useReactotron) {
+      // Let's connect and clear Reactotron on every time we load the app
+      console.tron.connect();
+      console.tron.clear();
+    }
+
     await Font.loadAsync({
       'Montserrat-Light': require('./Fonts/Montserrat-Light.ttf'),
       'Montserrat-SemiBold': require('./Fonts/Montserrat-SemiBold.ttf'),
       'Montserrat-Medium': require('./Fonts/Montserrat-Medium.ttf'),
     });
-    
+
     this.setState({ fontLoaded: true });
   }
 
@@ -49,7 +54,7 @@ class App extends Component {
       <Provider store={store}>
         <RootContainer />
       </Provider>
-    )
+    );
   }
 }
 
