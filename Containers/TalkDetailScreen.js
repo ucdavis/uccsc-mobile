@@ -19,7 +19,7 @@ class TalkDetail extends React.Component {
     tabBarLabel: "Schedule",
     tabBarIcon: ({ focused }) => (
       <MaterialIcons name="schedule" size={24} color="black" />
-    )
+    ),
   };
 
   componentDidMount() {
@@ -30,8 +30,35 @@ class TalkDetail extends React.Component {
     this.props.navigation.dispatch(NavigationActions.back());
   };
 
+  renderSpeakers = () => {
+    const { speakers } = this.props;
+
+    return (
+      <View>
+        { speakers.map(s => {
+          const id = '00000000000000000000000000000000';
+          return (
+            <View key={s.name}>
+              <View>
+                <Image
+                  style={styles.avatar}
+                  source={{ uri: `https://www.gravatar.com/avatar/${id}?d=mm&s=100` }}
+                />
+                <Text>{s.name}</Text>
+                <Text>{s.company}</Text>
+              </View>
+              <View>
+                <Text>{s.bio}</Text>
+              </View>
+            </View>
+          );
+        }) }
+      </View>
+    );
+  }
+
   render() {
-    const {title, eventStart, setReminder, removeReminder} = this.props;
+    const { title, description, eventStart, setReminder, removeReminder } = this.props;
 
     return (
       <ScrollView>
@@ -50,14 +77,14 @@ class TalkDetail extends React.Component {
           />
           <View style={styles.card}>
             <Text style={styles.sectionHeading}>TALK</Text>
-            <Text style={styles.heading}>{this.props.title}</Text>
-            <Text style={styles.description}>{this.props.description}</Text>
+            <Text style={styles.heading}>{title}</Text>
+            <Text style={styles.description}>{ description }</Text>
             <Text style={styles.sectionHeading}>ABOUT</Text>
-            {/* {this.renderSpeakers()} */}
+            { this.renderSpeakers() }
           </View>
           <TalkInfo
             start={new Date(this.props.eventStart)}
-            duration={Number(this.props.duration)}
+            duration={this.props.duration}
           />
         </View>
       </ScrollView>
