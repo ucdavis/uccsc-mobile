@@ -4,21 +4,18 @@ import { ApplicationStyles, Colors, Metrics } from '../../Themes/';
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
   container: {
-    marginTop: 101,
-    marginBottom: Metrics.doubleBaseMargin,
-    marginHorizontal: Metrics.doubleBaseMargin,
+    margin: Metrics.baseMargin,
+    paddingTop: Metrics.doubleBaseMargin,
     shadowRadius: 5,
     shadowColor: 'black',
     shadowOpacity: 0.8,
     elevation: 20,
   },
   backButton: {
-    position: 'absolute',
-    top: -59,
-    left: -10,
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 20
+    paddingHorizontal: Metrics.baseMargin,
+    paddingVertical: Metrics.doubleBaseMargin,
   },
   backButtonIcon: {
     marginRight: 5,
@@ -28,7 +25,7 @@ export default StyleSheet.create({
     fontSize: 17,
     letterSpacing: 0,
     backgroundColor: Colors.transparent,
-    color: 'rgba(255,255,255,0.80)'
+    color: 'rgba(0,0,0,0.80)',
   },
   cardShadow1: {
     flex: 1,
@@ -48,21 +45,10 @@ export default StyleSheet.create({
   },
   card: {
     paddingTop: 48,
-    paddingHorizontal: 30,
+    paddingHorizontal: Metrics.doubleBaseMargin,
     borderTopLeftRadius: Metrics.cardRadius,
     borderTopRightRadius: Metrics.cardRadius,
-    backgroundColor: Colors.snow
-  },
-  avatar: {
-    position: 'absolute',
-    top: -43,
-    left: (Metrics.screenWidth - (Metrics.doubleBaseMargin * 2)) / 2 - 53,
-    height: 106,
-    width: 106,
-    borderRadius: 53,
-    borderColor: Colors.snow,
-    borderWidth: 1,
-    zIndex: 4
+    backgroundColor: Colors.snow,
   },
   sectionHeading: {
     alignSelf: 'flex-start',
@@ -89,6 +75,51 @@ export default StyleSheet.create({
   },
   social: {
     flexDirection: 'row',
-    marginBottom: 30
-  }
-})
+    marginBottom: 30,
+  },
+  speakersContainer: {
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(0,0,0,0.2)',
+    backgroundColor: Colors.snow,
+    paddingVertical: 13,
+    paddingHorizontal: Metrics.doubleBaseMargin,
+  },
+  speakerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 13,
+  },
+  avatarContainer: {
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+  },
+  avatar: {
+    height: 50,
+    width: 50,
+    borderRadius: 25,
+    borderColor: Colors.snow,
+    borderWidth: 1,
+    zIndex: 4,
+  },
+  speakerInfo: {
+    flex: 1,
+    paddingHorizontal: Metrics.baseMargin,
+  },
+  speakerName: {
+    fontFamily: 'Montserrat-Light',
+    fontSize: 17,
+    letterSpacing: 0,
+  },
+  speakerCompany: {
+    fontFamily: 'Montserrat-Light',
+    fontSize: 11,
+    color: Colors.lightText,
+    marginBottom: Metrics.baseMargin,
+  },
+  speakerBio: {
+    fontFamily: 'Montserrat-Light',
+    fontSize: 16,
+    letterSpacing: 0,
+    lineHeight: 24,
+  },
+});
