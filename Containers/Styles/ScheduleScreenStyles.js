@@ -36,11 +36,9 @@ export default StyleSheet.create({
     paddingTop: Platform.OS === 'ios' ? 28 : 38,
   },
   headerLogo: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    width: '100%',
+    padding: Metrics.baseMargin,
+    width: 100,
+    height: 100,
   },
   dayToggle: {
     position: 'absolute',

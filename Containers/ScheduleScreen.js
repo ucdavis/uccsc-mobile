@@ -207,7 +207,7 @@ class ScheduleScreen extends React.Component {
       <Animated.View style={headerStyle}>
         <Animated.Image source={require('../Images/gradient.png')} style={backgroundStyle} resizeMode="cover" />
         <Animated.View style={logoContainerStyle}>
-          <Animated.Image source={Images.LogoWithText} style={logoStyle} resizeMode="contain" />
+          <Logo style={logoStyle} />
         </Animated.View>
         { this.renderDayToggle() }
       </Animated.View>
