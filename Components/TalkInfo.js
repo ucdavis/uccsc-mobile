@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { format } from 'date-fns';
 import styles from './Styles/TalkInfoStyle';
 
 const TalkInfo = (props) => {
-  const { start, duration, remindMe, toggleRemindMe, isFinished, showWhenFinished } = props;
+  const { start, duration } = props;
 
   return (
     <View style={styles.container}>
@@ -12,7 +13,9 @@ const TalkInfo = (props) => {
           <Text style={styles.detailLabel}>
             Start
           </Text>
-          <Text style={styles.detailText} />
+          <Text style={styles.detailText}>
+            { format(new Date(start), 'H:mm') }
+          </Text>
         </View>
         <View style={styles.detail}>
           <Text style={styles.detailLabel}>
