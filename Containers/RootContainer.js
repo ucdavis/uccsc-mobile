@@ -52,13 +52,13 @@ class RootContainer extends Component {
         />
         <ReduxNavigation />
       </View>
-    )
+    );
   }
 }
 
 const mapStateToProps = (state) => ({
   notifications: state.notifications.notifications,
-})
+});
 
 // wraps dispatch to create nicer functions to call within our component
 const mapDispatchToProps = (dispatch) => ({

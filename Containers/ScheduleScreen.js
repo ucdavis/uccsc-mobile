@@ -6,23 +6,24 @@ import {
   View,
   FlatList,
   SectionList,
-  Animated
-} from 'react-native'
+  Animated,
+} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { connect } from 'react-redux'
-import Config from '../Config/AppConfig'
-import { Images } from '../Themes'
-import ScheduleActions from '../Redux/ScheduleRedux'
+import { connect } from 'react-redux';
+import Config from '../Config/AppConfig';
+import { Images } from '../Themes';
+import ScheduleActions from '../Redux/ScheduleRedux';
 
-import DayToggle from '../Components/DayToggle'
-import Talk from '../Components/Talk'
+import Logo from '../Images/Logo';
+import DayToggle from '../Components/DayToggle';
+import Talk from '../Components/Talk';
 import ScheduleSectionHeader from '../Components/ScheduleSectionHeader';
 
-import styles from './Styles/ScheduleScreenStyles'
+import styles from './Styles/ScheduleScreenStyles';
 
 import { GroupBy, FindIndexAll, Sum } from '../Utils/Array';
 import { GetItemLayout } from '../Utils/SectionList';
-import { startOfDay, isSameDay, isWithinRange } from 'date-fns'
+import { startOfDay, isSameDay, isWithinRange } from 'date-fns';
 
 const HEADER_MAX_HEIGHT = 250;
 const HEADER_MIN_HEIGHT = 160;
@@ -51,7 +52,7 @@ class ScheduleScreen extends React.Component {
       activeDay,
       isCurrentDay,
       eventsByDay,
-      scrollY: new Animated.Value(0)
+      scrollY: new Animated.Value(0),
     }
   }
 
@@ -158,26 +159,26 @@ class ScheduleScreen extends React.Component {
       inputRange: [0, HEADER_SCROLL_DISTANCE],
       outputRange: [0, HEADER_SCROLL_DISTANCE / 1.5],
       extrapolateLeft: 'extend',
-      extrapolateRight: 'clamp'
+      extrapolateRight: 'clamp',
     });
 
     const backgroundStyle = [
-      styles.headerBackground, 
+      styles.headerBackground,
       {
         height: HEADER_MAX_HEIGHT,
         transform: [
           // { scale: imageScale },
           { translateY: backgroundTranslate }
-        ] 
-      }
-    ]
+        ],
+      },
+    ];
 
     // move down to counter container's upward movement
     const logoContainterTranslate = this.state.scrollY.interpolate({
       inputRange: [0, HEADER_SCROLL_DISTANCE],
       outputRange: [0, HEADER_SCROLL_DISTANCE / 2],
       extrapolateLeft: 'extend',
-      extrapolateRight: 'clamp'
+      extrapolateRight: 'clamp',
     });
 
     const logoContainerStyle = [
@@ -187,9 +188,9 @@ class ScheduleScreen extends React.Component {
         transform: [
           { translateY: logoContainterTranslate },
         ],
-      }
-    ]
-    
+      },
+    ];
+
     // scale logo
     const logoScale = this.state.scrollY.interpolate({
       inputRange: [0, HEADER_SCROLL_DISTANCE - 30, HEADER_SCROLL_DISTANCE],
@@ -199,7 +200,7 @@ class ScheduleScreen extends React.Component {
 
     const logoStyle = [
       styles.headerLogo,
-      { transform: [{ scale: logoScale }] }
+      { transform: [{ scale: logoScale }] },
     ];
 
     return (
@@ -223,7 +224,7 @@ class ScheduleScreen extends React.Component {
     const dayToggleStyle = [
       styles.dayToggle,
       {
-        opacity: opacity,
+        opacity,
       },
     ];
 

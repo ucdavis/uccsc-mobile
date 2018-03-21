@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
-import { ApplicationStyles, Colors, Metrics } from '../../Themes/'
+import { StyleSheet } from 'react-native';
+import { ApplicationStyles, Colors, Metrics } from '../../Themes/';
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
@@ -21,7 +21,7 @@ export default StyleSheet.create({
     padding: 20
   },
   backButtonIcon: {
-    marginRight: 5
+    marginRight: 5,
   },
   backButtonText: {
     fontFamily: 'Montserrat-Light',
@@ -36,7 +36,7 @@ export default StyleSheet.create({
     marginHorizontal: 10,
     backgroundColor: Colors.purpleShadow1,
     borderTopLeftRadius: Metrics.cardRadius,
-    borderTopRightRadius: Metrics.cardRadius
+    borderTopRightRadius: Metrics.cardRadius,
   },
   cardShadow2: {
     flex: 1,
@@ -44,7 +44,7 @@ export default StyleSheet.create({
     marginHorizontal: 5,
     backgroundColor: Colors.purpleShadow2,
     borderTopLeftRadius: Metrics.cardRadius,
-    borderTopRightRadius: Metrics.cardRadius
+    borderTopRightRadius: Metrics.cardRadius,
   },
   card: {
     paddingTop: 48,
@@ -70,14 +70,14 @@ export default StyleSheet.create({
     fontFamily: 'Montserrat-Light',
     fontSize: 11,
     letterSpacing: 3,
-    color: Colors.lightText
+    color: Colors.lightText,
   },
   heading: {
     marginBottom: 5,
     fontFamily: 'Montserrat-SemiBold',
     fontSize: 17,
     letterSpacing: 0,
-    color: Colors.darkPurple
+    color: Colors.darkPurple,
   },
   description: {
     marginBottom: 30,
@@ -85,7 +85,7 @@ export default StyleSheet.create({
     fontSize: 16,
     letterSpacing: 0,
     lineHeight: 24,
-    color: Colors.lightText
+    color: Colors.lightText,
   },
   social: {
     flexDirection: 'row',

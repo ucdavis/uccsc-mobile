@@ -1,17 +1,17 @@
-import React from "react";
-import { NavigationActions } from 'react-navigation'
+import React from 'react';
+import { NavigationActions } from 'react-navigation';
 import {
   BackHandler,
   ScrollView,
   Text,
   View,
   Image,
-  TouchableOpacity
-} from "react-native";
+  TouchableOpacity,
+} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import TalkInfo from '../Components/TalkInfo';
-import { Images } from '../Themes'
-import { connect } from "react-redux";
+import { Images } from '../Themes';
+import { connect } from 'react-redux';
 import styles from './Styles/TalkDetailScreenStyles';
 
 class TalkDetail extends React.Component {
@@ -77,7 +77,7 @@ class TalkDetail extends React.Component {
           />
           <View style={styles.card}>
             <Text style={styles.sectionHeading}>TALK</Text>
-            <Text style={styles.heading}>{title}</Text>
+            <Text style={styles.heading}>{ title }</Text>
             <Text style={styles.description}>{ description }</Text>
             <Text style={styles.sectionHeading}>ABOUT</Text>
             { this.renderSpeakers() }

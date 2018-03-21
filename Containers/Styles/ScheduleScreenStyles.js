@@ -33,7 +33,7 @@ export default StyleSheet.create({
     right: 0,
     width: '100%',
     zIndex: 20,
-    paddingTop: Platform.OS === 'ios' ? 28 : 38
+    paddingTop: Platform.OS === 'ios' ? 28 : 38,
   },
   headerLogo: {
     position: 'absolute',
