@@ -1,21 +1,23 @@
-import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation'
-import AboutScreen from '../Components/AboutScreen'
-import ScheduleScreen from '../Containers/ScheduleScreen'
-import TalkDetailScreen from '../Containers/TalkDetailScreen'
-import styles from './styles/NavigationStyles'
+import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
+import AboutScreen from '../Components/AboutScreen';
+import LocationScreen from '../Components/LocationScreen';
+import ScheduleScreen from '../Containers/ScheduleScreen';
+import TalkDetailScreen from '../Containers/TalkDetailScreen';
+import styles from './styles/NavigationStyles';
 
-const ScheduleStack = StackNavigator({
+const ScheduleStack = new StackNavigator({
   Home: { screen: ScheduleScreen },
-  TalkDetail: { screen: TalkDetailScreen }
+  TalkDetail: { screen: TalkDetailScreen },
 }, {
   headerMode: 'none',
   initialRouteName: 'Home',
-  cardStyle: styles.card
+  cardStyle: styles.card,
 });
 
-const TabNav = TabNavigator({
+const TabNav = new TabNavigator({
   Schedule: { screen: ScheduleStack },
-  About: { screen: AboutScreen }
+  Location: { screen: LocationScreen },
+  About: { screen: AboutScreen },
 }, {
   key: 'Schedule',
   tabBarComponent: TabBarBottom,
@@ -28,8 +30,8 @@ const TabNav = TabNavigator({
     style: styles.tabBar,
     labelStyle: styles.tabBarLabel,
     activeTintColor: 'white',
-    inactiveTintColor: 'white'
-  }
-})
+    inactiveTintColor: 'white',
+  },
+});
 
-export default TabNav
+export default TabNav;
