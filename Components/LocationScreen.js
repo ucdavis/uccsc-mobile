@@ -17,7 +17,7 @@ export default class LocationScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Location',
     tabBarIcon: ({ focused }) => (
-      <MaterialIcons name="location-on" size={24} color="black" />
+      <MaterialIcons name="location-on" size={24} color="white" />
     ),
   }
 
@@ -113,7 +113,7 @@ export default class LocationScreen extends React.Component {
 
   render() {
     return (
-      <ScrollView
+      <Animated.ScrollView
         style={styles.container}
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }],
@@ -148,7 +148,7 @@ export default class LocationScreen extends React.Component {
             </View>
           </TouchableOpacity>
         </View>
-      </ScrollView>
+      </Animated.ScrollView>
     );
   }
 }
