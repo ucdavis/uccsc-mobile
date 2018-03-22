@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
-import { Colors } from '../../Themes/'
+import { StyleSheet } from 'react-native';
+import { Colors } from '../../Themes/';
 
 export default StyleSheet.create({
   tabBar: {
@@ -9,7 +9,7 @@ export default StyleSheet.create({
     paddingHorizontal: 28,
     borderTopWidth: 1,
     borderTopColor: 'rgba(255,255,255,0.5)',
-    backgroundColor: Colors.background,
+    backgroundColor: Colors.darkBlue1,
     shadowRadius: 20,
     shadowColor: 'black',
     shadowOpacity: 0.8,
@@ -19,10 +19,10 @@ export default StyleSheet.create({
     fontFamily: 'Montserrat-Medium',
     fontSize: 16,
     letterSpacing: 0,
-    color: Colors.text
+    color: Colors.snow,
   },
   card: {
     opacity: 1,
-    backgroundColor: Colors.background
-  }
-})
+    backgroundColor: Colors.background,
+  },
+});
