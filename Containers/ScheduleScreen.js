@@ -15,6 +15,7 @@ import { Images } from '../Themes';
 import ScheduleActions from '../Redux/ScheduleRedux';
 
 import Logo from '../Images/Logo';
+import Gradient from '../Components/Gradient';
 import DayToggle from '../Components/DayToggle';
 import Talk from '../Components/Talk';
 import ScheduleSectionHeader from '../Components/ScheduleSectionHeader';
@@ -35,7 +36,7 @@ class ScheduleScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Schedule',
     tabBarIcon: ({ focused }) => (
-      <MaterialIcons name="schedule" size={24} color="black" />
+      <MaterialIcons name="schedule" size={24} color="white" />
     )
   }
 
@@ -53,7 +54,7 @@ class ScheduleScreen extends React.Component {
       isCurrentDay,
       eventsByDay,
       scrollY: new Animated.Value(0),
-    }
+    };
   }
 
   componentWillReceiveProps(nextProps) {
@@ -295,10 +296,10 @@ class ScheduleScreen extends React.Component {
     const data = eventsByDay[activeDay];
 
     return (
-      <View style={styles.container}>
+      <Gradient style={styles.container}>
         { this.renderHeader() }
         { this.renderList(data) }
-      </View>
+      </Gradient>
     );
   }
 }
