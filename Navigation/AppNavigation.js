@@ -1,6 +1,6 @@
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
 import AboutScreen from '../Components/AboutScreen';
-import LocationScreen from '../Components/LocationScreen';
+import LocationScreen from '../Containers/LocationScreen';
 import ScheduleScreen from '../Containers/ScheduleScreen';
 import TalkDetailScreen from '../Containers/TalkDetailScreen';
 import styles from './styles/NavigationStyles';

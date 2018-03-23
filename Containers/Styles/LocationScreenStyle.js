@@ -5,9 +5,7 @@ export default StyleSheet.create({
   ...ApplicationStyles.screen,
   container: {
     flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // backgroundColor: 'black',
+    
   },
   headingContainer: {
     alignItems: 'center',
@@ -19,6 +17,7 @@ export default StyleSheet.create({
     fontSize: 31,
     letterSpacing: 0.2,
     color: Colors.snow,
+    backgroundColor: Colors.transparent,
   },
   address: {
     fontFamily: 'Montserrat-Medium',
@@ -26,7 +25,8 @@ export default StyleSheet.create({
     letterSpacing: 0.47,
     lineHeight: 23,
     textAlign: 'center',
-    color: '#FDE5FF',
+    color: Colors.snow,
+    backgroundColor: Colors.transparent,
   },
   map: {
     height: 200,
@@ -81,5 +81,17 @@ export default StyleSheet.create({
     fontSize: 11,
     letterSpacing: 0,
     color: Colors.darkPurple,
+  },
+  sectionHeader: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 40,
+  },
+  sectionHeaderText: {
+    fontFamily: 'Montserrat-SemiBold',
+    fontSize: 17,
+    letterSpacing: 0,
+    color: Colors.snow,
+    backgroundColor: Colors.transparent,
   },
 });
