@@ -16,7 +16,6 @@ export default StyleSheet.create({
     borderBottomColor: Colors.snow,
   },
   codeIcon: {
-    // marginLeft: 5,
     marginRight: 10,
   },
   text: {
