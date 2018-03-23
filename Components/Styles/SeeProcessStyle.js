@@ -15,16 +15,12 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: Colors.snow,
   },
-  leftContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
   codeIcon: {
-    marginLeft: 5,
+    // marginLeft: 5,
     marginRight: 10,
   },
   text: {
+    flex: 1,
     backgroundColor: Colors.transparent,
     color: Colors.snow,
     fontFamily: Fonts.type.bold,
@@ -32,6 +28,6 @@ export default StyleSheet.create({
     letterSpacing: 0.2,
   },
   rightArrow: {
-    marginRight: 10,
+    marginLeft: 10,
   },
 });

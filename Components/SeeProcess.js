@@ -12,10 +12,8 @@ const onPress = () => {
 const SeeProcess = (props) => {
   return (
     <TouchableOpacity style={styles.processContainer} onPress={onPress}>
-      <View style={styles.leftContainer}>
-        <FontAwesome name="code-fork" size={24} color="white" style={styles.codeIcon} />
-        <Text style={styles.text}>See the process behind making our app</Text>
-      </View>
+      <FontAwesome name="code-fork" size={24} color="white" style={styles.codeIcon} />
+      <Text style={styles.text}>See the process behind making our app</Text>
       <FontAwesome name="long-arrow-right" size={24} color="white" style={styles.rightArrow} />
     </TouchableOpacity>
   );
