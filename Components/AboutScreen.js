@@ -19,7 +19,7 @@ import styles from './Styles/AboutScreenStyle';
 
 export default class AboutScreen extends React.Component {
   static navigationOptions = {
-    tabBarLabel: 'General Info',
+    tabBarLabel: 'Info',
     tabBarIcon: ({ focused }) => (
       <MaterialIcons name="info" size={24} color="white" />
     ),
