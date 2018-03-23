@@ -1,21 +1,29 @@
-import React, { Component } from 'react'
-import { View, StatusBar } from 'react-native'
-import { connect } from 'react-redux'
-import { Notifications } from 'expo'
-// import StartupActions from '../Redux/StartupRedux'
-import NotificationActions from '../Redux/NotificationRedux'
-// import ReduxPersist from '../Config/ReduxPersist'
-import ReduxNavigation from '../Navigation/ReduxNavigation'
-import styles from './Styles/RootContainerStyles'
+import React, { Component } from 'react';
+import { View, StatusBar } from 'react-native';
+import { connect } from 'react-redux';
+import { Notifications } from 'expo';
+// import StartupActions from '../Redux/StartupRedux';
+import NotificationActions from '../Redux/NotificationRedux';
+import ScheduleActions from '../Redux/ScheduleRedux';
+import ReduxPersistConfig from '../Config/ReduxPersistConfig';
+import ReduxNavigation from '../Navigation/ReduxNavigation';
+import styles from './Styles/RootContainerStyles';
 import { registerForPushNotificationsAsync } from '../Services/PushNotifications';
 import NotificationsBar from '../Components/NotificationsBar';
 
+import { getSchedule } from '../Services/Api';
+
 class RootContainer extends Component {
-  async componentDidMount () {
+  async componentDidMount() {
+    const { updateSchedule } = this.props;
     // if redux persist is not active fire startup action
-    // if (!ReduxPersist.active) {
-    //   this.props.startup()
-    // }
+    if (!ReduxPersistConfig.active) {
+      this.props.startup();
+    }
+
+    // fetch schedule updates
+    const schedule = await getSchedule();
+    updateSchedule(schedule);
 
     await registerForPushNotificationsAsync();
 
@@ -32,9 +40,9 @@ class RootContainer extends Component {
     addNotification(notification);
   };
 
-  render () {
+  render() {
     const { notifications, clearNotifications } = this.props;
-    
+
     return (
       <View style={styles.applicationView}>
         <StatusBar barStyle='light-content' />
@@ -44,19 +52,20 @@ class RootContainer extends Component {
         />
         <ReduxNavigation />
       </View>
-    )
+    );
   }
 }
 
 const mapStateToProps = (state) => ({
   notifications: state.notifications.notifications,
-})
+});
 
 // wraps dispatch to create nicer functions to call within our component
 const mapDispatchToProps = (dispatch) => ({
-  // startup: () => dispatch(StartupActions.startup()),
+  startup: () => dispatch(StartupActions.startup()),
   addNotification: (notification) => dispatch(NotificationActions.addNotification(notification)),
-  clearNotifications: () => dispatch(NotificationActions.clearNotifications())
-})
+  clearNotifications: () => dispatch(NotificationActions.clearNotifications()),
+  updateSchedule: (schedule) => dispatch(ScheduleActions.updateSchedule(schedule)),
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(RootContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(RootContainer);

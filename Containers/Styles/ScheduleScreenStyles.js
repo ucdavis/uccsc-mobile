@@ -4,7 +4,7 @@ import { ApplicationStyles, Colors, Fonts, Metrics } from '../../Themes/'
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
   container: {
-    
+    flex: 1,
   },
   headerContainer: {
     justifyContent: 'flex-start',
@@ -15,7 +15,7 @@ export default StyleSheet.create({
     right: 0,
     overflow: 'hidden',
     height: 150,
-    zIndex: 10
+    zIndex: 10,
   },
   headerBackground: {
     position: 'absolute',
@@ -33,23 +33,21 @@ export default StyleSheet.create({
     right: 0,
     width: '100%',
     zIndex: 20,
-    paddingTop: Platform.OS === 'ios' ? 28 : 38
+    paddingTop: Platform.OS === 'ios' ? 28 : 38,
   },
   headerLogo: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    width: '100%',
+    padding: Metrics.baseMargin,
+    width: 100,
+    height: 100,
   },
   dayToggle: {
     position: 'absolute',
     bottom: 0,
     left: 0,
     right: 0,
-    zIndex: 20
+    zIndex: 20,
   },
   listContent: {
     paddingBottom: Metrics.baseMargin * 8,
-  }
-})
+  },
+});

@@ -3,7 +3,9 @@ import Immutable from 'seamless-immutable'
 
 /* ------------- Initial State ------------- */
 export const INITIAL_STATE = Immutable({
-  notifications: ["This is my new message"],
+  notifications: [
+    // "This is my new message"
+  ],
 })
 
 /* ------------- Types and Action Creators ------------- */

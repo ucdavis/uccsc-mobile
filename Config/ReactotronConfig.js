@@ -1,26 +1,15 @@
-import Config from '../Config/DebugConfig'
-import Immutable from 'seamless-immutable'
-import Reactotron from 'reactotron-react-native'
-import { reactotronRedux as reduxPlugin } from 'reactotron-redux'
-// import sagaPlugin from 'reactotron-redux-saga'
+import Config from '../Config/DebugConfig';
+import Immutable from 'seamless-immutable';
+import Reactotron, { networking } from 'reactotron-react-native';
+import { reactotronRedux as reduxPlugin } from 'reactotron-redux';
 
-  // https://github.com/infinitered/reactotron for more options!
+// https://github.com/infinitered/reactotron for more options!
+
 Reactotron
-  .configure({ name: 'uccsc-mobile-2018' })
+  .configure({ name: 'uccsc-mobile-2018', host: 'localhost' })
   .useReactNative()
-  .use(reduxPlugin({ onRestore: Immutable }))
-  // register the redux-saga plugin so we can use the monitor in CreateStore.js
-  // .use(sagaPlugin())
+  .use(networking())
+  .use(reduxPlugin({ onRestore: Immutable }));
 
-if (Config.useReactotron) {
-  // let's connect!
-  Reactotron.connect()
+console.tron = Reactotron;
 
-  // Let's clear Reactotron on every time we load the app
-  Reactotron.clear()
-
-  // Totally hacky, but this allows you to not both importing reactotron-react-native
-  // on every file.  This is just DEV mode, so no big deal.
-}
-
-console.tron = Reactotron

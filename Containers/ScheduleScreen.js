@@ -6,23 +6,25 @@ import {
   View,
   FlatList,
   SectionList,
-  Animated
-} from 'react-native'
+  Animated,
+} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { connect } from 'react-redux'
-import Config from '../Config/AppConfig'
-import { Images } from '../Themes'
-import ScheduleActions from '../Redux/ScheduleRedux'
+import { connect } from 'react-redux';
+import Config from '../Config/AppConfig';
+import { Images } from '../Themes';
+import ScheduleActions from '../Redux/ScheduleRedux';
 
-import DayToggle from '../Components/DayToggle'
-import Talk from '../Components/Talk'
+import Logo from '../Images/Logo';
+import Gradient from '../Components/Gradient';
+import DayToggle from '../Components/DayToggle';
+import Talk from '../Components/Talk';
 import ScheduleSectionHeader from '../Components/ScheduleSectionHeader';
 
-import styles from './Styles/ScheduleScreenStyles'
+import styles from './Styles/ScheduleScreenStyles';
 
 import { GroupBy, FindIndexAll, Sum } from '../Utils/Array';
 import { GetItemLayout } from '../Utils/SectionList';
-import { startOfDay, isSameDay, isWithinRange } from 'date-fns'
+import { startOfDay, isSameDay, isWithinRange } from 'date-fns';
 
 const HEADER_MAX_HEIGHT = 250;
 const HEADER_MIN_HEIGHT = 160;
@@ -34,34 +36,32 @@ class ScheduleScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Schedule',
     tabBarIcon: ({ focused }) => (
-      <MaterialIcons name="schedule" size={24} color="black" />
+      <MaterialIcons name="schedule" size={24} color="white" />
     )
   }
 
   constructor(props) {
     super(props)
 
-    const { schedule, currentTime } = props
-    const activeDay = 0
-    const isCurrentDay = this.isActiveCurrentDay(currentTime, activeDay)
+    const { schedule, currentTime } = props;
+    const activeDay = 0;
+    const isCurrentDay = this.isActiveCurrentDay(currentTime, activeDay);
 
-    const eventsByDay = this.buildScheduleList(schedule)
+    const eventsByDay = this.buildScheduleList(schedule);
 
     this.state = {
       activeDay,
       isCurrentDay,
       eventsByDay,
-      scrollY: new Animated.Value(0)
-    }
+      scrollY: new Animated.Value(0),
+    };
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.schedule != nextProps.schedule) {
-
-      const { activeDay } = this.state
-      const eventsByDay = this.buildScheduleList(schedule)
-
-      this.setState({ eventsByDay })
+    if (this.props.schedule !== nextProps.schedule) {
+      const { activeDay } = this.state;
+      const eventsByDay = this.buildScheduleList(nextProps.schedule)
+      this.setState({ eventsByDay });
     }
   }
 
@@ -97,11 +97,15 @@ class ScheduleScreen extends React.Component {
   }
 
   setActiveDay = (activeDay) => {
-    const { currentTime } = this.props
-    const { eventsByDay } = this.state
+    const { currentTime } = this.props;
+    const { eventsByDay } = this.state;
     const isCurrentDay = this.isActiveCurrentDay(currentTime, activeDay)
 
     this.setState({ activeDay, isCurrentDay }, () => {
+      if (!this.scheduleList) {
+        return;
+      }
+
       if (isCurrentDay) {
         // Scroll to active
         // const headersIndices = FindIndexAll(schedule, i => i.isHeader);
@@ -109,11 +113,10 @@ class ScheduleScreen extends React.Component {
         // this.scheduleList.scrollToIndex({index, animated: false})
       } else {
         // Scroll to top
-        // console.log(this.scheduleList);
-        this.scheduleList.getNode().scrollToLocation({sectionIndex: 0, itemIndex: 0, viewPosition: 1, animated: true})
+        this.scheduleList.getNode().scrollToLocation({ sectionIndex: 0, itemIndex: 0, viewPosition: 1, animated: true });
         // this.scheduleList.getNode().scrollTo({y: 0, animated: false})
       }
-    })
+    });
   }
 
   getItemLayout = GetItemLayout({
@@ -127,19 +130,19 @@ class ScheduleScreen extends React.Component {
     },
     getSectionHeaderHeight: () => 60,
   });
-  
+
   renderHeader = () => {
     // move container up with scroll
     const headerTranslate = this.state.scrollY.interpolate({
       inputRange: [0, HEADER_SCROLL_DISTANCE],
       outputRange: [0, -HEADER_SCROLL_DISTANCE],
       extrapolateLeft: 'extend',
-      extrapolateRight: 'clamp'
+      extrapolateRight: 'clamp',
     });
 
     const headerStyle = [
       styles.headerContainer,
-      { 
+      {
         height: HEADER_MAX_HEIGHT,
         transform: [{ translateY: headerTranslate }] 
       }];
@@ -157,26 +160,26 @@ class ScheduleScreen extends React.Component {
       inputRange: [0, HEADER_SCROLL_DISTANCE],
       outputRange: [0, HEADER_SCROLL_DISTANCE / 1.5],
       extrapolateLeft: 'extend',
-      extrapolateRight: 'clamp'
+      extrapolateRight: 'clamp',
     });
 
     const backgroundStyle = [
-      styles.headerBackground, 
+      styles.headerBackground,
       {
         height: HEADER_MAX_HEIGHT,
         transform: [
           // { scale: imageScale },
           { translateY: backgroundTranslate }
-        ] 
-      }
-    ]
+        ],
+      },
+    ];
 
     // move down to counter container's upward movement
     const logoContainterTranslate = this.state.scrollY.interpolate({
       inputRange: [0, HEADER_SCROLL_DISTANCE],
       outputRange: [0, HEADER_SCROLL_DISTANCE / 2],
       extrapolateLeft: 'extend',
-      extrapolateRight: 'clamp'
+      extrapolateRight: 'clamp',
     });
 
     const logoContainerStyle = [
@@ -186,9 +189,9 @@ class ScheduleScreen extends React.Component {
         transform: [
           { translateY: logoContainterTranslate },
         ],
-      }
-    ]
-    
+      },
+    ];
+
     // scale logo
     const logoScale = this.state.scrollY.interpolate({
       inputRange: [0, HEADER_SCROLL_DISTANCE - 30, HEADER_SCROLL_DISTANCE],
@@ -198,14 +201,14 @@ class ScheduleScreen extends React.Component {
 
     const logoStyle = [
       styles.headerLogo,
-      { transform: [{ scale: logoScale }] }
+      { transform: [{ scale: logoScale }] },
     ];
 
     return (
       <Animated.View style={headerStyle}>
         <Animated.Image source={require('../Images/gradient.png')} style={backgroundStyle} resizeMode="cover" />
         <Animated.View style={logoContainerStyle}>
-          <Animated.Image source={Images.LogoWithText} style={logoStyle} resizeMode="contain" />
+          <Logo style={logoStyle} />
         </Animated.View>
         { this.renderDayToggle() }
       </Animated.View>
@@ -222,27 +225,27 @@ class ScheduleScreen extends React.Component {
     const dayToggleStyle = [
       styles.dayToggle,
       {
-        opacity: opacity,
-      }
+        opacity,
+      },
     ];
 
     return (
       <Animated.View style={dayToggleStyle}>
         <DayToggle
-          activeDay={this.state.activeDay} 
+          activeDay={this.state.activeDay}
           onPressIn={this.setActiveDay}
         />
       </Animated.View>
     )
   }
 
-  renderSectionHeader = ({section}) => {
+  renderSectionHeader = ({ section }) => {
     return (
       <ScheduleSectionHeader time={section.time} />
     )
   }
 
-  renderItem = ({item}) => {
+  renderItem = ({ item }) => {
     return (
       <Talk
         type={item.type}
@@ -256,38 +259,48 @@ class ScheduleScreen extends React.Component {
     );
   }
 
-  render () {
-    const { activeDay, eventsByDay } = this.state;
-    const data = eventsByDay[activeDay];
+  renderList(data) {
+    if (!data || !data.length) {
+      return null;
+    }
 
     const listContentStyle = [
       styles.listContent,
-      { 
+      {
         marginTop: HEADER_MIN_HEIGHT,
-        paddingTop: HEADER_SCROLL_DISTANCE
-      }
-    ]
+        paddingTop: HEADER_SCROLL_DISTANCE,
+      },
+    ];
 
     return (
-        <View style={styles.container}>
-          { this.renderHeader() }
-          <AnimatedSectionList
-            renderItem={this.renderItem}
-            renderSectionHeader={this.renderSectionHeader}
-            sections={data}
-            keyExtractor={(item, idx) => idx}
-            contentContainerStyle={listContentStyle}
-            getItemLayout={this.getItemLayout}
-            stickySectionHeadersEnabled={true}
-            scrollEventThrottle={1}
-            onScroll={Animated.event(
-              [{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }],
-              { useNativeDriver: true }
-            )}
-            ref={(r) => this.scheduleList = r}
-          />
-        </View>
-      )
+      <AnimatedSectionList
+        renderItem={this.renderItem}
+        renderSectionHeader={this.renderSectionHeader}
+        sections={data}
+        keyExtractor={(item, idx) => idx}
+        contentContainerStyle={listContentStyle}
+        getItemLayout={this.getItemLayout}
+        stickySectionHeadersEnabled={true}
+        scrollEventThrottle={1}
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }],
+          { useNativeDriver: true }
+        )}
+        ref={(r) => this.scheduleList = r}
+      />
+    );
+  }
+
+  render() {
+    const { activeDay, eventsByDay } = this.state;
+    const data = eventsByDay[activeDay];
+
+    return (
+      <Gradient style={styles.container}>
+        { this.renderHeader() }
+        { this.renderList(data) }
+      </Gradient>
+    );
   }
 }
 

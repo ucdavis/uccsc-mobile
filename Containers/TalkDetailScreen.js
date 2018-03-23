@@ -1,17 +1,17 @@
-import React from "react";
-import { NavigationActions } from 'react-navigation'
+import React from 'react';
+import { NavigationActions } from 'react-navigation';
 import {
   BackHandler,
   ScrollView,
   Text,
   View,
   Image,
-  TouchableOpacity
-} from "react-native";
+  TouchableOpacity,
+} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import TalkInfo from '../Components/TalkInfo';
-import { Images } from '../Themes'
-import { connect } from "react-redux";
+import { Images } from '../Themes';
+import { connect } from 'react-redux';
 import styles from './Styles/TalkDetailScreenStyles';
 
 class TalkDetail extends React.Component {
@@ -19,7 +19,7 @@ class TalkDetail extends React.Component {
     tabBarLabel: "Schedule",
     tabBarIcon: ({ focused }) => (
       <MaterialIcons name="schedule" size={24} color="black" />
-    )
+    ),
   };
 
   componentDidMount() {
@@ -30,34 +30,54 @@ class TalkDetail extends React.Component {
     this.props.navigation.dispatch(NavigationActions.back());
   };
 
-  render() {
-    const {title, eventStart, setReminder, removeReminder} = this.props;
+  renderSpeakers = () => {
+    const { speakers } = this.props;
 
+    return (
+      <View style={styles.speakersContainer}>
+        <Text style={styles.sectionHeading}>ABOUT</Text>
+        { speakers.map(s => {
+          const id = '00000000000000000000000000000000';
+          return (
+            <View key={s.name} style={styles.speakerContainer}>
+              <View style={styles.avatarContainer}>
+                <Image
+                  style={styles.avatar}
+                  source={{ uri: `https://www.gravatar.com/avatar/${id}?d=mm&s=50` }}
+                />
+              </View>
+              <View style={styles.speakerInfo}>
+                <Text style={styles.speakerName}>{s.name}</Text>
+                <Text style={styles.speakerCompany}>{s.company}</Text>
+                <Text style={styles.speakerBio}>{s.bio}</Text>
+              </View>
+            </View>
+          );
+        }) }
+      </View>
+    );
+  }
+
+  render() {
+    const { title, description, time, duration } = this.props;
     return (
       <ScrollView>
         <View style={styles.container}>
           <TouchableOpacity style={styles.backButton} onPress={this.goBack}>
-            <Image style={styles.backButtonIcon} source={Images.arrowIcon} />
+            <MaterialIcons name="chevron-left" size={24} />
             <Text style={styles.backButtonText}>Back</Text>
           </TouchableOpacity>
           <View style={styles.cardShadow1} />
           <View style={styles.cardShadow2} />
-          <Image
-            style={styles.avatar}
-            source={{
-              uri: `https://infinite.red/images/chainreact/${this.props.image}.png`
-            }}
-          />
           <View style={styles.card}>
             <Text style={styles.sectionHeading}>TALK</Text>
-            <Text style={styles.heading}>{this.props.title}</Text>
-            <Text style={styles.description}>{this.props.description}</Text>
-            <Text style={styles.sectionHeading}>ABOUT</Text>
-            {/* {this.renderSpeakers()} */}
+            <Text style={styles.heading}>{ title }</Text>
+            <Text style={styles.description}>{ description }</Text>
           </View>
+          { this.renderSpeakers() }
           <TalkInfo
-            start={new Date(this.props.eventStart)}
-            duration={Number(this.props.duration)}
+            start={time}
+            duration={duration}
           />
         </View>
       </ScrollView>

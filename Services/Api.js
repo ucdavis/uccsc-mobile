@@ -1,15 +1,13 @@
 
-const create = (baseURL = 'https://example/') => {
-  // TODO Create and configure a default fetch method.
-  const getSpeakers = () => {}
-  const getNearby = () => {}
+export async function getSchedule() {
 
-  return {
-    getSpeakers,
-    getNearby
-  }
-}
+  // url
+  const url = 'https://us-central1-uccsc-ac393.cloudfunctions.net/getAllSessions';
 
-export default {
-  create
+  // fetch sessions
+  const response = await fetch(url);
+
+  const sessions = JSON.parse(await response.text());
+
+  return sessions;
 }
