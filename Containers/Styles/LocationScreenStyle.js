@@ -31,6 +31,8 @@ export default StyleSheet.create({
   map: {
     height: 200,
     width: '100%',
+    borderTopWidth: 1,
+    borderTopColor: '#C4C4C4',
   },
   mapActions: {
     paddingHorizontal: 12,
@@ -39,22 +41,14 @@ export default StyleSheet.create({
     borderTopColor: '#C4C4C4',
     borderBottomWidth: 1,
     borderBottomColor: '#DEDEDE',
-    shadowColor: Colors.black,
-    shadowRadius: 3,
-    shadowOffset: {
-      x: 10,
-      y: 10,
-    },
-    shadowOpacity: 0.3,
-    zIndex: 1,
   },
   getDirections: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingVertical: 12,
-    borderBottomWidth: 1,
-    borderBottomColor: '#DEDEDE',
+    // borderBottomWidth: 1,
+    // borderBottomColor: '#DEDEDE',
   },
   venueName: {
     fontFamily: 'Montserrat-SemiBold',
