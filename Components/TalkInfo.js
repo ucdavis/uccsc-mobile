@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { format } from 'date-fns';
+import RemindMeButton from './RemindMeButton';
 import styles from './Styles/TalkInfoStyle';
 
 const TalkInfo = (props) => {
-  const { start, duration } = props;
+  const { start, duration, starred, toggleReminder } = props;
 
   return (
     <View style={styles.container}>
@@ -24,6 +25,9 @@ const TalkInfo = (props) => {
           <Text style={styles.detailText}>
             {duration}
           </Text>
+        </View>
+        <View style={styles.remindMe}>
+          <RemindMeButton onPress={toggleReminder} on={starred} />
         </View>
       </View>
     </View>
