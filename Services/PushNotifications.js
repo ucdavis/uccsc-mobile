@@ -1,7 +1,8 @@
 import { Permissions, Notifications } from 'expo';
 import Config from '../Config/ServerConfig';
+import PNHelpers from '../Helpers/PushNotificationHelpers';
 
-export async function registerForPushNotificationsAsync() {
+export async function checkNotificationPermission() {
   const { status: existingStatus } = await Permissions.getAsync(
     Permissions.NOTIFICATIONS
   );
@@ -16,16 +17,22 @@ export async function registerForPushNotificationsAsync() {
     finalStatus = status;
   }
 
+  return finalStatus;
+}
+
+export async function registerForPushNotificationsAsync() {
+
   // Stop here if the user did not grant permissions
-  if (finalStatus !== 'granted') {
+  const permission = await checkNotificationPermission();
+  if (permission !== 'granted') {
     return;
   }
 
   // Get the token that uniquely identifies this device
-  let token = await Notifications.getExpoPushTokenAsync();
+  const token = await Notifications.getExpoPushTokenAsync();
 
   // POST the token to your backend server from where you can retrieve it to send push notifications.
-  return fetch(Config.notificationsEndpoint, {
+  await fetch(Config.notificationsEndpoint, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -42,3 +49,32 @@ export async function registerForPushNotificationsAsync() {
   });
 }
 
+export async function scheduleTalkReminder(talk) {
+  // Stop here if the user did not grant permissions
+  const permission = await checkNotificationPermission();
+  if (permission !== 'granted') {
+    return 0;
+  }
+
+  const { title, start } = talk;
+
+  const id = await Notifications.scheduleLocalNotificationAsync({
+    title: PNHelpers.pushMessage(title, start),
+    body: PNHelpers.pushMessage(title, start),
+    data: { title },
+  }, {
+    time: PNHelpers.notificationTime(start),
+  });
+
+  return id;
+}
+
+export async function cancelTalkReminder(id) {
+  await Notifications.cancelScheduledNotificationAsync(id);
+}
+
+export default {
+  registerForPushNotificationsAsync,
+  scheduleTalkReminder,
+  cancelTalkReminder,
+};
