@@ -152,21 +152,18 @@ class ScheduleScreen extends React.Component {
 
     // create schedule local notification, track it, update star status
     if (!starred) {
-      try {
-        const id = await PushNotifications.scheduleTalkReminder(item);
-        trackLocalNotification(id, title);
-        starTalk(title);
-      } catch(err) {
-        console.error(err);
-      }
+      const id = await PushNotifications.scheduleTalkReminder(item);
+      trackLocalNotification(id, title);
+      starTalk(title);
       return;
     }
 
     // find local notification, cancel it, update star status
-    const id = localNotifications.find(n => n.title === title);
-    if (id) {
-      await PushNotifications.cancelTalkReminder(id);
-      untrackLocalNotification(id);
+    console.log(title, localNotifications);
+    const notification = localNotifications.find(n => n.title === title);
+    if (notification) {
+      await PushNotifications.cancelTalkReminder(notification.id);
+      untrackLocalNotification(notification.id);
     }
 
     unstarTalk(title);
