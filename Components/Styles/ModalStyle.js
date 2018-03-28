@@ -1,7 +1,7 @@
-import { TextStyle, ViewStyle, ImageStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { ApplicationStyles, Colors, Fonts } from '../../Themes/';
 
-const ModalStyle = {
+const ModalStyle = StyleSheet.create({
   ...ApplicationStyles.screen,
   wrapper: {
     flex: 1,
@@ -59,6 +59,6 @@ const ModalStyle = {
     color: Colors.silver,
     backgroundColor: Colors.clear,
   },
-};
+});
 
 export default ModalStyle;
