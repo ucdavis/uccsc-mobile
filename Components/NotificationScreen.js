@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import styles from './Styles/NotificationBarStyle';
+import styles from './Styles/ModalStyle';
 
 const NotificationScreen = (props) => {
   const { notifications, onDismissModal } = props;

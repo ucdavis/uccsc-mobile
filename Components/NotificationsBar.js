@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Modal, Text, TouchableOpacity } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
 import styles from './Styles/NotificationBarStyle';
 import NotificationScreen from './NotificationScreen';
 
@@ -9,27 +10,44 @@ class NotificationsBar extends Component {
     this.state = { showModal: false };
   }
 
-  onPressStatusBarAlert = () => {
+  onPressStatusBarAlert = (notification) => {
+    if (notification.link && canHandleDeepLink) {
+      const handled = this.handleDeepLink(notification.link);
+      if (handled) return;
+    }
+
     this.setState({ showModal: true });
   }
 
-  onDismissModal = () => {
+  onDismiss = () => {
     this.setState({ showModal: false });
     this.props.clearNotifications();
   }
 
-  renderBar() {
+  handleDeepLink = (link) => {
+    if (this.props.handleDeepLink) {
+      return this.props.handleDeepLink(link);
+    }
+    return false;
+  }
+
+  renderBar(notification) {
     if (this.state.showModal) {
       return null;
     }
 
+    const onPress = this.onPressStatusBarAlert.bind(this, notification);
+
     return (
-      <TouchableOpacity
-        style={styles.statusBar}
-        onPress={this.onPressStatusBarAlert}
-      >
-        <Text style={styles.statusBarText}>Talk coming up! (tap for details)</Text>
-      </TouchableOpacity>
+      <View style={styles.statusBar}>
+        <TouchableOpacity style={styles.detailsButton} onPress={onPress}>
+          <Text style={styles.statusBarText}>{ notification.message || 'You have a notification!' }</Text>
+          <Text style={styles.statusBarTextMinor}>(tap for details)</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.dismissButton} onPress={this.onDismiss}>
+          <FontAwesome name="close" style={styles.dismissIcon} />
+        </TouchableOpacity >
+      </View>
     );
   }
 
@@ -40,16 +58,18 @@ class NotificationsBar extends Component {
       return null;
     }
 
+    const notification = notifications[notifications.length - 1];
+
     return (
-      <View>
-        { this.renderBar() }
+      <View style={styles.container}>
+        { this.renderBar(notification) }
         <Modal
           transparent
           animationType={'slide'}
           visible={this.state.showModal}
-          onRequestClose={this.onDismissModal}>
+          onRequestClose={this.onDismiss}>
           <NotificationScreen
-            onDismissModal={this.onDismissModal}
+            onDismissModal={this.onDismiss}
             notifications={notifications}
           />
         </Modal>

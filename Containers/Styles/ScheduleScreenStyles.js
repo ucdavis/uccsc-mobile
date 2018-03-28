@@ -5,6 +5,7 @@ export default StyleSheet.create({
   ...ApplicationStyles.screen,
   container: {
     flex: 1,
+    zIndex: 0,
   },
   headerContainer: {
     justifyContent: 'flex-start',
@@ -23,6 +24,7 @@ export default StyleSheet.create({
     left: 0,
     right: 0,
     width: '100%',
+    zIndex: 10,
   },
   headerLogoContainer: {
     justifyContent: 'flex-start',
