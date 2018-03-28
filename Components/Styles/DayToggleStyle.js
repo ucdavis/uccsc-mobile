@@ -1,37 +1,33 @@
-import { StyleSheet } from 'react-native'
-import { Colors, Metrics } from '../../Themes/'
+import { StyleSheet } from 'react-native';
+import { Colors, Metrics } from '../../Themes/';
 
 export default StyleSheet.create({
-  headerGradient: {
-    shadowOffset: {
-      width: 0,
-      height: 0
-    },
-    shadowRadius: 10,
-    shadowColor: 'black',
-    shadowOpacity: 0.8,
-    elevation: 20,
-    backgroundColor: Colors.background
-  },
   dayToggle: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    height: 80,
     backgroundColor: Colors.blue,
   },
-  inactiveDay: {
-    backgroundColor: Colors.clear,
-    fontFamily: 'Montserrat-Light',
-    fontSize: 16,
-    color: 'rgba(255,255,255,0.80)',
-    letterSpacing: 0
+  item: {
+    flex: 1,
+    height: 70,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(253,229,255,0.5)',
   },
-  activeDay: {
-    backgroundColor: Colors.clear,
-    fontFamily: 'Montserrat-SemiBold',
+  activeItem: {
+    borderBottomColor: Colors.snow,
+  },
+  text: {
     fontSize: 16,
+    letterSpacing: 0,
+    fontFamily: 'Montserrat-Light',
+    backgroundColor: Colors.clear,
+    color: 'rgba(255,255,255,0.80)',
+  },
+  activeText: {
+    fontFamily: 'Montserrat-SemiBold',
     color: Colors.snow,
-    letterSpacing: 0
-  }
-})
+  },
+});
