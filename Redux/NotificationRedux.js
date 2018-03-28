@@ -4,7 +4,7 @@ import Immutable from 'seamless-immutable';
 /* ------------- Initial State ------------- */
 export const INITIAL_STATE = new Immutable({
   notifications: [
-    'This is my new message',
+    { message: 'This is my new message' },
   ],
   localNotifications: [],
 });

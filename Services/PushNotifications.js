@@ -57,11 +57,14 @@ export async function scheduleTalkReminder(talk) {
   }
 
   const { title, start } = talk;
-
+  const message = PNHelpers.pushMessage(title, start);
   const id = await Notifications.scheduleLocalNotificationAsync({
-    title: PNHelpers.pushMessage(title, start),
-    body: PNHelpers.pushMessage(title, start),
-    data: { title },
+    title: message,
+    body: message,
+    data: {
+      message,
+      link: `//session/${title}`,
+    },
   }, {
     time: PNHelpers.notificationTime(start),
   });
