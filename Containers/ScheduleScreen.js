@@ -159,7 +159,6 @@ class ScheduleScreen extends React.Component {
     }
 
     // find local notification, cancel it, update star status
-    console.log(title, localNotifications);
     const notification = localNotifications.find(n => n.title === title);
     if (notification) {
       await PushNotifications.cancelTalkReminder(notification.id);
