@@ -11,9 +11,13 @@ class NotificationsBar extends Component {
   }
 
   onPressStatusBarAlert = (notification) => {
-    if (notification.link && canHandleDeepLink) {
-      const handled = this.handleDeepLink(notification.link);
-      if (handled) return;
+    const data = notification.data;
+    if (data && data.link) {
+      const handled = this.handleDeepLink(data.link);
+      if (handled) {
+        this.props.clearNotifications();
+        return;
+      }
     }
 
     this.setState({ showModal: true });
