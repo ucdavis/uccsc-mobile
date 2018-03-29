@@ -1,30 +1,41 @@
 import React from 'react';
 import * as ReactNavigation from 'react-navigation';
+import { addNavigationHelpers, NavigationActions } from 'react-navigation';
 import { connect } from 'react-redux';
 import AppNavigation from './AppNavigation';
+import { addListener } from '../Redux/NavigationRedux';
 import { BackHandler } from 'react-native';
 
-const handleHardwareBack = (props, navigation) => () => {
-  // Back performs pop, unless we're to main screen [0,0]
-  if (navigation.state.index === 0 && navigation.state.routes[0].index === 0) {
-    BackHandler.exitApp();
+
+class ReduxNavigation extends React.Component {
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
   }
-  return navigation.goBack(null);
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
+  }
+
+  onBackPress = () => {
+    const { dispatch, nav } = this.props;
+    if (nav.index === 0) {
+      return false;
+    }
+    dispatch(NavigationActions.back());
+    return true;
+  };
+
+  render() {
+    const { dispatch, nav } = this.props;
+    const navigation = addNavigationHelpers({
+      dispatch,
+      state: nav,
+      addListener,
+    });
+
+    return <AppNavigation navigation={navigation} />;
+  }
 }
-
-// here is our redux-aware our smart component
-const ReduxNavigation = (props) => {
-  const { dispatch, nav } = props;
-  const navigation = ReactNavigation.addNavigationHelpers({
-    dispatch,
-    state: nav,
-  });
-
-  // Android back button
-  BackHandler.addEventListener('hardwareBackPress', handleHardwareBack(props, navigation))
-
-  return <AppNavigation navigation={navigation} />;
-};
 
 const mapStateToProps = state => ({ nav: state.nav });
 export default connect(mapStateToProps)(ReduxNavigation);
