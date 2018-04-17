@@ -1,8 +1,15 @@
 {
   "expo": {
     "name": "UCCSC Mobile",
+    "icon": "./Images/Logo/logo.png",
     "slug": "uccsc-mobile-2018",
     "sdkVersion": "24.0.0",
-    "privacy": "public"
+    "privacy": "public",
+    "ios": {
+      "bundleIdentifier": "edu.ucdavis.uccsc"
+    },
+    "android": {
+      "package": "edu.ucdavis.uccsc"
+    }
   }
 }
