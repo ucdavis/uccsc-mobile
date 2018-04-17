@@ -5,7 +5,7 @@ export default StyleSheet.create({
   button: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     paddingHorizontal: 5,
     marginLeft: 15,
     borderWidth: 1,
@@ -18,7 +18,7 @@ export default StyleSheet.create({
     backgroundColor: Colors.red,
   },
   star: {
-    marginRight: 7,
+    paddingHorizontal: 7,
     fontSize: 11,
     color: Colors.red,
   },
@@ -26,6 +26,7 @@ export default StyleSheet.create({
     fontFamily: Fonts.type.medium,
     fontSize: 11,
     color: Colors.red,
+    textAlign: 'center',
   },
   activeText: {
     color: Colors.snow,
