@@ -4,30 +4,30 @@ import {
   Text,
   Image,
   TouchableWithoutFeedback,
-  Animated
+  Animated,
 } from "react-native";
 import TalkInfo from "./TalkInfo";
 import styles from "./Styles/TalkStyle";
-import { Colors } from '../Themes/'
+import { Colors } from '../Themes/';
 
 const themeColors = [
   Colors.darkGreen1,
   Colors.darkBlue1,
-  Colors.darkPurple1
+  Colors.darkPurple1,
 ];
 
 export default class Talk extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       isActive: false,
-      animatedSize: new Animated.Value(1)
-    }
+      animatedSize: new Animated.Value(1),
+    };
   }
 
   shouldComponentUpdate(nextProps) {
-    const { name, title, avatarURL, start, duration } = this.props;
+    const { name, title, avatarURL, start, duration, starred } = this.props;
     if (nextProps.name !== name) {
       return true;
     }
@@ -44,13 +44,17 @@ export default class Talk extends React.Component {
       return true;
     }
 
+    if (nextProps.starred !== starred) {
+      return true;
+    }
+
     return false;
   }
 
   handlePressIn = () => {
     Animated.spring(this.state.animatedSize, {
       toValue: 1.05,
-      useNativeDriver: true
+      useNativeDriver: true,
     }).start();
   };
 
@@ -58,16 +62,16 @@ export default class Talk extends React.Component {
     Animated.spring(this.state.animatedSize, {
       toValue: 1,
       friction: 5,
-      useNativeDriver: true
+      useNativeDriver: true,
     }).start();
   };
 
   render() {
-    const { name, title, avatarURL, start, duration } = this.props;
+    const { name, title, avatarURL, start, duration, starred, toggleReminder } = this.props;
 
     const animatedStyle = {
-      transform: [{ scale: this.state.animatedSize }]
-    }
+      transform: [{ scale: this.state.animatedSize }],
+    };
 
     const themeColor = themeColors[(title || '').length % themeColors.length]
 
@@ -76,9 +80,9 @@ export default class Talk extends React.Component {
       animatedStyle,
       {
         borderTopWidth: 15,
-        borderTopColor: themeColor
-      }
-    ]
+        borderTopColor: themeColor,
+      },
+    ];
 
     return (
       <TouchableWithoutFeedback
@@ -94,7 +98,7 @@ export default class Talk extends React.Component {
             </View>
             <Image style={styles.avatar} source={{ uri: avatarURL }} />
           </View>
-          <TalkInfo start={start} duration={duration} />
+          <TalkInfo start={start} duration={duration} starred={starred} toggleReminder={toggleReminder} />
         </Animated.View>
       </TouchableWithoutFeedback>
     );

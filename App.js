@@ -4,6 +4,7 @@ import './Config/ReactotronConfig';
 import DebugConfig from './Config/DebugConfig';
 import { Font } from 'expo';
 import React, { Component } from 'react';
+import { View } from 'react-native';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import RootContainer from './Containers/RootContainer';
@@ -15,6 +16,7 @@ import createStore from './Redux';
 // UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
 // create our store
 const { store, persistor } = createStore();
+const PersistLoader = !!persistor ? PersistGate : (props) => props.children;
 
 /**
  * Provides an entry point into our application.
@@ -53,9 +55,9 @@ class App extends Component {
 
     return (
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
+        <PersistLoader loading={null} persistor={persistor}>
           <RootContainer />
-        </PersistGate>
+        </PersistLoader>
       </Provider>
     );
   }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
   ImageBackground,
   Image,
@@ -12,7 +12,9 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { connect } from 'react-redux';
 import Config from '../Config/AppConfig';
 import { Images } from '../Themes';
+import NotificationActions from '../Redux/NotificationRedux';
 import ScheduleActions from '../Redux/ScheduleRedux';
+import PushNotifications from '../Services/PushNotifications';
 
 import Logo from '../Images/Logo';
 import Gradient from '../Components/Gradient';
@@ -41,12 +43,12 @@ class ScheduleScreen extends React.Component {
   }
 
   constructor(props) {
-    super(props)
+    super(props);
 
-    const { schedule, currentTime } = props;
+    const { currentTime, starredTalks } = props;
     const activeDay = 0;
     const isCurrentDay = this.isActiveCurrentDay(currentTime, activeDay);
-
+    const schedule = this.setStarProperty(props.schedule, starredTalks);
     const eventsByDay = this.buildScheduleList(schedule);
 
     this.state = {
@@ -58,15 +60,28 @@ class ScheduleScreen extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.schedule !== nextProps.schedule) {
-      const { activeDay } = this.state;
-      const eventsByDay = this.buildScheduleList(nextProps.schedule)
+    if (this.props.schedule !== nextProps.schedule
+      || this.props.starredTalks !== nextProps.starredTalks) {
+      // rebuild list
+      const schedule = this.setStarProperty(nextProps.schedule, nextProps.starredTalks);
+      const eventsByDay = this.buildScheduleList(schedule);
       this.setState({ eventsByDay });
     }
   }
 
   isActiveCurrentDay = (currentTime, activeDay) =>
     isSameDay(currentTime, new Date(Config.conferenceDates[activeDay]))
+
+  setStarProperty = (schedule, starredTalks) => {
+    if (!starredTalks || !starredTalks.length) {
+      return schedule;
+    }
+
+    return schedule.map(s => {
+      const starred = starredTalks.indexOf(s.title) > -1;
+      return { ...s, starred };
+    });
+  }
 
   buildScheduleList = (schedule) => {
     // presort events
@@ -130,6 +145,28 @@ class ScheduleScreen extends React.Component {
     },
     getSectionHeaderHeight: () => 60,
   });
+
+  async toggleReminder(item) {
+    const { starred, title } = item;
+    const { starTalk, unstarTalk, trackLocalNotification, untrackLocalNotification, localNotifications } = this.props;
+
+    // create schedule local notification, track it, update star status
+    if (!starred) {
+      const id = await PushNotifications.scheduleTalkReminder(item);
+      trackLocalNotification(id, title);
+      starTalk(title);
+      return;
+    }
+
+    // find local notification, cancel it, update star status
+    const notification = localNotifications.find(n => n.title === title);
+    if (notification) {
+      await PushNotifications.cancelTalkReminder(notification.id);
+      untrackLocalNotification(notification.id);
+    }
+
+    unstarTalk(title);
+  }
 
   renderHeader = () => {
     // move container up with scroll
@@ -246,6 +283,7 @@ class ScheduleScreen extends React.Component {
   }
 
   renderItem = ({ item }) => {
+    const toggleReminder = this.toggleReminder.bind(this, item);
     return (
       <Talk
         type={item.type}
@@ -255,6 +293,8 @@ class ScheduleScreen extends React.Component {
         start={item.time}
         duration={item.duration}
         onPress={() => this.onEventPress(item)}
+        starred={item.starred}
+        toggleReminder={toggleReminder}
       />
     );
   }
@@ -304,18 +344,25 @@ class ScheduleScreen extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStoreToProps = (store) => {
   return {
-    // currentTime: new Date(state.schedule.currentTime),
-    schedule: state.schedule.speakerSchedule,
-  }
-}
+    // currentTime: new Date(store.schedule.currentTime),
+    schedule: store.schedule.speakerSchedule,
+    starredTalks: store.schedule.starredTalks,
+    localNotifications: store.notifications.localNotifications,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getScheduleUpdates: () => dispatch(ScheduleActions.getScheduleUpdates()),
     setSelectedEvent: data => dispatch(ScheduleActions.setSelectedEvent(data)),
-  }
-}
+    starTalk: title => dispatch(ScheduleActions.starTalk(title)),
+    unstarTalk: title => dispatch(ScheduleActions.unstarTalk(title)),
+    trackLocalNotification: (id, title) =>
+      dispatch(NotificationActions.trackLocalNotification(id, title)),
+    untrackLocalNotification: (id) => dispatch(NotificationActions.untrackLocalNotification(id)),
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(ScheduleScreen)
+export default connect(mapStoreToProps, mapDispatchToProps)(ScheduleScreen);

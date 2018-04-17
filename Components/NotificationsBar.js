@@ -1,75 +1,85 @@
-import React, { Component } from 'react'
-import { View, Modal, Text, TouchableOpacity } from 'react-native'
-import styles from './Styles/NotificationBarStyle'
-
-const NotificationScreen = ({notifications, onDismissModal}) => {
-  const notificationItems = notifications.map((message) => (
-    <Text style={styles.description} key={message}>
-      {message} 
-    </Text>
-  ))
-
-  return (
-    <View style={styles.container}>
-      <View style={styles.colorBump}>
-        <View style={styles.section}>
-          <Text style={styles.heading}>Sessions Starting!</Text>
-          {notificationItems}
-        </View>
-        <TouchableOpacity onPress={onDismissModal} style={styles.button}>
-          <Text style={styles.text}>
-            Close Message
-          </Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  )
-}
+import React, { Component } from 'react';
+import { View, Modal, Text, TouchableOpacity } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import styles from './Styles/NotificationBarStyle';
+import NotificationScreen from './NotificationScreen';
 
 class NotificationsBar extends Component {
-
-  constructor (props) {
-    super(props)
-    this.state = { showModal: true }
+  constructor(props) {
+    super(props);
+    this.state = { showModal: false };
   }
 
-  onPressStatusBarAlert = () => {
-    this.setState({ showModal: true })
-  }
-
-  onDismissModal = () => {
-    this.setState({ showModal: false })
-    this.props.clearNotifications()
-  }
-
-  render () {
-    const {notifications} = this.props
-
-    if (notifications.length === 0) {
-      return null
+  onPressStatusBarAlert = (notification) => {
+    const data = notification.data;
+    if (data && data.link) {
+      const handled = this.handleDeepLink(data.link);
+      if (handled) {
+        this.props.clearNotifications();
+        return;
+      }
     }
 
+    this.setState({ showModal: true });
+  }
+
+  onDismiss = () => {
+    this.setState({ showModal: false });
+    this.props.clearNotifications();
+  }
+
+  handleDeepLink = (link) => {
+    if (this.props.handleDeepLink) {
+      return this.props.handleDeepLink(link);
+    }
+    return false;
+  }
+
+  renderBar(notification) {
+    if (this.state.showModal) {
+      return null;
+    }
+
+    const onPress = this.onPressStatusBarAlert.bind(this, notification);
+
     return (
-      <View>
-        <View
-            style={styles.statusBar}
-            onPress={this.onPressStatusBarAlert}
-        >
-            <Text style={styles.statusBarText}>Talk coming up! (tap for details)</Text>
-        </View>
+      <View style={styles.statusBar}>
+        <TouchableOpacity style={styles.detailsButton} onPress={onPress}>
+          <Text style={styles.statusBarText}>{ notification.message || 'You have a notification!' }</Text>
+          <Text style={styles.statusBarTextMinor}>(tap for details)</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.dismissButton} onPress={this.onDismiss}>
+          <FontAwesome name="close" style={styles.dismissIcon} />
+        </TouchableOpacity >
+      </View>
+    );
+  }
+
+  render() {
+    const { notifications } = this.props;
+
+    if (notifications.length === 0) {
+      return null;
+    }
+
+    const notification = notifications[notifications.length - 1];
+
+    return (
+      <View style={styles.container}>
+        { this.renderBar(notification) }
         <Modal
           transparent
           animationType={'slide'}
           visible={this.state.showModal}
-          onRequestClose={this.onDismissModal}>
+          onRequestClose={this.onDismiss}>
           <NotificationScreen
-            onDismissModal={this.onDismissModal}
+            onDismissModal={this.onDismiss}
             notifications={notifications}
           />
         </Modal>
       </View>
-    )
+    );
   }
 }
 
-export default NotificationsBar
+export default NotificationsBar;
