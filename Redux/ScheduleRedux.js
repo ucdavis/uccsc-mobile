@@ -35,7 +35,9 @@ export const INITIAL_STATE = new Immutable({
   currentTime: initialTime,
   ignoreUpdates: false,
   selectedEvent: null,
-  speakerSchedule: require('../Fixtures/schedule.json').schedule,
+  activities: require('../Fixtures/activities.json'),
+  breaks: require('../Fixtures/breaks.json'),
+  talks: require('../Fixtures/talks.json'),
   starredTalks: [
     'Session',
     'Welcome to Chain React',
@@ -67,7 +69,7 @@ export const unlockCurrentTime = (state) => {
 
 // Store API
 export const updateSchedule = (state, { schedule }) => {
-  return state.merge({ speakerSchedule: schedule });
+  return state.merge({ talks: schedule });
 };
 
 export const starTalk = (state = INITIAL_STATE, { title }) =>

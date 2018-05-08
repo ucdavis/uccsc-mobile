@@ -1,0 +1,95 @@
+[
+  {
+    "type": "breakfast",
+    "title": "Registration and Breakfast",
+    "time": "7/10/2017 7:30 AM",
+    "duration": "75",
+    "options": [
+      "Assorted Coco Donuts",
+      "Whole Fruit",
+      "Bowery Bagels with Whipped Herb Cream Cheese"
+    ],
+    "veganOptions": []
+  },
+  {
+    "type": "coffee",
+    "time": "7/10/2017 10:00 AM",
+    "duration": "30",
+    "options": ["Spella Caffe Coffee, Hot Tea, and Water"],
+    "veganOptions": []
+  },
+  {
+    "type": "lunch",
+    "time": "7/10/2017 12:00 PM",
+    "duration": "90",
+    "options": [
+      "Chopped Radicchio Salad",
+      "Moroccan Chicken Tagine",
+      "Saffron Scented Rice",
+      "Assorted Cookies"
+    ],
+    "veganOptions": ["Moroccan Vegetable Tagine"]
+  },
+  {
+    "type": "breakfast",
+    "title": "Registration and Breakfast",
+    "time": "7/11/2017 7:30 AM",
+    "duration": "75",
+    "options": [
+      "Assorted Coco Donuts",
+      "Whole Fruit",
+      "Bowery Bagels with Whipped Herb Cream Cheese"
+    ],
+    "veganOptions": []
+  },
+  {
+    "type": "coffee",
+    "time": "7/11/2017 10:00 AM",
+    "duration": "30",
+    "options": ["Spella Caffe Coffee, Hot Tea, and Water"],
+    "veganOptions": []
+  },
+  {
+    "type": "lunch",
+    "time": "7/11/2017 12:00 PM",
+    "duration": "90",
+    "options": [
+      "Chopped Radicchio Salad",
+      "Moroccan Chicken Tagine",
+      "Saffron Scented Rice",
+      "Assorted Cookies"
+    ],
+    "veganOptions": ["Moroccan Vegetable Tagine"]
+  },
+  {
+    "type": "breakfast",
+    "title": "Registration and Breakfast",
+    "time": "7/12/2017 7:30 AM",
+    "duration": "75",
+    "options": [
+      "Assorted Coco Donuts",
+      "Whole Fruit",
+      "Bowery Bagels with Whipped Herb Cream Cheese"
+    ],
+    "veganOptions": []
+  },
+  {
+    "type": "coffee",
+    "time": "7/12/2017 10:00 AM",
+    "duration": "30",
+    "options": ["Spella Caffe Coffee, Hot Tea, and Water"],
+    "veganOptions": []
+  },
+  {
+    "type": "lunch",
+    "time": "7/12/2017 12:00 PM",
+    "duration": "90",
+    "options": [
+      "Chopped Radicchio Salad",
+      "Moroccan Chicken Tagine",
+      "Saffron Scented Rice",
+      "Assorted Cookies"
+    ],
+    "veganOptions": ["Moroccan Vegetable Tagine"]
+  }
+]
