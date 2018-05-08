@@ -16,14 +16,14 @@ import styles from './Styles/TalkDetailScreenStyles';
 
 class TalkDetail extends React.Component {
   static navigationOptions = {
-    tabBarLabel: "Schedule",
+    tabBarLabel: 'Schedule',
     tabBarIcon: ({ focused }) => (
-      <MaterialIcons name="schedule" size={24} color="black" />
+      <MaterialIcons name="schedule" size={24} color="white" />
     ),
   };
 
   componentDidMount() {
-    BackHandler.addEventListener("hardwareBackPress", this.goBack);
+    BackHandler.addEventListener('hardwareBackPress', this.goBack);
   }
 
   goBack = () => {
