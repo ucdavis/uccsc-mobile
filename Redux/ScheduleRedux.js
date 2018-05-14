@@ -35,10 +35,8 @@ export const INITIAL_STATE = new Immutable({
   currentTime: initialTime,
   ignoreUpdates: false,
   selectedEvent: null,
-  speakerSchedule: require('../Fixtures/schedule.json').schedule,
+  speakerSchedule: require('../Fixtures/schedule.json'),
   starredTalks: [
-    'Session',
-    'Welcome to Chain React',
   ],
 });
 
