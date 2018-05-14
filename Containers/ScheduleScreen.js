@@ -11,7 +11,7 @@ import {
 import { MaterialIcons } from '@expo/vector-icons';
 import { connect } from 'react-redux';
 import Config from '../Config/AppConfig';
-import { Images } from '../Themes';
+import { Images, Metrics } from '../Themes';
 import NotificationActions from '../Redux/NotificationRedux';
 import ScheduleActions from '../Redux/ScheduleRedux';
 import PushNotifications from '../Services/PushNotifications';
@@ -28,8 +28,8 @@ import { GroupBy, FindIndexAll, Sum } from '../Utils/Array';
 import { GetItemLayout } from '../Utils/SectionList';
 import { startOfDay, isSameDay, isWithinRange } from 'date-fns';
 
-const HEADER_MAX_HEIGHT = 250;
-const HEADER_MIN_HEIGHT = 160;
+const HEADER_MAX_HEIGHT = 200;
+const HEADER_MIN_HEIGHT = Metrics.statusBarHeight + 70;
 const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
 
 const AnimatedSectionList = Animated.createAnimatedComponent(SectionList);
@@ -181,7 +181,7 @@ class ScheduleScreen extends React.Component {
       styles.headerContainer,
       {
         height: HEADER_MAX_HEIGHT,
-        transform: [{ translateY: headerTranslate }] 
+        transform: [{ translateY: headerTranslate }],
       }];
 
     // scale image
@@ -309,6 +309,7 @@ class ScheduleScreen extends React.Component {
       {
         marginTop: HEADER_MIN_HEIGHT,
         paddingTop: HEADER_SCROLL_DISTANCE,
+        paddingBottom: HEADER_MIN_HEIGHT,
       },
     ];
 
