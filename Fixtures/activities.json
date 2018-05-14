@@ -1,0 +1,59 @@
+[
+    {
+        "type": "party",
+        "title": "Monday Happy Hour",
+        "time": "7/10/2017 5:00 PM",
+        "duration": "150",
+        "options": [
+          "Heater-Allen Pilsner (McMinnville, OR)",
+          "2 Towns Cider (Corvallis, OR)",
+          "2014 Brooks Amycas 5-varietal White Blend (OR)",
+          "Rosé 2015 REAL, Freja Vineyard Pinot Noir Rosé (OR)",
+          "2014 REAL, Freja Vineyard Pinot Noir (OR)",
+          "Table Red and White by Devil's Food Catering",
+          "Regular and Diet Coca-Cola",
+          "7*Up",
+          "Ginger Ale",
+          "San Pellegrino Limonata and Sparkling Water"
+        ],
+        "veganOptions": []
+      },
+      {
+        "type": "party",
+        "title": "Monday Happy Hour",
+        "time": "7/11/2017 5:00 PM",
+        "duration": "150",
+        "options": [
+          "Heater-Allen Pilsner (McMinnville, OR)",
+          "2 Towns Cider (Corvallis, OR)",
+          "2014 Brooks Amycas 5-varietal White Blend (OR)",
+          "Rosé 2015 REAL, Freja Vineyard Pinot Noir Rosé (OR)",
+          "2014 REAL, Freja Vineyard Pinot Noir (OR)",
+          "Table Red and White by Devil's Food Catering",
+          "Regular and Diet Coca-Cola",
+          "7*Up",
+          "Ginger Ale",
+          "San Pellegrino Limonata and Sparkling Water"
+        ],
+        "veganOptions": []
+      },
+      {
+        "type": "party",
+        "title": "Monday Happy Hour",
+        "time": "7/12/2017 5:00 PM",
+        "duration": "150",
+        "options": [
+          "Heater-Allen Pilsner (McMinnville, OR)",
+          "2 Towns Cider (Corvallis, OR)",
+          "2014 Brooks Amycas 5-varietal White Blend (OR)",
+          "Rosé 2015 REAL, Freja Vineyard Pinot Noir Rosé (OR)",
+          "2014 REAL, Freja Vineyard Pinot Noir (OR)",
+          "Table Red and White by Devil's Food Catering",
+          "Regular and Diet Coca-Cola",
+          "7*Up",
+          "Ginger Ale",
+          "San Pellegrino Limonata and Sparkling Water"
+        ],
+        "veganOptions": []
+      }
+]
