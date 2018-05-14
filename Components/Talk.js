@@ -1,13 +1,14 @@
-import React from "react";
+import React from 'react';
 import {
   View,
   Text,
   Image,
   TouchableWithoutFeedback,
   Animated,
-} from "react-native";
-import TalkInfo from "./TalkInfo";
-import styles from "./Styles/TalkStyle";
+} from 'react-native';
+import TalkInfo from './TalkInfo';
+import styles from './Styles/TalkStyle';
+import AppConfig from '../Config/AppConfig';
 import { Colors } from '../Themes/';
 
 const themeColors = [
@@ -67,8 +68,8 @@ export default class Talk extends React.Component {
   };
 
   render() {
-    const { name, title, avatarURL, start, duration, starred, toggleReminder } = this.props;
-
+    const { name, title, avatarUrl, start, duration, starred, toggleReminder } = this.props;
+    console.log(avatarUrl);
     const animatedStyle = {
       transform: [{ scale: this.state.animatedSize }],
     };
@@ -96,7 +97,7 @@ export default class Talk extends React.Component {
               <Text style={styles.title}>{title}</Text>
               <Text style={styles.name}>{name}</Text>
             </View>
-            <Image style={styles.avatar} source={{ uri: avatarURL }} />
+            <Image style={styles.avatar} source={{ uri: avatarUrl || '' }} />
           </View>
           <TalkInfo start={start} duration={duration} starred={starred} toggleReminder={toggleReminder} />
         </Animated.View>

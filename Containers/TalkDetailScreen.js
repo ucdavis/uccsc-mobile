@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import AppConfig from '../Config/AppConfig';
 import TalkInfo from '../Components/TalkInfo';
 import { Images } from '../Themes';
 import { connect } from 'react-redux';
@@ -43,7 +44,7 @@ class TalkDetail extends React.Component {
               <View style={styles.avatarContainer}>
                 <Image
                   style={styles.avatar}
-                  source={{ uri: `https://www.gravatar.com/avatar/${id}?d=mm&s=50` }}
+                  source={{ uri: `${AppConfig.conferenceUrl}/${s.photo.url}` }}
                 />
               </View>
               <View style={styles.speakerInfo}>

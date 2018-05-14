@@ -28,6 +28,7 @@ import styles from './Styles/ScheduleScreenStyles';
 import { GroupBy, FindIndexAll, Sum } from '../Utils/Array';
 import { GetItemLayout } from '../Utils/SectionList';
 import { startOfDay, isSameDay, isWithinRange, isBefore } from 'date-fns';
+import AppConfig from '../Config/AppConfig';
 
 const HEADER_MAX_HEIGHT = 200;
 const HEADER_MIN_HEIGHT = Metrics.statusBarHeight + 70;
@@ -338,11 +339,17 @@ class ScheduleScreen extends React.Component {
 
   renderTalk = (item) => {
     const toggleReminder = this.toggleReminder.bind(this, item);
+
+    let avatarUrl = '';
+    if (!!item.speakers && item.speakers.length && !!item.speakers[0].photo) {
+      avatarUrl = AppConfig.conferenceUrl + item.speakers[0].photo.url;
+    }
+
     return (
       <Talk
         type={item.type}
         name={item.speaker}
-        avatarURL={`https://infinite.red/images/chainreact/${item.image}.png`}
+        avatarUrl={avatarUrl}
         title={item.title}
         start={item.time}
         duration={item.duration}
