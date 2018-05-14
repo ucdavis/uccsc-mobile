@@ -19,6 +19,7 @@ import PushNotifications from '../Services/PushNotifications';
 import Logo from '../Images/Logo';
 import Gradient from '../Components/Gradient';
 import DayToggle from '../Components/DayToggle';
+import Break from '../Components/Break';
 import Talk from '../Components/Talk';
 import ScheduleSectionHeader from '../Components/ScheduleSectionHeader';
 
@@ -26,7 +27,7 @@ import styles from './Styles/ScheduleScreenStyles';
 
 import { GroupBy, FindIndexAll, Sum } from '../Utils/Array';
 import { GetItemLayout } from '../Utils/SectionList';
-import { startOfDay, isSameDay, isWithinRange } from 'date-fns';
+import { startOfDay, isSameDay, isWithinRange, isBefore } from 'date-fns';
 
 const HEADER_MAX_HEIGHT = 200;
 const HEADER_MIN_HEIGHT = Metrics.statusBarHeight + 70;
@@ -48,8 +49,8 @@ class ScheduleScreen extends React.Component {
     const { currentTime, starredTalks } = props;
     const activeDay = 0;
     const isCurrentDay = this.isActiveCurrentDay(currentTime, activeDay);
-    const schedule = this.setStarProperty(props.schedule, starredTalks);
-    const eventsByDay = this.buildScheduleList(schedule);
+    const talks = this.setStarProperty(props.talks, starredTalks);
+    const eventsByDay = this.buildScheduleList(props.activities, props.breaks, talks);
 
     this.state = {
       activeDay,
@@ -60,11 +61,11 @@ class ScheduleScreen extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.schedule !== nextProps.schedule
+    if (this.props.talks !== nextProps.talks
       || this.props.starredTalks !== nextProps.starredTalks) {
       // rebuild list
-      const schedule = this.setStarProperty(nextProps.schedule, nextProps.starredTalks);
-      const eventsByDay = this.buildScheduleList(schedule);
+      const talks = this.setStarProperty(nextProps.talks, nextProps.starredTalks);
+      const eventsByDay = this.buildScheduleList(nextProps.activities, nextProps.breaks, talks);
       this.setState({ eventsByDay });
     }
   }
@@ -72,49 +73,94 @@ class ScheduleScreen extends React.Component {
   isActiveCurrentDay = (currentTime, activeDay) =>
     isSameDay(currentTime, new Date(Config.conferenceDates[activeDay]))
 
-  setStarProperty = (schedule, starredTalks) => {
+  setStarProperty = (talks, starredTalks) => {
     if (!starredTalks || !starredTalks.length) {
-      return schedule;
+      return talks;
     }
 
-    return schedule.map(s => {
+    return talks.map(s => {
       const starred = starredTalks.indexOf(s.title) > -1;
       return { ...s, starred };
     });
   }
 
-  buildScheduleList = (schedule) => {
-    // presort events
-    const sorted = [...schedule].sort((a, b) => a.time < b.time);
+  buildScheduleList = (activities, breaks, talks) => {
+    // days
+    const days = Config.conferenceDates.map(d => ({ day: new Date(d), events: [] }));
 
-    // group events by day
-    const byDay = GroupBy(sorted, (t => startOfDay(t.time)));
+    // combine events
+    const events = [
+      ...talks,
+      ...activities,
+      ...breaks,
+    ];
 
-    // for each day, group by timeslot
-    return byDay.map(d => {
-      // group by timeslot
-      return GroupBy(d.values, (t => t.time))
-        .map(t => { 
-          // remap prop names
-          return {
-            time: t.key,
-            data: t.values
-          };
+    // events.reverse();
+
+    for (let i = 0; i < days.length; i++) {
+      const day = days[i];
+      // add events
+      for (let j = 0; j < events.length; j++) {
+        const event = events[j];
+        if (isSameDay(day.day, event.time)) {
+          day.events.push(event);
+        }
+      }
+
+      // group events by time slot
+      day.events = GroupBy(day.events, e => e.time);
+
+      // map the events, and sort the timeslot by title
+      // use property data for sectionlists
+      day.events = day.events.map(g => {
+        const data = g.values;
+        data.sort((a, b) => {
+          if (a.title < b.title) {
+            return -1;
+          }
+          if (a.title > b.title) {
+            return 1;
+          }
+          return 0;
         });
-    });
+
+        return {
+          time: g.key,
+          data,
+        };
+      });
+
+      // sort timeslots
+      day.events.sort((a, b) => {
+        if (isBefore(new Date(a.time), new Date(b.time))) {
+          return -1;
+        }
+        if (isBefore(new Date(b.time), new Date(a.time))) {
+          return 1;
+        }
+        return 0;
+      });
+    }
+
+    return days;
   }
 
   onEventPress = (item) => {
     const { navigation, setSelectedEvent } = this.props;
 
     setSelectedEvent(item);
-    navigation.navigate('TalkDetail');
+
+    if (item.type === 'talk') {
+      navigation.navigate('TalkDetail');
+    } else if (item.tyep === 'break') {
+      navigation.navigate('BreakDetail');
+    }
   }
 
   setActiveDay = (activeDay) => {
     const { currentTime } = this.props;
     const { eventsByDay } = this.state;
-    const isCurrentDay = this.isActiveCurrentDay(currentTime, activeDay)
+    const isCurrentDay = this.isActiveCurrentDay(currentTime, activeDay);
 
     this.setState({ activeDay, isCurrentDay }, () => {
       if (!this.scheduleList) {
@@ -189,7 +235,7 @@ class ScheduleScreen extends React.Component {
       inputRange: [0, HEADER_SCROLL_DISTANCE / 2, HEADER_SCROLL_DISTANCE],
       outputRange: [1.2, 0.8, 0.8],
       extrapolateLeft: 'extend',
-      extrapolateRight: 'clamp'
+      extrapolateRight: 'clamp',
     });
 
     // slowly move it down to counter the container's upward movement
@@ -279,10 +325,18 @@ class ScheduleScreen extends React.Component {
   renderSectionHeader = ({ section }) => {
     return (
       <ScheduleSectionHeader time={section.time} />
-    )
+    );
   }
 
   renderItem = ({ item }) => {
+    if (item.type === 'talk') {
+      return this.renderTalk(item);
+    }
+
+    return this.renderBreak(item);
+  }
+
+  renderTalk = (item) => {
     const toggleReminder = this.toggleReminder.bind(this, item);
     return (
       <Talk
@@ -295,6 +349,19 @@ class ScheduleScreen extends React.Component {
         onPress={() => this.onEventPress(item)}
         starred={item.starred}
         toggleReminder={toggleReminder}
+      />
+    );
+  }
+
+  renderBreak = (item) => {
+    return (
+      <Break
+        type={item.type}
+        title={item.title}
+        start={item.time}
+        duration={item.duration}
+        name={item.speaker}
+        onPress={() => this.onEventPress(item)}
       />
     );
   }
@@ -334,7 +401,7 @@ class ScheduleScreen extends React.Component {
 
   render() {
     const { activeDay, eventsByDay } = this.state;
-    const data = eventsByDay[activeDay];
+    const data = eventsByDay[activeDay].events;
 
     return (
       <Gradient style={styles.container}>
@@ -348,7 +415,9 @@ class ScheduleScreen extends React.Component {
 const mapStoreToProps = (store) => {
   return {
     // currentTime: new Date(store.schedule.currentTime),
-    schedule: store.schedule.speakerSchedule,
+    activities: store.schedule.activities,
+    breaks: store.schedule.breaks,
+    talks: store.schedule.talks,
     starredTalks: store.schedule.starredTalks,
     localNotifications: store.notifications.localNotifications,
   };
