@@ -39,8 +39,6 @@ export const INITIAL_STATE = new Immutable({
   breaks: require('../Fixtures/breaks.json'),
   talks: require('../Fixtures/talks.json'),
   starredTalks: [
-    'Session',
-    'Welcome to Chain React',
   ],
 });
 
