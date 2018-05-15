@@ -16,7 +16,11 @@
     "time": "7/10/2017 10:00 AM",
     "duration": "30",
     "options": ["Spella Caffe Coffee, Hot Tea, and Water"],
-    "veganOptions": []
+    "veganOptions": [],
+    "sponsor": {
+      "icon": "cisco",
+      "text": "by Cisco",
+    }
   },
   {
     "type": "lunch",

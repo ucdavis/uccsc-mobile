@@ -365,6 +365,7 @@ class ScheduleScreen extends React.Component {
       <Break
         type={item.type}
         title={item.title}
+        sponsor={item.sponsor}
         start={item.time}
         duration={item.duration}
         name={item.speaker}
