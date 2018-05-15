@@ -341,8 +341,10 @@ class ScheduleScreen extends React.Component {
     const toggleReminder = this.toggleReminder.bind(this, item);
 
     let avatarUrl = '';
-    if (!!item.speakers && item.speakers.length && !!item.speakers[0].photo) {
-      avatarUrl = AppConfig.conferenceUrl + item.speakers[0].photo.url;
+    if (!!item.speakers && item.speakers.length) {
+      // find first speaker with a photo
+      const photoUrl = item.speakers.reduce((prev, s) => s.photo ? s.photo.url : prev, '');
+      avatarUrl = AppConfig.conferenceUrl + photoUrl;
     }
 
     return (

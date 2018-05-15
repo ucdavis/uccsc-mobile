@@ -67,9 +67,20 @@ export default class Talk extends React.Component {
     }).start();
   };
 
+  renderAvatar() {
+    const { avatarUrl } = this.props;
+    if (!avatarUrl) {
+      return null;
+    }
+
+    return (
+      <Image style={styles.avatar} source={{ uri: avatarUrl }} />
+    );
+  }
+
   render() {
-    const { name, title, avatarUrl, start, duration, starred, toggleReminder } = this.props;
-    console.log(avatarUrl);
+    const { name, title, start, duration, starred, toggleReminder } = this.props;
+
     const animatedStyle = {
       transform: [{ scale: this.state.animatedSize }],
     };
@@ -97,7 +108,7 @@ export default class Talk extends React.Component {
               <Text style={styles.title}>{title}</Text>
               <Text style={styles.name}>{name}</Text>
             </View>
-            <Image style={styles.avatar} source={{ uri: avatarUrl || '' }} />
+            { this.renderAvatar() }
           </View>
           <TalkInfo start={start} duration={duration} starred={starred} toggleReminder={toggleReminder} />
         </Animated.View>

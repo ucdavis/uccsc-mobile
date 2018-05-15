@@ -31,7 +31,20 @@ class TalkDetail extends React.Component {
     this.props.navigation.dispatch(NavigationActions.back());
   };
 
-  renderSpeakers = () => {
+  renderAvatar(speaker) {
+    if (!speaker.photo) {
+      return null;
+    }
+
+    return (
+      <Image
+        style={styles.avatar}
+        source={{ uri: `${AppConfig.conferenceUrl}/${speaker.photo.url}` }}
+      />
+    );
+  }
+
+  renderSpeakers() {
     const { speakers } = this.props;
 
     return (
@@ -42,10 +55,7 @@ class TalkDetail extends React.Component {
           return (
             <View key={s.name} style={styles.speakerContainer}>
               <View style={styles.avatarContainer}>
-                <Image
-                  style={styles.avatar}
-                  source={{ uri: `${AppConfig.conferenceUrl}/${s.photo.url}` }}
-                />
+                { this.renderAvatar(s) }
               </View>
               <View style={styles.speakerInfo}>
                 <Text style={styles.speakerName}>{s.name}</Text>
