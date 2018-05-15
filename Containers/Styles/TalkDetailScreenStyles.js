@@ -3,6 +3,9 @@ import { ApplicationStyles, Colors, Metrics } from '../../Themes/';
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
+  main: {
+
+  },
   container: {
     margin: Metrics.baseMargin,
     paddingTop: Metrics.doubleBaseMargin,
@@ -19,13 +22,14 @@ export default StyleSheet.create({
   },
   backButtonIcon: {
     marginRight: 5,
+    color: 'rgba(255,255,255,0.80)',
   },
   backButtonText: {
     fontFamily: 'Montserrat-Light',
     fontSize: 17,
     letterSpacing: 0,
     backgroundColor: Colors.transparent,
-    color: 'rgba(0,0,0,0.80)',
+    color: 'rgba(255,255,255,0.80)',
   },
   cardShadow1: {
     flex: 1,
@@ -49,6 +53,12 @@ export default StyleSheet.create({
     borderTopLeftRadius: Metrics.cardRadius,
     borderTopRightRadius: Metrics.cardRadius,
     backgroundColor: Colors.snow,
+  },
+  talkInfo: {
+    paddingHorizontal: 0,
+  },
+  roomInfo: {
+    paddingHorizontal: 0,
   },
   sectionHeading: {
     alignSelf: 'flex-start',

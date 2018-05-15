@@ -96,8 +96,6 @@ class ScheduleScreen extends React.Component {
       ...breaks,
     ];
 
-    // events.reverse();
-
     for (let i = 0; i < days.length; i++) {
       const day = days[i];
       // add events
@@ -358,6 +356,7 @@ class ScheduleScreen extends React.Component {
         onPress={() => this.onEventPress(item)}
         starred={item.starred}
         toggleReminder={toggleReminder}
+        room={item.room}
       />
     );
   }

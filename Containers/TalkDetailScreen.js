@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import AppConfig from '../Config/AppConfig';
+import Gradient from '../Components/Gradient';
+import RoomInfo from '../Components/RoomInfo';
 import TalkInfo from '../Components/TalkInfo';
 import { Images } from '../Themes';
 import { connect } from 'react-redux';
@@ -70,28 +72,36 @@ class TalkDetail extends React.Component {
   }
 
   render() {
-    const { title, description, time, duration } = this.props;
+    const { title, description, time, duration, room } = this.props;
     return (
-      <ScrollView>
-        <View style={styles.container}>
-          <TouchableOpacity style={styles.backButton} onPress={this.goBack}>
-            <MaterialIcons name="chevron-left" size={24} />
-            <Text style={styles.backButtonText}>Back</Text>
-          </TouchableOpacity>
-          <View style={styles.cardShadow1} />
-          <View style={styles.cardShadow2} />
-          <View style={styles.card}>
-            <Text style={styles.sectionHeading}>TALK</Text>
-            <Text style={styles.heading}>{ title }</Text>
-            <Text style={styles.description}>{ description }</Text>
+      <Gradient style={styles.main}>
+        <ScrollView>
+          <View style={styles.container}>
+            <TouchableOpacity style={styles.backButton} onPress={this.goBack}>
+              <MaterialIcons name="chevron-left" size={24} style={styles.backButtonIcon} />
+              <Text style={styles.backButtonText}>Back</Text>
+            </TouchableOpacity>
+            <View style={styles.cardShadow1} />
+            <View style={styles.cardShadow2} />
+            <View style={styles.card}>
+              <Text style={styles.sectionHeading}>TALK</Text>
+              <Text style={styles.heading}>{ title }</Text>
+              <TalkInfo
+                start={time}
+                duration={duration}
+                style={styles.talkInfo}
+              />
+              <RoomInfo
+                building={room.building}
+                room={room.room}
+                style={styles.roomInfo}
+              />
+              <Text style={styles.description}>{ description }</Text>
+            </View>
+            { this.renderSpeakers() }
           </View>
-          { this.renderSpeakers() }
-          <TalkInfo
-            start={time}
-            duration={duration}
-          />
-        </View>
-      </ScrollView>
+        </ScrollView>
+      </Gradient>
     );
   }
 }

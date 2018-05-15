@@ -6,6 +6,7 @@ import {
   TouchableWithoutFeedback,
   Animated,
 } from 'react-native';
+import RoomInfo from './RoomInfo';
 import TalkInfo from './TalkInfo';
 import styles from './Styles/TalkStyle';
 import AppConfig from '../Config/AppConfig';
@@ -79,7 +80,7 @@ export default class Talk extends React.Component {
   }
 
   render() {
-    const { name, title, start, duration, starred, toggleReminder } = this.props;
+    const { name, title, start, duration, room, starred, toggleReminder } = this.props;
 
     const animatedStyle = {
       transform: [{ scale: this.state.animatedSize }],
@@ -96,6 +97,11 @@ export default class Talk extends React.Component {
       },
     ];
 
+    let place = `${room.building} - ${room.room}`;
+    if (!!room.number) {
+      place = `${place}: ${room.number}`;
+    }
+
     return (
       <TouchableWithoutFeedback
         onPressIn={this.handlePressIn}
@@ -110,7 +116,8 @@ export default class Talk extends React.Component {
             </View>
             { this.renderAvatar() }
           </View>
-          <TalkInfo start={start} duration={duration} starred={starred} toggleReminder={toggleReminder} />
+          <RoomInfo building={room.building} room={room.room} />
+          <TalkInfo start={start} duration={duration} starred={starred} room={room} toggleReminder={toggleReminder} />
         </Animated.View>
       </TouchableWithoutFeedback>
     );
