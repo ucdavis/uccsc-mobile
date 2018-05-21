@@ -86,7 +86,7 @@ export default class Break extends React.Component {
 
     return (
       <View style={styles.sponsor}>
-        <Image source={Images[sponsor.icon]} />
+        <Image style={styles.sponsorIcon} source={Images[sponsor.icon]} />
         <Text style={styles.sponsorText}>{sponsor.text}</Text>
       </View>
     );

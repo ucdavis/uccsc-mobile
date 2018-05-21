@@ -50,18 +50,22 @@ class TalkDetail extends React.Component {
     const { speakers } = this.props;
 
     return (
-      <View style={styles.speakersContainer}>
+      <View style={styles.section}>
         <Text style={styles.sectionHeading}>ABOUT</Text>
         { speakers.map(s => {
           const id = '00000000000000000000000000000000';
           return (
             <View key={s.name} style={styles.speakerContainer}>
-              <View style={styles.avatarContainer}>
-                { this.renderAvatar(s) }
-              </View>
               <View style={styles.speakerInfo}>
-                <Text style={styles.speakerName}>{s.name}</Text>
-                <Text style={styles.speakerCompany}>{s.company}</Text>
+                <View style={styles.avatarContainer}>
+                  { this.renderAvatar(s) }
+                </View>
+                <View style={styles.nameContainer}>
+                  <Text style={styles.speakerName}>{s.name}</Text>
+                  <Text style={styles.speakerCompany}>{s.company}</Text>
+                </View>
+              </View>
+              <View style={styles.bioContainer}>
                 <Text style={styles.speakerBio}>{s.bio}</Text>
               </View>
             </View>
@@ -74,9 +78,9 @@ class TalkDetail extends React.Component {
   render() {
     const { title, description, time, duration, room } = this.props;
     return (
-      <Gradient style={styles.main}>
+      <Gradient style={styles.container}>
         <ScrollView>
-          <View style={styles.container}>
+          <View style={styles.main}>
             <TouchableOpacity style={styles.backButton} onPress={this.goBack}>
               <MaterialIcons name="chevron-left" size={24} style={styles.backButtonIcon} />
               <Text style={styles.backButtonText}>Back</Text>
@@ -86,16 +90,14 @@ class TalkDetail extends React.Component {
             <View style={styles.card}>
               <Text style={styles.sectionHeading}>TALK</Text>
               <Text style={styles.heading}>{ title }</Text>
-              <TalkInfo
-                start={time}
-                duration={duration}
-                style={styles.talkInfo}
-              />
-              <RoomInfo
-                building={room.building}
-                room={room.room}
-                style={styles.roomInfo}
-              />
+            </View>
+            <View style={styles.section}>
+              <TalkInfo start={time} duration={duration} />
+            </View>
+            <View style={styles.section}>
+              <RoomInfo building={room.building} room={room.room} />
+            </View>
+            <View style={styles.section}>
               <Text style={styles.description}>{ description }</Text>
             </View>
             { this.renderSpeakers() }

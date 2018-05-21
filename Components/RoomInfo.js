@@ -9,23 +9,21 @@ const RoomInfo = (props) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.details}>
-        <View style={styles.detail}>
-          <Text style={styles.detailLabel}>
-            Building
-          </Text>
-          <Text style={styles.detailText}>
-            { building }
-          </Text>
-        </View>
-        <View style={styles.detail}>
-          <Text style={styles.detailLabel}>
-            Room
-          </Text>
-          <Text style={styles.detailText}>
-            { room }
-          </Text>
-        </View>
+      <View style={styles.detail}>
+        <Text style={styles.detailLabel}>
+          Building
+        </Text>
+        <Text style={styles.detailText}>
+          { building }
+        </Text>
+      </View>
+      <View style={styles.detail}>
+        <Text style={styles.detailLabel}>
+          Room
+        </Text>
+        <Text style={styles.detailText}>
+          { room }
+        </Text>
       </View>
     </View>
   );

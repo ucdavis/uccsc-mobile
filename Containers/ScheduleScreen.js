@@ -40,8 +40,12 @@ class ScheduleScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Schedule',
     tabBarIcon: ({ focused }) => (
-      <MaterialIcons name="schedule" size={24} color="white" />
-    )
+      <MaterialIcons
+        name="schedule"
+        size={24}
+        color="white"
+      />
+    ),
   }
 
   constructor(props) {
@@ -183,7 +187,7 @@ class ScheduleScreen extends React.Component {
     getItemHeight: (item) => {
       if (item.type === 'talk') {
         // use best guess for variable height rows
-        return 138 + (1.002936 * item.title.length + 6.77378)
+        return 138 + (1.002936 * item.title.length + 6.77378);
       }
 
       return 154;
@@ -318,7 +322,7 @@ class ScheduleScreen extends React.Component {
           onPressIn={this.setActiveDay}
         />
       </Animated.View>
-    )
+    );
   }
 
   renderSectionHeader = ({ section }) => {
@@ -397,7 +401,7 @@ class ScheduleScreen extends React.Component {
         keyExtractor={(item, idx) => idx}
         contentContainerStyle={listContentStyle}
         getItemLayout={this.getItemLayout}
-        stickySectionHeadersEnabled={true}
+        stickySectionHeadersEnabled
         scrollEventThrottle={1}
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }],

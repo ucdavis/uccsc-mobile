@@ -3,18 +3,15 @@ import { Colors, Metrics } from '../../Themes/';
 
 export default StyleSheet.create({
   container: {
-    flex: 2,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingVertical: 13,
-    paddingHorizontal: Metrics.doubleBaseMargin,
-    backgroundColor: Colors.snow,
-  },
-  details: {
     flex: 1,
     flexDirection: 'row',
+    backgroundColor: Colors.snow,
   },
   detail: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    // flexWrap: 'wrap',
     paddingRight: Metrics.doubleBaseMargin,
   },
   detailLabel: {
@@ -28,5 +25,6 @@ export default StyleSheet.create({
     fontSize: 11,
     color: Colors.darkPurple,
     letterSpacing: 0,
+    // flexWrap: 'wrap'
   },
 });

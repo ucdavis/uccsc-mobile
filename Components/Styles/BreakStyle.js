@@ -51,6 +51,14 @@ const BreakStyle = {
     justifyContent: 'center',
     marginRight: 15,
   },
+  sponsorIcon: {
+    backgroundColor: Colors.snow,
+    height: 50,
+    width: 50,
+    borderRadius: 25,
+    borderColor: Colors.snow,
+    borderWidth: 1,
+  },
   sponsorText: {
     marginTop: 4,
     fontFamily: Fonts.type.base,

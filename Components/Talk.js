@@ -116,8 +116,12 @@ export default class Talk extends React.Component {
             </View>
             { this.renderAvatar() }
           </View>
-          <RoomInfo building={room.building} room={room.room} />
-          <TalkInfo start={start} duration={duration} starred={starred} room={room} toggleReminder={toggleReminder} />
+          <View style={styles.roomInfo}>
+            <RoomInfo building={room.building} room={room.room}  />
+          </View>
+          <View style={styles.talkInfo}>
+            <TalkInfo start={start} duration={duration} starred={starred} room={room} toggleReminder={toggleReminder} />
+          </View>
         </Animated.View>
       </TouchableWithoutFeedback>
     );
