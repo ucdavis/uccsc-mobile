@@ -18,6 +18,29 @@ const images = {
 
   // sponsors
   cisco: require('../Images/Sponsors/cisco.png'),
+  aws: require('../Images/Sponsors/aws.jpg'),
+  aruba: require('../Images/Sponsors/aruba.png'),
+  dasher: require('../Images/Sponsors/dasher.png'),
+  ePlus: require('../Images/Sponsors/ePlus.jpg'),
+  interVision: require('../Images/Sponsors/interVision.png'),
+  laserfiche: require('../Images/Sponsors/laserfiche.png'),
+  microsoft: require('../Images/Sponsors/microsoft.png'),
+  acquia: require('../Images/Sponsors/acquia.png'),
+  avispl: require('../Images/Sponsors/avispl.png'),
+  code42: require('../Images/Sponsors/code42.png'),
+  google: require('../Images/Sponsors/google.png'),
+  ibm: require('../Images/Sponsors/ibm.jpg'),
+  lenovo: require('../Images/Sponsors/lenovo.png'),
+  optiv: require('../Images/Sponsors/optiv.jpg'),
+  paymentWorks: require('../Images/Sponsors/paymentWorks.png'),
+  randstad: require('../Images/Sponsors/randstad.png'),
+  ricoh: require('../Images/Sponsors/ricoh.jpg'),
+  sap: require('../Images/Sponsors/sap.png'),
+  serviceNow: require('../Images/Sponsors/serviceNow.jpg'),
+  shi: require('../Images/Sponsors/shi.jpg'),
+  siteimprove: require('../Images/Sponsors/siteimprove.png'),
+  sophos: require('../Images/Sponsors/sophos.jpg'),
+  symantec: require('../Images/Sponsors/symantec.jpg'),
 };
 
 export default images;

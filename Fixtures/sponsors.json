@@ -1,0 +1,110 @@
+{
+    "platinum": [
+        {
+            "name": "Cisco",
+            "image": "cisco"
+        }
+    ],
+    "gold": [
+        {
+            "name": "AWS",
+            "image": "aws"
+        },
+        {
+            "name": "Aruba",
+            "image": "aruba"
+        },
+        {
+            "name": "Dasher Technologies",
+            "image": "symantec"
+        },
+        {
+            "name": "ePlus",
+            "image": "ePlus"
+        },
+        {
+            "name": "InterVision",
+            "image": "interVision"
+        },
+        {
+            "name": "Laserfiche",
+            "image": "laserfiche"
+        },
+        {
+            "name": "Microsoft",
+            "image": "microsoft"
+        }
+    ],
+    "silver": [
+        {
+            "name": "Acquia",
+            "image": "acquia"
+        },
+        {
+            "name": "AVI SPL",
+            "image": "avispl"
+        },
+        {
+            "name": "Code42",
+            "image": "code42"
+        },
+        {
+            "name": "Google Cloud",
+            "image": "google"
+        },
+        {
+            "name": "IBM",
+            "image": "ibm"
+        },
+        {
+            "name": "Lenovo",
+            "image": "lenovo"
+        },
+        {
+            "name": "Optiv",
+            "image": "optiv"
+        },
+        {
+            "name": "PaymentWorks",
+            "image": "paymentWorks"
+        },
+        {
+            "name": "Randstad Technologies",
+            "image": "randstad"
+        },
+        {
+            "name": "Ricoh",
+            "image": "ricoh"
+        },
+        {
+            "name": "SAP",
+            "image": "sap"
+        },
+        {
+            "name": "Symantec",
+            "image": "symantec"
+        },
+        {
+            "name": "ServiceNow",
+            "image": "serviceNow"
+        },
+        {
+            "name": "SHI",
+            "image": "shi"
+        },
+        {
+            "name": "Siteimprove",
+            "image": "siteimprove"
+        },
+        {
+            "name": "Sophos",
+            "image": "sophos"
+        }
+    ],
+    "bronze": [
+        {
+            "name": "Symantec",
+            "image": "symantec"
+        }
+    ]
+}

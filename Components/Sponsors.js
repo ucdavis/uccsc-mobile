@@ -4,6 +4,8 @@ import Sponsor from './Sponsor';
 import { Images } from '../Themes';
 import styles from './Styles/SponsorsStyle';
 
+const data = require('../Fixtures/sponsors.json');
+
 const Sponsors = () => {
   return (
     <View style={styles.sponsors}>
@@ -18,43 +20,36 @@ const Sponsors = () => {
         Platinum Sponsors
       </Text>
       <View style={styles.sponsorTier}>
-        <Sponsor url={'https://www.squarespace.com/'} image={Images.squarespace} />
+        { data.platinum.map(s =>
+          <Sponsor key={s.name} url={s.url} image={Images[s.image]} />
+        ) }
       </View>
 
       <Text style={styles.sponsorTierTitle}>
         Gold Sponsors
       </Text>
       <View style={styles.sponsorTier}>
-        <Sponsor url={'https://nativebase.io/'} image={Images.nativeBase} />
-        <Sponsor url={'https://formidable.com/'} image={Images.formidable} />
-        <Sponsor url={'https://moduscreate.com/'} image={Images.modus} />
-        <Sponsor url={'https://www.bugsnag.com/'} image={Images.bugsnag} />
+        { data.gold.map(s =>
+          <Sponsor key={s.name} url={s.url} image={Images[s.image]} />
+        ) }
       </View>
 
       <Text style={styles.sponsorTierTitle}>
         Silver Sponsors
       </Text>
       <View style={styles.sponsorTier}>
-        <Sponsor url={'https://aws.amazon.com/'} image={Images.amazon} isLow />
-        <Sponsor url={'http://reactnative.training/'} image={Images.training} isLow />
-        <Sponsor url={'https://rangle.io/'} image={Images.rangle} isLow />
-        <Sponsor url={'https://gudog.co.uk/'} image={Images.gudog} isLow />
-        <Sponsor url={'http://www.oregon4biz.com'} image={Images.businessOregon} isLow />
-        <Sponsor url={'http://www.healthsparq.com/'} image={Images.healthsparq} isLow />
+        { data.silver.map(s =>
+          <Sponsor key={s.name} url={s.url} image={Images[s.image]} isLow />
+        ) }
       </View>
 
       <Text style={styles.sponsorTierTitle}>
         Bronze Sponsors
       </Text>
       <View style={styles.sponsorTier}>
-        <Sponsor url={'https://echobind.com/'} image={Images.echobind} isLow />
-        <Sponsor url={'https://www.capitalone.com/'} image={Images.capitalOne} isLow />
-        <Sponsor url={'https://www.salesforce.com/'} image={Images.salesforce} isLow />
-        <Sponsor url={'https://www.paypal.com/us/home'} image={Images.paypal} isLow />
-        <Sponsor url={'https://www.instrument.com/'} image={Images.instrument} isLow />
-        <Sponsor url={'http://www.qlik.com/us/'} image={Images.qlik} />
-        <Sponsor url={'https://callstack.io/'} image={Images.callstack} isLow />
-        <Sponsor url={'https://www.mlssoccer.com/'} image={Images.mls} isLow />
+        { data.bronze.map(s =>
+          <Sponsor key={s.name} url={s.url} image={Images[s.image]} isLow />
+        ) }
       </View>
 
       <Text style={styles.sponsorTierTitle}>
