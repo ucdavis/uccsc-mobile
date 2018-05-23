@@ -1,15 +1,31 @@
 {
   "expo": {
     "name": "UCCSC Mobile",
-    "icon": "./Images/Logo/logo.png",
     "slug": "uccsc-mobile-2018",
-    "sdkVersion": "24.0.0",
+    "sdkVersion": "27.0.0",
     "privacy": "public",
+    "icon": "./Images/Logo/logo.png",
+    "primaryColor": "#002855",
+    "platforms": ["ios", "android"],
+    "orientation": "portrait",
+    "githubUrl": "https://github.com/ucdavis/uccsc-mobile",
     "ios": {
-      "bundleIdentifier": "edu.ucdavis.uccsc"
+      "bundleIdentifier": "edu.ucdavis.uccsc",
+      "buildNumber": "0.1.0",
+      "config": {
+        "googleMapsApiKey": "AIzaSyCGAQAUVoqMwccWP7-bbQUiDZo4DsHczSY"
+      }
     },
     "android": {
-      "package": "edu.ucdavis.uccsc"
+      "package": "edu.ucdavis.uccsc",
+      "permissions": [
+      ],
+      "versionCode": 3,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCGAQAUVoqMwccWP7-bbQUiDZo4DsHczSY"
+        }
+      }
     }
   }
 }
