@@ -9,6 +9,9 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import AppConfig from '../Config/AppConfig';
+import Gradient from '../Components/Gradient';
+import RoomInfo from '../Components/RoomInfo';
 import TalkInfo from '../Components/TalkInfo';
 import { Images } from '../Themes';
 import { connect } from 'react-redux';
@@ -30,25 +33,39 @@ class TalkDetail extends React.Component {
     this.props.navigation.dispatch(NavigationActions.back());
   };
 
-  renderSpeakers = () => {
+  renderAvatar(speaker) {
+    if (!speaker.photo) {
+      return null;
+    }
+
+    return (
+      <Image
+        style={styles.avatar}
+        source={{ uri: `${AppConfig.conferenceUrl}/${speaker.photo.url}` }}
+      />
+    );
+  }
+
+  renderSpeakers() {
     const { speakers } = this.props;
 
     return (
-      <View style={styles.speakersContainer}>
+      <View style={styles.section}>
         <Text style={styles.sectionHeading}>ABOUT</Text>
         { speakers.map(s => {
           const id = '00000000000000000000000000000000';
           return (
             <View key={s.name} style={styles.speakerContainer}>
-              <View style={styles.avatarContainer}>
-                <Image
-                  style={styles.avatar}
-                  source={{ uri: `https://www.gravatar.com/avatar/${id}?d=mm&s=50` }}
-                />
-              </View>
               <View style={styles.speakerInfo}>
-                <Text style={styles.speakerName}>{s.name}</Text>
-                <Text style={styles.speakerCompany}>{s.company}</Text>
+                <View style={styles.avatarContainer}>
+                  { this.renderAvatar(s) }
+                </View>
+                <View style={styles.nameContainer}>
+                  <Text style={styles.speakerName}>{s.name}</Text>
+                  <Text style={styles.speakerCompany}>{s.company}</Text>
+                </View>
+              </View>
+              <View style={styles.bioContainer}>
                 <Text style={styles.speakerBio}>{s.bio}</Text>
               </View>
             </View>
@@ -59,28 +76,34 @@ class TalkDetail extends React.Component {
   }
 
   render() {
-    const { title, description, time, duration } = this.props;
+    const { title, description, time, duration, room } = this.props;
     return (
-      <ScrollView>
-        <View style={styles.container}>
-          <TouchableOpacity style={styles.backButton} onPress={this.goBack}>
-            <MaterialIcons name="chevron-left" size={24} />
-            <Text style={styles.backButtonText}>Back</Text>
-          </TouchableOpacity>
-          <View style={styles.cardShadow1} />
-          <View style={styles.cardShadow2} />
-          <View style={styles.card}>
-            <Text style={styles.sectionHeading}>TALK</Text>
-            <Text style={styles.heading}>{ title }</Text>
-            <Text style={styles.description}>{ description }</Text>
+      <Gradient style={styles.container}>
+        <ScrollView>
+          <View style={styles.main}>
+            <TouchableOpacity style={styles.backButton} onPress={this.goBack}>
+              <MaterialIcons name="chevron-left" size={24} style={styles.backButtonIcon} />
+              <Text style={styles.backButtonText}>Back</Text>
+            </TouchableOpacity>
+            <View style={styles.cardShadow1} />
+            <View style={styles.cardShadow2} />
+            <View style={styles.card}>
+              <Text style={styles.sectionHeading}>TALK</Text>
+              <Text style={styles.heading}>{ title }</Text>
+            </View>
+            <View style={styles.section}>
+              <TalkInfo start={time} duration={duration} />
+            </View>
+            <View style={styles.section}>
+              <RoomInfo building={room.building} room={room.room} />
+            </View>
+            <View style={styles.section}>
+              <Text style={styles.description}>{ description }</Text>
+            </View>
+            { this.renderSpeakers() }
           </View>
-          { this.renderSpeakers() }
-          <TalkInfo
-            start={time}
-            duration={duration}
-          />
-        </View>
-      </ScrollView>
+        </ScrollView>
+      </Gradient>
     );
   }
 }

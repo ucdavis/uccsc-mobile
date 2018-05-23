@@ -3,6 +3,13 @@ import Immutable from 'seamless-immutable';
 import DebugConfig from '../Config/DebugConfig';
 import Config from '../Config/AppConfig';
 
+// TEMP
+import talks from '../Fixtures/talks.json';
+import rooms from '../Fixtures/rooms.json';
+
+// set random rooms
+talks.forEach(t => { t.room = rooms[Math.floor(Math.random() * rooms.length)]; });
+
 /* ------------- Types and Action Creators ------------- */
 
 const { Types, Creators } = createActions({
@@ -37,7 +44,7 @@ export const INITIAL_STATE = new Immutable({
   selectedEvent: null,
   activities: require('../Fixtures/activities.json'),
   breaks: require('../Fixtures/breaks.json'),
-  talks: require('../Fixtures/talks.json'),
+  talks,
   starredTalks: [
   ],
 });

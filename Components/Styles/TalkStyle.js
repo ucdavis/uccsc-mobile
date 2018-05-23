@@ -6,9 +6,9 @@ export default StyleSheet.create({
     flex: 1,
     marginVertical: Metrics.baseMargin,
     marginHorizontal: Metrics.doubleBaseMargin,
-    shadowRadius: 5,
-    shadowColor: 'black',
-    shadowOpacity: 0.8,
+    // shadowRadius: 5,
+    // shadowColor: 'black',
+    // shadowOpacity: 0.8,
   },
   currentDay: {
     marginLeft: 16,
@@ -84,5 +84,19 @@ export default StyleSheet.create({
     fontSize: 11,
     color: Colors.darkPurple,
     letterSpacing: 0
-  }
-})
+  },
+  roomInfo: {
+    paddingVertical: 13,
+    paddingHorizontal: Metrics.doubleBaseMargin,
+    backgroundColor: Colors.snow,
+  },
+  talkInfo: {
+    paddingVertical: 13,
+    paddingHorizontal: Metrics.doubleBaseMargin,
+    backgroundColor: Colors.snow,
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(0,0,0,0.2)',
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(0,0,0,0.2)',
+  },
+});

@@ -78,18 +78,18 @@ export default class Break extends React.Component {
   }
 
   renderSponsor() {
-    const { type } = this.props;
+    const { sponsor } = this.props;
 
-    if (type === 'coffee') {
-      return (
-        <View style={styles.sponsor}>
-          <Image source={Images.sponsor} />
-          <Text style={styles.sponsorText}>by Qlik Playground</Text>
-        </View>
-      );
+    if (!sponsor) {
+      return null;
     }
 
-    return null;
+    return (
+      <View style={styles.sponsor}>
+        <Image style={styles.sponsorIcon} source={Images[sponsor.icon]} />
+        <Text style={styles.sponsorText}>{sponsor.text}</Text>
+      </View>
+    );
   }
 
   render() {

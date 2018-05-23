@@ -1,0 +1,113 @@
+[
+    {
+        "building": "RMI",
+        "room": "Good Life Garden"
+    },
+    {
+        "building": "RMI - South",
+        "room": "Conference Room",
+        "number": "1207"
+    },
+    {
+        "building": "Mondavi Center",
+        "room": "Yocha Dehe Grand Lobby"
+    },
+    {
+        "building": "Mondavi Center",
+        "room": "Barbara K & Turrentine Jackson Hall"
+    },
+    {
+        "building": "Mondavi Center",
+        "room": "Larry & Rosalie Vanderhoff Studio Theatre"
+    },
+    {
+        "building": "Hyatt Place",
+        "room": "Executive Meeting Room",
+        "number": "2"
+    },
+    {
+        "building": "Conference Center",
+        "room": "Lobby"
+    },
+    {
+        "building": "Conference Center",
+        "room": "Ballroom",
+        "number": "1401A"
+    },
+    {
+        "building": "Conference Center",
+        "room": "Ballroom",
+        "number": "1401B"
+    },
+    {
+        "building": "Conference Center",
+        "room": "Ballroom",
+        "number": "1401C"
+    },
+    {
+        "building": "Conference Center",
+        "room": "Conference Room A",
+        "number": "1209"
+    },
+    {
+        "building": "Conference Center",
+        "room": "Conference Room B",
+        "number": "1213"
+    },
+    {
+        "building": "Conference Center",
+        "room": "Large Conference Room",
+        "number": "2207"
+    },
+    {
+        "building": "Alumni Center",
+        "room": "Founder's Board Room",
+        "number": "104"
+    },
+    {
+        "building": "Alumni Center",
+        "room": "William & Jean Allewelt Conference Room",
+        "number": "105"
+    },
+    {
+        "building": "Alumni Center",
+        "room": "West Conference Room",
+        "number": "131"
+    },
+    {
+        "building": "Alumni Center",
+        "room": "Ralph H. Moss Patio"
+    },
+    {
+        "building": "Gallagher Hall",
+        "room": "Grand Foyer"
+    },
+    {
+        "building": "Gallagher Hall",
+        "room": "Ali Abbaszadeh Lecture Hall",
+        "number": "1213"
+    },
+    {
+        "building": "Gallagher Hall",
+        "room": "Dorf Classroom",
+        "number": "1302"
+    },
+    {
+        "building": "Gallagher Hall",
+        "room": "Medearis Presentation Room",
+        "number": "2102"
+    },
+    {
+        "building": "Gallagher Hall",
+        "room": "Helen Singer Suran Classroom",
+        "number": "2310"
+    },
+    {
+        "building": "Manetti Shrem",
+        "room": "The Parker Art Studio"
+    },
+    {
+        "building": "Manetti Shrem",
+        "room": "Theibaud Collections Classroom"
+    }
+]

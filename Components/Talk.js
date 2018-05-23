@@ -1,13 +1,15 @@
-import React from "react";
+import React from 'react';
 import {
   View,
   Text,
   Image,
   TouchableWithoutFeedback,
   Animated,
-} from "react-native";
-import TalkInfo from "./TalkInfo";
-import styles from "./Styles/TalkStyle";
+} from 'react-native';
+import RoomInfo from './RoomInfo';
+import TalkInfo from './TalkInfo';
+import styles from './Styles/TalkStyle';
+import AppConfig from '../Config/AppConfig';
 import { Colors } from '../Themes/';
 
 const themeColors = [
@@ -66,8 +68,19 @@ export default class Talk extends React.Component {
     }).start();
   };
 
+  renderAvatar() {
+    const { avatarUrl } = this.props;
+    if (!avatarUrl) {
+      return null;
+    }
+
+    return (
+      <Image style={styles.avatar} source={{ uri: avatarUrl }} />
+    );
+  }
+
   render() {
-    const { name, title, avatarURL, start, duration, starred, toggleReminder } = this.props;
+    const { name, title, start, duration, room, starred, toggleReminder } = this.props;
 
     const animatedStyle = {
       transform: [{ scale: this.state.animatedSize }],
@@ -84,6 +97,11 @@ export default class Talk extends React.Component {
       },
     ];
 
+    let place = `${room.building} - ${room.room}`;
+    if (!!room.number) {
+      place = `${place}: ${room.number}`;
+    }
+
     return (
       <TouchableWithoutFeedback
         onPressIn={this.handlePressIn}
@@ -96,9 +114,14 @@ export default class Talk extends React.Component {
               <Text style={styles.title}>{title}</Text>
               <Text style={styles.name}>{name}</Text>
             </View>
-            <Image style={styles.avatar} source={{ uri: avatarURL }} />
+            { this.renderAvatar() }
           </View>
-          <TalkInfo start={start} duration={duration} starred={starred} toggleReminder={toggleReminder} />
+          <View style={styles.roomInfo}>
+            <RoomInfo building={room.building} room={room.room}  />
+          </View>
+          <View style={styles.talkInfo}>
+            <TalkInfo start={start} duration={duration} starred={starred} room={room} toggleReminder={toggleReminder} />
+          </View>
         </Animated.View>
       </TouchableWithoutFeedback>
     );

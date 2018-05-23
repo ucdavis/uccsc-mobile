@@ -2,14 +2,14 @@ import { StyleSheet } from 'react-native';
 import { ApplicationStyles, Colors, Metrics } from '../../Themes/';
 
 export default StyleSheet.create({
-  ...ApplicationStyles.screen,
   container: {
-    margin: Metrics.baseMargin,
+    flex: 1,
+    backgroundColor: Colors.blue,
+    paddingTop: Metrics.statusBarHeight,
+    paddingHorizontal: Metrics.baseMargin,
+  },
+  main: {
     paddingTop: Metrics.doubleBaseMargin,
-    shadowRadius: 5,
-    shadowColor: 'black',
-    shadowOpacity: 0.8,
-    elevation: 20,
   },
   backButton: {
     flexDirection: 'row',
@@ -19,13 +19,15 @@ export default StyleSheet.create({
   },
   backButtonIcon: {
     marginRight: 5,
+    color: 'rgba(255,255,255,0.80)',
+    backgroundColor: Colors.transparent,
   },
   backButtonText: {
     fontFamily: 'Montserrat-Light',
     fontSize: 17,
     letterSpacing: 0,
     backgroundColor: Colors.transparent,
-    color: 'rgba(0,0,0,0.80)',
+    color: 'rgba(255,255,255,0.80)',
   },
   cardShadow1: {
     flex: 1,
@@ -44,7 +46,8 @@ export default StyleSheet.create({
     borderTopRightRadius: Metrics.cardRadius,
   },
   card: {
-    paddingTop: 48,
+    paddingBottom: 13,
+    paddingTop: Metrics.doubleBaseMargin,
     paddingHorizontal: Metrics.doubleBaseMargin,
     borderTopLeftRadius: Metrics.cardRadius,
     borderTopRightRadius: Metrics.cardRadius,
@@ -65,33 +68,34 @@ export default StyleSheet.create({
     letterSpacing: 0,
     color: Colors.darkPurple,
   },
+  section: {
+    paddingVertical: 13,
+    paddingHorizontal: Metrics.doubleBaseMargin,
+    backgroundColor: Colors.snow,
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(0,0,0,0.2)',
+  },
   description: {
-    marginBottom: 30,
     fontFamily: 'Montserrat-Light',
     fontSize: 16,
     letterSpacing: 0,
     lineHeight: 24,
     color: Colors.lightText,
-  },
-  social: {
-    flexDirection: 'row',
-    marginBottom: 30,
-  },
-  speakersContainer: {
-    borderTopWidth: 1,
-    borderTopColor: 'rgba(0,0,0,0.2)',
-    backgroundColor: Colors.snow,
-    paddingVertical: 13,
-    paddingHorizontal: Metrics.doubleBaseMargin,
+    backgroundColor: Colors.transparent,
   },
   speakerContainer: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-between',
+    alignItems: 'stretch',
     paddingVertical: 13,
   },
+  speakerInfo: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'stretch',
+  },
   avatarContainer: {
-    flexDirection: 'column',
-    justifyContent: 'space-around',
+
   },
   avatar: {
     height: 50,
@@ -101,9 +105,11 @@ export default StyleSheet.create({
     borderWidth: 1,
     zIndex: 4,
   },
-  speakerInfo: {
+  nameContainer: {
     flex: 1,
-    paddingHorizontal: Metrics.baseMargin,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
   },
   speakerName: {
     fontFamily: 'Montserrat-Light',
@@ -115,6 +121,10 @@ export default StyleSheet.create({
     fontSize: 11,
     color: Colors.lightText,
     marginBottom: Metrics.baseMargin,
+  },
+  bioContainer: {
+    flex: 1,
+    paddingVertical: 13,
   },
   speakerBio: {
     fontFamily: 'Montserrat-Light',

@@ -11,7 +11,7 @@ import {
 import { MaterialIcons } from '@expo/vector-icons';
 import { connect } from 'react-redux';
 import Config from '../Config/AppConfig';
-import { Images } from '../Themes';
+import { Images, Metrics } from '../Themes';
 import NotificationActions from '../Redux/NotificationRedux';
 import ScheduleActions from '../Redux/ScheduleRedux';
 import PushNotifications from '../Services/PushNotifications';
@@ -28,9 +28,10 @@ import styles from './Styles/ScheduleScreenStyles';
 import { GroupBy, FindIndexAll, Sum } from '../Utils/Array';
 import { GetItemLayout } from '../Utils/SectionList';
 import { startOfDay, isSameDay, isWithinRange, isBefore } from 'date-fns';
+import AppConfig from '../Config/AppConfig';
 
-const HEADER_MAX_HEIGHT = 250;
-const HEADER_MIN_HEIGHT = 160;
+const HEADER_MAX_HEIGHT = 200;
+const HEADER_MIN_HEIGHT = Metrics.statusBarHeight + 70;
 const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
 
 const AnimatedSectionList = Animated.createAnimatedComponent(SectionList);
@@ -39,8 +40,12 @@ class ScheduleScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Schedule',
     tabBarIcon: ({ focused }) => (
-      <MaterialIcons name="schedule" size={24} color="white" />
-    )
+      <MaterialIcons
+        name="schedule"
+        size={24}
+        color="white"
+      />
+    ),
   }
 
   constructor(props) {
@@ -94,8 +99,6 @@ class ScheduleScreen extends React.Component {
       ...activities,
       ...breaks,
     ];
-
-    // events.reverse();
 
     for (let i = 0; i < days.length; i++) {
       const day = days[i];
@@ -184,7 +187,7 @@ class ScheduleScreen extends React.Component {
     getItemHeight: (item) => {
       if (item.type === 'talk') {
         // use best guess for variable height rows
-        return 138 + (1.002936 * item.title.length + 6.77378)
+        return 138 + (1.002936 * item.title.length + 6.77378);
       }
 
       return 154;
@@ -227,7 +230,7 @@ class ScheduleScreen extends React.Component {
       styles.headerContainer,
       {
         height: HEADER_MAX_HEIGHT,
-        transform: [{ translateY: headerTranslate }] 
+        transform: [{ translateY: headerTranslate }],
       }];
 
     // scale image
@@ -319,7 +322,7 @@ class ScheduleScreen extends React.Component {
           onPressIn={this.setActiveDay}
         />
       </Animated.View>
-    )
+    );
   }
 
   renderSectionHeader = ({ section }) => {
@@ -338,17 +341,26 @@ class ScheduleScreen extends React.Component {
 
   renderTalk = (item) => {
     const toggleReminder = this.toggleReminder.bind(this, item);
+
+    let avatarUrl = '';
+    if (!!item.speakers && item.speakers.length) {
+      // find first speaker with a photo
+      const photoUrl = item.speakers.reduce((prev, s) => s.photo ? s.photo.url : prev, '');
+      avatarUrl = AppConfig.conferenceUrl + photoUrl;
+    }
+
     return (
       <Talk
         type={item.type}
         name={item.speaker}
-        avatarURL={`https://infinite.red/images/chainreact/${item.image}.png`}
+        avatarUrl={avatarUrl}
         title={item.title}
         start={item.time}
         duration={item.duration}
         onPress={() => this.onEventPress(item)}
         starred={item.starred}
         toggleReminder={toggleReminder}
+        room={item.room}
       />
     );
   }
@@ -358,6 +370,7 @@ class ScheduleScreen extends React.Component {
       <Break
         type={item.type}
         title={item.title}
+        sponsor={item.sponsor}
         start={item.time}
         duration={item.duration}
         name={item.speaker}
@@ -376,6 +389,7 @@ class ScheduleScreen extends React.Component {
       {
         marginTop: HEADER_MIN_HEIGHT,
         paddingTop: HEADER_SCROLL_DISTANCE,
+        paddingBottom: HEADER_MIN_HEIGHT,
       },
     ];
 
@@ -387,7 +401,7 @@ class ScheduleScreen extends React.Component {
         keyExtractor={(item, idx) => idx}
         contentContainerStyle={listContentStyle}
         getItemLayout={this.getItemLayout}
-        stickySectionHeadersEnabled={true}
+        stickySectionHeadersEnabled
         scrollEventThrottle={1}
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { y: this.state.scrollY } } }],
