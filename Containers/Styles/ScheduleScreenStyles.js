@@ -2,7 +2,7 @@ import { StyleSheet, Platform } from 'react-native';
 import { ApplicationStyles, Colors, Fonts, Metrics } from '../../Themes/';
 
 export default StyleSheet.create({
-  ...ApplicationStyles.screen,
+  // ...ApplicationStyles.screen,
   container: {
     flex: 1,
     zIndex: 0,
@@ -50,6 +50,6 @@ export default StyleSheet.create({
     zIndex: 20,
   },
   listContent: {
-    paddingBottom: Metrics.baseMargin * 8,
+    // paddingBottom: Metrics.baseMargin * 8,
   },
 });

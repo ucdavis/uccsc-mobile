@@ -46,8 +46,9 @@ const SponsorsStyles = {
   },
   sponsor: {
     margin: 15,
-    flexShrink: 0,
+    // flexShrink: 0,
     alignItems: 'center',
+    width: '80%',
   },
   lowTier: {
     marginHorizontal: 25,
