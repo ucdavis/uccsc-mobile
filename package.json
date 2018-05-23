@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "jest-expo": "^24",
+    "jest-expo": "^27.0.0",
     "react-native-scripts": "1.5.0",
     "react-test-renderer": "16.0.0-alpha.12"
   },
@@ -20,10 +20,10 @@
   },
   "dependencies": {
     "date-fns": "^1.29.0",
-    "expo": "^24.0.0",
-    "react": "16.0.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
-    "react-navigation": "^1.5.8",
+    "expo": "^27.0.0",
+    "react": "16.3.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz",
+    "react-navigation": "^1.5.11",
     "react-navigation-redux-helpers": "^1.0.3",
     "react-redux": "^5.0.6",
     "reactotron-react-native": "^1.13.2",
