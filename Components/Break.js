@@ -1,8 +1,11 @@
 import React from 'react';
 import { View, Text, Image, TouchableWithoutFeedback } from 'react-native';
+import { format, getTime } from 'date-fns';
+
+import AppConfig from '../Config/AppConfig';
 import { Images, Videos } from '../Themes';
 import BackgroundVideo from './BackgroundVideo';
-import { format, getTime } from 'date-fns';
+
 import styles from './Styles/BreakStyle';
 
 export default class Break extends React.Component {
@@ -22,11 +25,49 @@ export default class Break extends React.Component {
     });
   };
 
+  renderBackground() {
+    const { type, title, image } = this.props;
+
+    let background = '';
+    
+    if (type === 'Meal/Snack') {
+      background = Images[`${type}Break`];
+    }
+    else if (title.indexOf('Yoga') > -1) {
+      background = Images.morningYoga;
+    }
+    else if (title.indexOf('Jog') > -1) {
+      background = Images.morningJog;
+    }
+    else if (title.indexOf('Bus') > -1) {
+      background = Images.busTour;
+    }
+    else if (title.indexOf('Bowling') > -1) {
+      background = Images.bowling;
+    }
+    // else if (image) {
+    //   background = { uri: `${AppConfig.conferenceUrl}/${image.uri}` };
+    // }
+    else {
+      background = (title.length % 2) ? Images.meetup1 : Images.meetup2;
+    }
+
+    const imageWidth = this.state.imageWidth;
+
+    return (
+      <Image
+        source={background}
+        style={[styles.background, { width: imageWidth }]}
+      />
+    );
+  }
+
   renderContent() {
     const {
       type,
       title,
       duration,
+      image,
       isCurrentDay,
       isActive,
       start,
@@ -39,7 +80,6 @@ export default class Break extends React.Component {
       isActive && styles.active,
     ];
 
-    const background = Images[`${type}Break`];
     const video = Videos[type];
     const timeframe =
       duration <= 60
@@ -51,15 +91,10 @@ export default class Break extends React.Component {
     const cellTitle =
       title || `${type.charAt(0).toUpperCase() + type.slice(1)} Break`;
 
-    const imageWidth = this.state.imageWidth;
-
     return (
       <View>
         <View style={containerStyles} onLayout={this.onLayout}>
-          <Image
-            source={background}
-            style={[styles.background, { width: imageWidth }]}
-          />
+          { this.renderBackground() }
           <BackgroundVideo
             source={video}
             style={styles.video}

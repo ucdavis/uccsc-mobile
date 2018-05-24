@@ -4,6 +4,19 @@ const images = {
   HeaderGradient: require('../Images/gradient.png'),
   GradientVertical: require('../Images/gradient-vertical.png'),
 
+  // activity backgrounds
+  meetup1: require('../Images/Events/meetup1.jpg'),
+  meetup2: require('../Images/Events/meetup2.jpg'),
+  // registration: require(),
+  welcomeDinner: require('../Images/bg-party.jpg'),
+  morningYoga: require('../Images/Events/yoga.jpg'),
+  arboretumTour: require('../Images/Events/arboretum.jpg'),
+  busTour: require('../Images/Events/bus-tour.jpg'),
+  bowling: require('../Images/Events/bowling.jpg'),
+  morningJog: require('../Images/Events/jog.jpg'),
+
+  // keynote backgrounds
+
   // break backgrounds
   breakfastBreak: require('../Images/breakfast.jpg'),
   coffeeBreak: require('../Images/bg-coffee-break.jpg'),
