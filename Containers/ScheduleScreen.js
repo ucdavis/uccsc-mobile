@@ -117,6 +117,28 @@ class ScheduleScreen extends React.Component {
       day.events = day.events.map(g => {
         const data = g.values;
         data.sort((a, b) => {
+          // sort by type first
+          if (a.eventType === 'Meal/Snack') {
+            return -1;
+          }
+          if (b.eventType === 'Meal/Snack') {
+            return 1;
+          }
+
+          if (a.eventType === 'Keynote') {
+            return -1;
+          }
+          if (b.eventType === 'Keynote') {
+            return 1;
+          }
+
+          if (a.eventType === 'Activity' && b.type === 'talk') {
+            return -1;
+          }
+          if (b.eventType === 'Activity' && a.type === 'talk') {
+            return 1;
+          }
+
           if (a.title < b.title) {
             return -1;
           }
