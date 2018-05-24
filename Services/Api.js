@@ -1,13 +1,14 @@
 
-export async function getSchedule() {
+const baseUrl = 'https://us-central1-uccsc-ac393.cloudfunctions.net';
 
-  // url
-  const url = 'https://us-central1-uccsc-ac393.cloudfunctions.net/getAllSessions';
-
-  // fetch sessions
+export async function getActivities() {
+  const url = `${baseUrl}/getAllActivities`;
   const response = await fetch(url);
+  return JSON.parse(await response.text());
+}
 
-  const sessions = JSON.parse(await response.text());
-
-  return sessions;
+export async function getTalks() {
+  const url = `${baseUrl}/getAllSessions`;
+  const response = await fetch(url);
+  return JSON.parse(await response.text());
 }
