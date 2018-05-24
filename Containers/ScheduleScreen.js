@@ -51,11 +51,11 @@ class ScheduleScreen extends React.Component {
   constructor(props) {
     super(props);
 
-    const { currentTime, starredTalks } = props;
+    const { activities, currentTime, starredTalks } = props;
     const activeDay = 0;
     const isCurrentDay = this.isActiveCurrentDay(currentTime, activeDay);
     const talks = this.setStarProperty(props.talks, starredTalks);
-    const eventsByDay = this.buildScheduleList(props.activities, props.breaks, talks);
+    const eventsByDay = this.buildScheduleList(activities, talks);
 
     this.state = {
       activeDay,
@@ -70,7 +70,7 @@ class ScheduleScreen extends React.Component {
       || this.props.starredTalks !== nextProps.starredTalks) {
       // rebuild list
       const talks = this.setStarProperty(nextProps.talks, nextProps.starredTalks);
-      const eventsByDay = this.buildScheduleList(nextProps.activities, nextProps.breaks, talks);
+      const eventsByDay = this.buildScheduleList(nextProps.activities, talks);
       this.setState({ eventsByDay });
     }
   }
@@ -89,15 +89,14 @@ class ScheduleScreen extends React.Component {
     });
   }
 
-  buildScheduleList = (activities, breaks, talks) => {
+  buildScheduleList = (activities, talks) => {
     // days
     const days = Config.conferenceDates.map(d => ({ day: new Date(d), events: [] }));
 
     // combine events
     const events = [
-      ...talks,
       ...activities,
-      ...breaks,
+      ...talks,
     ];
 
     for (let i = 0; i < days.length; i++) {
@@ -429,7 +428,6 @@ const mapStoreToProps = (store) => {
   return {
     // currentTime: new Date(store.schedule.currentTime),
     activities: store.schedule.activities,
-    breaks: store.schedule.breaks,
     talks: store.schedule.talks,
     starredTalks: store.schedule.starredTalks,
     localNotifications: store.notifications.localNotifications,
@@ -438,7 +436,6 @@ const mapStoreToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getScheduleUpdates: () => dispatch(ScheduleActions.getScheduleUpdates()),
     setSelectedEvent: data => dispatch(ScheduleActions.setSelectedEvent(data)),
     starTalk: title => dispatch(ScheduleActions.starTalk(title)),
     unstarTalk: title => dispatch(ScheduleActions.unstarTalk(title)),
