@@ -381,7 +381,7 @@ class ScheduleScreen extends React.Component {
         onPress={() => this.onEventPress(item)}
         starred={item.starred}
         toggleReminder={toggleReminder}
-        room={item.room}
+        venue={item.venue}
       />
     );
   }
@@ -389,13 +389,16 @@ class ScheduleScreen extends React.Component {
   renderBreak = (item) => {
     return (
       <Break
-        type={item.type}
+        type={item.eventType}
         title={item.title}
         sponsor={item.sponsor}
         start={item.time}
+        end={item.end}
         duration={item.duration}
         name={item.speaker}
         onPress={() => this.onEventPress(item)}
+        venue={item.venue}
+        image={item.image}
       />
     );
   }
