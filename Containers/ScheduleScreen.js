@@ -176,7 +176,7 @@ class ScheduleScreen extends React.Component {
 
     if (item.type === 'talk') {
       navigation.navigate('TalkDetail');
-    } else if (item.tyep === 'break') {
+    } else if (item.type === 'break') {
       navigation.navigate('BreakDetail');
     }
   }
