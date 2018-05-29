@@ -18,9 +18,9 @@ const images = {
   // keynote backgrounds
 
   // break backgrounds
-  breakfastBreak: require('../Images/breakfast.jpg'),
+  breakfast: require('../Images/breakfast.jpg'),
   coffeeBreak: require('../Images/bg-coffee-break.jpg'),
-  lunchBreak: require('../Images/bg-lunch-break.jpg'),
+  lunch: require('../Images/bg-lunch-break.jpg'),
   partyBreak: require('../Images/bg-party.jpg'),
 
   // nearby
