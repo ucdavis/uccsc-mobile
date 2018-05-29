@@ -1,12 +1,11 @@
 import { TextStyle, ViewStyle, ImageStyle } from 'react-native';
 import { Colors, Metrics, Fonts } from '../../Themes/';
 
-const BreakStyle = {
+const MealStyle = {
   container: {
-    marginVertical: Metrics.baseMargin,
-    marginHorizontal: Metrics.doubleBaseMargin,
-    backgroundColor: Colors.transparent,
+    backgroundColor: Colors.recpoolBlue,
     height: Metrics.breakHeight,
+    borderRadius: 5,
   },
   currentDay: {
     marginLeft: 16,
@@ -88,4 +87,4 @@ const BreakStyle = {
   },
 };
 
-export default BreakStyle;
+export default MealStyle;

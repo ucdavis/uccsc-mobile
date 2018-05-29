@@ -19,7 +19,9 @@ import PushNotifications from '../Services/PushNotifications';
 import Logo from '../Images/Logo';
 import Gradient from '../Components/Gradient';
 import DayToggle from '../Components/DayToggle';
-import Break from '../Components/Break';
+import Activity from '../Components/Activity';
+import Event from '../Components/Event';
+import Meal from '../Components/Meal';
 import Talk from '../Components/Talk';
 import ScheduleSectionHeader from '../Components/ScheduleSectionHeader';
 
@@ -357,7 +359,15 @@ class ScheduleScreen extends React.Component {
       return this.renderTalk(item);
     }
 
-    return this.renderBreak(item);
+    if (item.eventType === "Activity") {
+      return this.renderActivity(item);
+    }
+
+    if (item.eventType === "Meal/Snack") {
+      return this.renderMeal(item);
+    }
+
+    return this.renderEvent(item);
   }
 
   renderTalk = (item) => {
@@ -378,7 +388,7 @@ class ScheduleScreen extends React.Component {
         title={item.title}
         start={item.time}
         duration={item.duration}
-        onPress={() => this.onEventPress(item)}
+        onPress={this.createOnEventPress(item)}
         starred={item.starred}
         toggleReminder={toggleReminder}
         venue={item.venue}
@@ -386,9 +396,9 @@ class ScheduleScreen extends React.Component {
     );
   }
 
-  renderBreak = (item) => {
+  renderActivity = (item) => {
     return (
-      <Break
+      <Activity
         type={item.eventType}
         title={item.title}
         sponsor={item.sponsor}
@@ -396,15 +406,51 @@ class ScheduleScreen extends React.Component {
         end={item.end}
         duration={item.duration}
         name={item.speaker}
-        onPress={() => this.onEventPress(item)}
+        onPress={this.createOnEventPress(item)}
         venue={item.venue}
         image={item.image}
       />
     );
   }
 
-  renderList(data) {
-    if (!data || !data.length) {
+  renderMeal = (item) => {
+    return (
+      <Meal
+        type={item.eventType}
+        title={item.title}
+        sponsor={item.sponsor}
+        start={item.time}
+        end={item.end}
+        duration={item.duration}
+        name={item.speaker}
+        onPress={this.createOnEventPress(item)}
+        venue={item.venue}
+        image={item.image}
+      />
+    );
+  }
+
+  renderEvent = (item) => {
+    return (
+      <Event
+        type={item.eventType}
+        title={item.title}
+        sponsor={item.sponsor}
+        start={item.time}
+        end={item.end}
+        duration={item.duration}
+        name={item.speaker}
+        onPress={this.createOnEventPress(item)}
+        venue={item.venue}
+        image={item.image}
+      />
+    );
+  }
+
+  renderList() {
+    const { activeDay, eventsByDay } = this.state;
+    const events = eventsByDay[activeDay].events;
+    if (!events || !events.length) {
       return null;
     }
 
@@ -421,8 +467,9 @@ class ScheduleScreen extends React.Component {
       <AnimatedSectionList
         renderItem={this.renderItem}
         renderSectionHeader={this.renderSectionHeader}
-        sections={data}
-        keyExtractor={(item, idx) => idx}
+        sections={events}
+        extraData={{activeDay}}
+        keyExtractor={(item, idx) => item.title}
         contentContainerStyle={listContentStyle}
         getItemLayout={this.getItemLayout}
         stickySectionHeadersEnabled
@@ -437,13 +484,10 @@ class ScheduleScreen extends React.Component {
   }
 
   render() {
-    const { activeDay, eventsByDay } = this.state;
-    const data = eventsByDay[activeDay].events;
-
     return (
       <Gradient style={styles.container}>
         { this.renderHeader() }
-        { this.renderList(data) }
+        { this.renderList() }
       </Gradient>
     );
   }
