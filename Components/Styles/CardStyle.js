@@ -6,9 +6,6 @@ export default StyleSheet.create({
     flex: 1,
     marginVertical: Metrics.baseMargin,
     marginHorizontal: Metrics.doubleBaseMargin,
-    // shadowRadius: 5,
-    // shadowColor: 'black',
-    // shadowOpacity: 0.8,
   },
   currentDay: {
     marginLeft: 16,

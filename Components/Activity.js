@@ -4,69 +4,35 @@ import { format, getTime } from 'date-fns';
 
 import AppConfig from '../Config/AppConfig';
 import { Images, Videos } from '../Themes';
-import BackgroundVideo from './BackgroundVideo';
 
+import Card from './Card';
+import BackgroundVideo from './BackgroundVideo';
 import styles from './Styles/ActivityStyle';
 
-export default class Activity extends React.Component {
+export default class Activity extends React.PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      imageWidth: 335,
+      isLaidOut: false,
     };
-  }
-
-  shouldComponentUpdate(nextProps) {
-    const {
-      type,
-      title,
-      duration,
-      image,
-      isCurrentDay,
-      isActive,
-      start,
-      end,
-    } = this.props;
-
-    if (nextProps.type !== type) {
-      return true;
-    }
-    if (nextProps.title !== title) {
-      return true;
-    }
-    if (nextProps.duration !== duration) {
-      return true;
-    }
-    if (nextProps.image !== image) {
-      return true;
-    }
-    if (nextProps.isCurrentDay !== isCurrentDay) {
-      return true;
-    }
-    if (nextProps.isActive !== isActive) {
-      return true;
-    }
-    if (nextProps.start !== start) {
-      return true;
-    }
-    if (nextProps.end !== end) {
-      return true;
-    }
-
-    return false;
   }
 
   onLayout = event => {
     const width = event.nativeEvent.layout.width;
-
     this.setState({
+      isLaidOut: true,
       imageWidth: width,
     });
   };
 
   renderBackground() {
     const { type, title, image } = this.props;
+    const { isLaidOut, imageWidth } = this.state;
+    
+    if (!isLaidOut) {
+      return null;
+    }
 
     let background = '';
     
@@ -98,8 +64,6 @@ export default class Activity extends React.Component {
       background = (title.length % 2) ? Images.meetup1 : Images.meetup2;
     }
 
-    const imageWidth = this.state.imageWidth;
-
     return (
       <Image
         source={background}
@@ -113,7 +77,6 @@ export default class Activity extends React.Component {
       type,
       title,
       duration,
-      image,
       isCurrentDay,
       isActive,
       start,
@@ -140,21 +103,21 @@ export default class Activity extends React.Component {
       <View
         renderToHardwareTextureAndroid
         shouldRasterizeIO
+        onLayout={this.onLayout}
+        style={styles.container}
       >
-        <View style={containerStyles} onLayout={this.onLayout}>
-          { this.renderBackground() }
-          {/* <BackgroundVideo
-            source={video}
-            style={styles.video}
-            isActive={true}
-          /> */}
-          <View style={styles.contentContainer}>
-            <View style={styles.content}>
-              <Text style={styles.heading}>{title}</Text>
-              <Text style={styles.duration}>{timeframe}</Text>
-            </View>
-            {this.renderSponsor()}
+        { this.renderBackground() }
+        {/* <BackgroundVideo
+          source={video}
+          style={styles.video}
+          isActive={true}
+        /> */}
+        <View style={styles.contentContainer}>
+          <View style={styles.content}>
+            <Text style={styles.heading}>{title}</Text>
+            <Text style={styles.duration}>{timeframe}</Text>
           </View>
+          {this.renderSponsor()}
         </View>
       </View>
     );
@@ -176,14 +139,10 @@ export default class Activity extends React.Component {
   }
 
   render() {
-    if (this.props.onPress) {
-      return (
-        <TouchableWithoutFeedback onPress={this.props.onPress}>
-          {this.renderContent()}
-        </TouchableWithoutFeedback>
-      );
-    }
-
-    return this.renderContent();
+    return (
+      <Card>
+        { this.renderContent() }
+      </Card>
+    );
   }
 }

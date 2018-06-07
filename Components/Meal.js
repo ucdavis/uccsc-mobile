@@ -4,9 +4,9 @@ import { format, getTime } from 'date-fns';
 
 import AppConfig from '../Config/AppConfig';
 import { Images, Videos } from '../Themes';
-import BackgroundVideo from './BackgroundVideo';
 
 import Card from './Card';
+import BackgroundVideo from './BackgroundVideo';
 import styles from './Styles/MealStyle';
 
 export default class Meal extends React.PureComponent {
@@ -14,7 +14,7 @@ export default class Meal extends React.PureComponent {
     super(props);
 
     this.state = {
-      imageWidth: 335,
+      isLaidOut: false,
     };
   }
 
@@ -22,12 +22,18 @@ export default class Meal extends React.PureComponent {
     const width = event.nativeEvent.layout.width;
 
     this.setState({
+      isLaidOut: true,
       imageWidth: width,
     });
   };
 
   renderBackground() {
     const { type, title, image } = this.props;
+    const { isLaidOut, imageWidth } = this.state;
+
+    if (!isLaidOut) {
+      return null;
+    }
 
     let background = '';
     
@@ -44,12 +50,10 @@ export default class Meal extends React.PureComponent {
       background = Images.lunch;
     }
 
-    const imageWidth = this.state.imageWidth;
-
     return (
       <Image
         source={background}
-        style={[styles.background, {  }]}
+        style={[styles.background, { width: imageWidth }]}
       />
     );
   }
@@ -59,7 +63,6 @@ export default class Meal extends React.PureComponent {
       type,
       title,
       duration,
-      image,
       start,
       end,
       isActive
@@ -79,6 +82,8 @@ export default class Meal extends React.PureComponent {
       <View
         renderToHardwareTextureAndroid
         shouldRasterizeIO
+        onLayout={this.onLayout}
+        style={styles.container}
       >
         { this.renderBackground() }
         {/* <BackgroundVideo
@@ -113,10 +118,8 @@ export default class Meal extends React.PureComponent {
   }
 
   render() {
-    
-
     return (
-      <Card onLayout={this.onLayout}>
+      <Card>
         { this.renderContent() }
       </Card>
     );

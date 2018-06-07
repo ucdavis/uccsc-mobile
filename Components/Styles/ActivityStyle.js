@@ -3,8 +3,6 @@ import { Colors, Metrics, Fonts } from '../../Themes/';
 
 const ActivityStyle = {
   container: {
-    marginVertical: Metrics.baseMargin,
-    marginHorizontal: Metrics.doubleBaseMargin,
     backgroundColor: Colors.recpoolBlue,
     height: Metrics.breakHeight,
     borderRadius: 5,
