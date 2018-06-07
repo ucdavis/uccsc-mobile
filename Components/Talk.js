@@ -32,7 +32,7 @@ export default class Talk extends React.PureComponent {
   }
 
   render() {
-    const { name, title, start, duration, venue, starred, toggleReminder } = this.props;
+    const { name, title, start, duration, venue, onPress, starred, toggleReminder } = this.props;
 
     const themeColor = themeColors[(title || '').length % themeColors.length];
 
@@ -45,7 +45,7 @@ export default class Talk extends React.PureComponent {
     ];
 
     return (
-      <Card style={containerStyles}>
+      <Card style={containerStyles} onPress={onPress}>
         <View style={styles.info}>
           <View style={styles.infoText}>
             <Text style={styles.title}>{title}</Text>
