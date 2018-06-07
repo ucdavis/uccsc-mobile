@@ -49,14 +49,14 @@ class ScheduleList extends React.Component {
   }
 
   createOnEventPress = (item) => () => {
-    const { navigation, setSelectedEvent } = this.props;
-
+    const { screenProps, setSelectedEvent } = this.props;
     setSelectedEvent(item);
-
+    
+    const { rootNavigation } = screenProps;
     if (item.type === 'talk') {
-      navigation.navigate('TalkDetail');
+      rootNavigation.navigate('TalkDetail');
     } else if (item.type === 'event') {
-      navigation.navigate('ActivityDetail');
+      rootNavigation.navigate('ActivityDetail');
     }
   }
 
@@ -201,7 +201,6 @@ class ScheduleList extends React.Component {
 
   render () {
     const { events } = this.props;
-    console.log(events);
     if (!events || !events.length) {
       return null;
     }

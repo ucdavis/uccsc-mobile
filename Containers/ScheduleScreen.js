@@ -136,7 +136,7 @@ export default class ScheduleScreen extends React.Component {
     return (
       <Gradient style={containerStyle}>
         { this.renderHeader() }
-        <DayTabNavigator screenProps={{ navigation: this.props.navigation }} />
+        <DayTabNavigator screenProps={{ rootNavigation: this.props.navigation }} />
       </Gradient>
     );
   }
