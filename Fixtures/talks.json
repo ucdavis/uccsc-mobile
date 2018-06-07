@@ -50,8 +50,8 @@
                 }
             }
         ],
-        "time": "2018-08-14T22:00:00",
-        "end": "2018-08-14T22:45:00",
+        "time": "2018-08-14T22:00:00.000Z",
+        "end": "2018-08-14T22:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -69,8 +69,8 @@
                 "company": "UC Riverside"
             }
         ],
-        "time": "2018-08-15T23:00:00",
-        "end": "2018-08-15T23:45:00",
+        "time": "2018-08-15T23:00:00.000Z",
+        "end": "2018-08-15T23:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -109,8 +109,8 @@
                 }
             }
         ],
-        "time": "2018-08-15T15:45:00",
-        "end": "2018-08-15T16:30:00",
+        "time": "2018-08-15T15:45:00.000Z",
+        "end": "2018-08-15T16:30:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -149,8 +149,8 @@
                 "company": "UC Berkeley"
             }
         ],
-        "time": "2018-08-15T20:00:00",
-        "end": "2018-08-15T20:45:00",
+        "time": "2018-08-15T20:00:00.000Z",
+        "end": "2018-08-15T20:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -184,8 +184,8 @@
                 }
             }
         ],
-        "time": "2018-08-15T21:00:00",
-        "end": "2018-08-15T21:45:00",
+        "time": "2018-08-15T21:00:00.000Z",
+        "end": "2018-08-15T21:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -240,8 +240,8 @@
                 }
             }
         ],
-        "time": "2018-08-15T22:00:00",
-        "end": "2018-08-15T23:30:00",
+        "time": "2018-08-15T22:00:00.000Z",
+        "end": "2018-08-15T23:30:00.000Z",
         "duration": "90 Minutes",
         "venue": null
     },
@@ -275,8 +275,8 @@
                 }
             }
         ],
-        "time": "2018-08-15T15:45:00",
-        "end": "2018-08-15T16:30:00",
+        "time": "2018-08-15T15:45:00.000Z",
+        "end": "2018-08-15T16:30:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -293,25 +293,25 @@
                 "bio": "I build open source software for UCSF.",
                 "company": "UC San Francisco",
                 "photo": {
-                    "fid": 967,
-                    "uuid": "4a396dfb-cbef-4f96-a2de-4f221a7a16c1",
+                    "fid": 996,
+                    "uuid": "14b0fb3d-6ad4-4b8f-a4cc-aaef54d511eb",
                     "langcode": "en",
-                    "filename": "Profile Photo.jpeg",
+                    "filename": "avatar.png",
                     "uri": {
-                        "value": "public://users/images/Profile Photo.jpeg",
-                        "url": "/sites/default/files/users/images/Profile%20Photo.jpeg"
+                        "value": "public://users/images/avatar.png",
+                        "url": "/sites/default/files/users/images/avatar.png"
                     },
-                    "filemime": "image/jpeg",
-                    "filesize": 79482,
+                    "filemime": "image/png",
+                    "filesize": 902089,
                     "status": true,
-                    "created": 1527093458,
-                    "changed": 1527093467,
-                    "url": "/sites/default/files/users/images/Profile%20Photo.jpeg"
+                    "created": 1527438621,
+                    "changed": 1527438641,
+                    "url": "/sites/default/files/users/images/avatar.png"
                 }
             }
         ],
-        "time": "2018-08-14T20:00:00",
-        "end": "2018-08-14T20:45:00",
+        "time": "2018-08-14T20:00:00.000Z",
+        "end": "2018-08-14T20:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -328,25 +328,25 @@
                 "bio": "I build open source software for UCSF.",
                 "company": "UC San Francisco",
                 "photo": {
-                    "fid": 967,
-                    "uuid": "4a396dfb-cbef-4f96-a2de-4f221a7a16c1",
+                    "fid": 996,
+                    "uuid": "14b0fb3d-6ad4-4b8f-a4cc-aaef54d511eb",
                     "langcode": "en",
-                    "filename": "Profile Photo.jpeg",
+                    "filename": "avatar.png",
                     "uri": {
-                        "value": "public://users/images/Profile Photo.jpeg",
-                        "url": "/sites/default/files/users/images/Profile%20Photo.jpeg"
+                        "value": "public://users/images/avatar.png",
+                        "url": "/sites/default/files/users/images/avatar.png"
                     },
-                    "filemime": "image/jpeg",
-                    "filesize": 79482,
+                    "filemime": "image/png",
+                    "filesize": 902089,
                     "status": true,
-                    "created": 1527093458,
-                    "changed": 1527093467,
-                    "url": "/sites/default/files/users/images/Profile%20Photo.jpeg"
+                    "created": 1527438621,
+                    "changed": 1527438641,
+                    "url": "/sites/default/files/users/images/avatar.png"
                 }
             }
         ],
-        "time": "2018-08-14T22:00:00",
-        "end": "2018-08-14T22:45:00",
+        "time": "2018-08-14T22:00:00.000Z",
+        "end": "2018-08-14T22:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -380,8 +380,8 @@
                 }
             }
         ],
-        "time": "2018-08-14T21:00:00",
-        "end": "2018-08-14T21:45:00",
+        "time": "2018-08-14T21:00:00.000Z",
+        "end": "2018-08-14T21:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -441,8 +441,8 @@
                 "company": "UC San Francisco, IT"
             }
         ],
-        "time": "2018-08-14T20:00:00",
-        "end": "2018-08-14T20:45:00",
+        "time": "2018-08-14T20:00:00.000Z",
+        "end": "2018-08-14T20:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -476,8 +476,8 @@
                 }
             }
         ],
-        "time": "2018-08-14T20:00:00",
-        "end": "2018-08-14T20:45:00",
+        "time": "2018-08-14T20:00:00.000Z",
+        "end": "2018-08-14T20:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -532,8 +532,8 @@
                 }
             }
         ],
-        "time": "2018-08-15T23:00:00",
-        "end": "2018-08-15T23:45:00",
+        "time": "2018-08-15T23:00:00.000Z",
+        "end": "2018-08-15T23:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -593,8 +593,8 @@
                 "company": "UC Los Angeles, IT Services"
             }
         ],
-        "time": "2018-08-15T21:00:00",
-        "end": "2018-08-15T21:45:00",
+        "time": "2018-08-15T21:00:00.000Z",
+        "end": "2018-08-15T21:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -649,8 +649,8 @@
                 }
             }
         ],
-        "time": "2018-08-15T23:00:00",
-        "end": "2018-08-15T23:45:00",
+        "time": "2018-08-15T23:00:00.000Z",
+        "end": "2018-08-15T23:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -689,8 +689,8 @@
                 "company": "UC Irvine"
             }
         ],
-        "time": "2018-08-14T15:45:00",
-        "end": "2018-08-14T16:30:00",
+        "time": "2018-08-14T15:45:00.000Z",
+        "end": "2018-08-14T16:30:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -724,8 +724,8 @@
                 }
             }
         ],
-        "time": "2018-08-14T15:45:00",
-        "end": "2018-08-14T16:30:00",
+        "time": "2018-08-14T15:45:00.000Z",
+        "end": "2018-08-14T16:30:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -764,8 +764,8 @@
                 "company": "UC Berkeley"
             }
         ],
-        "time": "2018-08-15T22:00:00",
-        "end": "2018-08-15T22:45:00",
+        "time": "2018-08-15T22:00:00.000Z",
+        "end": "2018-08-15T22:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -803,30 +803,46 @@
                 "bio": "I build open source software for UCSF.",
                 "company": "UC San Francisco",
                 "photo": {
-                    "fid": 967,
-                    "uuid": "4a396dfb-cbef-4f96-a2de-4f221a7a16c1",
+                    "fid": 996,
+                    "uuid": "14b0fb3d-6ad4-4b8f-a4cc-aaef54d511eb",
                     "langcode": "en",
-                    "filename": "Profile Photo.jpeg",
+                    "filename": "avatar.png",
                     "uri": {
-                        "value": "public://users/images/Profile Photo.jpeg",
-                        "url": "/sites/default/files/users/images/Profile%20Photo.jpeg"
+                        "value": "public://users/images/avatar.png",
+                        "url": "/sites/default/files/users/images/avatar.png"
                     },
-                    "filemime": "image/jpeg",
-                    "filesize": 79482,
+                    "filemime": "image/png",
+                    "filesize": 902089,
                     "status": true,
-                    "created": 1527093458,
-                    "changed": 1527093467,
-                    "url": "/sites/default/files/users/images/Profile%20Photo.jpeg"
+                    "created": 1527438621,
+                    "changed": 1527438641,
+                    "url": "/sites/default/files/users/images/avatar.png"
                 }
             },
             {
                 "name": "Stefan Topfstedt",
                 "bio": null,
-                "company": "UC San Francisco"
+                "company": "UC San Francisco",
+                "photo": {
+                    "fid": 1003,
+                    "uuid": "a8232f82-03c2-43bc-a9f5-5cd21ddf2a8d",
+                    "langcode": "en",
+                    "filename": "stefan2017_square.jpg",
+                    "uri": {
+                        "value": "public://users/images/stefan2017_square.jpg",
+                        "url": "/sites/default/files/users/images/stefan2017_square.jpg"
+                    },
+                    "filemime": "image/jpeg",
+                    "filesize": 406574,
+                    "status": true,
+                    "created": 1527700413,
+                    "changed": 1527700418,
+                    "url": "/sites/default/files/users/images/stefan2017_square.jpg"
+                }
             }
         ],
-        "time": "2018-08-14T15:45:00",
-        "end": "2018-08-14T16:30:00",
+        "time": "2018-08-14T15:45:00.000Z",
+        "end": "2018-08-14T16:30:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -844,8 +860,8 @@
                 "company": "UC Davis"
             }
         ],
-        "time": "2018-08-15T22:00:00",
-        "end": "2018-08-15T22:45:00",
+        "time": "2018-08-15T22:00:00.000Z",
+        "end": "2018-08-15T22:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -879,8 +895,8 @@
                 }
             }
         ],
-        "time": "2018-08-15T22:00:00",
-        "end": "2018-08-15T22:45:00",
+        "time": "2018-08-15T22:00:00.000Z",
+        "end": "2018-08-15T22:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -914,8 +930,8 @@
                 }
             }
         ],
-        "time": "2018-08-15T21:00:00",
-        "end": "2018-08-15T21:45:00",
+        "time": "2018-08-15T21:00:00.000Z",
+        "end": "2018-08-15T21:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -933,8 +949,8 @@
                 "company": "UC San Diego"
             }
         ],
-        "time": "2018-08-14T20:00:00",
-        "end": "2018-08-14T20:45:00",
+        "time": "2018-08-14T20:00:00.000Z",
+        "end": "2018-08-14T20:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -968,8 +984,8 @@
                 }
             }
         ],
-        "time": "2018-08-14T22:00:00",
-        "end": "2018-08-14T22:45:00",
+        "time": "2018-08-14T22:00:00.000Z",
+        "end": "2018-08-14T22:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -1029,8 +1045,8 @@
                 }
             }
         ],
-        "time": "2018-08-15T20:00:00",
-        "end": "2018-08-15T20:45:00",
+        "time": "2018-08-15T20:00:00.000Z",
+        "end": "2018-08-15T20:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -1064,8 +1080,8 @@
                 }
             }
         ],
-        "time": "2018-08-15T15:45:00",
-        "end": "2018-08-15T16:30:00",
+        "time": "2018-08-15T15:45:00.000Z",
+        "end": "2018-08-15T16:30:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -1074,7 +1090,7 @@
         "speaker": "Vanessa Kaskiris",
         "title": "A Woman's Story in IT at UC Berkeley: Systemic Harassment and Discrimination",
         "description": "In 2014, Vanessa Kaskiris joined a team in IT at the University of California, Berkeley. Subsequently, and after repeated escalations to management, she would initiate one of the largest investigations in University history and prove a hostile work environment based on gender.\n\nThis is her story coming forward and breaking the silence on a systemic culture of abuse and retaliation. She will reference the completed University investigation and present why it was imperative to shed light on the University's behavior to discredit the voices of women who were harassed in IT at the University of California, Berkeley.\n\nThe presentation will review the numerous supporting documents supplied to initiate the investigation. The necessary role of allies in creating an irrefutable case. The retaliation that she experienced while the investigation was underway. The role of IT’s HR to, per the investigation, knowingly falsify information to justify the departure of woman after woman on the team.\n\nThe presentation will address the stigmas around credibility when one does come forward and the prevailing fear that prevents others from supporting or coming forward. Furthermore, the presentation will describe the events immediately post\u00ad investigation: Vanessa was terminated. She sent numerous detailed email documents to the CIO of the University of California, Berkeley detailing retaliation and witness intimidation, the CIO refused in email to meet with Vanessa.\n\nThe presentation will discuss University and Nondiscrimination in Employment policy violations and examine why zero tolerance is not effectively observed or enforced among staff in IT at the University of California, Berkeley. As a woman of color, in an industry severely underrepresented by women of color, Vanessa will describe the promotion patterns for leadership in IT at the University of California, Berkeley.\n\nIn addition, time will be spent describing the various paths that could have been followed, including a settlement, and what each of those would have looked like in Vanessa’s opinion.\n\nFinally, ample time will be allocated to an explanation, in her own words, on why Vanessa would not stand down to the systemic harassment and discrimination that she and multiple women experienced. The presentation will discuss the long term advantages to shedding light on discriminatory work environments and how to be prepared to do so to protect future women.",
-        "knowledge": "BIBLIOGRAPHY\n\nArticles on this story:\n\nPando - [The Bear’s Lair: The untold story of systemic gender discrimination inside UC Berkeley’s IT Department](https://pando.com/2018/02/23/bears-lair-untold-story-systemic-gender-discrimination-inside-uc-berkeleys-it-department/)\n\nPando - [How to be “credible” even if you're a woman... and other takeaways from the Berkeley sexual discrimination investigation](https://pando.com/2018/02/27/how-be-credible-even-if-youre-woman-and-other-takeaways-berkeley-sexual-discrimination-investigation/)\n\nDaily Cal - [Time’s Up on UC Berkeley administrators failing to address gender discrimination](http://www.dailycal.org/2018/03/12/times-up-uc-berkeley-gender-discrimination/)\n\niPetition - [Time's Up for UC Berkeley Misogyny](https://www.ipetitions.com/petition/times-up-for-uc-berkeley-misogyny)\n\nHuffington Post - [Nothing About Reporting Sexual Harassment Is Easy](https://www.huffingtonpost.com/entry/opinion-tracyramirez-metcalf-reporting-harassment_us_5aaa8948e4b045cd0a6f6333)\n\nWomens Magazine Interview, KPFA - https://kpfa.org/episode/womens-magazine-april-23-2018/",
+        "knowledge": "BIBLIOGRAPHY\n\nArticles on this story:\n\nPando - [The Bear’s Lair: The untold story of systemic gender discrimination inside UC Berkeley’s IT Department](https://pando.com/2018/02/23/bears-lair-untold-story-systemic-gender-discrimination-inside-uc-berkeleys-it-department/)\n\nPando - [How to be “credible” even if you're a woman... and other takeaways from the Berkeley sexual discrimination investigation](https://pando.com/2018/02/27/how-be-credible-even-if-youre-woman-and-other-takeaways-berkeley-sexual-discrimination-investigation/)\n\nDaily Cal - [Time’s Up on UC Berkeley administrators failing to address gender discrimination](http://www.dailycal.org/2018/03/12/times-up-uc-berkeley-gender-discrimination/)\n\niPetition - [Time's Up for UC Berkeley Misogyny](https://www.ipetitions.com/petition/times-up-for-uc-berkeley-misogyny)\n\nHuffington Post - [Nothing About Reporting Sexual Harassment Is Easy](https://www.huffingtonpost.com/entry/opinion-tracyramirez-metcalf-reporting-harassment_us_5aaa8948e4b045cd0a6f6333)\n\nWomens Magazine Interview, KPFA, interview starts 18 minutes in - https://kpfa.org/episode/womens-magazine-april-23-2018/",
         "software": "n/a",
         "speakers": [
             {
@@ -1099,8 +1115,8 @@
                 }
             }
         ],
-        "time": "2018-08-15T15:45:00",
-        "end": "2018-08-15T16:30:00",
+        "time": "2018-08-15T15:45:00.000Z",
+        "end": "2018-08-15T16:30:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -1123,8 +1139,8 @@
                 "company": "UC Irvine"
             }
         ],
-        "time": "2018-08-15T20:00:00",
-        "end": "2018-08-15T20:45:00",
+        "time": "2018-08-15T20:00:00.000Z",
+        "end": "2018-08-15T20:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -1179,8 +1195,8 @@
                 }
             }
         ],
-        "time": "2018-08-15T20:00:00",
-        "end": "2018-08-15T20:45:00",
+        "time": "2018-08-15T20:00:00.000Z",
+        "end": "2018-08-15T20:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     },
@@ -1214,8 +1230,8 @@
                 }
             }
         ],
-        "time": "2018-08-14T20:00:00",
-        "end": "2018-08-14T20:45:00",
+        "time": "2018-08-14T20:00:00.000Z",
+        "end": "2018-08-14T20:45:00.000Z",
         "duration": "45 Minutes",
         "venue": null
     }

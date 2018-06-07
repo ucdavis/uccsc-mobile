@@ -1,768 +1,894 @@
 [
-  {
-      "type": "event",
-      "title": "Welcome Dinner",
-      "description": "UC Davis is pleased to host the UCCSC Monday night reception on the grounds of the [Robert Mondavi Institute](http://robertmondaviinstitute.ucdavis.edu/) Good Life Garden. The [Good Life Garden](http://www.goodlifegarden.ucdavis.edu/location) contains an ever-changing edible landscape, which features organic and sustainably grown vegetables, herbs and flowers.\n\nOn Monday, August 13, enjoy food and wine in a beautiful setting and mingle with your colleagues with a view to a vineyard.",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/20160830_grape_crush_9977.jpg",
-          "filename": "20160830_grape_crush_9977.jpg"
-      },
-      "time": "2018-08-14T01:00:00",
-      "end": "2018-08-14T04:00:00",
-      "rsvp": "[UCCSC registration](/schedule/2018-08-13/registration) will be available at the Monday night reception.",
-      "eventType": "Meal/Snack",
-      "sponsors": [
-          "Cisco Systems, Inc."
-      ],
-      "organizer": [],
-      "venue": {
-          "title": "Good Life Garden",
-          "building": "Robert Mondavi Institute",
-          "room": "Good Life Garden",
-          "address": {
-              "street": "Old Davis Road Old Davis Road",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.532763293583,
-              "lng": -121.75087433183
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Morning Yoga",
-      "description": "A certified personal trainer will lead an outdoor morning yoga session. Participants will require a longer warm-up but will experience yoga the traditional way! Power Vinyasa Yoga is a combination of deep breathing and specifically sequenced set of flowing yoga poses. It has the ability not only to build strength, increase endurance, but also release tension, and create more flexibility in the entire body.",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/20170509_yoga_9526.jpg",
-          "filename": "20170509_yoga_9526.jpg"
-      },
-      "time": "2018-08-14T13:15:00",
-      "end": "2018-08-14T14:00:00",
-      "rsvp": "",
-      "eventType": "Activity",
-      "sponsors": [],
-      "organizer": [],
-      "venue": null
-  },
-  {
-      "type": "event",
-      "title": "UC Drupal Community of Practice",
-      "description": "The UC Drupal Collaboration continues to gain momentum across the UC System. Drupal is the primary web publishing platform for the vast majority of UC campuses. In this meeting, we will come together to discuss the [UC-Wide SiteFarm platform](/sessions/meet-sitefarm-university-californias-drupal-8-collaboration) and best practices for development, service delivery, documentation and training, and more.\n\nIf you use Drupal in the UC System, you're not gonna want to miss this!",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/druplicon-large.png",
-          "filename": "druplicon-large.png"
-      },
-      "time": "2018-08-13T21:00:00",
-      "end": "2018-08-14T00:00:00",
-      "rsvp": "",
-      "eventType": "Activity",
-      "sponsors": [],
-      "organizer": [
-          {
-              "name": "Shawn DeArmond",
-              "bio": "Shawn is the Web Architect for Information and Educational Technology at UC Davis. He supervises the Web Development team, which offers custom web development services to campus units, as well as builds and maintains the SiteFarm web platform service.\r\n\r\nShawn has been a UC Davis employee since 1997 and cut his teeth at the School of Education. Now in IET, he drives a high-performing team implementing state-of-the-art web technology. They use highly evolved development methodologies and workflows including established version control strategies, code-review practices, and automated testing, builds, and deployment.\r\n\r\nIn addition his work at UC Davis, Shawn is a founding member of the UC Drupal Collaboration, along with UCLA and UC San Francisco, in an effort to save costs and create a community of practice of web development across the UC System. He has also organized the Higher Education Drupal Summit at the Bay Area Drupal Camp and DrupalCon since 2010.",
-              "company": "UC Davis",
-              "photo": null
-          }
-      ],
-      "venue": {
-          "title": "Founders Board Room - Alumni Center",
-          "building": "Walter A. Buehler Alumni Center",
-          "room": "104 / Founders Board Room",
-          "address": {
-              "street": "530 Alumni Lane 530 Alumni Lane",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.5349753,
-              "lng": -121.7481516
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Morning Yoga",
-      "description": "A certified personal trainer will lead an outdoor morning yoga session. Participants will require a longer warm-up but will experience yoga the traditional way! Power Vinyasa Yoga is a combination of deep breathing and specifically sequenced set of flowing yoga poses. It has the ability not only to build strength, increase endurance, but also release tension, and create more flexibility in the entire body.",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/20170509_yoga_9526_0.jpg",
-          "filename": "20170509_yoga_9526.jpg"
-      },
-      "time": "2018-08-15T13:15:00",
-      "end": "2018-08-15T14:00:00",
-      "rsvp": "",
-      "eventType": "Activity",
-      "sponsors": [],
-      "organizer": [],
-      "venue": null
-  },
-  {
-      "type": "event",
-      "title": "Breakfast",
-      "description": "Energize yourself for a full day of sessions and activities. Tuesday morning breakfast will be held in the Grand Foyer of Gallagher Hall.",
-      "image": null,
-      "time": "2018-08-14T14:30:00",
-      "end": "2018-08-14T15:45:00",
-      "rsvp": "Sponsored by [Amazon Web Services](/sponsor/amazon-web-services)",
-      "eventType": "Meal/Snack",
-      "sponsors": [
-          "Amazon Web Services"
-      ],
-      "organizer": [],
-      "venue": {
-          "title": "Grand Foyer - Gallagher Hall",
-          "building": "Maurice J. Gallagher Jr Hall",
-          "room": "Grand Foyer",
-          "address": {
-              "street": "540 Alumni Lane 540 Alumni Lane",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.5347983,
-              "lng": -121.747254
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Campus Bus Tour",
-      "description": "Take a break and take a ride through the UC Davis campus on a double-decker bus. Unitrans is well-known for our fleet of historic London double-decker buses, which in 2010 were joined by two [modern double-decker buses](https://unitrans.ucdavis.edu/media/uploads/2017/10/18/new-dd-bus-with-bikes.jpg).",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/201070929_sustainability_5050.jpg",
-          "filename": "201070929_sustainability_5050.jpg"
-      },
-      "time": "2018-08-14T15:45:00",
-      "end": "2018-08-14T16:30:00",
-      "rsvp": "",
-      "eventType": "Activity",
-      "sponsors": [],
-      "organizer": [],
-      "venue": {
-          "title": "Hyatt Parking Lot",
-          "building": "Hyatt Place",
-          "room": null,
-          "address": {
-              "street": "173 Old Davis Road 173 Old Davis Road",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.53520919572,
-              "lng": -121.74574013477
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Campus Bus Tour",
-      "description": "Take a break and take a ride through the UC Davis campus on a double-decker bus. Unitrans is well-known for our fleet of historic London double-decker buses, which in 2010 were joined by two [modern doubledecker buses](https://unitrans.ucdavis.edu/media/uploads/2017/10/18/new-dd-bus-with-bikes.jpg).",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/201070929_sustainability_5050_0.jpg",
-          "filename": "201070929_sustainability_5050.jpg"
-      },
-      "time": "2018-08-14T20:00:00",
-      "end": "2018-08-14T20:45:00",
-      "rsvp": "",
-      "eventType": "Activity",
-      "sponsors": [],
-      "organizer": [],
-      "venue": {
-          "title": "Hyatt Parking Lot",
-          "building": "Hyatt Place",
-          "room": null,
-          "address": {
-              "street": "173 Old Davis Road 173 Old Davis Road",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.53520919572,
-              "lng": -121.74574013477
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Campus Bus Tour",
-      "description": "Take a break and take a ride through the UC Davis campus on a double-decker bus. Unitrans is well-known for our fleet of historic London double-decker buses, which in 2010 were joined by two [modern double-decker buses](https://unitrans.ucdavis.edu/media/uploads/2017/10/18/new-dd-bus-with-bikes.jpg).",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/201070929_sustainability_5050_1.jpg",
-          "filename": "201070929_sustainability_5050.jpg"
-      },
-      "time": "2018-08-14T21:00:00",
-      "end": "2018-08-14T21:45:00",
-      "rsvp": "",
-      "eventType": "Activity",
-      "sponsors": [],
-      "organizer": [],
-      "venue": {
-          "title": "Hyatt Parking Lot",
-          "building": "Hyatt Place",
-          "room": null,
-          "address": {
-              "street": "173 Old Davis Road 173 Old Davis Road",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.53520919572,
-              "lng": -121.74574013477
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Campus Bus Tour",
-      "description": "Take a break and take a ride through the UC Davis campus on a double-decker bus. Unitrans is well-known for our fleet of historic London double-decker buses, which in 2010 were joined by two [modern double-decker buses](https://unitrans.ucdavis.edu/media/uploads/2017/10/18/new-dd-bus-with-bikes.jpg).",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/201070929_sustainability_5050_2.jpg",
-          "filename": "201070929_sustainability_5050.jpg"
-      },
-      "time": "2018-08-14T22:00:00",
-      "end": "2018-08-14T22:45:00",
-      "rsvp": "",
-      "eventType": "Activity",
-      "sponsors": [],
-      "organizer": [],
-      "venue": {
-          "title": "Hyatt Parking Lot",
-          "building": "Hyatt Place",
-          "room": null,
-          "address": {
-              "street": "173 Old Davis Road 173 Old Davis Road",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.53520919572,
-              "lng": -121.74574013477
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Campus Bus Tour",
-      "description": "Take a break and take a ride through the UC Davis campus on a double-decker bus. Unitrans is well-known for our fleet of historic London double-decker buses, which in 2010 were joined by two [modern double-decker buses](https://unitrans.ucdavis.edu/media/uploads/2017/10/18/new-dd-bus-with-bikes.jpg).",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/201070929_sustainability_5050_4.jpg",
-          "filename": "201070929_sustainability_5050.jpg"
-      },
-      "time": "2018-08-15T15:45:00",
-      "end": "2018-08-15T16:30:00",
-      "rsvp": "",
-      "eventType": "Activity",
-      "sponsors": [],
-      "organizer": [],
-      "venue": {
-          "title": "Hyatt Parking Lot",
-          "building": "Hyatt Place",
-          "room": null,
-          "address": {
-              "street": "173 Old Davis Road 173 Old Davis Road",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.53520919572,
-              "lng": -121.74574013477
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Campus Bus Tour",
-      "description": "Take a break and take a ride through the UC Davis campus on a double-decker bus. Unitrans is well-known for our fleet of historic London double-decker buses, which in 2010 were joined by two [modern double-decker buses](https://unitrans.ucdavis.edu/media/uploads/2017/10/18/new-dd-bus-with-bikes.jpg).",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/201070929_sustainability_5050_5.jpg",
-          "filename": "201070929_sustainability_5050.jpg"
-      },
-      "time": "2018-08-15T20:00:00",
-      "end": "2018-08-15T20:45:00",
-      "rsvp": "",
-      "eventType": "Activity",
-      "sponsors": [],
-      "organizer": [],
-      "venue": {
-          "title": "Hyatt Parking Lot",
-          "building": "Hyatt Place",
-          "room": null,
-          "address": {
-              "street": "173 Old Davis Road 173 Old Davis Road",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.53520919572,
-              "lng": -121.74574013477
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Campus Bus Tour",
-      "description": "Take a break and take a ride through the UC Davis campus on a double-decker bus. Unitrans is well-known for our fleet of historic London double-decker buses, which in 2010 were joined by two [modern double-decker buses](https://unitrans.ucdavis.edu/media/uploads/2017/10/18/new-dd-bus-with-bikes.jpg).",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/201070929_sustainability_5050_6.jpg",
-          "filename": "201070929_sustainability_5050.jpg"
-      },
-      "time": "2018-08-15T21:00:00",
-      "end": "2018-08-15T21:45:00",
-      "rsvp": "",
-      "eventType": "Activity",
-      "sponsors": [],
-      "organizer": [],
-      "venue": {
-          "title": "Hyatt Parking Lot",
-          "building": "Hyatt Place",
-          "room": null,
-          "address": {
-              "street": "173 Old Davis Road 173 Old Davis Road",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.53520919572,
-              "lng": -121.74574013477
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Campus Bus Tour",
-      "description": "Take a break and take a ride through the UC Davis campus on a double-decker bus. Unitrans is well-known for our fleet of historic London double-decker buses, which in 2010 were joined by two [modern double-decker buses](https://unitrans.ucdavis.edu/media/uploads/2017/10/18/new-dd-bus-with-bikes.jpg).",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/201070929_sustainability_5050_8.jpg",
-          "filename": "201070929_sustainability_5050.jpg"
-      },
-      "time": "2018-08-15T22:00:00",
-      "end": "2018-08-15T22:45:00",
-      "rsvp": "",
-      "eventType": "Activity",
-      "sponsors": [],
-      "organizer": [],
-      "venue": {
-          "title": "Hyatt Parking Lot",
-          "building": "Hyatt Place",
-          "room": null,
-          "address": {
-              "street": "173 Old Davis Road 173 Old Davis Road",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.53520919572,
-              "lng": -121.74574013477
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Campus Bus Tour",
-      "description": "Take a break and take a ride through the UC Davis campus on a double-decker bus. Unitrans is well-known for our fleet of historic London double-decker buses, which in 2010 were joined by two [modern double-decker buses](https://unitrans.ucdavis.edu/media/uploads/2017/10/18/new-dd-bus-with-bikes.jpg).",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/201070929_sustainability_5050_9.jpg",
-          "filename": "201070929_sustainability_5050.jpg"
-      },
-      "time": "2018-08-15T23:00:00",
-      "end": "2018-08-15T23:45:00",
-      "rsvp": "",
-      "eventType": "Activity",
-      "sponsors": [],
-      "organizer": [],
-      "venue": {
-          "title": "Hyatt Parking Lot",
-          "building": "Hyatt Place",
-          "room": null,
-          "address": {
-              "street": "173 Old Davis Road 173 Old Davis Road",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.53520919572,
-              "lng": -121.74574013477
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Bowling at the Memorial Union",
-      "description": "Have some spare time? Check out the bowling alley at the Memorial Union on campus.\n\nThe Games Area has 12 bowling lanes. Bring your friends to play a quick game or rent out a lane by the hour! Bowling shoes are required. Bring your own socks please.",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/20170503_memorial_union_8604.jpg",
-          "filename": "20170503_memorial_union_8604.jpg"
-      },
-      "time": "2018-08-15T02:00:00",
-      "end": "2018-08-15T04:00:00",
-      "rsvp": "",
-      "eventType": "Activity",
-      "sponsors": [],
-      "organizer": [],
-      "venue": null
-  },
-  {
-      "type": "event",
-      "title": "Morning Jog through the Arboretum",
-      "description": "",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/20120522_arboretum_dramatic_0022.jpg",
-          "filename": "20120522_arboretum_dramatic_0022.jpg"
-      },
-      "time": "2018-08-15T13:15:00",
-      "end": "2018-08-15T14:00:00",
-      "rsvp": "",
-      "eventType": "Activity",
-      "sponsors": [],
-      "organizer": [],
-      "venue": null
-  },
-  {
-      "type": "event",
-      "title": "Morning Walk through the Arboretum",
-      "description": "Walk up with a refreshing walk through the UC Davis Arboretum with a tour through California's living garden. This tour will be led by [Warren Roberts](http://publicgarden.ucdavis.edu/in-the-news/uc-davis-arboretum-superintendent-emeritus-warren-roberts-featured-in-davis-enterprise), the Superintendent Emeritus of the Arboretum.",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/201611031_arboretum_landscape_4928.jpg",
-          "filename": "201611031_arboretum_landscape_4928.jpg"
-      },
-      "time": "2018-08-14T13:30:00",
-      "end": "2018-08-14T14:30:00",
-      "rsvp": "",
-      "eventType": "Activity",
-      "sponsors": [],
-      "organizer": [],
-      "venue": null
-  },
-  {
-      "type": "event",
-      "title": "Lunch",
-      "description": "Fortify yourself for an afternoon of conference sessions and networking with your colleagues.",
-      "image": null,
-      "time": "2018-08-14T18:30:00",
-      "end": "2018-08-14T20:00:00",
-      "rsvp": "Lunch sponsored by [Microsoft](/sponsor/microsoft). Desserts sponsored by [Intervision Systems](/sponsor/intervision-systems)",
-      "eventType": "Meal/Snack",
-      "sponsors": [
-          "InterVision Systems",
-          "Microsoft"
-      ],
-      "organizer": [],
-      "venue": {
-          "title": "Grand Foyer - Gallagher Hall",
-          "building": "Maurice J. Gallagher Jr Hall",
-          "room": "Grand Foyer",
-          "address": {
-              "street": "540 Alumni Lane 540 Alumni Lane",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.5347983,
-              "lng": -121.747254
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Happy Hour Social Mixer",
-      "description": "Get to know your community during the social mixer. This networking event is reserved for just that. All of us are here because we share things in common; take this opportunity to connect with others that share your interests. Mix and mingle, find your counterparts across the UC system, and enjoy!",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/20130222_bike_egg_3790.jpg",
-          "filename": "20130222_bike_egg_3790.jpg"
-      },
-      "time": "2018-08-14T23:30:00",
-      "end": "2018-08-15T01:30:00",
-      "rsvp": "",
-      "eventType": "Meal/Snack",
-      "sponsors": [],
-      "organizer": [],
-      "venue": {
-          "title": "Ballroom - Conference Center",
-          "building": "Conference Center",
-          "room": "Ballroom",
-          "address": {
-              "street": "550 Alumni Lane 550 Alumni Lane",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.5344429,
-              "lng": -121.7473024
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Keynote Speaker: Andrew Isaacs",
-      "description": "Keynote speak Andrew Mansfield Isaacs will open Wednesday's schedule of events.\n\n##### Andrew Mansfield Isaacs\n\nUniversity of California, Berkeley, Adjunct Professor, Haas School of Business\n\nFaculty Director, Center for Executive Education\n\nAndrew Isaacs is a successful scientist, business executive, entrepreneur, and educator. He is passionate about mentoring the next generation of business leaders and has a strong track record of helping entrepreneurs launch their careers. Isaacs has worked at the crossroads of Silicon Valley technology and business innovation for 35 years, 20 of those years at UC Berkeley, helping start-ups and established companies create and execute successful innovation strategies.\n\nIsaacs joined the UC Berkeley faculty in 1999. In 2000 he was appointed Executive Director of UC Berkeley’s Management of Technology Program, the joint program of the Haas School of Business and College of Engineering. He co-founded UC Berkeley’s Center for Energy and Environmental Innovation in 2005, and since 2006 has served as Faculty Director of UC Berkeley’s Center for Executive Education. Isaacs is ranked one of the Top 15 professors in the US by 360Career.\n\n##### Graduate Instruction\n\nIsaacs teaches five MBA and Executive-level courses at UC Berkeley, and has instructed over 2,000 students in his courses:\n\n*   Opportunity Recognition\n*   High-tech Marketing\n*   Innovation Strategies for Emerging Technologies\n*   Technology Innovation\n*   Technology and Entrepreneurship in Silicon Valley\n\n##### Executive Education and Consulting\n\nIn addition to his work at UC Berkeley, Isaacs has taught Executive-level courses for more than 90 corporations, government agencies and other groups in the US, Europe and Asia. His courses focus on leadership, marketing, and innovation strategy. A list of current and prior engagements follows.\n\n##### Before Berkeley\n\nPrior to joining UC Berkeley, Isaacs held positions as a marketing and technology executive at public and private companies in Silicon Valley. Before coming to Silicon Valley, Isaacs was Senior Scientist at the NASA Johnson Space Center in Houston, Texas. He holds BS and MS degrees in Geochemistry from the University of Michigan.",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/Isaacs%20-%20photo.png",
-          "filename": "Isaacs - photo.png"
-      },
-      "time": "2018-08-15T17:00:00",
-      "end": "2018-08-15T18:30:00",
-      "rsvp": "",
-      "eventType": "Keynote",
-      "sponsors": [],
-      "organizer": [],
-      "venue": {
-          "title": "Mondavi Center, Jackson Hall",
-          "building": "Mondavi Center",
-          "room": "Jackson Hall",
-          "address": {
-              "street": "Mrak Hall Drive Mrak Hall Drive",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.534634,
-              "lng": -121.748777
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Keynote Speaker: Diane Bryant",
-      "description": "Keynote speaker, Diane Bryant, will open Wednesday's schedule of events.\n\n**Diane Bryant, COO Google Cloud**\n\nDiane M. Bryant is focused on accelerating the scale and reach of Google Cloud. Most recently, Bryant was Group President of Intel’s Data Center Group, the worldwide organization that develops server, storage and network platforms for the digital services economy, growing it to $17 billion in revenue in 2016. Prior to that, Bryant was Intel’s Corporate Vice President and Chief Information Officer, responsible for the corporate-wide information technology solutions and services that enable Intel’s business.\n\nBryant sits on the board of directors for United Technologies Corporation, was named among Fortune’s 50 Most Powerful Women in Business in 2015 and 2016, and is a tireless advocate for women and underrepresented minorities in the fields of engineering and technology. She created the UC Davis Diane Bryant Endowed Scholarship for Women in Engineering and has also served on the technical board of the Anita Borg Institute, a non-profit organization focused on the advancement of women in computing.\n\nBryant received her bachelor’s degree in electrical engineering from U.C. Davis in 1985. She attended the Stanford Executive Program in 2011 and holds four U.S. patents.",
-      "image": {
-          "url": "/sites/default/files/event/2018-05/DianeBryantPhoto.jpg",
-          "filename": "DianeBryantPhoto.jpg"
-      },
-      "time": "2018-08-14T17:00:00",
-      "end": "2018-08-14T18:30:00",
-      "rsvp": "",
-      "eventType": "Keynote",
-      "sponsors": [],
-      "organizer": [],
-      "venue": {
-          "title": "Mondavi Center, Jackson Hall",
-          "building": "Mondavi Center",
-          "room": "Jackson Hall",
-          "address": {
-              "street": "Mrak Hall Drive Mrak Hall Drive",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.534634,
-              "lng": -121.748777
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Lunch",
-      "description": "Fortify yourself for an afternoon of conference sessions and networking with your colleagues.",
-      "image": null,
-      "time": "2018-08-15T18:30:00",
-      "end": "2018-08-15T20:00:00",
-      "rsvp": "Lunch sponsored by [Dasher Technologies](/sponsor/dasher-technologies). Desserts sponsored by [ePlus](/sponsor/eplus).",
-      "eventType": "Meal/Snack",
-      "sponsors": [
-          "Dasher Technologies",
-          "ePlus"
-      ],
-      "organizer": [],
-      "venue": {
-          "title": "Grand Foyer - Gallagher Hall",
-          "building": "Maurice J. Gallagher Jr Hall",
-          "room": "Grand Foyer",
-          "address": {
-              "street": "540 Alumni Lane 540 Alumni Lane",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.5347983,
-              "lng": -121.747254
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Birds of a Feather",
-      "description": "",
-      "image": null,
-      "time": "2018-08-14T18:30:00",
-      "end": "2018-08-14T20:00:00",
-      "rsvp": "",
-      "eventType": "Birds of a Feather",
-      "sponsors": [],
-      "organizer": [],
-      "venue": null
-  },
-  {
-      "type": "event",
-      "title": "Birds of a Feather",
-      "description": "",
-      "image": null,
-      "time": "2018-08-15T18:30:00",
-      "end": "2018-08-15T20:00:00",
-      "rsvp": "",
-      "eventType": "Birds of a Feather",
-      "sponsors": [],
-      "organizer": [],
-      "venue": null
-  },
-  {
-      "type": "event",
-      "title": "All UC DocuSign Meet Up",
-      "description": "DocuSign is being used in one way or another at all UC locations for electronic signature processes and forms automation. The UC-wide DocuSign special-interest-group continues to meet on monthly conference calls and via Slack. This forum will provide a face-to-face meet-up similar to the one held last year at UCCSC in San Diego. This forum will be open to any interested UCCSC attendees and will focus on sharing recent DocuSign activities, issues and directions from the reps each location. Please note there is a separate introductory session for DocuSign on the program where people who are not already active in the DocuSign SIG can learn more about the product and uses across UC.",
-      "image": null,
-      "time": "2018-08-14T18:30:00",
-      "end": "2018-08-14T19:30:00",
-      "rsvp": "Contact Eric Taggart for more information: [etaggart@uci.edu](mailto:etaggart@uci.edu)",
-      "eventType": "Birds of a Feather",
-      "sponsors": [],
-      "organizer": [
-          {
-              "name": "Eric Taggart",
-              "bio": "Associate Director, Enterprise Applications - UCI Office of Information Technology\r\n\r\nI've been with UC since 1981 (UC Irvine Registrar's Office student programmer).  Co-created ASSIST (Articulation System Stimulating Interinstitutional Student Transfer) in 1984 as the lead developer, went on to serve as the Statewide Director for ASSIST from 1989 thru 2008 (under UCOP but located in Irvine).  UC Irvine Graduate Division IT Director in 2008, added Office of Research IT and other groups in subsequent years.  Now Associate Director, Enterprise Applications and overseeing Office of Research IT, HR IT, UCPath IT, Transportation & Distribution Services IT, Facilities Management IT, and Accounting/Financials/KFS IT (and some other miscellaneous).",
-              "company": "UC Irvine",
-              "photo": null
-          }
-      ],
-      "venue": null
-  },
-  {
-      "type": "event",
-      "title": "Documentation for a Product or Service",
-      "description": "For departments/teams who provide a technical product or service for the campus (for example, a website platform or hosting service, a learning management system, document management, etc.), and who also provide documentation on how to use that product or service. Discussion could include what platforms are used for documentation, how often documentation is updated, how it's organized, and more. The goal of this discussion would be to share tips and ideas so that we can better serve our customers with our documentation.",
-      "image": null,
-      "time": "2018-08-14T18:30:00",
-      "end": "2018-08-14T19:30:00",
-      "rsvp": "",
-      "eventType": "Birds of a Feather",
-      "sponsors": [],
-      "organizer": [
-          {
-              "name": "Anna Gazdowicz",
-              "bio": "Anna is a Web and Accessibility Specialist at UC Berkeley, in central IT, for the Web Platform Services team. Web Platform Services manages the Open Berkeley website platform (turnkey web platform solution for campus websites), helps campus departments adhere to the UC web accessibility policy (clinics, consultation, resources), and facilitates the campus relationship with Pantheon (external website hosting provider). She lives in Berkeley with her husband, son, and cat, and enjoys music, podcasts, running, riding her bike, cooking, and eating.",
-              "company": "UC Berkeley",
-              "photo": null
-          }
-      ],
-      "venue": null
-  },
-  {
-      "type": "event",
-      "title": "Business Continuity Planners (BCP) and IT Disaster Recovery (ITDR) Planners at UC",
-      "description": "Meet with other Business Continuity Planners and IT Disaster Recovery Planners from UC campuses and Medical Centers to discuss trends, experiences, tools and more.",
-      "image": null,
-      "time": "2018-08-15T18:30:00",
-      "end": "2018-08-15T19:30:00",
-      "rsvp": "Contact Louis Zeoli for more information or to suggest additional discussion topics: [louis.zeoli@ucop.edu](mailto:louis.zeoli@ucop.edu)",
-      "eventType": "Birds of a Feather",
-      "sponsors": [],
-      "organizer": [
-          {
-              "name": "Louis Zeoli",
-              "bio": null,
-              "company": "UC Office of the President"
-          }
-      ],
-      "venue": null
-  },
-  {
-      "type": "event",
-      "title": "Early Registration",
-      "description": "Early registration will be offered outside the UC Davis Conference Center.",
-      "image": null,
-      "time": "2018-08-13T23:00:00",
-      "end": "2018-08-14T00:30:00",
-      "rsvp": "",
-      "eventType": "",
-      "sponsors": [],
-      "organizer": [],
-      "venue": {
-          "title": "UC Davis Conference Center",
-          "building": "Conference Center",
-          "room": null,
-          "address": {
-              "street": "550 Alumni Lane 550 Alumni Lane",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.5344429,
-              "lng": -121.7473024
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Registration",
-      "description": "Registration will be offered at the Good Life Garden during the [Welcome Dinner event](/schedule/2018-08-13/welcome-dinner).",
-      "image": null,
-      "time": "2018-08-14T00:30:00",
-      "end": "2018-08-14T04:30:00",
-      "rsvp": "",
-      "eventType": "General",
-      "sponsors": [],
-      "organizer": [],
-      "venue": {
-          "title": "Good Life Garden",
-          "building": "Robert Mondavi Institute",
-          "room": "Good Life Garden",
-          "address": {
-              "street": "Old Davis Road Old Davis Road",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.532763293583,
-              "lng": -121.75087433183
-          }
-      }
-  },
-  {
-      "type": "event",
-      "title": "Breakfast",
-      "description": "Energize yourself for a full day of sessions and activities. Wednesday morning breakfast will be held in the Grand Foyer of Gallagher Hall.",
-      "image": null,
-      "time": "2018-08-15T14:30:00",
-      "end": "2018-08-15T15:30:00",
-      "rsvp": "",
-      "eventType": "Meal/Snack",
-      "sponsors": [
-          "Laserfiche"
-      ],
-      "organizer": [],
-      "venue": {
-          "title": "Grand Foyer - Gallagher Hall",
-          "building": "Maurice J. Gallagher Jr Hall",
-          "room": "Grand Foyer",
-          "address": {
-              "street": "540 Alumni Lane 540 Alumni Lane",
-              "city": "Davis",
-              "state": "CA",
-              "postalCode": "95616"
-          },
-          "location": {
-              "lat": 38.5347983,
-              "lng": -121.747254
-          }
-      }
-  }
+    {
+        "type": "event",
+        "title": "Welcome Dinner",
+        "description": "UC Davis and UCCSC Platinum Sponsor, Cisco, are pleased to host the UCCSC Monday night reception on the grounds of the [Robert Mondavi Institute](http://robertmondaviinstitute.ucdavis.edu/) Good Life Garden. The [Good Life Garden](http://www.goodlifegarden.ucdavis.edu/location) contains an ever-changing edible landscape, which features organic and sustainably grown vegetables, herbs and flowers.\n\nOn Monday, August 13, enjoy food and wine in a beautiful setting and mingle with your colleagues with a view to a vineyard.",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/20160830_grape_crush_9977.jpg",
+            "filename": "20160830_grape_crush_9977.jpg"
+        },
+        "time": "2018-08-14T01:00:00.000Z",
+        "end": "2018-08-14T04:00:00.000Z",
+        "rsvp": "[UCCSC registration](/schedule/2018-08-13/registration) will be available at the Monday night reception.",
+        "eventType": "Meal/Snack",
+        "sponsors": [
+            "Cisco Systems, Inc."
+        ],
+        "organizer": [],
+        "venue": {
+            "title": "Good Life Garden",
+            "building": "Robert Mondavi Institute",
+            "room": "Good Life Garden",
+            "address": {
+                "street": "Old Davis Road Old Davis Road",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.532763293583,
+                "lng": -121.75087433183
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Morning Yoga",
+        "description": "A certified personal trainer will lead an outdoor morning yoga session. Participants will require a longer warm-up but will experience yoga the traditional way. Power Vinyasa Yoga is a combination of deep breathing and specifically sequenced sets of flowing yoga poses. It builds strength, increases endurance, releases tension, and creates more flexibility in the entire body.",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/20170509_yoga_9526.jpg",
+            "filename": "20170509_yoga_9526.jpg"
+        },
+        "time": "2018-08-14T13:15:00.000Z",
+        "end": "2018-08-14T14:00:00.000Z",
+        "rsvp": "",
+        "eventType": "Activity",
+        "sponsors": [],
+        "organizer": [],
+        "venue": null
+    },
+    {
+        "type": "event",
+        "title": "UC Drupal Community of Practice",
+        "description": "The UC Drupal Collaboration continues to gain momentum across the UC System. Drupal is the primary web publishing platform for the vast majority of UC campuses. In this meeting, we will come together to discuss the [UC-Wide SiteFarm platform](/sessions/meet-sitefarm-university-californias-drupal-8-collaboration) and best practices for development, service delivery, documentation and training, and more.\n\nIf you use Drupal in the UC System, you're not gonna want to miss this!",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/druplicon-large.png",
+            "filename": "druplicon-large.png"
+        },
+        "time": "2018-08-13T21:00:00.000Z",
+        "end": "2018-08-14T00:00:00.000Z",
+        "rsvp": "",
+        "eventType": "Activity",
+        "sponsors": [],
+        "organizer": [
+            {
+                "name": "Shawn DeArmond",
+                "bio": "Shawn is the Web Architect for Information and Educational Technology at UC Davis. He supervises the Web Development team, which offers custom web development services to campus units, as well as builds and maintains the SiteFarm web platform service.\r\n\r\nShawn has been a UC Davis employee since 1997 and cut his teeth at the School of Education. Now in IET, he drives a high-performing team implementing state-of-the-art web technology. They use highly evolved development methodologies and workflows including established version control strategies, code-review practices, and automated testing, builds, and deployment.\r\n\r\nIn addition his work at UC Davis, Shawn is a founding member of the UC Drupal Collaboration, along with UCLA and UC San Francisco, in an effort to save costs and create a community of practice of web development across the UC System. He has also organized the Higher Education Drupal Summit at the Bay Area Drupal Camp and DrupalCon since 2010.",
+                "company": "UC Davis",
+                "photo": null
+            }
+        ],
+        "venue": {
+            "title": "Founders Board Room - Alumni Center",
+            "building": "Walter A. Buehler Alumni Center",
+            "room": "104 / Founders Board Room",
+            "address": {
+                "street": "530 Alumni Lane 530 Alumni Lane",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.5349753,
+                "lng": -121.7481516
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Morning Yoga",
+        "description": "A certified personal trainer will lead an outdoor morning yoga session. Participants will require a longer warm-up but will experience yoga the traditional way. Power Vinyasa Yoga is a combination of deep breathing and specifically sequenced sets of flowing yoga poses. It builds strength, increases endurance, releases tension, and creates more flexibility in the entire body.",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/20170509_yoga_9526_0.jpg",
+            "filename": "20170509_yoga_9526.jpg"
+        },
+        "time": "2018-08-15T13:15:00.000Z",
+        "end": "2018-08-15T14:00:00.000Z",
+        "rsvp": "",
+        "eventType": "Activity",
+        "sponsors": [],
+        "organizer": [],
+        "venue": null
+    },
+    {
+        "type": "event",
+        "title": "Breakfast",
+        "description": "Energize yourself for a full day of sessions and activities. Tuesday morning breakfast - sponsored by Amazon Web Services - will be held in the Grand Foyer of Gallagher Hall.",
+        "image": null,
+        "time": "2018-08-14T14:30:00.000Z",
+        "end": "2018-08-14T15:45:00.000Z",
+        "rsvp": "Sponsored by [Amazon Web Services](/sponsor/amazon-web-services)",
+        "eventType": "Meal/Snack",
+        "sponsors": [
+            "Amazon Web Services"
+        ],
+        "organizer": [],
+        "venue": {
+            "title": "Grand Foyer - Gallagher Hall",
+            "building": "Maurice J. Gallagher Jr Hall",
+            "room": "Grand Foyer",
+            "address": {
+                "street": "540 Alumni Lane 540 Alumni Lane",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.5347983,
+                "lng": -121.747254
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Campus Bus Tour",
+        "description": "Take a ride through the UC Davis campus on a double-decker bus. Unitrans is well-known for our fleet of historic London double-decker buses, which in 2010 were joined by two [modern double-decker buses](https://unitrans.ucdavis.edu/media/uploads/2017/10/18/new-dd-bus-with-bikes.jpg).",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/201070929_sustainability_5050.jpg",
+            "filename": "201070929_sustainability_5050.jpg"
+        },
+        "time": "2018-08-14T15:45:00.000Z",
+        "end": "2018-08-14T16:30:00.000Z",
+        "rsvp": "",
+        "eventType": "Activity",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Hyatt Parking Lot",
+            "building": "Hyatt Place",
+            "room": null,
+            "address": {
+                "street": "173 Old Davis Road 173 Old Davis Road",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.53520919572,
+                "lng": -121.74574013477
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Campus Bus Tour",
+        "description": "Take a ride through the UC Davis campus on a double-decker bus. Unitrans is well-known for our fleet of historic London double-decker buses, which in 2010 were joined by two [modern doubledecker buses](https://unitrans.ucdavis.edu/media/uploads/2017/10/18/new-dd-bus-with-bikes.jpg).",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/201070929_sustainability_5050_0.jpg",
+            "filename": "201070929_sustainability_5050.jpg"
+        },
+        "time": "2018-08-14T20:00:00.000Z",
+        "end": "2018-08-14T20:45:00.000Z",
+        "rsvp": "",
+        "eventType": "Activity",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Hyatt Parking Lot",
+            "building": "Hyatt Place",
+            "room": null,
+            "address": {
+                "street": "173 Old Davis Road 173 Old Davis Road",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.53520919572,
+                "lng": -121.74574013477
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Campus Bus Tour",
+        "description": "Take a ride through the UC Davis campus on a double-decker bus. Unitrans is well-known for our fleet of historic London double-decker buses, which in 2010 were joined by two [modern double-decker buses](https://unitrans.ucdavis.edu/media/uploads/2017/10/18/new-dd-bus-with-bikes.jpg).",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/201070929_sustainability_5050_1.jpg",
+            "filename": "201070929_sustainability_5050.jpg"
+        },
+        "time": "2018-08-14T21:00:00.000Z",
+        "end": "2018-08-14T21:45:00.000Z",
+        "rsvp": "",
+        "eventType": "Activity",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Hyatt Parking Lot",
+            "building": "Hyatt Place",
+            "room": null,
+            "address": {
+                "street": "173 Old Davis Road 173 Old Davis Road",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.53520919572,
+                "lng": -121.74574013477
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Campus Bus Tour",
+        "description": "Take a ride through the UC Davis campus on a double-decker bus. Unitrans is well-known for our fleet of historic London double-decker buses, which in 2010 were joined by two [modern double-decker buses](https://unitrans.ucdavis.edu/media/uploads/2017/10/18/new-dd-bus-with-bikes.jpg).",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/201070929_sustainability_5050_2.jpg",
+            "filename": "201070929_sustainability_5050.jpg"
+        },
+        "time": "2018-08-14T22:00:00.000Z",
+        "end": "2018-08-14T22:45:00.000Z",
+        "rsvp": "",
+        "eventType": "Activity",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Hyatt Parking Lot",
+            "building": "Hyatt Place",
+            "room": null,
+            "address": {
+                "street": "173 Old Davis Road 173 Old Davis Road",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.53520919572,
+                "lng": -121.74574013477
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Campus Bus Tour",
+        "description": "Take a ride through the UC Davis campus on a double-decker bus. Unitrans is well-known for our fleet of historic London double-decker buses, which in 2010 were joined by two [modern double-decker buses](https://unitrans.ucdavis.edu/media/uploads/2017/10/18/new-dd-bus-with-bikes.jpg).",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/201070929_sustainability_5050_4.jpg",
+            "filename": "201070929_sustainability_5050.jpg"
+        },
+        "time": "2018-08-15T15:45:00.000Z",
+        "end": "2018-08-15T16:30:00.000Z",
+        "rsvp": "",
+        "eventType": "Activity",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Hyatt Parking Lot",
+            "building": "Hyatt Place",
+            "room": null,
+            "address": {
+                "street": "173 Old Davis Road 173 Old Davis Road",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.53520919572,
+                "lng": -121.74574013477
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Campus Bus Tour",
+        "description": "Take a ride through the UC Davis campus on a double-decker bus. Unitrans is well-known for our fleet of historic London double-decker buses, which in 2010 were joined by two [modern double-decker buses](https://unitrans.ucdavis.edu/media/uploads/2017/10/18/new-dd-bus-with-bikes.jpg).",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/201070929_sustainability_5050_5.jpg",
+            "filename": "201070929_sustainability_5050.jpg"
+        },
+        "time": "2018-08-15T20:00:00.000Z",
+        "end": "2018-08-15T20:45:00.000Z",
+        "rsvp": "",
+        "eventType": "Activity",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Hyatt Parking Lot",
+            "building": "Hyatt Place",
+            "room": null,
+            "address": {
+                "street": "173 Old Davis Road 173 Old Davis Road",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.53520919572,
+                "lng": -121.74574013477
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Campus Bus Tour",
+        "description": "Take a break and take a ride through the UC Davis campus on a double-decker bus. Unitrans is well-known for our fleet of historic London double-decker buses, which in 2010 were joined by two [modern double-decker buses](https://unitrans.ucdavis.edu/media/uploads/2017/10/18/new-dd-bus-with-bikes.jpg).",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/201070929_sustainability_5050_6.jpg",
+            "filename": "201070929_sustainability_5050.jpg"
+        },
+        "time": "2018-08-15T21:00:00.000Z",
+        "end": "2018-08-15T21:45:00.000Z",
+        "rsvp": "",
+        "eventType": "Activity",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Hyatt Parking Lot",
+            "building": "Hyatt Place",
+            "room": null,
+            "address": {
+                "street": "173 Old Davis Road 173 Old Davis Road",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.53520919572,
+                "lng": -121.74574013477
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Campus Bus Tour",
+        "description": "Take a ride through the UC Davis campus on a double-decker bus. Unitrans is well-known for our fleet of historic London double-decker buses, which in 2010 were joined by two [modern double-decker buses](https://unitrans.ucdavis.edu/media/uploads/2017/10/18/new-dd-bus-with-bikes.jpg).",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/201070929_sustainability_5050_8.jpg",
+            "filename": "201070929_sustainability_5050.jpg"
+        },
+        "time": "2018-08-15T22:00:00.000Z",
+        "end": "2018-08-15T22:45:00.000Z",
+        "rsvp": "",
+        "eventType": "Activity",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Hyatt Parking Lot",
+            "building": "Hyatt Place",
+            "room": null,
+            "address": {
+                "street": "173 Old Davis Road 173 Old Davis Road",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.53520919572,
+                "lng": -121.74574013477
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Campus Bus Tour",
+        "description": "Take a ride through the UC Davis campus on a double-decker bus. Unitrans is well-known for our fleet of historic London double-decker buses, which in 2010 were joined by two [modern double-decker buses](https://unitrans.ucdavis.edu/media/uploads/2017/10/18/new-dd-bus-with-bikes.jpg).",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/201070929_sustainability_5050_9.jpg",
+            "filename": "201070929_sustainability_5050.jpg"
+        },
+        "time": "2018-08-15T23:00:00.000Z",
+        "end": "2018-08-15T23:45:00.000Z",
+        "rsvp": "",
+        "eventType": "Activity",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Hyatt Parking Lot",
+            "building": "Hyatt Place",
+            "room": null,
+            "address": {
+                "street": "173 Old Davis Road 173 Old Davis Road",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.53520919572,
+                "lng": -121.74574013477
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Bowling at the Memorial Union",
+        "description": "Have some spare time? Check out the bowling alley at the Memorial Union on campus.\n\nFour bowling lanes are reserved for UCCSC strikers. Bring your friends to play a quick game. Bowling shoes are required. Bring your own socks please.",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/20170503_memorial_union_8604.jpg",
+            "filename": "20170503_memorial_union_8604.jpg"
+        },
+        "time": "2018-08-15T02:00:00.000Z",
+        "end": "2018-08-15T04:00:00.000Z",
+        "rsvp": "",
+        "eventType": "Activity",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Memorial Union (MU) Games Area",
+            "building": "Memorial Union",
+            "room": "MU Games Area",
+            "address": {
+                "street": "Memorial Union Memorial Union",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.542501371449,
+                "lng": -121.74938321114
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Morning jog through the Arboretum",
+        "description": "",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/20120522_arboretum_dramatic_0022.jpg",
+            "filename": "20120522_arboretum_dramatic_0022.jpg"
+        },
+        "time": "2018-08-15T13:15:00.000Z",
+        "end": "2018-08-15T14:00:00.000Z",
+        "rsvp": "",
+        "eventType": "Activity",
+        "sponsors": [],
+        "organizer": [],
+        "venue": null
+    },
+    {
+        "type": "event",
+        "title": "Morning Walk through the Arboretum",
+        "description": "Wake up and take a refreshing stroll through the UC Davis Arboretum, including a tour through California's living garden. This special tour will be led by [Warren Roberts](http://publicgarden.ucdavis.edu/in-the-news/uc-davis-arboretum-superintendent-emeritus-warren-roberts-featured-in-davis-enterprise), the Superintendent Emeritus of the Arboretum.",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/201611031_arboretum_landscape_4928.jpg",
+            "filename": "201611031_arboretum_landscape_4928.jpg"
+        },
+        "time": "2018-08-14T13:30:00.000Z",
+        "end": "2018-08-14T14:30:00.000Z",
+        "rsvp": "",
+        "eventType": "Activity",
+        "sponsors": [],
+        "organizer": [],
+        "venue": null
+    },
+    {
+        "type": "event",
+        "title": "Lunch",
+        "description": "Fortify yourself for an afternoon of conference sessions and networking with your colleagues. Lunch sponsored by [Microsoft](/sponsor/microsoft). Desserts sponsored by [Intervision Systems](/sponsor/intervision-systems).",
+        "image": null,
+        "time": "2018-08-14T18:30:00.000Z",
+        "end": "2018-08-14T20:00:00.000Z",
+        "rsvp": "Lunch seating available in the Conference Center, and if you prefer outdoors, the Alumni Center Moss Patio.",
+        "eventType": "Meal/Snack",
+        "sponsors": [
+            "InterVision Systems",
+            "Microsoft"
+        ],
+        "organizer": [],
+        "venue": {
+            "title": "Grand Foyer - Gallagher Hall",
+            "building": "Maurice J. Gallagher Jr Hall",
+            "room": "Grand Foyer",
+            "address": {
+                "street": "540 Alumni Lane 540 Alumni Lane",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.5347983,
+                "lng": -121.747254
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Happy Hour Social Mixer",
+        "description": "Get to know your community during the social mixer. This networking event is reserved for just that. All of us are here because we share things in common; take this opportunity to connect with others that share your interests. Mix and mingle, find your counterparts across the UC system, and enjoy!",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/20130222_bike_egg_3790.jpg",
+            "filename": "20130222_bike_egg_3790.jpg"
+        },
+        "time": "2018-08-14T23:30:00.000Z",
+        "end": "2018-08-15T01:30:00.000Z",
+        "rsvp": "",
+        "eventType": "Meal/Snack",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Ballroom - Conference Center",
+            "building": "Conference Center",
+            "room": "Ballroom",
+            "address": {
+                "street": "550 Alumni Lane 550 Alumni Lane",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.5344429,
+                "lng": -121.7473024
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Keynote Speaker: Andrew Isaacs",
+        "description": "Keynote speaker, Andrew Mansfield Isaacs, will open Wednesday's schedule of events.\n\nAndrew Isaacs is a successful scientist, business executive, entrepreneur, and educator. He is passionate about mentoring the next generation of business leaders and has a strong track record of helping entrepreneurs launch their careers. Isaacs has worked at the crossroads of Silicon Valley technology and business innovation for 35 years, 20 of those years at UC Berkeley, helping start-ups and established companies create and execute successful innovation strategies.\n\nIsaacs joined the UC Berkeley faculty in 1999. In 2000 he was appointed Executive Director of UC Berkeley’s Management of Technology Program, the joint program of the Haas School of Business and College of Engineering. He co-founded UC Berkeley’s Center for Energy and Environmental Innovation in 2005, and since 2006 has served as Faculty Director of UC Berkeley’s Center for Executive Education. Isaacs is ranked one of the Top 15 professors in the US by 360Career.",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/Isaacs%20-%20photo.png",
+            "filename": "Isaacs - photo.png"
+        },
+        "time": "2018-08-15T17:00:00.000Z",
+        "end": "2018-08-15T18:30:00.000Z",
+        "rsvp": "##### Graduate Instruction\n\nIsaacs teaches five MBA and Executive-level courses at UC Berkeley, and has instructed over 2,000 students in his courses:\n\n*   Opportunity Recognition\n*   High-tech Marketing\n*   Innovation Strategies for Emerging Technologies\n*   Technology Innovation\n*   Technology and Entrepreneurship in Silicon Valley\n\n##### Executive Education and Consulting\n\nIn addition to his work at UC Berkeley, Isaacs has taught Executive-level courses for more than 90 corporations, government agencies and other groups in the US, Europe and Asia. His courses focus on leadership, marketing, and innovation strategy. A list of current and prior engagements follows.\n\n##### Before Berkeley\n\nPrior to joining UC Berkeley, Isaacs held positions as a marketing and technology executive at public and private companies in Silicon Valley. Before coming to Silicon Valley, Isaacs was Senior Scientist at the NASA Johnson Space Center in Houston, Texas. He holds BS and MS degrees in Geochemistry from the University of Michigan.",
+        "eventType": "Keynote",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Mondavi Center, Jackson Hall",
+            "building": "Mondavi Center",
+            "room": "Jackson Hall",
+            "address": {
+                "street": "Mrak Hall Drive Mrak Hall Drive",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.534634,
+                "lng": -121.748777
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Keynote Speaker: Diane Bryant",
+        "description": "Keynote speaker, Diane Bryant, will open Wednesday's schedule of events.\n\nDiane Bryant, COO Google Cloud\n\nDiane M. Bryant is focused on accelerating the scale and reach of Google Cloud. Most recently, Bryant was Group President of Intel’s Data Center Group, the worldwide organization that develops server, storage and network platforms for the digital services economy, growing it to $17 billion in revenue in 2016. Prior to that, Bryant was Intel’s Corporate Vice President and Chief Information Officer, responsible for the corporate-wide information technology solutions and services that enable Intel’s business.\n\nBryant sits on the board of directors for United Technologies Corporation, was named among Fortune’s 50 Most Powerful Women in Business in 2015 and 2016, and is a tireless advocate for women and underrepresented minorities in the fields of engineering and technology. She created the UC Davis Diane Bryant Endowed Scholarship for Women in Engineering and has also served on the technical board of the Anita Borg Institute, a non-profit organization focused on the advancement of women in computing.\n\nBryant received her bachelor’s degree in electrical engineering from U.C. Davis in 1985. She attended the Stanford Executive Program in 2011 and holds four U.S. patents.",
+        "image": {
+            "url": "/sites/default/files/event/2018-05/DianeBryantPhoto.jpg",
+            "filename": "DianeBryantPhoto.jpg"
+        },
+        "time": "2018-08-14T17:00:00.000Z",
+        "end": "2018-08-14T18:30:00.000Z",
+        "rsvp": "",
+        "eventType": "Keynote",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Mondavi Center, Jackson Hall",
+            "building": "Mondavi Center",
+            "room": "Jackson Hall",
+            "address": {
+                "street": "Mrak Hall Drive Mrak Hall Drive",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.534634,
+                "lng": -121.748777
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Lunch",
+        "description": "Fortify yourself for an afternoon of conference sessions and networking with your colleagues. Lunch sponsored by [Dasher Technologies](/sponsor/dasher-technologies). Desserts sponsored by [ePlus](/sponsor/eplus).",
+        "image": null,
+        "time": "2018-08-15T18:30:00.000Z",
+        "end": "2018-08-15T20:00:00.000Z",
+        "rsvp": "Lunch seating available in the Conference Center. If you prefer eating outdoors, the Alumni Center Moss Patio is open and shady.",
+        "eventType": "Meal/Snack",
+        "sponsors": [
+            "Dasher Technologies",
+            "ePlus"
+        ],
+        "organizer": [],
+        "venue": {
+            "title": "Grand Foyer - Gallagher Hall",
+            "building": "Maurice J. Gallagher Jr Hall",
+            "room": "Grand Foyer",
+            "address": {
+                "street": "540 Alumni Lane 540 Alumni Lane",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.5347983,
+                "lng": -121.747254
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Birds of a Feather: All UC DocuSign Meet Up",
+        "description": "DocuSign is being used in one way or another at all UC locations for electronic signature processes and forms automation. The UC-wide DocuSign special-interest-group continues to meet on monthly conference calls and via Slack. This forum will provide a face-to-face meet-up similar to the one held last year at UCCSC in San Diego. This forum will be open to any interested UCCSC attendees and will focus on sharing recent DocuSign activities, issues and directions from the reps each location. Please note there is a separate introductory session for DocuSign on the program where people who are not already active in the DocuSign SIG can learn more about the product and uses across UC.",
+        "image": null,
+        "time": "2018-08-14T18:30:00.000Z",
+        "end": "2018-08-14T19:30:00.000Z",
+        "rsvp": "Contact Eric Taggart for more information: [etaggart@uci.edu](mailto:etaggart@uci.edu)",
+        "eventType": "Birds of a Feather",
+        "sponsors": [],
+        "organizer": [
+            {
+                "name": "Eric Taggart",
+                "bio": "Associate Director, Enterprise Applications - UCI Office of Information Technology\r\n\r\nI've been with UC since 1981 (UC Irvine Registrar's Office student programmer).  Co-created ASSIST (Articulation System Stimulating Interinstitutional Student Transfer) in 1984 as the lead developer, went on to serve as the Statewide Director for ASSIST from 1989 thru 2008 (under UCOP but located in Irvine).  UC Irvine Graduate Division IT Director in 2008, added Office of Research IT and other groups in subsequent years.  Now Associate Director, Enterprise Applications and overseeing Office of Research IT, HR IT, UCPath IT, Transportation & Distribution Services IT, Facilities Management IT, and Accounting/Financials/KFS IT (and some other miscellaneous).",
+                "company": "UC Irvine",
+                "photo": null
+            }
+        ],
+        "venue": null
+    },
+    {
+        "type": "event",
+        "title": "Birds of a Feather: Documentation for a Product or Service",
+        "description": "For departments/teams who provide a technical product or service for the campus (for example, a website platform or hosting service, a learning management system, document management, etc.), and who also provide documentation on how to use that product or service. Discussion could include what platforms are used for documentation, how often documentation is updated, how it's organized, and more. The goal of this discussion would be to share tips and ideas so that we can better serve our customers with our documentation.",
+        "image": null,
+        "time": "2018-08-14T18:30:00.000Z",
+        "end": "2018-08-14T19:30:00.000Z",
+        "rsvp": "",
+        "eventType": "Birds of a Feather",
+        "sponsors": [],
+        "organizer": [
+            {
+                "name": "Anna Gazdowicz",
+                "bio": "Anna is a Web and Accessibility Specialist at UC Berkeley, in central IT, for the Web Platform Services team. Web Platform Services manages the Open Berkeley website platform (turnkey web platform solution for campus websites), helps campus departments adhere to the UC web accessibility policy (clinics, consultation, resources), and facilitates the campus relationship with Pantheon (external website hosting provider). She lives in Berkeley with her husband, son, and cat, and enjoys music, podcasts, running, riding her bike, cooking, and eating.",
+                "company": "UC Berkeley",
+                "photo": null
+            }
+        ],
+        "venue": null
+    },
+    {
+        "type": "event",
+        "title": "Birds of a Feather: Business Continuity Planners (BCP) and IT Disaster Recovery (ITDR) Planners at UC",
+        "description": "Meet with other Business Continuity Planners and IT Disaster Recovery Planners from UC campuses and Medical Centers to discuss trends, experiences, tools and more.",
+        "image": null,
+        "time": "2018-08-15T18:30:00.000Z",
+        "end": "2018-08-15T19:30:00.000Z",
+        "rsvp": "Contact Louis Zeoli for more information or to suggest additional discussion topics: [louis.zeoli@ucop.edu](mailto:louis.zeoli@ucop.edu)",
+        "eventType": "Birds of a Feather",
+        "sponsors": [],
+        "organizer": [
+            {
+                "name": "Louis Zeoli",
+                "bio": null,
+                "company": "UC Office of the President",
+                "photo": null
+            }
+        ],
+        "venue": null
+    },
+    {
+        "type": "event",
+        "title": "Registration",
+        "description": "Conference registration will be offered at the Good Life Garden during the [Welcome Dinner event](/schedule/2018-08-13/welcome-dinner).",
+        "image": null,
+        "time": "2018-08-13T23:00:00.000Z",
+        "end": "2018-08-14T04:00:00.000Z",
+        "rsvp": "",
+        "eventType": "General",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Good Life Garden",
+            "building": "Robert Mondavi Institute",
+            "room": "Good Life Garden",
+            "address": {
+                "street": "Old Davis Road Old Davis Road",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.532763293583,
+                "lng": -121.75087433183
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Breakfast",
+        "description": "Energize yourself for a full day of sessions and activities. Wednesday morning breakfast, sponsored by Laserfiche, will be held in the Grand Foyer of Gallagher Hall.",
+        "image": null,
+        "time": "2018-08-15T14:30:00.000Z",
+        "end": "2018-08-15T15:30:00.000Z",
+        "rsvp": "",
+        "eventType": "Meal/Snack",
+        "sponsors": [
+            "Laserfiche"
+        ],
+        "organizer": [],
+        "venue": {
+            "title": "Grand Foyer - Gallagher Hall",
+            "building": "Maurice J. Gallagher Jr Hall",
+            "room": "Grand Foyer",
+            "address": {
+                "street": "540 Alumni Lane 540 Alumni Lane",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.5347983,
+                "lng": -121.747254
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Lunch and Learn: Women in Technology Panel - Creating Change",
+        "description": "[Register to attend](https://docs.google.com/forms/d/e/1FAIpQLSdZAaql9Oa6mfXeSgps3bpKdRRlVFiZWG1YLm90Q42OgvgE-A/viewform)\n\nJoin a panel of UC IT women leaders for lunch and be part of a movement for positive change. Facilitated by UC Davis CIO Viji Murali, panel discussions will range from challenges women encounter, to combatting unconscious bias, to building self-confidence, to raising a voice for change. The panel will highlight recommendations for pragmatic actions to ensure UC supports and promotes women in IT. A working group will be formed to follow up on some of the ideas raised in this session and build an empowering work environment for UC women in IT. The panel will be followed by another WIT session: Empowering Women: From History to Practical Change.\n\nLunch will be provided in the Vanderhoef Lobby for up to 60 attendees as part of the session. Because of limited space, people must submit a [registration form](https://docs.google.com/forms/d/e/1FAIpQLSdZAaql9Oa6mfXeSgps3bpKdRRlVFiZWG1YLm90Q42OgvgE-A/viewform) to attend. The form provides an opportunity to submit questions for panelists in advance; submitters’ names will be kept anonymous. Confirmation of registration will be sent to attendees closer to the event.",
+        "image": null,
+        "time": "2018-08-14T18:30:00.000Z",
+        "end": "2018-08-14T20:00:00.000Z",
+        "rsvp": "",
+        "eventType": "Meal/Snack",
+        "sponsors": [],
+        "organizer": [
+            {
+                "name": "Yvonne Tevis",
+                "bio": null,
+                "company": "UC Office of the President"
+            }
+        ],
+        "venue": null
+    },
+    {
+        "type": "event",
+        "title": "Vendor Fair",
+        "description": "The generous sponsors of UCCSC 2018 will be tabling in the Conference Center. Stop by and talk to a representative about your business needs. Collect tickets for the prize drawing at the social hour on Tuesday afternoon. Yes, you do have to be present to win!",
+        "image": null,
+        "time": "2018-08-14T18:30:00.000Z",
+        "end": "2018-08-15T01:30:00.000Z",
+        "rsvp": "",
+        "eventType": "General",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Ballroom - Conference Center",
+            "building": "Conference Center",
+            "room": "Ballroom",
+            "address": {
+                "street": "550 Alumni Lane 550 Alumni Lane",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.5344429,
+                "lng": -121.7473024
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Vendor Fair",
+        "description": "The generous sponsors of UCCSC 2018 will be tabling in the Conference Center. Stop by and talk to a representative about your business needs.",
+        "image": null,
+        "time": "2018-08-15T15:30:00.000Z",
+        "end": "2018-08-15T21:00:00.000Z",
+        "rsvp": "",
+        "eventType": "General",
+        "sponsors": [],
+        "organizer": [],
+        "venue": null
+    },
+    {
+        "type": "event",
+        "title": "Desserts & Door Prizes",
+        "description": "Come to the Vendor Fair area in the Conference Center for some dessert, and stay for the UCCSC Door Prize drawing. We have fabulous prizes to award, including an XBox 1S, 3D Printer, Chromebook, Amazon Echo, Beats headphones, Apple Watch, and more.  You'll get tickets for the drawing at registration. Yes, you do need to be present to win!",
+        "image": null,
+        "time": "2018-08-14T19:15:00.000Z",
+        "end": "2018-08-14T19:45:00.000Z",
+        "rsvp": "",
+        "eventType": "General",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Ballroom - Conference Center",
+            "building": "Conference Center",
+            "room": "Ballroom",
+            "address": {
+                "street": "550 Alumni Lane 550 Alumni Lane",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.5344429,
+                "lng": -121.7473024
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Dessert & Door Prizes",
+        "description": "Come to the Vendor Fair area in the Conference Center for some dessert, and stay for the UCCSC Door Prize drawing. We have fabulous prizes to award, including an XBox 1S, 3D Printer, Chromebook, Amazon Echo, Beats headphones, Apple Watch, and more.  You'll get tickets for the drawing at registration. Yes, you do need to be present to win!",
+        "image": null,
+        "time": "2018-08-15T19:15:00.000Z",
+        "end": "2018-08-15T19:45:00.000Z",
+        "rsvp": "",
+        "eventType": "General",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Ballroom - Conference Center",
+            "building": "Conference Center",
+            "room": "Ballroom",
+            "address": {
+                "street": "550 Alumni Lane 550 Alumni Lane",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.5344429,
+                "lng": -121.7473024
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Ice Cream Cart",
+        "description": "Swing by and grab a cold and refreshing treat, compliments of [Aruba](/sponsor/aruba), one of our generous sponsors! Dairy and non-dairy options available.",
+        "image": null,
+        "time": "2018-08-15T21:30:00.000Z",
+        "end": "2018-08-15T22:30:00.000Z",
+        "rsvp": "",
+        "eventType": "Meal/Snack",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Grand Foyer - Gallagher Hall",
+            "building": "Maurice J. Gallagher Jr Hall",
+            "room": "Grand Foyer",
+            "address": {
+                "street": "540 Alumni Lane 540 Alumni Lane",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.5347983,
+                "lng": -121.747254
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Birds of a Feather: UC Health Profiles and Research Networking",
+        "description": "In May 2018, five UC campuses joined a research networking system called UC Health Profiles, which shows researchers contact information, publications, grants and clinical trials - and connects researchers to their coauthors. UCSF has had the system for years and wants to meet up to discuss faculty engagement, product features and enhancements, and any other topics that might come up for techies supporting researchers with consumer-grade products.",
+        "image": null,
+        "time": "2018-08-14T18:30:00.000Z",
+        "end": "2018-08-14T19:30:00.000Z",
+        "rsvp": "For more information, please contact Brian Turner: [brian.turner@ucsf.edu](mailto:brian.turner@ucsf.edu).",
+        "eventType": "Birds of a Feather",
+        "sponsors": [],
+        "organizer": [
+            {
+                "name": "Brian Turner",
+                "bio": "http://profiles.ucsf.edu/brian.turner \r\nBrian is a member of the Research Technologies program of the Clinical & Translational Science Institute (CTSI) at UCSF. He is the product lead for UCSF Profiles, the UCSF Clinical Trials website, Application Review and Tracking (ART), UCSF Cores Search and some other products launched by CTSI.  Brian joined UCSF and CTSI in January, 2011. \r\nBrian has worked in software for over 20 years and been a product manager in medical software since 2003, including clinical support software, online personal health records, secure online doctor-patient communications and electronically delivered drug warnings. He has extensive experience bringing user-focused products to market. \r\nIn 1997, he earned his MBA from the Haas School of Business at UC Berkeley with a focus in Technology Management and Product Development. Prior to studying business, Brian worked in space systems acquisition at the rank of Captain at Los Angeles Air Force Base. His undergraduate degree is in mechanical engineering from Washington University in St. Louis.",
+                "company": "UCSF"
+            },
+            {
+                "name": "Eric Meeks",
+                "bio": null,
+                "company": "UC San Francisco"
+            }
+        ],
+        "venue": null
+    }
 ]
