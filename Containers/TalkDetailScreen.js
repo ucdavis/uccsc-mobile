@@ -76,7 +76,7 @@ class TalkDetail extends React.Component {
   }
 
   render() {
-    const { title, description, time, duration, room } = this.props;
+    const { title, description, time, duration, venue } = this.props;
     return (
       <Gradient style={styles.container}>
         <ScrollView>
@@ -94,9 +94,11 @@ class TalkDetail extends React.Component {
             <View style={styles.section}>
               <TalkInfo start={time} duration={duration} />
             </View>
-            <View style={styles.section}>
-              <RoomInfo building={room.building} room={room.room} />
-            </View>
+            { venue &&
+              <View style={styles.section}>
+                <RoomInfo building={venue.building} room={venue.room} />
+              </View>
+            }
             <View style={styles.section}>
               <Text style={styles.description}>{ description }</Text>
             </View>

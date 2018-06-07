@@ -52,9 +52,11 @@ class ActivityDetail extends React.Component {
             <View style={styles.section}>
               <TalkInfo start={time} duration={duration} />
             </View>
-            <View style={styles.section}>
-              <RoomInfo building={venue.building} room={venue.room} />
-            </View>
+            { venue && 
+              <View style={styles.section}>
+                  <RoomInfo building={venue.building} room={venue.room} />
+              </View>
+            }
             <View style={styles.section}>
               <Text style={styles.description}>{ description }</Text>
             </View>
