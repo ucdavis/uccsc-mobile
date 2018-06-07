@@ -1,13 +1,7 @@
 import React from 'react';
 import {
-  ImageBackground,
-  Image,
-  Text,
-  View,
-  Animated,
   SectionList,
 } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
 import { connect } from 'react-redux';
 import Config from '../Config/AppConfig';
 import { Images, Metrics } from '../Themes';
@@ -28,24 +22,13 @@ import { GetItemLayout } from '../Utils/SectionList';
 import { startOfDay, isSameDay, isWithinRange, isBefore } from 'date-fns';
 import AppConfig from '../Config/AppConfig';
 
-const AnimatedSectionList = Animated.createAnimatedComponent(SectionList);
-
 class ScheduleList extends React.Component {
 
-  setStarProperty = (talks, starredTalks) => {
-    if (!starredTalks || !starredTalks.length) {
-      return talks;
-    }
-
-    return talks.map(s => {
-      const starred = starredTalks.indexOf(s.title) > -1;
-      return { ...s, starred };
-    });
-  }
-
   async toggleReminder(item) {
-    const { starred, title } = item;
+    const { title } = item;
     const { starTalk, unstarTalk, trackLocalNotification, untrackLocalNotification, localNotifications } = this.props;
+
+    const starred = this.props.starredTalks.indexOf(s.title) > -1;
 
     // create schedule local notification, track it, update star status
     if (!starred) {
@@ -89,14 +72,21 @@ class ScheduleList extends React.Component {
   });
 
   async toggleReminder(item) {
-    const { starred, title } = item;
+    const { title } = item;
     const { starTalk, unstarTalk, trackLocalNotification, untrackLocalNotification, localNotifications } = this.props;
+
+      // trigger state change
+    const starred = this.props.starredTalks.indexOf(title) > -1;
+    if (!starred) {
+      starTalk(title);
+    } else {
+      unstarTalk(title);
+    }
 
     // create schedule local notification, track it, update star status
     if (!starred) {
       const id = await PushNotifications.scheduleTalkReminder(item);
       trackLocalNotification(id, title);
-      starTalk(title);
       return;
     }
 
@@ -106,8 +96,6 @@ class ScheduleList extends React.Component {
       await PushNotifications.cancelTalkReminder(notification.id);
       untrackLocalNotification(notification.id);
     }
-
-    unstarTalk(title);
   }
 
   renderSectionHeader = ({ section }) => { 
@@ -135,6 +123,8 @@ class ScheduleList extends React.Component {
   renderTalk = (item) => {
     const toggleReminder = this.toggleReminder.bind(this, item);
 
+    const starred = this.props.starredTalks.indexOf(item.title) > -1;
+
     let avatarUrl = '';
     if (!!item.speakers && item.speakers.length) {
       // find first speaker with a photo
@@ -151,7 +141,7 @@ class ScheduleList extends React.Component {
         start={item.time}
         duration={item.duration}
         onPress={this.createOnEventPress(item)}
-        starred={item.starred}
+        starred={starred}
         toggleReminder={toggleReminder}
         venue={item.venue}
       />
@@ -217,7 +207,7 @@ class ScheduleList extends React.Component {
     }
 
     return (
-      <AnimatedSectionList
+      <SectionList
         renderItem={this.renderItem}
         renderSectionHeader={this.renderSectionHeader}
         sections={events}
@@ -225,10 +215,6 @@ class ScheduleList extends React.Component {
         contentContainerStyle={styles.listContent}
         getItemLayout={this.getItemLayout}
         stickySectionHeadersEnabled
-        scrollEventThrottle={1}
-        // initialNumToRender={10}
-        // maxToRenderPerBatch={1}
-        // updateCellsBatchingPeriod={100}
         ref={(r) => this.scheduleList = r}
       />
     );
