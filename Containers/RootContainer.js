@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, StatusBar } from 'react-native';
 import { connect } from 'react-redux';
 import { Notifications } from 'expo';
+import AnnouncementActions from '../Redux/AnnouncementsRedux';
 import StartupActions from '../Redux/StartupRedux';
 import NavigationActions from '../Redux/NavigationRedux';
 import NotificationActions from '../Redux/NotificationRedux';
@@ -12,23 +13,36 @@ import styles from './Styles/RootContainerStyles';
 import { registerForPushNotificationsAsync } from '../Services/PushNotifications';
 import NotificationsBar from '../Components/NotificationsBar';
 
-import { getSchedule } from '../Services/Api';
+import { getActivities, getTalks, getNews } from '../Services/Api';
 
 const sessionDeepLinkRegex = /^\/\/session\/(.*)$/gi;
 
-class RootContainer extends Component {
+class RootContainer extends React.Component {
   async componentDidMount() {
-    const { updateSchedule } = this.props;
+    const { updateActivities, updateTalks, updateNews } = this.props;
     // if redux persist is not active fire startup action
     if (!ReduxPersistConfig.active) {
       this.props.startup();
     }
 
-    // fetch schedule updates
-    const schedule = await getSchedule();
-    updateSchedule(schedule);
+    // start schedule update requests
+    const activitiesTask = getActivities();
+    const talksTask = getTalks();
+    const newsTask = getNews();
 
     await registerForPushNotificationsAsync();
+
+    // process requests
+    try {
+      const activities = await activitiesTask;
+      updateActivities(activities);
+      const talks = await talksTask;
+      updateTalks(talks);
+      const news = await newsTask;
+      updateNews(news);
+    } catch (err) {
+      console.error(err);
+    }
 
     // Handle notifications that are received or selected while the app
     // is open. If the app was closed and then opened by tapping the
@@ -89,7 +103,9 @@ const mapDispatchToProps = (dispatch) => ({
   startup: () => dispatch(StartupActions.startup()),
   addNotification: (notification) => dispatch(NotificationActions.addNotification(notification)),
   clearNotifications: () => dispatch(NotificationActions.clearNotifications()),
-  updateSchedule: (schedule) => dispatch(ScheduleActions.updateSchedule(schedule)),
+  updateActivities: (activities) => dispatch(ScheduleActions.updateActivities(activities)),
+  updateNews: (news) => dispatch(AnnouncementActions.updateNews(news)),
+  updateTalks: (talks) => dispatch(ScheduleActions.updateTalks(talks)),
   setSelectedEvent: (talk) => dispatch(ScheduleActions.setSelectedEvent(talk)),
   navigateToTalkDetail: () =>
     dispatch(NavigationActions.navigate({
