@@ -10,6 +10,7 @@ const navReducer = (state, action) => {
 export default () => {
   /* ------------- Assemble The Reducers ------------- */
   const rootReducer = combineReducers({
+    announcements: require('./AnnouncementsRedux').reducer,
     nav: require('./NavigationRedux').reducer,
     schedule: require('./ScheduleRedux').reducer,
     location: require('./LocationRedux').reducer,
