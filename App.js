@@ -2,7 +2,7 @@ import './Config';
 import './Config/ReactotronConfig';
 
 import DebugConfig from './Config/DebugConfig';
-import { Font } from 'expo';
+import { AppLoading, Font } from 'expo';
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { Provider } from 'react-redux';
@@ -30,11 +30,11 @@ const PersistLoader = !!persistor ? PersistGate : (props) => props.children;
 class App extends Component {
 
   state = {
-    fontLoaded: false,
+    isReady: false,
     notification: null,
   };
 
-  async componentDidMount() {
+  async _loadResources() {
     if (DebugConfig.useReactotron) {
       // Let's connect and clear Reactotron on every time we load the app
       console.tron.connect();
@@ -47,11 +47,19 @@ class App extends Component {
       'Montserrat-Medium': require('./Fonts/Montserrat-Medium.ttf'),
     });
 
-    this.setState({ fontLoaded: true });
+    return;
   }
 
   render() {
-    if (!this.state.fontLoaded) return null;
+    if (!this.state.isReady) {
+      return (
+        <AppLoading
+          startAsync={this._loadResources}
+          onFinish={() => this.setState({ isReady: true })}
+          onError={console.warn}
+        />
+      );
+    }
 
     return (
       <Provider store={store}>
