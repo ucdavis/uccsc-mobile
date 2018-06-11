@@ -2,13 +2,14 @@ import './Config';
 import './Config/ReactotronConfig';
 
 import DebugConfig from './Config/DebugConfig';
-import { AppLoading, Font } from 'expo';
+import { AppLoading, Asset, Font } from 'expo';
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import RootContainer from './Containers/RootContainer';
 import createStore from './Redux';
+import { Images } from './Themes';
 
 // Allow layoutanimations for android
 // import { UIManager } from 'NativeModules'
@@ -17,6 +18,20 @@ import createStore from './Redux';
 // create our store
 const { store, persistor } = createStore();
 const PersistLoader = !!persistor ? PersistGate : (props) => props.children;
+
+function cacheImages(images) {
+  return images.map(image => {
+    if (typeof image === 'string') {
+      return Image.prefetch(image);
+    } else {
+      return Asset.fromModule(image).downloadAsync();
+    }
+  });
+}
+
+function cacheFonts(fonts) {
+  return fonts.map(font => Font.loadAsync(font));
+}
 
 /**
  * Provides an entry point into our application.
@@ -41,13 +56,22 @@ class App extends Component {
       console.tron.clear();
     }
 
-    await Font.loadAsync({
-      'Montserrat-Light': require('./Fonts/Montserrat-Light.ttf'),
-      'Montserrat-SemiBold': require('./Fonts/Montserrat-SemiBold.ttf'),
-      'Montserrat-Medium': require('./Fonts/Montserrat-Medium.ttf'),
-    });
+    const imageAssets = cacheImages([
+      Images.meetup1,
+      Images.meetup2,
+      Images.welcomeDinner,
+      Images.morningJog,
+      Images.morningYoga,
+      Images.busTour,
+    ]);
 
-    return;
+    const fontAssets = cacheFonts([
+      {'Montserrat-Light': require('./Fonts/Montserrat-Light.ttf')},
+      {'Montserrat-SemiBold': require('./Fonts/Montserrat-SemiBold.ttf')},
+      {'Montserrat-Medium': require('./Fonts/Montserrat-Medium.ttf')},
+    ]);
+
+    await Promise.all([...imageAssets, ...fontAssets]);
   }
 
   render() {
