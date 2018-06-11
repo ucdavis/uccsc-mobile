@@ -2,39 +2,19 @@ import { StyleSheet, ViewStyle, TextStyle } from 'react-native';
 import { Colors, Fonts, Metrics } from '../../Themes/';
 
 const AnnouncementStyle: AnnouncementStyleType = {
-  afterPartyContainer: {
-    flex: 3,
-    borderTopWidth: 1,
-    borderTopColor: Colors.snow,
+  container: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around',
     backgroundColor: Colors.transparent,
   },
-  partyHeader: {
+  header: {
     flex: 2,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  partyInfo: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  partyButton: {
-    width: 200,
-    top: -20,
-    left: (Metrics.screenWidth - 200) / 2,
-    backgroundColor: Colors.snow,
-  },
-  partyButtonText: {
-    fontSize: 11,
-    fontFamily: Fonts.type.base,
-    color: Colors.lightText,
-    letterSpacing: 1,
-    fontWeight: '600',
-  },
-  welcomeParty: {
-    fontSize: 31,
+  headerText: {
+    fontSize: 20,
     fontFamily: Fonts.type.base,
     color: Colors.snow,
     letterSpacing: 2,
@@ -43,6 +23,25 @@ const AnnouncementStyle: AnnouncementStyleType = {
     marginHorizontal: Metrics.baseMargin,
     textAlign: 'center',
   },
+  info: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  button: {
+    width: 200,
+    top: -20,
+    left: (Metrics.screenWidth - 200) / 2,
+    backgroundColor: Colors.snow,
+  },
+  buttonText: {
+    fontSize: 11,
+    fontFamily: Fonts.type.base,
+    color: Colors.lightText,
+    letterSpacing: 1,
+    fontWeight: '600',
+  },
+  
   partyDescription: {
     fontSize: 13,
     fontFamily: Fonts.type.base,
