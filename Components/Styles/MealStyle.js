@@ -45,10 +45,23 @@ const MealStyle = {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  sponsors: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 15,
+  },
+  sponsorHeading: {
+    marginVertical: 4,
+    fontFamily: Fonts.type.base,
+    fontSize: 11,
+    letterSpacing: 0,
+    backgroundColor: Colors.transparent,
+    color: Colors.snow,
+  },
   sponsor: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginRight: 15,
   },
   sponsorIcon: {
     backgroundColor: Colors.snow,
@@ -59,9 +72,9 @@ const MealStyle = {
     borderWidth: 1,
   },
   sponsorText: {
-    marginTop: 4,
+    marginVertical: 4,
     fontFamily: Fonts.type.base,
-    fontSize: 11,
+    fontSize: 14,
     letterSpacing: 0,
     backgroundColor: Colors.transparent,
     color: Colors.snow,

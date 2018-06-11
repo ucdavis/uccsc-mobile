@@ -96,30 +96,41 @@ export default class Meal extends React.PureComponent {
             <Text style={styles.heading}>{title}</Text>
             <Text style={styles.duration}>{timeframe}</Text>
           </View>
-          {this.renderSponsor()}
+          {this.renderSponsors()}
         </View>
       </View>
     );
   }
 
-  renderSponsor() {
-    const { sponsor } = this.props;
+  renderSponsors() {
+    const { sponsors } = this.props;
 
-    if (!sponsor) {
+    if (!sponsors || !sponsors.length) {
       return null;
     }
 
     return (
-      <View style={styles.sponsor}>
-        <Image style={styles.sponsorIcon} source={Images[sponsor.icon]} />
-        <Text style={styles.sponsorText}>{sponsor.text}</Text>
+      <View style={styles.sponsors}>
+        <Text style={styles.sponsorHeading}>Sponsored By:</Text>
+        { sponsors.map(s => this.renderSponsor(s)) }
+      </View>
+    );
+  }
+
+  renderSponsor(sponsor) {
+    return (
+      <View key={sponsor} style={styles.sponsor}>
+        {/* <Image style={styles.sponsorIcon} source={Images[sponsor.icon]} /> */}
+        <Text style={styles.sponsorText}>{sponsor}</Text>
       </View>
     );
   }
 
   render() {
+    const { onPress } = this.props;
+
     return (
-      <Card>
+      <Card onPress={onPress}>
         { this.renderContent() }
       </Card>
     );

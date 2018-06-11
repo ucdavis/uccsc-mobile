@@ -201,7 +201,7 @@ class ScheduleList extends React.Component {
       <Meal
         type={item.eventType}
         title={item.title}
-        sponsor={item.sponsor}
+        sponsors={item.sponsors}
         start={item.time}
         end={item.end}
         duration={item.duration}
