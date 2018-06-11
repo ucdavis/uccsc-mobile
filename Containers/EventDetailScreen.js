@@ -15,9 +15,9 @@ import RoomInfo from '../Components/RoomInfo';
 import TalkInfo from '../Components/TalkInfo';
 import { Images } from '../Themes';
 import { connect } from 'react-redux';
-import styles from './Styles/ActivityDetailScreenStyles';
+import styles from './Styles/EventDetailScreenStyles';
 
-class ActivityDetail extends React.Component {
+class EventDetailScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Schedule',
     tabBarIcon: ({ focused }) => (
@@ -33,6 +33,51 @@ class ActivityDetail extends React.Component {
     this.props.navigation.dispatch(NavigationActions.back());
   };
 
+  renderAvatar(speaker) {
+    if (!speaker.photo) {
+      return null;
+    }
+
+    return (
+      <Image
+        style={styles.avatar}
+        source={{ uri: `${AppConfig.conferenceUrl}/${speaker.photo.url}` }}
+      />
+    );
+  }
+
+  renderSpeakers() {
+    const { speakers } = this.props;
+    if (!speakers || !speakers.length) {
+      return null;
+    }
+
+    return (
+      <View style={[styles.section, styles.speakers]}>
+        <Text style={styles.sectionHeading}>ABOUT</Text>
+        { speakers.map(s => {
+          const id = '00000000000000000000000000000000';
+          return (
+            <View key={s.name} style={styles.speakerContainer}>
+              <View style={styles.speakerInfo}>
+                <View style={styles.avatarContainer}>
+                  { this.renderAvatar(s) }
+                </View>
+                <View style={styles.nameContainer}>
+                  <Text style={styles.speakerName}>{s.name}</Text>
+                  <Text style={styles.speakerCompany}>{s.company}</Text>
+                </View>
+              </View>
+              <View style={styles.bioContainer}>
+                <Text style={styles.speakerBio}>{s.bio}</Text>
+              </View>
+            </View>
+          );
+        }) }
+      </View>
+    );
+  }
+
   render() {
     const { title, description, time, duration, venue, eventType } = this.props;
     return (
@@ -46,7 +91,7 @@ class ActivityDetail extends React.Component {
             <View style={styles.cardShadow1} />
             <View style={styles.cardShadow2} />
             <View style={styles.card}>
-              <Text style={styles.sectionHeading}>{ eventType }</Text>
+              <Text style={styles.sectionHeading}>{ eventType || 'TALK' }</Text>
               <Text style={styles.heading}>{ title }</Text>
             </View>
             <View style={styles.section}>
@@ -60,6 +105,7 @@ class ActivityDetail extends React.Component {
             <View style={[styles.section, styles.lastSection]}>
               <Text style={styles.description}>{ description }</Text>
             </View>
+            { this.renderSpeakers() }
           </View>
         </ScrollView>
       </Gradient>
@@ -78,4 +124,4 @@ const mapDispatchToProps = dispatch => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ActivityDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(EventDetailScreen);

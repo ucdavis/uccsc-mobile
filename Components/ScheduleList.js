@@ -84,11 +84,7 @@ class ScheduleList extends React.Component {
     setSelectedEvent(item);
     
     const { rootNavigation } = screenProps;
-    if (item.type === 'talk') {
-      rootNavigation.navigate('TalkDetail');
-    } else if (item.type === 'event') {
-      rootNavigation.navigate('ActivityDetail');
-    }
+    rootNavigation.navigate('EventDetail');
   }
 
   getItemLayout = GetItemLayout({
