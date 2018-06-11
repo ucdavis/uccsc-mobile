@@ -79,7 +79,7 @@ const DayTabNavigatorOptions = {
   }
 };
 
-export default class ScheduleScreen extends React.Component {
+export default class ScheduleScreen extends React.PureComponent {
   static navigationOptions = {
     tabBarLabel: 'Schedule',
     tabBarIcon: ({ focused }) => (
