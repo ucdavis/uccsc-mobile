@@ -2,13 +2,13 @@ import { StyleSheet } from 'react-native';
 import { ApplicationStyles, Colors, Metrics } from '../../Themes/';
 
 export default StyleSheet.create({
-  container: {
+  gradient: {
     flex: 1,
     backgroundColor: Colors.blue,
     paddingTop: Metrics.statusBarHeight,
     paddingHorizontal: Metrics.baseMargin,
   },
-  main: {
+  container: {
     paddingTop: Metrics.doubleBaseMargin,
   },
   backButton: {
@@ -74,6 +74,11 @@ export default StyleSheet.create({
     backgroundColor: Colors.snow,
     borderTopWidth: 1,
     borderTopColor: 'rgba(0,0,0,0.2)',
+  },
+  lastSection: {
+    marginBottom: Metrics.baseMargin,
+    borderBottomLeftRadius: Metrics.cardRadius,
+    borderBottomRightRadius: Metrics.cardRadius,
   },
   description: {
     fontFamily: 'Montserrat-Light',

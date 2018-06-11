@@ -36,9 +36,9 @@ class ActivityDetail extends React.Component {
   render() {
     const { title, description, time, duration, venue, eventType } = this.props;
     return (
-      <Gradient style={styles.container}>
+      <Gradient style={styles.gradient}>
         <ScrollView>
-          <View style={styles.main}>
+          <View style={styles.container}>
             <TouchableOpacity style={styles.backButton} onPress={this.goBack}>
               <MaterialIcons name="chevron-left" size={24} style={styles.backButtonIcon} />
               <Text style={styles.backButtonText}>Back</Text>
@@ -57,7 +57,7 @@ class ActivityDetail extends React.Component {
                   <RoomInfo building={venue.building} room={venue.room} />
               </View>
             }
-            <View style={styles.section}>
+            <View style={[styles.section, styles.lastSection]}>
               <Text style={styles.description}>{ description }</Text>
             </View>
           </View>
