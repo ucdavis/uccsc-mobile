@@ -24,10 +24,20 @@ export default class Event extends React.PureComponent {
   }
 
   render() {
-    const { name, title, start, duration, venue, starred, toggleReminder } = this.props;
+    const { name, title, start, duration, venue, onPress, starred, toggleReminder } = this.props;
+
+    // const themeColor = themeColors[(title || '').length % themeColors.length];
+
+    const containerStyles = [
+      styles.container,
+      {
+        // borderTopWidth: 15,
+        // borderTopColor: themeColor,
+      },
+    ];
 
     return (
-      <Card>
+      <Card style={containerStyles} onPress={onPress}>
         <View style={styles.container}>
           <View style={styles.info}>
             <View style={styles.infoText}>
