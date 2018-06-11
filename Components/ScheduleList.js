@@ -24,6 +24,37 @@ import AppConfig from '../Config/AppConfig';
 
 class ScheduleList extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      events: buildScheduleList(props.activities, props.talks, props.dayIndex),
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      events: buildScheduleList(nextProps.activities, nextProps.talks, nextProps.dayIndex),
+    });
+  }
+
+  shouldComponentUpdate(nextProps) {
+
+    if (nextProps.dayIndex !== this.props.dayIndex) {
+      return true;
+    }
+
+    if (nextProps.activities !== this.props.activities) {
+      return true;
+    }
+
+    if (nextProps.talks !== this.props.talks) {
+      return true;
+    }
+
+    return false;
+  }
+
   async toggleReminder(item) {
     const { title } = item;
     const { starTalk, unstarTalk, trackLocalNotification, untrackLocalNotification, localNotifications } = this.props;
@@ -200,7 +231,7 @@ class ScheduleList extends React.Component {
   }
 
   render () {
-    const { events } = this.props;
+    const { events } = this.state;
     if (!events || !events.length) {
       return null;
     }
@@ -296,7 +327,9 @@ const mapStoreToProps = (dayIndex) => (store) => {
   return {
     currentTime: new Date(store.schedule.currentTime),
     isCurrentDay: isSameDay(store.schedule.currentTime, new Date(Config.conferenceDates[dayIndex])),
-    events: buildScheduleList(store.schedule.activities, store.schedule.talks, dayIndex),
+    activities: store.schedule.activities,
+    talks: store.schedule.talks,
+    dayIndex: dayIndex,
     starredTalks: store.schedule.starredTalks,
     localNotifications: store.notifications.localNotifications,
   };
