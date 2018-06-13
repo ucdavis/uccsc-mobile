@@ -4,6 +4,8 @@
         "speaker": "Lynn Underwood, Mojgan Amini",
         "title": "UC San Diego’s Process Palooza: LEANing Toward Success",
         "description": "Are you being asked to do more with less? We are. IT is often expected to perform magic by automating business processes, but that fails miserably when the process is cumbersome to begin with! Here at UC San Diego, we are committed to success by making our business processes sustainable and growing a continuous improvement mindset.\n\nYet finding ways to inspire, make connections and raise practice across campus is challenging. Which is why we held UC San Diego’s Process Palooza. An integrated experience, this first-of-its-kind conference and competition showcased the practice and benefits of process improvement using Lean Six Sigma (LSS) methodology in a fun, interactive and highly engaging way.\n\nOpen to the entire UC community (students, faculty, researchers, staff) and extension alumni, Process Palooza is now one of the ways we are changing our campus culture by bringing together non-practitioners and practitioners alike to share, learn, compete and network!\n\nAt Process Palooza Dr. Elizabeth Simmons, UC San Diego’s new executive vice chancellor for academic affairs and particle physicist, likened her field with that of process improvement because both require observation and inquiry into why things happen the way they do. She said it is critical to ask questions about how and why things are done a certain way to encourage innovation and improvement. Event participants shared their LSS experiences, measureable impact, challenges and success while competitors raced against the clock using LSS to improve real business UC San Diego processes.  More than 400 attendees learned to incorporate process improvement into their jobs, and saw first-hand how process improvement can save money, streamline operations and improve service.\n\nCome and learn about Process Palooza- how we break down barriers to participation, engage communities of practice, bring campus leaders onboard, build meaningful partnerships and how we are packaging it for others!",
+        "knowledge": "None required",
+        "software": "None required.",
         "speakers": [
             {
                 "name": "Lynn Underwood",
@@ -48,33 +50,46 @@
                 }
             }
         ],
-        "time": "7/10/2017 8:45 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-14T22:00:00.000Z",
+        "end": "2018-08-14T22:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Scott Metoyer",
         "title": "Building serverless enterprise applications with AWS",
         "description": "Learn how to build Serverless Enterprise Applications using managed AWS services.\n\nServerless computing allows you to build and run enterprise applications without thinking about servers. Serverless applications don't require you to provision, scale, and manage any servers. As a developer, you can focus on solving core business problems using highly available and scalable services – no more managing software, runtimes, or operating systems.\n\nThis presentation will demonstrate the UCR Library LibApps Cloud application architecture. This application was built using AWS Lambda, S3, DynamoDB, and API Gateway services with AngularJS on the front end. In addition to architecture, application authentication and deployment will be demonstrated using CloudFormation and Auth0.",
+        "knowledge": "General knowledge of web application development and previous experience building applications using HTML, CSS, and JavaScript.\n\nSome knowledge of Node.js and Angularjs.\n\nKnowledge of RESTful web services.",
+        "software": "",
         "speakers": [
             {
                 "name": "Scott Metoyer",
                 "bio": null,
-                "company": "UCR"
+                "company": "UC Riverside"
             }
         ],
-        "time": "7/10/2017 9:30 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-15T23:00:00.000Z",
+        "end": "2018-08-15T23:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
-        "speaker": "Asghar Riahi",
+        "speaker": "Nathan Clark, Asghar Riahi",
         "title": "Disaster Recovery & Business Continuity with Catalyst - Lessons Learned",
-        "description": "In this session I will review and share my experience using Catalyst to plan and update the DRBC plan for UCB SAIT department.\n\nAgenda\n\n-Introduction\n\n-BCP vs. DRP\n\n-What is Catalyst\n\n-Before You Start\n\n-Lessons Learned\n\n-Catalyst FAQs?",
+        "description": "In this session I will review and share my experience using Catalyst to plan and update the DRBC plan for UCB SAIT department.\n\nAgenda\n\n*   HA vs. BCP vs. DRP\n*   What is Catalyst\n*   Catalyst Features\n*   Catalyst Internal Flow\n*   Before You Start\n*   Lessons Learned\n*   Catalyst FAQs?",
+        "knowledge": "N/A",
+        "software": "N/A",
         "speakers": [
             {
+                "name": "Nathan Clark",
+                "bio": "Nathan Clark started his IT career at Walt Disney Feature Animation, where he worked ... let's say, from Lion King through Tarzan.  He's been at UC Berkeley in Student Affairs IT for ten years.",
+                "company": "UC Berkeley"
+            },
+            {
                 "name": "Asghar Riahi",
-                "bio": "Asghar has 27 years of experience, both in US and Europe; focusing on IT solutions including: System programing, Cloud, solutions, Virtualization, Business Continuity, High Availability and Disaster Recovery solutions, Storage solutions, Open Source SW & HW, \r\n and DevOps.",
+                "bio": "Asghar has 27 years of international experience, in US, Europe and Asia; focusing on IT solutions including: System programing, Cloud, solutions, Virtualization, Business Continuity, High Availability and Disaster Recovery solutions, Storage solutions, Open Source SW & HW, and DevOps.",
                 "company": "UC Berkeley",
                 "photo": {
                     "fid": 649,
@@ -94,14 +109,18 @@
                 }
             }
         ],
-        "time": "7/10/2017 9:30 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-15T15:45:00.000Z",
+        "end": "2018-08-15T16:30:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Joleen Locanas, Candy Skinner",
         "title": "From Service Desk to Scrum team: Unexpected Career Opportunities in IT",
         "description": "First, a look at [ITSM career paths](https://www.axelos.com/enhance-your-skills-with-axelos/career-paths/itsm-careers-path) and the relationship to workforce development - why it is crucial to the health of an IT organization.\n\nNext, a Business Analyst shares with you her journey through IT.\n\nThen, get a glimpse at how a (non-development) Scrum Team drives organizational growth by utilizing tools and techniques from Project / Portfolio management, Agile Scrum, Lean/Six Sigma, Organizational Development / Change Management, and Business Analysis.\n\nFinally, Q&A with audience.",
+        "knowledge": "Participants of all skill levels welcome, open discussion following presentation.\n\nMay be most relevant to participants interested in\n\n*   (Other-than-technical) Career Path / Career Development, Workforce Development\n*   Strategic Planning & Organizational Development\n*   Agile Scrum in Non Software Development Environment",
+        "software": "",
         "speakers": [
             {
                 "name": "Joleen Locanas",
@@ -130,19 +149,23 @@
                 "company": "UC Berkeley"
             }
         ],
-        "time": "7/10/2017 9:30 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-15T20:00:00.000Z",
+        "end": "2018-08-15T20:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Robert Smith",
         "title": "UC’s electronic information security policy – the all-new IS-3 is changing the game",
         "description": "UC must managing cyber risk. Gone is a policy that tells you to write a policy. Time to think. Pick up you sparring gear and get ready to roll. UC has an all-new electronic information security policy that puts you in the cage. There are important new features in the policy that give Locations and Units both control and responsibility for fighting bad cyber actors. This session will overview how the policy operates, describe the features that address the main risk areas and show some helpful tools to fight bad actors by managing cyber risk.",
+        "knowledge": "None required.",
+        "software": "None required.",
         "speakers": [
             {
                 "name": "Robert Smith",
                 "bio": "Robert Smith, CISSP, PMP\r\nSystemwide IT Policy Director\r\nBefore joining University of California’s Office of the President Systemwide CISO’s office, Robert was the senior director of technology for student affairs at UC Riverside. He has been with the University of California since 2011 and was the lead for IT security and compliance, software development, infrastructure, services and program management at UCR.  His experience covers multiple industry areas, including; FDA/HIPAA regulated, DoD, corporate and product development environments.  Notably, he ran enterprise endpoint security product development and other projects during his years at Symantec.  He participates in UC-wide security initiatives, focused on shared services, PCI and HIPAA. He has written articles and short stories on security, compliance and IT for Journal of GxP Compliance.  He speaks on IT and security topics.\r\n",
-                "company": "Univ of California",
+                "company": "UCOP",
                 "photo": {
                     "fid": 647,
                     "uuid": "47335b72-1c1f-47dd-a274-5fcd47565fe2",
@@ -161,14 +184,18 @@
                 }
             }
         ],
-        "time": "7/10/2017 10:15 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-15T21:00:00.000Z",
+        "end": "2018-08-15T21:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Jessica Hilt, Allison Flick",
         "title": "How to Get Out of Your Own Way",
         "description": "This is a class about how to get better facilitating your own career success. Sysadmins and technologists are typically heads-down-work-hard types who do good work but struggle when it comes playing the business game to advancement and recognition of their work. This class will break-down some of the more cryptic areas of professional development into simple strategies that participants can implement immediately but, more importantly, won’t feel weird doing.\n\nWho should attend: \n\nSystem Administrators at all levels (junior, intermediate, advanced). Anyone who might feel stalled in their current career and wants to see what they could be doing better to get the recognition they deserve.\n\nTake back to work: \n\nSysadmins who complete this class will learn strategies that they can implement immediately to become better promoters of their own accomplishments, identify hurdles that they can and can’t control, and incorporate tools that will help on a day-to-day basis for career success.\n\nTopics include: \n\nCareer\n\n*   Self-promotion: From interviewing to job reviews\n*   Stepping up and stepping out: opportunities within a job\n*   Tools that help you when it’s time to shine\n\nInterpersonal\n\n*   Successful delegation and diplomacy\n*   Playing with others when they don’t play well with you\n*   Community building\n\nInternal\n\n*   Make a career plan\n*   Self-doubt and imposter syndrome: no power poses here\n*   Your success narrative: storytelling on the fly",
+        "knowledge": "None",
+        "software": "None.",
         "speakers": [
             {
                 "name": "Jessica Hilt",
@@ -194,7 +221,7 @@
             {
                 "name": "Allison Flick",
                 "bio": "Allison Flick is an IT professional who has spent her career within higher education.  After spending 10 years as a programmer and database designer, she has shifted her focus to supervision, systems administration, and user support.  She is a mentor to many student employees and sysadmins in their early careers. In her spare time, she organizes and runs a Women in Advanced Computing group at UC San Diego that helps women with career development and advancement.",
-                "company": "UCSD",
+                "company": "UC San Diego",
                 "photo": {
                     "fid": 691,
                     "uuid": "356d820f-459f-4bd7-a9b3-33286cbbca28",
@@ -213,14 +240,18 @@
                 }
             }
         ],
-        "time": "7/10/2017 10:15 AM",
-        "duration": "90 Minutes"
+        "time": "2018-08-15T22:00:00.000Z",
+        "end": "2018-08-15T23:30:00.000Z",
+        "duration": "90 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Tim Marconi",
         "title": "Dragging researchers and their data into the Library",
         "description": "Researchers are producing data at an unprecedented rate. Once they publish, that data often gets tossed, lost or stored on a server under their desk. How do you bridge the gap between becoming a dumping ground for unstructured raw data and the place where you can collaborate with a research group to curate and distribute their data in our Digital Asset Management System? This session will cover how we set up a staging server with half a petabyte of capacity to capture research data and assist researchers and curators to collaborate on a shared platform. After working with over 20 different researchers and labs, it became perfectly clear that there isn’t a one-size-fits-all solution. I will discuss methods we use to capture research data through an internet-based large file transfer service, to typical NFS/CIFS mounts, and the unexpected successes and challenges found therein.",
+        "knowledge": "Basic knowledge of file systems will help, but is not required.",
+        "software": "None",
         "speakers": [
             {
                 "name": "Tim Marconi",
@@ -244,81 +275,93 @@
                 }
             }
         ],
-        "time": "7/10/2017 10:15 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-15T15:45:00.000Z",
+        "end": "2018-08-15T16:30:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Jon Johnson",
         "title": "From Stuck to Soaring: Taking Aim at Continuous Delivery",
         "description": "When we set out to re-write Ilios in 2014 the most important metric we targeted with every decision was confidence. Developers had to be confident in every change,  and **users needed to be confident in every release**. This meant building code on well tested foundations, choosing technologies that favored stable releases over breaking changes, and adopting a culture of **agile project management** an**d test driven development**.\n\nIn 2017 we averaged a **deploy every other week**! When it is necessary we can get bug fixes out to our users in minutes and we are so confident in each release that  we usually deploy our changes **on Friday nights**.\n\nThis talk will cover the practical tools and technologies we use, but more importantly, I will discus the mechanisms from **code review** to **project planning** that allow us to keep our team's velocity so high.",
+        "knowledge": "This talk will be accessible to a wide range of technologists as no existing experience in any particular language or stack will be needed. Those with some prior understanding of the software development process will get the most from this content.",
+        "software": "",
         "speakers": [
             {
                 "name": "Jon Johnson",
                 "bio": "I build open source software for UCSF.",
-                "company": "UCSF",
+                "company": "UC San Francisco",
                 "photo": {
-                    "fid": 673,
-                    "uuid": "90392af9-41e4-4429-954c-6a8263f877aa",
+                    "fid": 996,
+                    "uuid": "14b0fb3d-6ad4-4b8f-a4cc-aaef54d511eb",
                     "langcode": "en",
-                    "filename": "jon-face.jpeg",
+                    "filename": "avatar.png",
                     "uri": {
-                        "value": "public://users/images/jon-face.jpeg",
-                        "url": "/sites/default/files/users/images/jon-face.jpeg"
+                        "value": "public://users/images/avatar.png",
+                        "url": "/sites/default/files/users/images/avatar.png"
                     },
-                    "filemime": "image/jpeg",
-                    "filesize": 46704,
+                    "filemime": "image/png",
+                    "filesize": 902089,
                     "status": true,
-                    "created": 1520984476,
-                    "changed": 1520984498,
-                    "url": "/sites/default/files/users/images/jon-face.jpeg"
+                    "created": 1527438621,
+                    "changed": 1527438641,
+                    "url": "/sites/default/files/users/images/avatar.png"
                 }
             }
         ],
-        "time": "7/10/2017 11:00 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-14T20:00:00.000Z",
+        "end": "2018-08-14T20:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Jon Johnson",
         "title": "Delivering Personalized Content to Students",
         "description": "Last summer a brand new Learning Tools Interoperability (LTI) application was rolled out at UCSF to connect students using our learning management system (Moodle) to their class schedules. Leveraging the LTI standard, Amazon’s Lambda serverless architecture, and the Ilios REST API this integration was built and rolled out in just few weeks with mission critical reliability and scalability.\n\nCome and see how we brought together these services to address a long standing student issue and learn how you can duplicate this effort on campuses running Canvas, Moodle or any other LMS that supports the LTI standard.",
+        "knowledge": "This will be technical focusing on the LTI standard as well as AWS Lambda, but previous knowledge in either of these technologies will not be required. I will assume some domain knowledge of education and at least some understanding of software development in general.",
+        "software": "None",
         "speakers": [
             {
                 "name": "Jon Johnson",
                 "bio": "I build open source software for UCSF.",
-                "company": "UCSF",
+                "company": "UC San Francisco",
                 "photo": {
-                    "fid": 673,
-                    "uuid": "90392af9-41e4-4429-954c-6a8263f877aa",
+                    "fid": 996,
+                    "uuid": "14b0fb3d-6ad4-4b8f-a4cc-aaef54d511eb",
                     "langcode": "en",
-                    "filename": "jon-face.jpeg",
+                    "filename": "avatar.png",
                     "uri": {
-                        "value": "public://users/images/jon-face.jpeg",
-                        "url": "/sites/default/files/users/images/jon-face.jpeg"
+                        "value": "public://users/images/avatar.png",
+                        "url": "/sites/default/files/users/images/avatar.png"
                     },
-                    "filemime": "image/jpeg",
-                    "filesize": 46704,
+                    "filemime": "image/png",
+                    "filesize": 902089,
                     "status": true,
-                    "created": 1520984476,
-                    "changed": 1520984498,
-                    "url": "/sites/default/files/users/images/jon-face.jpeg"
+                    "created": 1527438621,
+                    "changed": 1527438641,
+                    "url": "/sites/default/files/users/images/avatar.png"
                 }
             }
         ],
-        "time": "7/10/2017 11:00 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-14T22:00:00.000Z",
+        "end": "2018-08-14T22:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Wayne Fields",
         "title": "Implementing HIPAA into your Zoom!",
         "description": "UCOP rolled out a strategic sourcing contract with Zoom in 2016.  Penetration was so successful that contract pricing fell by 10% in 2017.  With the availability of this new tool to enhance collaboration, there has been a desire to utilize the tool in many areas.  Some of those departments contain PHI where HIPAA compliance is expected.  This session will review a basic understanding of HIPAA; departments which may need to protect PHI; and how those departments can utilize the Zoom collaboration platform while ensuring HIPAA compliance.  Enabling the HIPAA configuration for Zoom will enhance the security of your collaboration platform, but it will also affect some basic functionality.  Learn the steps to enable the HIPAA configuration as well as the differences from the standard encrypted configuration.",
+        "knowledge": "No previous knowledge is needed.",
+        "software": "Internet Browser",
         "speakers": [
             {
                 "name": "Wayne Fields",
                 "bio": "As a strong collaborative leader who creates consensus among intensely different groups, Wayne has built a reputation for problem-solving as a pivotal subject matter expert—resolving and removing challenges, while reinventing processes that allowed for rapid, effective revenue and cost advantages. Wayne is currently the Assistant Director, Student Affairs IT at UC Irvine.  He has worked on a number of highly visible projects including the first of it kind UCI eSports arena and most recently, the integration of UCI's Housing Management System with a new Student Information System.\r\n\r\nWayne has spent over 30 years in the technology field, with the last 5 years in Higher Education.  He holds both a Master of Business Administration and a Bachelor of Science in Business Administration – High Technology Management from California State University San Marcos.",
-                "company": "UCI",
+                "company": "UC Irvine",
                 "photo": {
                     "fid": 663,
                     "uuid": "0c431d4e-adf9-4c14-bbbf-f710e78debfa",
@@ -337,19 +380,23 @@
                 }
             }
         ],
-        "time": "7/10/2017 11:00 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-14T21:00:00.000Z",
+        "end": "2018-08-14T21:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Kevin Dale, Erik Wieland, John von Eichhorn",
         "title": "A Tale of Two Factor",
         "description": "UCSF has spent the last several years improving our security posture, including hardening systems, tightening border routers, expanding DLP, and adding other types of threat protection. A sudden increase in phishing pushed our rollout of two-factor authentication for VPN and email up by 6 months, to just before the holiday travel rush. It took a huge effort from many teams and stakeholders to get it done, but we successfully enrolled over 30,000 users in 6 weeks. Our CIO paid us the ultimate compliment, saying it was the quietest go-live he had ever seen. Learn from us just how hard it is to support faculty traveling on 6 continents (especially Africa), why millennials are our new best friends, what a Yubikey is and why you don’t want one, and the magical power of cookies in making the project successful.",
+        "knowledge": "",
+        "software": "",
         "speakers": [
             {
                 "name": "Kevin Dale",
                 "bio": "I manage the Identity and Access Management department at UCSF.\r\n\r\nThe Identity and Access Management team works to improve the access management processes and provisioning at UCSF, to identify improvements and make recommendations for the UCSF community while working with the UCSF community to improve our technology.",
-                "company": "UCSF",
+                "company": "UC San Francisco",
                 "photo": {
                     "fid": 670,
                     "uuid": "8c331049-bc3a-4af0-a992-6911ecaf3b11",
@@ -370,7 +417,7 @@
             {
                 "name": "Erik Wieland",
                 "bio": "Secure Box, DocuSign, ECM, Qualtrics, SmartSheet, Web, Staff Development, Engagement, Communications, Strategery @UCSF",
-                "company": "UCSF",
+                "company": "UC San Francisco",
                 "photo": {
                     "fid": 620,
                     "uuid": "35df10b2-dfb8-4f61-8aab-06df3968e8e3",
@@ -391,21 +438,25 @@
             {
                 "name": "John von Eichhorn",
                 "bio": null,
-                "company": "UC San Francisco - IT"
+                "company": "UC San Francisco, IT"
             }
         ],
-        "time": "7/11/2017 8:45 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-14T20:00:00.000Z",
+        "end": "2018-08-14T20:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Courtney Kievernagel",
         "title": "Implementing the Three Cs of Courtesy, Clarity, and Comprehension to Optimize End User Engagement",
         "description": "User interaction is fundamental to successful IT operations within an organization. A disconnect between the end user point of view and the IT professional is growing. This talk will present examples on how to ease the strain of interacting with end users and provide insight on how to bridge the communication gap between the IT professional and they people they support. The skills used to communicate with the end user, in all IT career fields, are notoriously lacking.\n\nFor many IT professionals, the so-called “soft skills” required to have successful interactions with end users are non-existent. Users become dissatisfied and unwilling to adopt change, while the IT professional struggles to maintain policy. The solution to help bolster these trying interactions is by emphasizing the use of the three Cs: courtesy, clarity, and comprehension.\n\nIt has been observed that when engaged, user satisfaction and willingness to comply increases greatly and allows success for the IT professional to accomplish their goals. One interesting parallel that supports this claim can be seen through the relationships forged through a medical doctor’s communication skills with their patients. Studies have shown that when doctor-patient communications increased a more positive outcome occurred especially in the areas of adherence and compliance (Matusitz & Spear, 2014).\n\nThis talk takes a deeper dive into these meanings and provides useful, applicable tips on how an IT professional can apply them.  In order for an IT professional to be successful in their own jobs, they must master the three Cs when interacting with the end user.\n\nMatusitz, J., & Spear, J. (2014). Effective Doctor-Patient Communication: An Updated Examination. _Social Work in Public Health_, 253",
+        "knowledge": "  N/A",
+        "software": "N/A",
         "speakers": [
             {
                 "name": "Courtney Kievernagel",
-                "bio": "I am a United States Air Force veteran with eight years working in computer tech. I currently provide enterprise and network administration support at UC Davis. Customer communication has played a pivotal part in all my roles, some of which include help desk manager, executive assistant, asset management coordinator, and technical support lead for inspection teams. Over the span of my career, I have worked in a support role for a variety of dynamic and demanding personalities both in the military and in academia. My next career goal is to be gainfully employed in the Information Security industry.",
+                "bio": "Courtney is an United States Air Force veteran with eight years working in computer tech. She currently provides enterprise and network administration support at UC Davis. Customer communication has played a pivotal part in all her roles, some of which include help desk manager, executive assistant, asset management coordinator, and technical support lead for inspection teams. Over the span of her career, she has worked in a support role for a variety of dynamic and demanding personalities both in the military and in academia. Her next career goal is to be gainfully employed in the Information Security industry.",
                 "company": "UC Davis ",
                 "photo": {
                     "fid": 680,
@@ -425,14 +476,18 @@
                 }
             }
         ],
-        "time": "7/11/2017 9:30 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-14T20:00:00.000Z",
+        "end": "2018-08-14T20:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Shawn DeArmond, Ahna Ligtenberg Heller",
         "title": "Creating the 2018 UCCSC Web Site - For Today and the Future",
         "description": "The UCCSC 2018 web site is the best ever! Ammirite folks?\n\nA lot of planning and work went into creating and publishing the 2018 UCCSC web site, and we're going to show you how it was done. As a bonus, we'll show how future UCCSC organizing teams can take our work and implement it for the 2019 UCCSC... and 2020... and onward.  The framework isn't just limited to UCCSC; if you're organizing another conference, this might work for you too.\n\nIn this session, we'll cover:\n\n*   A great framework that's ready for your campus branding\n*   Creating a great site with photography, graphic design, logos, and content\n*   Content strategy with calls-to-action that change over time\n*   Photo galleries to archive UCCSC images \n*   Sponsorship Application and other web forms\n*   Session submissions, selection, and scheduling\n*   Registration and payments\n*   \"My Schedule\"",
+        "knowledge": "",
+        "software": "",
         "speakers": [
             {
                 "name": "Shawn DeArmond",
@@ -477,14 +532,18 @@
                 }
             }
         ],
-        "time": "7/11/2017 9:30 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-15T23:00:00.000Z",
+        "end": "2018-08-15T23:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Shawn DeArmond, John Kealy, Quyen Vaillant",
         "title": "Meet SiteFarm! University of California's Drupal 8 Collaboration",
         "description": "The University of California System is big. Like, really really big. 10 campuses, plus a couple auxiliary units employ 21,200 academic staff, 144,000 administrative staff and serve 251,000 students.\n\nBecause of the distributed nature of the UC System, each campus has their own Drupal 7 distribution. If they were lucky. Some campuses had more than one. Most campuses had a dozen other web solutions too. This was indeed the Wild West of Web platforms.\n\nSome of us realized that with the release of Drupal 8, we have an opportunity to join forces and collaborate on building the best Drupal distribution for Higher Education.\n\nSo UCSF, UCLA, and UC Davis joined forces and, well, we did it. And it's called SiteFarm.\n\nBecause of this effort, we stand to realize significant security, stability, accessibility, and consistency gains across all campuses. Not to mention, reducing duplication of work. So much duplication of work...\n\nIn this session, we'll cover:\n\n*   Identifying the problem\n*   Building a grassroots collaboration\n*   Establishing governance\n*   Development\n*   Automated testing\n*   Evangelism\n*   Success!\n*   Future plans",
+        "knowledge": "No previous knowledge required, but you might benefit from knowing what [Drupal](https://drupal.org) is.",
+        "software": "",
         "speakers": [
             {
                 "name": "Shawn DeArmond",
@@ -510,7 +569,7 @@
             {
                 "name": "John Kealy",
                 "bio": "I come from a background in BioGeography and Plant Ecology, computer modeling of ecological interactions over changing landscapes. So of course I build websites now.\r\n\r\nWorked at the Sierra Club for 3 years, then at a high end consulting firm (Tiffany website, NYMoma, bestbuy, ect).\r\n\r\nI've been at UCSF for over 15 years in a variety of roles, web developer, Web Architect, Web Services Manager, etc. \r\n\r\nSome things I've done at UCSF:\r\n* built directory.ucsf.edu\r\n* built help.ucsf.edu\r\n* launched first its.ucsf.edu site, and upgraded to a CMS\r\n* managed web and communications team for ITS\r\n* Manage central web hosting for roughly 1,000 websites\r\n* Manage a team of web consultants who handle custom website builds.\r\n\r\nWhat I'm up to now:\r\n* working on building out web developer community across UCSF and the UC System",
-                "company": "UCSF",
+                "company": "UC San Francisco",
                 "photo": {
                     "fid": 684,
                     "uuid": "0b213040-9ac1-418a-9618-68bc455fda87",
@@ -531,17 +590,21 @@
             {
                 "name": "Quyen Vaillant",
                 "bio": "Quyen is the Program Manager for Web Content & Strategy at UCLA IT Services. The Web Content & Strategy team concentrates on developing, promoting, and maintaining best practices for web content creation, management and user interaction design. The team works closely with pertinent UCLA departments to ensure compliance with university web branding, usability, and accessibility standards. The group also has program management responsibility for UCLA's enterprise Drupal platform, Box and DocuSign.\r\n\r\nAlong with her day-to-day responsibilities, Quyen works closely with her colleagues in promoting open collaboration across the UC system. Quyen is a co-founder of the UC Drupal Collaboration team, along with UC San Francisco and UC Davis. ",
-                "company": "UCLA - IT Services"
+                "company": "UC Los Angeles, IT Services"
             }
         ],
-        "time": "7/11/2017 9:30 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-15T21:00:00.000Z",
+        "end": "2018-08-15T21:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Josh Lien, Wayne Fields",
         "title": "UC Irvine's Community Provider Database",
         "description": "UCI's Community Provider Database, a resource for Wellness, Health & Counseling Services was created in collaboration with the Student Health Center, Counseling Center, Campus Social Workers, and CARE (Campus Assault Resources & Education).\n\nThe database filters mental health professionals in the surrounding geographic area based on very specific criteria. Upon request, staff will search the database and provide a list of referrals to students. Upcoming enhancements will open access to this application directly to the community.\n\nDiscussion points of the session will include why certain design elements were chosen. For example, why are their 200+ fields in the provider application? The application is utilized by four separate units. Each unit has a different population which they serve. As a result, they require different information about each provider. In order for the database to be useful to all of the units, consensus was made on a dataset of 200+ fields. As a result, this many fields led to a very long form. We’ll discuss how the form was shortened to about 10 minutes with conditional fields and autocompletion.\n\nDesign elements were also based on UC Irvine’s unique surrounding area. However, the application can easily be modified for other campuses. As an example, Mental Health Professionals in South Orange County do not have a heavy dependence on referrals from the university. Therefore, it can be difficult to get service providers to continually update their data. In order to keep the information as current as possible, the application will allow staff to edit provider information directly. Additionally, automatic emails are sent reminding service providers to update their information and licensure status.\n\nOther topics for the session include separating moderation by each unit, notes, search (with maps), mobile accessibility, printing, and exposing this data as a feed.",
+        "knowledge": "No previous knowledge is required. This discussion covers the application, its features, and why design decisions were made.",
+        "software": "none.",
         "speakers": [
             {
                 "name": "Josh Lien",
@@ -567,7 +630,7 @@
             {
                 "name": "Wayne Fields",
                 "bio": "As a strong collaborative leader who creates consensus among intensely different groups, Wayne has built a reputation for problem-solving as a pivotal subject matter expert—resolving and removing challenges, while reinventing processes that allowed for rapid, effective revenue and cost advantages. Wayne is currently the Assistant Director, Student Affairs IT at UC Irvine.  He has worked on a number of highly visible projects including the first of it kind UCI eSports arena and most recently, the integration of UCI's Housing Management System with a new Student Information System.\r\n\r\nWayne has spent over 30 years in the technology field, with the last 5 years in Higher Education.  He holds both a Master of Business Administration and a Bachelor of Science in Business Administration – High Technology Management from California State University San Marcos.",
-                "company": "UCI",
+                "company": "UC Irvine",
                 "photo": {
                     "fid": 663,
                     "uuid": "0c431d4e-adf9-4c14-bbbf-f710e78debfa",
@@ -586,18 +649,22 @@
                 }
             }
         ],
-        "time": "7/11/2017 10:15 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-15T23:00:00.000Z",
+        "end": "2018-08-15T23:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Briandy Walden, Ray Vadnais",
         "title": " The Compass Project: Comprehensive Analytics for Student Success",
         "description": "When UC Irvine realized that advisors had access to the right data in the wrong way, we harnessed business intelligence tools to provide richer and more timely reporting through a new self-service application called Compass. In this presentation we will explore how business analysis, advisor interviews, and user experience design were employed to bring about student data reporting tools that met the real needs of campus advising units.\n\nIn partnership, our central IT organization works collaboratively with advisors to ensure that intervention and outreach occur with reduced manual processes, greater flexibility in data access, and easy to use filters to target specific populations rapidly. Advisors spend less time wrangling spreadsheets and more time working with students.\n\nThis presentation will cover the background of the Compass project, including its origins in the University of California, Irvine’s earlier student success initiatives. We’ll also provide a look into the reports that have been created for our academic advisors, including ways to look at bulk student data in ways not previously feasible in existing reports.",
+        "knowledge": "None",
+        "software": "None",
         "speakers": [
             {
                 "name": "Briandy Walden",
-                "bio": "UX Nerd and IT Innovation Sherpa",
+                "bio": "UX Nerd and IT Innovation Sherpa\r\n\r\nI've been working on UCI's academic and educational technologies for nearly two decades, and am finding the new frontier of student success analytics to be a fascinating challenge. Happy to meet-up and talk all things edu tech!\r\n\r\nProud Anteater Arts alumna, I also hold a Masters in Human Computer Interaction and have a passion for UX. When not being a nerd at work, I'm happily being a nerd at home. Interests include hiking, reading, and everything related to food.",
                 "company": "UC Irvine",
                 "photo": {
                     "fid": 905,
@@ -619,17 +686,21 @@
             {
                 "name": "Ray Vadnais",
                 "bio": "* User Experience Architect in the Office of Information Technology\r\n* Descriptive Analytics Lead for the Compass project: http://sites.uci.edu/compass/",
-                "company": "University of California, Irvine"
+                "company": "UC Irvine"
             }
         ],
-        "time": "7/11/2017 10:15 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-14T15:45:00.000Z",
+        "end": "2018-08-14T16:30:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "John Ruzicka",
         "title": "What? So What? Now What?",
         "description": "We all write email, give presentations, and/or answer lots of questions from our teams and managers. The \"What? So What? Now What?\" method lets you quickly and concisely frame and address **any** topic in any of these formats. In this session, we'll explain the method and show how easy it is to use. We'll apply it to conversation, email, and longer form material. You'll learn how the method saves time and provides clarity. We'll do demos in real time. If you write a lot of email, do presentations, or even just answer lots of questions, this is the session for you!",
+        "knowledge": "No previous knowledge or experience is required.",
+        "software": "This technique works with any email, writing, or presentation software. It also works in conversation.",
         "speakers": [
             {
                 "name": "John Ruzicka",
@@ -653,18 +724,22 @@
                 }
             }
         ],
-        "time": "7/11/2017 10:15 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-14T15:45:00.000Z",
+        "end": "2018-08-14T16:30:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Anna Gazdowicz, Lucy  Greco",
         "title": "Making Web Accessibility Work at Your Campus",
         "description": "For technology to be truly sustainable, it must also be accessible. Thankfully, the UC has a web accessibility policy. But what can individual UC campuses do to promote accessibility and build it into their processes? At this session, learn about what UC Berkeley’s Web Access team has done to foster a culture of web accessibility, influence third-party products and services, and provide a platform for campus departments to build accessible websites. Learn about how it all started, where we are now, and where we want to go from here. In this presentation, the audience will also be encouraged to share their experiences with web accessibility at their respective campuses.",
+        "knowledge": "Basic knowledge of web accessibility",
+        "software": "None",
         "speakers": [
             {
                 "name": "Anna Gazdowicz",
-                "bio": "Anna is a Web and Accessibility Specialist at UC Berkeley, in central IT, for the Web Platform Services team. She lives in Berkeley with her husband, son, and cat, and enjoys music, podcasts, running, riding her bike, cooking, and eating.",
+                "bio": "Anna is a Web and Accessibility Specialist at UC Berkeley, in central IT, for the Web Platform Services team. Web Platform Services manages the Open Berkeley website platform (turnkey web platform solution for campus websites), helps campus departments adhere to the UC web accessibility policy (clinics, consultation, resources), and facilitates the campus relationship with Pantheon (external website hosting provider). She lives in Berkeley with her husband, son, and cat, and enjoys music, podcasts, running, riding her bike, cooking, and eating.",
                 "company": "UC Berkeley",
                 "photo": {
                     "fid": 648,
@@ -689,19 +764,23 @@
                 "company": "UC Berkeley"
             }
         ],
-        "time": "7/11/2017 11:00 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-15T22:00:00.000Z",
+        "end": "2018-08-15T22:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Sascha Cohen, Jon Johnson, Stefan Topfstedt",
         "title": "\"I, For One, Welcome Our New Robot Permissions Overlords\"",
         "description": "When crafting access models for content management applications, there are two interconnected standard models: that of role assignment, and that of permissions assignment. Typically, a modern application will have customized roles (\"admin\", \"approver\") which are in turn fine tuned by the addition/exclusion of specific permitted actions (\"can update forms\", \"can delete users\"). These roles are in turn assigned by managers to users of the application, explicitly, giving them access in proportion to their needs.\n\nThis model is hampered by a few key issues: first, roles must be explicitly assigned and determined by a third party. Next, those roles may not be flexible enough to control or constrain exceptional use cases like limited time engagement, heightened privilege for specific use, or rapidly shifting organizational roles for a user. Still, it continues to be the primary model for use because in large part, it mostly works.\n\nIn education and curriculum management, we face some particularly thorny issues like those noted above, which complicate the ability to easily provide appropriate access to curricular content within our management platforms: short-term or even one-time instructors; teaching assistants, peer mentors, and small group discussion leads; work-study students, and more. In these cases, it can be challenging to provide a simple and manageable permissions control environment without either significant compromise in the levels of access granted, or the resource needs to oversee their maintenance, or both.\n\nWith the new permissions model being deployed in the Ilios curriculum management platform, we have taken a different, hybrid approach: rather than relying on roles assigned for access to data, _we are determining permissions based on relationship to the data itself._ A user associated with a dataset will be provided with a role via the context of their data relationship, allowing the process to be derivative from the internal interaction of user, data, and context. The permissions matrix (and in turn, the default \"roles\") is then produced via a canvassing of all the standard permutations of user interaction.\n\nIn this presentation, we will discuss how this model reduces resource overhead for management, since it relies explicitly on published data context, rather than external role assignment; how it also reduces risk, since overly-permissive (or restrictive) roles need not be applied; we will show how the algorithmic intelligence of the data itself provides the baseline foundations for user management. We will share the conceptual planning which helped to develop this model, and show the applied matrix which is governing data access in the platform.",
+        "knowledge": "",
+        "software": "",
         "speakers": [
             {
                 "name": "Sascha Cohen",
-                "bio": "Sascha is the Director of Technology Strategy & Development for Technology Enhanced Education at the UCSF School of Medicine, as well as the Director of the Ilios Project, a competency-based curriculum management tool designed for and used by schools around the world to help achieve excellence in medical and health education. \r\n\r\nHolding degrees in religion, comparative culture, and Middle Eastern history, arts and language, Sascha’s research is currently focused on the development of sustainable models for technology-enhanced education and curriculum development.\r\n",
-                "company": "UCSF",
+                "bio": "Sascha is the Director of Technology Strategy & Development for Technology Enhanced Education at the UCSF School of Medicine, as well as the Director of the Ilios Project, a competency-based curriculum management tool designed for and used by schools around the world to help achieve excellence in medical and health education. \r\n\r\nHolding degrees in religion, comparative culture, and Middle Eastern history, arts and language, Sascha’s research is currently focused on the development of sustainable models for technology-enhanced education and curriculum development.\r\n\r\nHe also bakes a mean pie, and has been known to share.\r\n",
+                "company": "UC San Francisco",
                 "photo": {
                     "fid": 676,
                     "uuid": "a29fb774-478d-45f7-a058-4315fd63da31",
@@ -722,38 +801,58 @@
             {
                 "name": "Jon Johnson",
                 "bio": "I build open source software for UCSF.",
-                "company": "UCSF",
+                "company": "UC San Francisco",
                 "photo": {
-                    "fid": 673,
-                    "uuid": "90392af9-41e4-4429-954c-6a8263f877aa",
+                    "fid": 996,
+                    "uuid": "14b0fb3d-6ad4-4b8f-a4cc-aaef54d511eb",
                     "langcode": "en",
-                    "filename": "jon-face.jpeg",
+                    "filename": "avatar.png",
                     "uri": {
-                        "value": "public://users/images/jon-face.jpeg",
-                        "url": "/sites/default/files/users/images/jon-face.jpeg"
+                        "value": "public://users/images/avatar.png",
+                        "url": "/sites/default/files/users/images/avatar.png"
                     },
-                    "filemime": "image/jpeg",
-                    "filesize": 46704,
+                    "filemime": "image/png",
+                    "filesize": 902089,
                     "status": true,
-                    "created": 1520984476,
-                    "changed": 1520984498,
-                    "url": "/sites/default/files/users/images/jon-face.jpeg"
+                    "created": 1527438621,
+                    "changed": 1527438641,
+                    "url": "/sites/default/files/users/images/avatar.png"
                 }
             },
             {
                 "name": "Stefan Topfstedt",
                 "bio": null,
-                "company": "UCSF"
+                "company": "UC San Francisco",
+                "photo": {
+                    "fid": 1003,
+                    "uuid": "a8232f82-03c2-43bc-a9f5-5cd21ddf2a8d",
+                    "langcode": "en",
+                    "filename": "stefan2017_square.jpg",
+                    "uri": {
+                        "value": "public://users/images/stefan2017_square.jpg",
+                        "url": "/sites/default/files/users/images/stefan2017_square.jpg"
+                    },
+                    "filemime": "image/jpeg",
+                    "filesize": 406574,
+                    "status": true,
+                    "created": 1527700413,
+                    "changed": 1527700418,
+                    "url": "/sites/default/files/users/images/stefan2017_square.jpg"
+                }
             }
         ],
-        "time": "7/11/2017 11:00 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-14T15:45:00.000Z",
+        "end": "2018-08-14T16:30:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "John Knoll",
         "title": "Creating the UCCSC 2018 Mobile App",
         "description": "Come see how the UCCSC 2018 Mobile Application was developed! Talk to include technical details about platform, language, and tools used.",
+        "knowledge": "",
+        "software": "",
         "speakers": [
             {
                 "name": "John Knoll",
@@ -761,19 +860,23 @@
                 "company": "UC Davis"
             }
         ],
-        "time": "7/11/2017 11:00 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-15T22:00:00.000Z",
+        "end": "2018-08-15T22:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Steve Miley",
         "title": "We built a Curriculum planner for our Master's program, was it worth it? ",
         "description": "Higher education needs to graduate students on time. Some benefits include: decreasing the student's cost of education and more space for new students.   \n  \nTo achieve this, one component includes helping students understand what their schedules might look like for the degree they are considering. Another component is giving academic staff visibility on course demand so they can plan appropriately.  \nOffering 30 class seats when the demand is 90 in a required course leads to delayed graduation. Providing students with an easy to use planner to map their academic career empowers them to view realistic scenarios of graduating with a specific degree. Allowing students to easily see what it takes to have an emphasis, concentration or a minor without having to meet with an undergraduate/graduate advisor. The rules for degree requirements, the prerequisites of courses, the availability of classes in a student's schedule is complicated. This is not an easy problem to solve. Our campus is about five years out from integrating a schedule planning solution. At UC Santa Barbara, Bren School of Environmental Science & Management, we developed a custom, easy to use schedule planner for our Master's Program called Myplan. Myplan allows creating multiple scenarios, trying out different emphasis, concentrations and specializations with an automated requirement check. This has enabled our Student Affairs staff to only review schedule submissions that have exceptions. Students can now easily update their planned schedule when they decide to change courses during their academic career. Empowering students to create and visualize a schedule meeting the requirements of their degree should be a requirement of our higher education institutions.",
+        "knowledge": "I've been involved with software engineering, IT system administration at UCSB and numerous private industry companies for over 25 years.  I'm very familiar with University academic business rules due to my work on our course management system and waiting list. \n\nPreviously, I designed and built UCSB's successful course management system (GauchoSpace) and UCSB's first wait list system.",
+        "software": "This application is a PHP / MySQL application, with generic tables and rules so that it could be used by others with a little modification.   We are using Moodle to handle authentication and authorization of this application.",
         "speakers": [
             {
                 "name": "Steve Miley",
                 "bio": "IT Director - Bren School of Environmental Science & Management",
-                "company": "UCSB",
+                "company": "UC Santa Barbara",
                 "photo": {
                     "fid": 707,
                     "uuid": "29db0843-5a1e-4787-9574-da8efd5b4f8e",
@@ -792,19 +895,23 @@
                 }
             }
         ],
-        "time": "7/12/2017 8:45 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-15T22:00:00.000Z",
+        "end": "2018-08-15T22:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Steve Miley",
         "title": "Can Airtable improve your department's operational efficiency?  It seems like its magic, but is it really that incredible?",
         "description": "At the Bren School of Environmental Science & Management we have lots of spreadsheets.   We also have lots of duplicated data.   We have sheets for people, offices,  groupings of people, management of our space.  We have simulated databases in our web site.    We've started a journey to improve operational efficiency of our procedures and to make our data easier to access.   We are using Airtable, a company that offers a SAAS product that can magically turn spreadsheets into databases.   Data that has been locked in an excel spreadsheet on our file server, can now serve all or parts of the spreadsheet to the web, access optionally controlled with passwords.   Common features such as filtering, grouping, sorting, having formulas in columns are all a part of Airtable.  All record changes are recorded for auditing and you can easily create a \"snapshot\" of your database and export it to a new workspace for archival or auditing. A change to your data is instantly accessible on the web.  No Duplicate copies!\n\nDuring this session, I'll demo some key use cases and lessons learned in our staff learning and adopting this technology.   I'll also demonstrate how we easily created reports/graphs and charts using Airtable by synchronizing data in a legacy web application to a \"base\" in Airtable.   One use cases will include efficient on-boarding of visitors and having a live calendar view of when visitors arrive and depart.\n\nI'll also summarize the key missing features gathered from the active community forum  on Airtable.",
+        "knowledge": "I've been involved with software engineering, IT system administration at UCSB and numerous private industry companies for over 25 years.  I'm very familiar with University academic business rules due to my work on our course management system and waiting list.",
+        "software": "This just requires a web browser!",
         "speakers": [
             {
                 "name": "Steve Miley",
                 "bio": "IT Director - Bren School of Environmental Science & Management",
-                "company": "UCSB",
+                "company": "UC Santa Barbara",
                 "photo": {
                     "fid": 707,
                     "uuid": "29db0843-5a1e-4787-9574-da8efd5b4f8e",
@@ -823,29 +930,37 @@
                 }
             }
         ],
-        "time": "7/12/2017 9:30 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-15T21:00:00.000Z",
+        "end": "2018-08-15T21:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Patricia Honda-Nations",
         "title": "Empowering Women: from history to practical change",
         "description": "I wish to discuss the history of women in STEM fields (focusing on the computer industry), including the challenges and the lessons learned. That history has a bearing on current workplace issues, and gives us a context. I would like to conclude with some practical tips and ideas for promoting change, fostering professional growth, and mentoring.",
+        "knowledge": "",
+        "software": "",
         "speakers": [
             {
                 "name": "Patricia Honda-Nations",
-                "bio": "I am a web and database programmer working for Information Technology Services at Housing, Dining, and Hospitality at UC San Diego. I've worked at the university for seven years. Before coming to UCSD, I worked in the software industry as a programmer and contractor, integration services lead, QA analyst, documentation specialist and education manager; in the way back, I was an assistant professor of English. In my spare time, I work in the fiber arts.",
+                "bio": "I am a web and database programmer working for Information Technology Services at Housing, Dining, and Hospitality at UC San Diego. I've worked at the university for seven years. Before coming to UCSD, I worked in the software industry as a programmer and contractor, integration services lead, QA analyst, documentation specialist, and education manager; in the way back, I was an assistant professor of English. In my spare time, I work in the fiber arts.",
                 "company": "UC San Diego"
             }
         ],
-        "time": "7/12/2017 9:30 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-14T20:00:00.000Z",
+        "end": "2018-08-14T20:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Monte Ratzlaff",
         "title": "Changing The Cybersecurity Culture: UC Cyber Champion Program",
         "description": "General security awareness training, phishing simulation and education, posters, contests…all are important aspects of a security awareness program; but are these efforts changing the culture of our organization toward a more secure minded organization?  One aspect that is making a difference in moving an organization to a secure culture is a security ambassador or cyber champion program.  The Cyber-Risk Coordination Center (C3) at University of California established the Cyber Champion Program to support UC locations with existing ambassador/cyber champion programs as well as help locations who are developing their programs.  This presentation will give an overview of what a Cyber Champion is and how C3 has partnered with UC locations to support their Cyber Champion programs.",
+        "knowledge": "None.",
+        "software": "None.",
         "speakers": [
             {
                 "name": "Monte Ratzlaff",
@@ -869,23 +984,48 @@
                 }
             }
         ],
-        "time": "7/12/2017 9:30 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-14T22:00:00.000Z",
+        "end": "2018-08-14T22:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
-        "speaker": "Shohreh Bozorgmehri, Eric Taggart",
-        "title": "Building a Workforce Innovation Initiative",
-        "description": "Do you want to help grow your organization's cultural values of innovation, experimentation, creativity and “success thru failure”?\n\nDo you want to create a scalable and sustainable innovation initiative to enable broader innovation across your organization?\n\nWell so do we!\n\nJoin us to hear about our failures and successes in building a workforce innovation initiative at UCI's Office of Information Technology - and help us think about how we can make it even better.\n\nWe'll discuss our approach to forming and refining the early ideas, socializing them with colleagues, and proposing/implementing a pilot initiative.  We'll review the initial tools being used as well as the Innovation Framework (inspired by UC Berkeley’s Haas School of Business) that we're promoting through the initiative.\n\n{Note to Session Proposal Reviewers:  Shohreh Bozorgmehr from UCI will be co-presenting.  We’d also be very open to joining with colleagues from other locations who may be proposing a similar session to do a joint panel discussion format on a related topic.}",
+        "speaker": "Jane Harrington, Shohreh Bozorgmehri, Eric Taggart",
+        "title": "Accelerate Innovation in Your Organization",
+        "description": "Joint session with UCD and UCI presenting/discussing their innovation initiatives.  More details to be updated here soon.\n\nDo you want to help grow your organization's cultural values of innovation, experimentation, creativity and “success thru failure”?\n\nDo you want to create a scalable and sustainable innovation initiative to enable broader innovation across your organization?\n\nWell so do we!\n\nJoin us to hear about our failures and successes in building a workforce innovation initiative at UCI's Office of Information Technology - and help us think about how we can make it even better.\n\nWe'll discuss our approach to forming and refining the early ideas, socializing them with colleagues, and proposing/implementing a pilot initiative.  We'll review the initial tools being used as well as the Innovation Framework (inspired by UC Berkeley’s Haas School of Business) that we're promoting through the initiative.",
+        "knowledge": "N/A",
+        "software": "N/A",
         "speakers": [
+            {
+                "name": "Jane Harrington",
+                "bio": "Senior Organization Development Consultant",
+                "company": "UC Davis",
+                "photo": {
+                    "fid": 817,
+                    "uuid": "1c12591c-36f7-44b1-bc85-df0582ac33bc",
+                    "langcode": "en",
+                    "filename": "Jane Harrington headshot 1.jpg",
+                    "uri": {
+                        "value": "public://users/images/Jane Harrington headshot 1_0.jpg",
+                        "url": "/sites/default/files/users/images/Jane%20Harrington%20headshot%201_0.jpg"
+                    },
+                    "filemime": "image/jpeg",
+                    "filesize": 62426,
+                    "status": true,
+                    "created": 1522708999,
+                    "changed": 1522709005,
+                    "url": "/sites/default/files/users/images/Jane%20Harrington%20headshot%201_0.jpg"
+                }
+            },
             {
                 "name": "Shohreh Bozorgmehri",
                 "bio": null,
-                "company": "UCI"
+                "company": "UC Irvine"
             },
             {
                 "name": "Eric Taggart",
-                "bio": "Associate Director, Enterprise Applications - UCI Office of Information Technology",
+                "bio": "Associate Director, Enterprise Applications - UCI Office of Information Technology\r\n\r\nI've been with UC since 1981 (UC Irvine Registrar's Office student programmer).  Co-created ASSIST (Articulation System Stimulating Interinstitutional Student Transfer) in 1984 as the lead developer, went on to serve as the Statewide Director for ASSIST from 1989 thru 2008 (under UCOP but located in Irvine).  UC Irvine Graduate Division IT Director in 2008, added Office of Research IT and other groups in subsequent years.  Now Associate Director, Enterprise Applications and overseeing Office of Research IT, HR IT, UCPath IT, Transportation & Distribution Services IT, Facilities Management IT, and Accounting/Financials/KFS IT (and some other miscellaneous).",
                 "company": "UC Irvine",
                 "photo": {
                     "fid": 732,
@@ -905,38 +1045,22 @@
                 }
             }
         ],
-        "time": "7/12/2017 10:15 AM",
-        "duration": "45 Minutes"
-    },
-    {
-        "type": "talk",
-        "speaker": "Su Wang, Alissa Powers",
-        "title": "Hiring and Mentoring Student IT Employees for Today’s Tech Industry",
-        "description": "For students to be able to succeed in today’s tech industry, relevant experience is often required even at entry level positions. As a member of the university IT department, we have the unique ability to not only provide a job opportunity for students to gain this experience, but also to provide valuable mentorship along the way. This presentation will cover how our web development team at UC Irvine hires and mentors student IT employees so that they are ready for the next step in their career.",
-        "speakers": [
-            {
-                "name": "Su Wang",
-                "bio": "Su works as a developer and data integration architect on the UC Irvine Campus for over 6 years. (Hopefully) for this year's UCCSC, he will be presenting on student hiring, supervision, and mentoring.",
-                "company": "UC Irvine"
-            },
-            {
-                "name": "Alissa Powers",
-                "bio": "Alissa is currently the supervisor for student developers on the Academic Web Technologies team at UC Irvine. Her responsibilities include hiring, mentoring and direct supervision of students working on complex web applications used by the entire UC Irvine campus.",
-                "company": "UC Irvine"
-            }
-        ],
-        "time": "7/12/2017 10:15 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-15T20:00:00.000Z",
+        "end": "2018-08-15T20:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Eric Taggart",
         "title": "Electronic Signatures and Forms Automation - DocuSign Across UC",
         "description": "Want to learn more about how electronic signature and forms automation are being used to streamline processes across UC?\n\nDocuSign has been vetted UC-wide and is being used in one way or another at all UC locations.  The broad range of current and potential use cases is fascinating and reflects the diverse challenges we all face.\n\nThis session will provide an introduction to electronic signature processes and key capabilities of DocuSign.  We'll review many of the common and unique ways it's being used across UC where select campuses will discuss their uses in more depth.  There will be plenty of time to answer any of your questions.  This session is intended to be informational for any UCCSC attendees and will not be vendor marketing.",
+        "knowledge": "N/A",
+        "software": "N/A",
         "speakers": [
             {
                 "name": "Eric Taggart",
-                "bio": "Associate Director, Enterprise Applications - UCI Office of Information Technology",
+                "bio": "Associate Director, Enterprise Applications - UCI Office of Information Technology\r\n\r\nI've been with UC since 1981 (UC Irvine Registrar's Office student programmer).  Co-created ASSIST (Articulation System Stimulating Interinstitutional Student Transfer) in 1984 as the lead developer, went on to serve as the Statewide Director for ASSIST from 1989 thru 2008 (under UCOP but located in Irvine).  UC Irvine Graduate Division IT Director in 2008, added Office of Research IT and other groups in subsequent years.  Now Associate Director, Enterprise Applications and overseeing Office of Research IT, HR IT, UCPath IT, Transportation & Distribution Services IT, Facilities Management IT, and Accounting/Financials/KFS IT (and some other miscellaneous).",
                 "company": "UC Irvine",
                 "photo": {
                     "fid": 732,
@@ -956,14 +1080,18 @@
                 }
             }
         ],
-        "time": "7/12/2017 10:15 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-15T15:45:00.000Z",
+        "end": "2018-08-15T16:30:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Vanessa Kaskiris",
         "title": "A Woman's Story in IT at UC Berkeley: Systemic Harassment and Discrimination",
-        "description": "In 2014, Vanessa Kaskiris joined a team in IT at the University of California, Berkeley. Subsequently, and after repeated escalations to management, she would initiate one of the largest investigations in University history and prove a hostile work environment based on gender.\n\nThis is her story coming forward and breaking the silence on a systemic culture of abuse and retaliation. She will reference the completed University investigation and present why it was imperative, in her opinion, to shed light on the University's behavior to discredit the voices of women who were harassed in IT at the University of California, Berkeley.\n\nThe presentation will review the numerous supporting documents supplied to initiate the investigation. The necessary role of allies in creating an irrefutable case. The role of “bad players” in ignoring or blocking requests for help. The coordinated efforts of the respondents to corroborate and change facts. The retaliation that she experienced while the investigation was underway. The role of IT’s HR in protecting the University and, per the investigation, knowingly falsifying information to justify the departure of woman after woman on the team.\n\nThe presentation will address the stigmas around credibility when one does come forward and the prevailing fear that prevents others from supporting or coming forward. How power is doled out to the “trusted” who play ball, as the people in power want it to be played.\n\nFurthermore, the presentation will describe the events immediately post\u00adinvestigation: Vanessa was terminated. She sent numerous detailed email documents to the CIO of the University of California, Berkeley detailing retaliation and witness intimidation, the CIO refused in email to meet with Vanessa.\n\nThe presentation will discuss University and Nondiscrimination in Employment policy violations and examine why zero tolerance is not effectively observed or enforced among staff in IT at the University of California, Berkeley. As a woman of color, in an industry severely underrepresented by women of color, Vanessa will describe the profile for leadership in IT at the University of California, Berkeley and the promotion patterns and opportunities open only to that profile.\n\nIn addition, time will be spent describing the various paths that could have been followed \u00ad including a settlement \u00ad and what each of those would have looked like in Vanessa’s opinion.\n\nFinally, ample time will be allocated to an explanation, in her own words, on why Vanessa would not stand down to the systemic harassment and discrimination that she and multiple women experienced. The presentation will discuss the long term advantages to shedding light on discriminatory work environments and how to be prepared to do so to protect future women.",
+        "description": "In 2014, Vanessa Kaskiris joined a team in IT at the University of California, Berkeley. Subsequently, and after repeated escalations to management, she would initiate one of the largest investigations in University history and prove a hostile work environment based on gender.\n\nThis is her story coming forward and breaking the silence on a systemic culture of abuse and retaliation. She will reference the completed University investigation and present why it was imperative to shed light on the University's behavior to discredit the voices of women who were harassed in IT at the University of California, Berkeley.\n\nThe presentation will review the numerous supporting documents supplied to initiate the investigation. The necessary role of allies in creating an irrefutable case. The retaliation that she experienced while the investigation was underway. The role of IT’s HR to, per the investigation, knowingly falsify information to justify the departure of woman after woman on the team.\n\nThe presentation will address the stigmas around credibility when one does come forward and the prevailing fear that prevents others from supporting or coming forward. Furthermore, the presentation will describe the events immediately post\u00ad investigation: Vanessa was terminated. She sent numerous detailed email documents to the CIO of the University of California, Berkeley detailing retaliation and witness intimidation, the CIO refused in email to meet with Vanessa.\n\nThe presentation will discuss University and Nondiscrimination in Employment policy violations and examine why zero tolerance is not effectively observed or enforced among staff in IT at the University of California, Berkeley. As a woman of color, in an industry severely underrepresented by women of color, Vanessa will describe the promotion patterns for leadership in IT at the University of California, Berkeley.\n\nIn addition, time will be spent describing the various paths that could have been followed, including a settlement, and what each of those would have looked like in Vanessa’s opinion.\n\nFinally, ample time will be allocated to an explanation, in her own words, on why Vanessa would not stand down to the systemic harassment and discrimination that she and multiple women experienced. The presentation will discuss the long term advantages to shedding light on discriminatory work environments and how to be prepared to do so to protect future women.",
+        "knowledge": "BIBLIOGRAPHY\n\nArticles on this story:\n\nPando - [The Bear’s Lair: The untold story of systemic gender discrimination inside UC Berkeley’s IT Department](https://pando.com/2018/02/23/bears-lair-untold-story-systemic-gender-discrimination-inside-uc-berkeleys-it-department/)\n\nPando - [How to be “credible” even if you're a woman... and other takeaways from the Berkeley sexual discrimination investigation](https://pando.com/2018/02/27/how-be-credible-even-if-youre-woman-and-other-takeaways-berkeley-sexual-discrimination-investigation/)\n\nDaily Cal - [Time’s Up on UC Berkeley administrators failing to address gender discrimination](http://www.dailycal.org/2018/03/12/times-up-uc-berkeley-gender-discrimination/)\n\niPetition - [Time's Up for UC Berkeley Misogyny](https://www.ipetitions.com/petition/times-up-for-uc-berkeley-misogyny)\n\nHuffington Post - [Nothing About Reporting Sexual Harassment Is Easy](https://www.huffingtonpost.com/entry/opinion-tracyramirez-metcalf-reporting-harassment_us_5aaa8948e4b045cd0a6f6333)\n\nWomens Magazine Interview, KPFA, interview starts 18 minutes in - https://kpfa.org/episode/womens-magazine-april-23-2018/",
+        "software": "n/a",
         "speakers": [
             {
                 "name": "Vanessa Kaskiris",
@@ -987,19 +1115,23 @@
                 }
             }
         ],
-        "time": "7/12/2017 11:00 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-15T15:45:00.000Z",
+        "end": "2018-08-15T16:30:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Ray Vadnais, Alissa Powers",
         "title": " The ScoreShare Story: How & why we used Canvas as a data source to build an application for our advisors",
         "description": "ScoreShare is a tool that provides academic advisors with student assignment performance data to better inform their decision-making processes and streamline advising sessions. We (UCI’s Academic Web Technologies team) partnered with academic advising units around campus to design and pilot ScoreShare in 2017.\n\nIn this session, we will share our experience building a web application that relies on assignment and grade data from Canvas, as well as the challenges in combining this with data from our legacy learning management system.\n\nWe will also provide background about the tool, why we built it, and our process for designing the tool in partnership with our advisors.",
+        "knowledge": "None",
+        "software": "None",
         "speakers": [
             {
                 "name": "Ray Vadnais",
                 "bio": "* User Experience Architect in the Office of Information Technology\r\n* Descriptive Analytics Lead for the Compass project: http://sites.uci.edu/compass/",
-                "company": "University of California, Irvine"
+                "company": "UC Irvine"
             },
             {
                 "name": "Alissa Powers",
@@ -1007,19 +1139,23 @@
                 "company": "UC Irvine"
             }
         ],
-        "time": "7/12/2017 11:00 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-15T20:00:00.000Z",
+        "end": "2018-08-15T20:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     },
     {
         "type": "talk",
         "speaker": "Jayson Jaynes, Mark Miller",
         "title": "Pattern Libraries: Leveraging Atomic Design and Pattern Lab to Develop a Living Visual Style Guide",
         "description": "How do you build a complex library of design patterns and styles that are compliant, accessible, responsive, and can be used across platforms and content management systems? All that while making sure it adheres to University guidelines and Web standards best practices that can grow with your brand as you develop more use cases?\n\nUCSF and UC Davis will demonstrate how we utilized Pattern Lab to leverage atomic design principles to develop a living library to meet the needs of our clients and Universities. Giving a step-by-step quick guide to developing your own library and explaining the challenges we encountered and the solutions we developed. We'll talk about where we are now and what we are working on for future releases and discuss collaborations we hope will help the entire UC system.",
+        "knowledge": "A working knowledge of HTML, CSS, PHP, and task runners like Gulp and familiar with Sass, Twig, and Mustache compiling would be helpful, but not required.",
+        "software": "",
         "speakers": [
             {
                 "name": "Jayson Jaynes",
-                "bio": null,
-                "company": "UCSF",
+                "bio": "Jayson is a designer and developer with over 20+ years creating sophisticated user experiences and interfaces for online and print delivery.\r\n\r\nWhen not in the kitchen or shuffling around an art show, he can likely be found bouncing around at a concert or exploring the ever-growing San Francisco food scene.\r\n\r\nOh, and he's obsessed with his dog, Zoey. Follow her on Instagram: https://www.instagram.com/zoeyfrisk/",
+                "company": "UC San Francisco",
                 "photo": {
                     "fid": 726,
                     "uuid": "eb056863-eea0-4bb0-8d53-334c312d539a",
@@ -1059,7 +1195,44 @@
                 }
             }
         ],
-        "time": "7/12/2017 11:00 AM",
-        "duration": "45 Minutes"
+        "time": "2018-08-15T20:00:00.000Z",
+        "end": "2018-08-15T20:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
+    },
+    {
+        "type": "talk",
+        "speaker": "Huy Tran",
+        "title": "Why do technology implementations fail? Understanding your customer and their problems for successful system implementation",
+        "description": "We have all experienced situations where seemingly great technological solutions get implemented and then they fail spectacularly. This can be from low user adoption, complex processes or the simple fact that the solution was not what was ask. In this interactive session, we will delve into several frameworks to help you better understand your customers and clearly define their problems before creating a technological solution. We will introduce concepts of measurement that are rooted in project management, LEAN and change management, to track your project's progress. You will leave with knowledge that will expand your toolkit for tackling your IT projects and fulfilling your customer's needs.",
+        "knowledge": "None",
+        "software": "None",
+        "speakers": [
+            {
+                "name": "Huy Tran",
+                "bio": "Huy Tran is an IT Professional with over a decade of experience in Higher Education Information Technology. He is currently the IT Manager for the Arts Group at UC Davis leading a team of enthusiastic IT Professionals. Huy has experience in business process architecting, change management, systems management and project management. In additional to his professional life, Huy is an avid winemaker, cyclists, backpacker, and enjoys many other outdoor activities. Huy holds a degree in Computer Engineering from UC Davis, is ITIL Foundations certified and is currently pursuing his Masters in Business Administration.",
+                "company": "UC Davis",
+                "photo": {
+                    "fid": 738,
+                    "uuid": "dd5989cc-a4ac-4714-9d49-787844cf80de",
+                    "langcode": "en",
+                    "filename": "Tran 16.jpg",
+                    "uri": {
+                        "value": "public://users/images/Tran 16.jpg",
+                        "url": "/sites/default/files/users/images/Tran%2016.jpg"
+                    },
+                    "filemime": "image/jpeg",
+                    "filesize": 65427,
+                    "status": true,
+                    "created": 1521657627,
+                    "changed": 1521657638,
+                    "url": "/sites/default/files/users/images/Tran%2016.jpg"
+                }
+            }
+        ],
+        "time": "2018-08-14T20:00:00.000Z",
+        "end": "2018-08-14T20:45:00.000Z",
+        "duration": "45 Minutes",
+        "venue": null
     }
 ]

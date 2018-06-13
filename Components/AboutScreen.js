@@ -13,7 +13,7 @@ import SeeProcess from '../Components/SeeProcess';
 import Twitter from '../Components/Twitter';
 import Sponsors from '../Components/Sponsors';
 import LiveHelp from '../Components/LiveHelp';
-import ConferenceAnnouncements from '../Components/ConferenceAnnouncements';
+import ConferenceAnnouncements from '../Containers/ConferenceAnnouncements';
 import { Images } from '../Themes';
 import styles from './Styles/AboutScreenStyle';
 
@@ -89,7 +89,7 @@ export default class AboutScreen extends React.Component {
     return (
       <Gradient style={styles.container}>
         <ScrollView>
-          <ConferenceAnnouncements currentDate={this.props.currentTime} />
+          <ConferenceAnnouncements />
           <Twitter />
           <SeeProcess />
           {this.renderTabs()}

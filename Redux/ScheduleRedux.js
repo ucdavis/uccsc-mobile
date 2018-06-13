@@ -3,13 +3,6 @@ import Immutable from 'seamless-immutable';
 import DebugConfig from '../Config/DebugConfig';
 import Config from '../Config/AppConfig';
 
-// TEMP
-import talks from '../Fixtures/talks.json';
-import rooms from '../Fixtures/rooms.json';
-
-// set random rooms
-talks.forEach(t => { t.room = rooms[Math.floor(Math.random() * rooms.length)]; });
-
 /* ------------- Types and Action Creators ------------- */
 
 const { Types, Creators } = createActions({
@@ -21,7 +14,8 @@ const { Types, Creators } = createActions({
   setSelectedEvent: ['event'],
   clearSelectedEvent: null,
   updateSchedule: ['schedule'],
-  getScheduleUpdates: null,
+  updateActivities: ['activities'],
+  updateTalks: ['talks'],
   starTalk: ['title'],
   unstarTalk: ['title'],
 });
@@ -43,10 +37,8 @@ export const INITIAL_STATE = new Immutable({
   ignoreUpdates: false,
   selectedEvent: null,
   activities: require('../Fixtures/activities.json'),
-  breaks: require('../Fixtures/breaks.json'),
-  talks,
-  starredTalks: [
-  ],
+  talks: require('../Fixtures/talks.json'),
+  starredTalks: [],
 });
 
 /* ------------- Reducers ------------- */
@@ -73,9 +65,14 @@ export const unlockCurrentTime = (state) => {
 };
 
 // Store API
-export const updateSchedule = (state, { schedule }) => {
-  return state.merge({ talks: schedule });
-};
+// export const updateSchedule = (state, { schedule }) => {
+//   const { activities, talks } = schedule;
+//   return state.merge({ activities, talks });
+// };
+
+export const updateActivites = (state, { activities }) => state.merge({ activities });
+
+export const updateTalks = (state, { talks }) => state.merge({ talks });
 
 export const starTalk = (state = INITIAL_STATE, { title }) =>
   state.merge({ starredTalks: [...state.starredTalks, title] });
@@ -91,7 +88,9 @@ export const reducer = createReducer(INITIAL_STATE, {
   [Types.UNLOCK_CURRENT_TIME]: unlockCurrentTime,
   [Types.SET_SELECTED_EVENT]: setSelectedEvent,
   [Types.CLEAR_SELECTED_EVENT]: clearSelectedEvent,
-  [Types.UPDATE_SCHEDULE]: updateSchedule,
+  // [Types.UPDATE_SCHEDULE]: updateSchedule,
+  [Types.UPDATE_ACTIVITIES]: updateActivites,
+  [Types.UPDATE_TALKS]: updateTalks,
   [Types.STAR_TALK]: starTalk,
   [Types.UNSTAR_TALK]: unstarTalk,
 });
