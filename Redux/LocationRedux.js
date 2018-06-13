@@ -19,9 +19,7 @@ export const INITIAL_STATE = new Immutable({
 /* ------------- Reducers ------------- */
 
 // Store API
-export const updateNearby = (state, { nearby }) => {
-  return state.merge({ nearby });
-};
+export const updateNearby = (state, { nearby }) => Immutable.merge(state, { nearby });
 
 /* ------------- Hookup Reducers To Types ------------- */
 

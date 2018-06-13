@@ -43,42 +43,33 @@ export const INITIAL_STATE = new Immutable({
 
 /* ------------- Reducers ------------- */
 
-export const updateCurrentTime = (state, { time }) => {
-  return (state.ignoreUpdates) ? state : state.merge({ currentTime: time });
-};
+export const updateCurrentTime = (state, { time }) =>
+  (state.ignoreUpdates) ? state : Immutable.merge(state, { currentTime: time });
 
-export const setSelectedEvent = (state, { event }) => {
-  return state.merge({ selectedEvent: event });
-};
+export const setSelectedEvent = (state, { event }) =>
+  Immutable.merge(state, { selectedEvent: event });
 
-export const clearSelectedEvent = (state) => {
-  return state.merge({ selectedEvent: null });
-};
+export const clearSelectedEvent = (state) =>
+  Immutable.merge(state, { selectedEvent: null });
 
 // Used for Debugging
-export const lockCurrentTime = (state, { time }) => {
-  return state.merge({ currentTime: time, ignoreUpdates: true });
-};
+export const lockCurrentTime = (state, { time }) =>
+  Immutable.merge(state, { currentTime: time, ignoreUpdates: true });
 
-export const unlockCurrentTime = (state) => {
-  return state.merge({ ignoreUpdates: false });
-};
+export const unlockCurrentTime = (state) =>
+  Immutable.merge(state, { ignoreUpdates: false });
 
-// Store API
-// export const updateSchedule = (state, { schedule }) => {
-//   const { activities, talks } = schedule;
-//   return state.merge({ activities, talks });
-// };
+export const updateActivites = (state, { activities }) =>
+  Immutable.merge(state, { activities });
 
-export const updateActivites = (state, { activities }) => state.merge({ activities });
-
-export const updateTalks = (state, { talks }) => state.merge({ talks });
+export const updateTalks = (state, { talks }) =>
+  Immutable.merge(state, { talks });
 
 export const starTalk = (state = INITIAL_STATE, { title }) =>
-  state.merge({ starredTalks: [...state.starredTalks, title] });
+  Immutable.merge(state, { starredTalks: [...state.starredTalks, title] });
 
 export const unstarTalk = (state = INITIAL_STATE, { title }) =>
-  state.merge({ starredTalks: [...state.starredTalks.filter((t) => t !== title)] });
+  Immutable.merge(state, { starredTalks: [...state.starredTalks.filter((t) => t !== title)] });
 
 /* ------------- Hookup Reducers To Types ------------- */
 
@@ -88,7 +79,6 @@ export const reducer = createReducer(INITIAL_STATE, {
   [Types.UNLOCK_CURRENT_TIME]: unlockCurrentTime,
   [Types.SET_SELECTED_EVENT]: setSelectedEvent,
   [Types.CLEAR_SELECTED_EVENT]: clearSelectedEvent,
-  // [Types.UPDATE_SCHEDULE]: updateSchedule,
   [Types.UPDATE_ACTIVITIES]: updateActivites,
   [Types.UPDATE_TALKS]: updateTalks,
   [Types.STAR_TALK]: starTalk,

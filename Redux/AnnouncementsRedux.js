@@ -20,7 +20,7 @@ export const INITIAL_STATE = new Immutable({
 
 /* ------------- Reducers ------------- */
 
-export const updateNews = (state, { news }) => state.merge({ news });
+export const updateNews = (state = INITIAL_STATE, { news }) => Immutable.merge(state, { news });
 
 /* ------------- Hookup Reducers To Types ------------- */
 

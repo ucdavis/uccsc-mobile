@@ -23,22 +23,22 @@ export default Creators;
 
 /* ------------- Reducer ------------- */
 
-export const addSingleNotification = (state = INITIAL_STATE, { message }) =>
-  state.merge({ notifications: [...state.notifications, message] });
+export const addNotification = (state = INITIAL_STATE, { message }) => 
+  Immutable.merge(state, { notifications: [...state.notifications, message] });
 
-export const clearAllNotifications = (state) =>
-  state.merge({ notifications: [] });
+export const clearAllNotifications = (state ) =>
+  Immutable.merge(state, { notifications: [] });
 
 export const trackLocalNotification = (state = INITIAL_STATE, { id, title }) =>
-  state.merge({ localNotifications: [...state.localNotifications, { id, title }] });
+  Immutable.merge(state, { localNotifications: [...state.localNotifications, { id, title }] });
 
 export const untrackLocalNotification = (state, { id }) =>
-  state.merge({ localNotifications: [...state.localNotifications.filter((n) => n.id !== id)] });
+  Immutable.merge(state, { localNotifications: [...state.localNotifications.filter((n) => n.id !== id)] });
 
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [Types.ADD_NOTIFICATION]: addSingleNotification,
+  [Types.ADD_NOTIFICATION]: addNotification,
   [Types.CLEAR_NOTIFICATIONS]: clearAllNotifications,
   [Types.TRACK_LOCAL_NOTIFICATION]: trackLocalNotification,
   [Types.UNTRACK_LOCAL_NOTIFICATION]: untrackLocalNotification,
