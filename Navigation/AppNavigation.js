@@ -1,11 +1,11 @@
-import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import AboutScreen from '../Components/AboutScreen';
 import EventDetailScreen from '../Containers/EventDetailScreen';
 import LocationScreen from '../Containers/LocationScreen';
 import ScheduleScreen from '../Containers/ScheduleScreen';
 import styles from './styles/NavigationStyles';
 
-const ScheduleStack = new StackNavigator({
+const ScheduleStack = createStackNavigator({
   Home: { screen: ScheduleScreen },
   EventDetail: { screen: EventDetailScreen },
 }, {
@@ -14,13 +14,12 @@ const ScheduleStack = new StackNavigator({
   cardStyle: styles.card,
 });
 
-const TabNav = new TabNavigator({
+const TabNav = createBottomTabNavigator({
   Schedule: { screen: ScheduleStack },
   Location: { screen: LocationScreen },
   About: { screen: AboutScreen },
 }, {
   key: 'Schedule',
-  tabBarComponent: TabBarBottom,
   tabBarPosition: 'bottom',
   animationEnabled: true,
   swipeEnabled: true,

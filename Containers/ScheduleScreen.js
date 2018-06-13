@@ -6,7 +6,7 @@ import {
   View,
   Animated,
 } from 'react-native';
-import { TabNavigator, TabBarTop } from 'react-navigation';
+import { createMaterialTopTabNavigator } from 'react-navigation';
 import { MaterialIcons } from '@expo/vector-icons';
 import { connect } from 'react-redux';
 import Config from '../Config/AppConfig';
@@ -44,7 +44,6 @@ const DayTabs = {
 };
 
 const DayTabNavigatorOptions = {
-  tabBarComponent: TabBarTop,
   tabBarPosition: 'top',
   lazy: false,
   animationEnabled: false,
@@ -121,7 +120,7 @@ export default class ScheduleScreen extends React.PureComponent {
   }
 
   render() {
-    const DayTabNavigator = new TabNavigator(DayTabs, {
+    const DayTabNavigator = createMaterialTopTabNavigator(DayTabs, {
       ...DayTabNavigatorOptions,
       initialRouteName: 'Monday',
     });
