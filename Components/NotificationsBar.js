@@ -40,12 +40,13 @@ class NotificationsBar extends Component {
       return null;
     }
 
+    const message = notification.message || 'You have a notification!';
     const onPress = this.onPressStatusBarAlert.bind(this, notification);
 
     return (
       <View style={styles.statusBar}>
         <TouchableOpacity style={styles.detailsButton} onPress={onPress}>
-          <Text style={styles.statusBarText}>{ notification.message || 'You have a notification!' }</Text>
+          <Text style={styles.statusBarText}>{ message }</Text>
           <Text style={styles.statusBarTextMinor}>(tap for details)</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.dismissButton} onPress={this.onDismiss}>
