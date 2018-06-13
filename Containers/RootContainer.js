@@ -96,7 +96,7 @@ class RootContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  talks: state.schedule.speakerSchedule,
+  talks: state.schedule.talks,
   notifications: state.notifications.notifications,
 });
 
