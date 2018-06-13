@@ -44,7 +44,6 @@ const DayTabs = {
 };
 
 const DayTabNavigatorOptions = {
-  tabBarPosition: 'top',
   lazy: false,
   animationEnabled: false,
   swipeEnabled: false,
@@ -52,14 +51,13 @@ const DayTabNavigatorOptions = {
     activeTintColor: Colors.snow,
     inactiveTintColor: 'rgba(255,255,255,0.80)',
     indicatorStyle: {
-      borderBottomColor: Colors.snow
+      backgroundColor: Colors.snow
     },
     labelStyle: {
       fontSize: 16,
       letterSpacing: 0,
       fontFamily: 'Montserrat-Light',
       backgroundColor: Colors.clear,
-      // color: 'rgba(255,255,255,0.80)',
     },
     tabStyle: {
       flex: 1,
@@ -70,9 +68,6 @@ const DayTabNavigatorOptions = {
       borderBottomColor: 'rgba(253,229,255,0.5)',
     },
     style: {
-      // flexDirection: 'row',
-      // alignItems: 'center',
-      // justifyContent: 'space-around',
       backgroundColor: Colors.blue,
     }
   }

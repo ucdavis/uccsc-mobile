@@ -15,15 +15,12 @@ const ScheduleStack = createStackNavigator({
 });
 
 const TabNav = createBottomTabNavigator({
-  Schedule: { screen: ScheduleStack },
+  Schedule: { screen: ScheduleStack, navigationOptions: ScheduleScreen.navigationOptions },
   Location: { screen: LocationScreen },
   About: { screen: AboutScreen },
 }, {
-  key: 'Schedule',
-  tabBarPosition: 'bottom',
   animationEnabled: true,
-  swipeEnabled: true,
-  headerMode: 'none',
+  swipeEnabled: false,
   initialRouteName: 'Schedule',
   tabBarOptions: {
     style: styles.tabBar,
