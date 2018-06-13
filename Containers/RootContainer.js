@@ -1,19 +1,21 @@
 import React from 'react';
 import { View, StatusBar } from 'react-native';
-import { connect } from 'react-redux';
 import { Notifications } from 'expo';
+import { connect } from 'react-redux';
+
 import AnnouncementActions from '../Redux/AnnouncementsRedux';
-import StartupActions from '../Redux/StartupRedux';
-import NavigationActions from '../Redux/NavigationRedux';
 import NotificationActions from '../Redux/NotificationRedux';
 import ScheduleActions from '../Redux/ScheduleRedux';
-import ReduxPersistConfig from '../Config/ReduxPersistConfig';
-import ReduxNavigation from '../Navigation/ReduxNavigation';
-import styles from './Styles/RootContainerStyles';
-import { registerForPushNotificationsAsync } from '../Services/PushNotifications';
+import StartupActions from '../Redux/StartupRedux';
+
+import AppNavigation from '../Navigation/AppNavigation';
 import NotificationsBar from '../Components/NotificationsBar';
+import ReduxPersistConfig from '../Config/ReduxPersistConfig';
+import styles from './Styles/RootContainerStyles';
 
 import { getActivities, getTalks, getNews } from '../Services/Api';
+import { registerForPushNotificationsAsync } from '../Services/PushNotifications';
+import * as NavigationService from '../Services/NavigationService';
 
 const sessionDeepLinkRegex = /^\/\/session\/(.*)$/gi;
 
@@ -69,7 +71,7 @@ class RootContainer extends React.Component {
 
       // setup navigation and go
       this.props.setSelectedEvent(talk);
-      this.props.navigateToTalkDetail({ routeName: 'Schedule', action: 'TalkDetail' });
+      NavigationService.navigate({ routeName: 'Schedule', action: 'TalkDetail' });
       
       return true;
     }
@@ -87,7 +89,7 @@ class RootContainer extends React.Component {
           clearNotifications={clearNotifications}
           handleDeepLink={this._handleDeepLink}
         />
-        <ReduxNavigation />
+        <AppNavigation ref={r => NavigationService.setTopLevelNavigator(r)} />
       </View>
     );
   }
@@ -107,11 +109,6 @@ const mapDispatchToProps = (dispatch) => ({
   updateNews: (news) => dispatch(AnnouncementActions.updateNews(news)),
   updateTalks: (talks) => dispatch(ScheduleActions.updateTalks(talks)),
   setSelectedEvent: (talk) => dispatch(ScheduleActions.setSelectedEvent(talk)),
-  navigateToTalkDetail: () =>
-    dispatch(NavigationActions.navigate({
-      routeName: 'Schedule',
-      action: NavigationActions.navigate({ routeName: 'TalkDetail' }),
-    })),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RootContainer);

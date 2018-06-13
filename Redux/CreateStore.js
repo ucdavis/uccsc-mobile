@@ -4,8 +4,6 @@ import Config from '../Config/DebugConfig';
 // import createSagaMiddleware from 'redux-saga'
 import ReduxPersistConfig from '../Config/ReduxPersistConfig';
 // import ScreenTracking from './ScreenTrackingMiddleware'
-import { middleware as navigationMiddleware } from './NavigationRedux';
-import { createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers';
 
 // creates the store
 export default (rootReducer, rootSaga) => {
@@ -22,9 +20,6 @@ export default (rootReducer, rootSaga) => {
   // const sagaMonitor = Config.useReactotron ? console.tron.createSagaMonitor() : null
   // const sagaMiddleware = createSagaMiddleware({ sagaMonitor })
   // middleware.push(sagaMiddleware)
-
-  /* ------------- Navigation Middleware ------------- */
-  middleware.push(navigationMiddleware);
 
   /* ------------- Assemble Middleware ------------- */
 
