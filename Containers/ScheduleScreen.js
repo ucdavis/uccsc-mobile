@@ -1,32 +1,15 @@
 import React from 'react';
 import {
-  ImageBackground,
-  Image,
-  Text,
-  View,
   Animated,
 } from 'react-native';
 import { createMaterialTopTabNavigator } from 'react-navigation';
 import { MaterialIcons } from '@expo/vector-icons';
-import { connect } from 'react-redux';
-import Config from '../Config/AppConfig';
-import { Colors, Images, Metrics } from '../Themes';
+import { Colors, Metrics } from '../Themes';
 
-import Logo from '../Images/Logo';
 import Gradient from '../Components/Gradient';
-import DayToggle from '../Components/DayToggle';
 import { MondayScheduleList, TuesdayScheduleList, WednesdayScheduleList } from '../Components/ScheduleList';
 
 import styles from './Styles/ScheduleScreenStyles';
-
-import { GroupBy, FindIndexAll, Sum } from '../Utils/Array';
-import { GetItemLayout } from '../Utils/SectionList';
-import { startOfDay, isSameDay, isWithinRange, isBefore } from 'date-fns';
-import AppConfig from '../Config/AppConfig';
-
-const HEADER_MAX_HEIGHT = 200;
-const HEADER_MIN_HEIGHT = Metrics.statusBarHeight + 70;
-const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
 
 const DayTabs = {
   Monday: {

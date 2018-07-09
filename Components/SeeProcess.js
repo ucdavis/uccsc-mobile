@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, Linking } from 'react-native';
+import { Text, TouchableOpacity, Linking } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import { Images } from '../Themes';
 import styles from './Styles/SeeProcessStyle';
 
 const onPress = () => {

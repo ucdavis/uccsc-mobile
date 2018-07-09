@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
 import styles from './Styles/RoundedButtonStyle';
 
-const RoundedButton = (props: RoundedButtonProps) => {
+const RoundedButton = (props) => {
   const getText = () => {
     return props.text || props.children || '';
   };

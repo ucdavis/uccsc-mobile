@@ -13,7 +13,6 @@ import AppConfig from '../Config/AppConfig';
 import Gradient from '../Components/Gradient';
 import RoomInfo from '../Components/RoomInfo';
 import TalkInfo from '../Components/TalkInfo';
-import { Images } from '../Themes';
 import { connect } from 'react-redux';
 import styles from './Styles/EventDetailScreenStyles';
 

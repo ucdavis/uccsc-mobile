@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, Image, TouchableOpacity, Text, Linking } from 'react-native';
+import { View, TouchableOpacity, Text, Linking } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import { Images } from '../Themes';
 import styles from './Styles/TwitterStyle';
 
 const tweetWithHashtag = async () => {

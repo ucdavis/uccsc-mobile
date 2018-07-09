@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import { Images } from '../Themes';
 import styles from './Styles/RemindMeButtonStyle';
 
 const RemindMeButton = (props) => {

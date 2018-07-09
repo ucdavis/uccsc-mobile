@@ -1,11 +1,9 @@
 import React from 'react';
 import {
   Animated,
-  Image,
   Text,
   View,
   Linking,
-  ScrollView,
   TouchableOpacity,
 } from 'react-native';
 import { MapView } from 'expo';

@@ -2,7 +2,6 @@ import React from 'react';
 import {
   ScrollView,
   TouchableOpacity,
-  Image,
   Text,
   View,
   LayoutAnimation,
@@ -14,7 +13,6 @@ import Twitter from '../Components/Twitter';
 import Sponsors from '../Components/Sponsors';
 import LiveHelp from '../Components/LiveHelp';
 import ConferenceAnnouncements from '../Containers/ConferenceAnnouncements';
-import { Images } from '../Themes';
 import styles from './Styles/AboutScreenStyle';
 
 export default class AboutScreen extends React.Component {

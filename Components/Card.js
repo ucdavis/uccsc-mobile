@@ -1,11 +1,9 @@
 import React from 'react';
 import {
-  View,
   TouchableWithoutFeedback,
   Animated,
 } from 'react-native';
 import styles from './Styles/CardStyle';
-import AppConfig from '../Config/AppConfig';
 
 export default class Card extends React.PureComponent {
   constructor(props) {

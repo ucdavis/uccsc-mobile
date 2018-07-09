@@ -8,8 +8,6 @@ import Card from './Card';
 import RoomInfo from './RoomInfo';
 import TalkInfo from './TalkInfo';
 import styles from './Styles/EventStyle';
-import AppConfig from '../Config/AppConfig';
-import { Colors } from '../Themes/';
 
 export default class Event extends React.PureComponent {
   renderAvatar() {

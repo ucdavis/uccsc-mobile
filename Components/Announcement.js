@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, View, Text, } from 'react-native';
+import { View, Text, } from 'react-native';
 import styles from './Styles/AnnouncementStyle';
 
 class Announcement extends React.Component {

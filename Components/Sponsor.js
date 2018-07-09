@@ -3,7 +3,6 @@ import {
   TouchableOpacity,
   Image,
   Linking,
-  ImageStyle,
 } from 'react-native';
 import styles from './Styles/SponsorsStyle';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Linking, Button } from 'react-native';
+import { View, Text, Linking } from 'react-native';
 import RoundedButton from './RoundedButton';
 import styles from './Styles/LiveHelpStyle';
 

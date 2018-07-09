@@ -3,14 +3,11 @@ import {
   View,
   Text,
   Image,
-  TouchableWithoutFeedback,
-  Animated,
 } from 'react-native';
 import Card from './Card';
 import RoomInfo from './RoomInfo';
 import TalkInfo from './TalkInfo';
 import styles from './Styles/TalkStyle';
-import AppConfig from '../Config/AppConfig';
 import { Colors } from '../Themes/';
 
 const themeColors = [

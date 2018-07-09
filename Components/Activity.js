@@ -1,12 +1,10 @@
 import React from 'react';
-import { View, Text, Image, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { format, getTime } from 'date-fns';
 
-import AppConfig from '../Config/AppConfig';
-import { Images, Videos } from '../Themes';
+import { Images } from '../Themes';
 
 import Card from './Card';
-import BackgroundVideo from './BackgroundVideo';
 import styles from './Styles/ActivityStyle';
 
 export default class Activity extends React.PureComponent {

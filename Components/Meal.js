@@ -2,11 +2,9 @@ import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { format, getTime } from 'date-fns';
 
-import AppConfig from '../Config/AppConfig';
-import { Images, Videos } from '../Themes';
+import { Images } from '../Themes';
 
 import Card from './Card';
-import BackgroundVideo from './BackgroundVideo';
 import styles from './Styles/MealStyle';
 
 export default class Meal extends React.PureComponent {
@@ -28,7 +26,7 @@ export default class Meal extends React.PureComponent {
   };
 
   renderBackground() {
-    const { type, title, image } = this.props;
+    const { title } = this.props;
     const { isLaidOut, imageWidth } = this.state;
 
     if (!isLaidOut) {

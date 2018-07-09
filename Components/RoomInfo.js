@@ -1,7 +1,5 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { format } from 'date-fns';
-import RemindMeButton from './RemindMeButton';
 import styles from './Styles/RoomInfoStyle';
 
 const RoomInfo = (props) => {
