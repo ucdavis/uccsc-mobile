@@ -33,6 +33,19 @@ class EventDetailScreen extends React.Component {
     this.props.navigation.dispatch(NavigationActions.back());
   };
 
+  renderTalkInfo() {
+    const { title, time, duration, eventType } = this.props;
+
+    let showToggleReminder = false;
+    if (!eventType) {
+      showToggleReminder = true;
+    }
+
+    return (
+      <TalkInfo showDay start={time} duration={duration} showToggleReminder={showToggleReminder} toggleReminderData={{ title }} />
+    );
+  }
+
   renderAvatar(speaker) {
     if (!speaker.photo) {
       return null;
@@ -79,7 +92,9 @@ class EventDetailScreen extends React.Component {
   }
 
   render() {
-    const { title, description, time, duration, venue, eventType } = this.props;
+    const { title, description, venue, eventType } = this.props;
+
+
     return (
       <Gradient style={styles.gradient}>
         <ScrollView>
@@ -95,7 +110,7 @@ class EventDetailScreen extends React.Component {
               <Text style={styles.heading}>{ title }</Text>
             </View>
             <View style={styles.section}>
-              <TalkInfo start={time} duration={duration} />
+              { this.renderTalkInfo() }
             </View>
             { venue && 
               <View style={styles.section}>
