@@ -65,10 +65,10 @@ export const updateActivites = (state, { activities }) =>
 export const updateTalks = (state, { talks }) =>
   Immutable.merge(state, { talks });
 
-export const starTalk = (state = INITIAL_STATE, { title }) =>
+export const starTalk = (state, { title }) =>
   Immutable.merge(state, { starredTalks: [...state.starredTalks, title] });
 
-export const unstarTalk = (state = INITIAL_STATE, { title }) =>
+export const unstarTalk = (state, { title }) =>
   Immutable.merge(state, { starredTalks: [...state.starredTalks.filter((t) => t !== title)] });
 
 /* ------------- Hookup Reducers To Types ------------- */
