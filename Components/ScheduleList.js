@@ -4,7 +4,6 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import Config from '../Config/AppConfig';
-import { Images, Metrics } from '../Themes';
 import NotificationActions from '../Redux/NotificationRedux';
 import ScheduleActions from '../Redux/ScheduleRedux';
 import PushNotifications from '../Services/PushNotifications';
@@ -17,9 +16,9 @@ import ScheduleSectionHeader from '../Components/ScheduleSectionHeader';
 
 import styles from './Styles/ScheduleListStyles';
 
-import { GroupBy, FindIndexAll, Sum } from '../Utils/Array';
+import { GroupBy } from '../Utils/Array';
 import { GetItemLayout } from '../Utils/SectionList';
-import { startOfDay, isSameDay, isWithinRange, isBefore } from 'date-fns';
+import { isSameDay, isBefore } from 'date-fns';
 import AppConfig from '../Config/AppConfig';
 
 class ScheduleList extends React.Component {
