@@ -20,7 +20,7 @@
       "package": "edu.ucdavis.uccsc",
       "permissions": [
       ],
-      "versionCode": 3,
+      "versionCode": 4,
       "config": {
         "googleMaps": {
           "apiKey": "AIzaSyCGAQAUVoqMwccWP7-bbQUiDZo4DsHczSY"
