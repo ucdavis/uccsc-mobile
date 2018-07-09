@@ -5,24 +5,32 @@ import styles from './Styles/RoomInfoStyle';
 const RoomInfo = (props) => {
   const { building, room } = props;
 
+  if (!building && !room) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
-      <View style={styles.detail}>
-        <Text style={styles.detailLabel}>
-          Building
-        </Text>
-        <Text style={styles.detailText}>
-          { building }
-        </Text>
-      </View>
-      <View style={styles.detail}>
-        <Text style={styles.detailLabel}>
-          Room
-        </Text>
-        <Text style={styles.detailText}>
-          { room }
-        </Text>
-      </View>
+      { building &&
+        <View style={styles.detail}>
+          <Text style={styles.detailLabel}>
+            Building
+          </Text>
+          <Text style={styles.detailText}>
+            { building }
+          </Text>
+        </View>
+      }
+      { room && 
+        <View style={styles.detail}>
+          <Text style={styles.detailLabel}>
+            Room
+          </Text>
+          <Text style={styles.detailText}>
+            { room }
+          </Text>
+        </View>
+      }
     </View>
   );
 };
