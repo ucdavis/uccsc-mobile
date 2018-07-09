@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StatusBar } from 'react-native';
 import { Notifications } from 'expo';
 import { connect } from 'react-redux';
+import { StackActions } from 'react-navigation';
 
 import AnnouncementActions from '../Redux/AnnouncementsRedux';
 import NotificationActions from '../Redux/NotificationRedux';
@@ -55,8 +56,18 @@ class RootContainer extends React.Component {
   }
 
   _handleNotification = (notification) => {
-    const { addNotification } = this.props;
+    // show the banner regardless
+    const { addNotification, clearNotifications } = this.props;
     addNotification(notification);
+
+    // if the notification was selected
+    if (notification.origin === 'selected') {
+      // try to handle the notification's deeplink
+      const handled = this._handleDeepLink(notification.data.link);
+      if (handled) {
+        clearNotifications();
+      }
+    }
   };
 
   _handleDeepLink = (link) => {
@@ -71,7 +82,7 @@ class RootContainer extends React.Component {
 
       // setup navigation and go
       this.props.setSelectedEvent(talk);
-      NavigationService.navigate({ routeName: 'Schedule', action: 'TalkDetail' });
+      NavigationService.navigate({ routeName: 'Schedule', action: StackActions.push({ routeName: 'EventDetail' }) });
       
       return true;
     }
