@@ -6,27 +6,41 @@ import styles from './Styles/TalkInfoStyle';
 
 export default class TalkInfo extends React.PureComponent {
   render() {
-    const { start, duration, showToggleReminder, toggleReminderData } = this.props;
+    const { showDay, start, duration, showToggleReminder, toggleReminderData } = this.props;
 
     return (
       <View style={styles.container}>
         <View style={styles.details}>
-          <View style={styles.detail}>
-            <Text style={styles.detailLabel}>
-              Start
-            </Text>
-            <Text style={styles.detailText}>
-              { format(new Date(start), 'h:mm') }
-            </Text>
-          </View>
-          <View style={styles.detail}>
-            <Text style={styles.detailLabel}>
-              Duration
-            </Text>
-            <Text style={styles.detailText}>
-              {duration}
-            </Text>
-          </View>
+          { showDay &&
+              <View style={styles.detail}>
+                <Text style={styles.detailLabel}>
+                  Day
+                </Text>
+                <Text style={styles.detailText}>
+                  { format(new Date(start), 'ddd') }
+                </Text>
+              </View>
+            }
+          { start &&
+            <View style={styles.detail}>
+              <Text style={styles.detailLabel}>
+                Start
+              </Text>
+              <Text style={styles.detailText}>
+                { format(new Date(start), 'h:mma') }
+              </Text>
+            </View>
+          }
+          { duration &&
+            <View style={styles.detail}>
+              <Text style={styles.detailLabel}>
+                Duration
+              </Text>
+              <Text style={styles.detailText}>
+                {duration}
+              </Text>
+            </View>
+          }
           { showToggleReminder &&
             <View style={styles.remindMe}>
                 <RemindMeButton data={toggleReminderData} />
