@@ -73,7 +73,7 @@ export default StyleSheet.create({
     paddingHorizontal: Metrics.doubleBaseMargin,
     backgroundColor: Colors.snow,
     borderTopWidth: 1,
-    borderTopColor: 'rgba(0,0,0,0.2)',
+    borderTopColor: Colors.steel,
   },
   lastSection: {
     marginBottom: Metrics.baseMargin,
