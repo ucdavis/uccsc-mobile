@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
-import { Colors, Metrics } from '../../Themes/'
+import { StyleSheet } from 'react-native';
+import { Colors, Metrics } from '../../Themes/';
 
 export default StyleSheet.create({
   container: {
@@ -7,12 +7,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     backgroundColor: Colors.snow,
-    // paddingVertical: 13,
-    // paddingHorizontal: Metrics.doubleBaseMargin,
-    // borderTopWidth: 1,
-    // borderTopColor: 'rgba(0,0,0,0.2)',
-    // borderBottomWidth: 1,
-    // borderBottomColor: 'rgba(0,0,0,0.2)',
   },
   details: {
     flex: 1,
