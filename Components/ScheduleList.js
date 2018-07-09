@@ -4,9 +4,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import Config from '../Config/AppConfig';
-import NotificationActions from '../Redux/NotificationRedux';
 import ScheduleActions from '../Redux/ScheduleRedux';
-import PushNotifications from '../Services/PushNotifications';
 
 import Activity from '../Components/Activity';
 import Event from '../Components/Event';
@@ -54,30 +52,6 @@ class ScheduleList extends React.Component {
     return false;
   }
 
-  async toggleReminder(item) {
-    const { title } = item;
-    const { starTalk, unstarTalk, trackLocalNotification, untrackLocalNotification, localNotifications } = this.props;
-
-    const starred = this.props.starredTalks.indexOf(s.title) > -1;
-
-    // create schedule local notification, track it, update star status
-    if (!starred) {
-      const id = await PushNotifications.scheduleTalkReminder(item);
-      trackLocalNotification(id, title);
-      starTalk(title);
-      return;
-    }
-
-    // find local notification, cancel it, update star status
-    const notification = localNotifications.find(n => n.title === title);
-    if (notification) {
-      await PushNotifications.cancelTalkReminder(notification.id);
-      untrackLocalNotification(notification.id);
-    }
-
-    unstarTalk(title);
-  }
-
   createOnEventPress = (item) => () => {
     const { screenProps, setSelectedEvent } = this.props;
     setSelectedEvent(item);
@@ -96,33 +70,6 @@ class ScheduleList extends React.Component {
     },
     getSectionHeaderHeight: () => 39,
   });
-
-  async toggleReminder(item) {
-    const { title } = item;
-    const { starTalk, unstarTalk, trackLocalNotification, untrackLocalNotification, localNotifications } = this.props;
-
-      // trigger state change
-    const starred = this.props.starredTalks.indexOf(title) > -1;
-    if (!starred) {
-      starTalk(title);
-    } else {
-      unstarTalk(title);
-    }
-
-    // create schedule local notification, track it, update star status
-    if (!starred) {
-      const id = await PushNotifications.scheduleTalkReminder(item);
-      trackLocalNotification(id, title);
-      return;
-    }
-
-    // find local notification, cancel it, update star status
-    const notification = localNotifications.find(n => n.title === title);
-    if (notification) {
-      await PushNotifications.cancelTalkReminder(notification.id);
-      untrackLocalNotification(notification.id);
-    }
-  }
 
   renderSectionHeader = ({ section }) => { 
     return ( 
@@ -147,10 +94,6 @@ class ScheduleList extends React.Component {
   }
 
   renderTalk = (item) => {
-    const toggleReminder = this.toggleReminder.bind(this, item);
-
-    const starred = this.props.starredTalks.indexOf(item.title) > -1;
-
     let avatarUrl = '';
     if (!!item.speakers && item.speakers.length) {
       // find first speaker with a photo
@@ -167,8 +110,6 @@ class ScheduleList extends React.Component {
         start={item.time}
         duration={item.duration}
         onPress={this.createOnEventPress(item)}
-        starred={starred}
-        toggleReminder={toggleReminder}
         venue={item.venue}
       />
     );
@@ -325,19 +266,12 @@ const mapStoreToProps = (dayIndex) => (store) => {
     activities: store.schedule.activities,
     talks: store.schedule.talks,
     dayIndex: dayIndex,
-    starredTalks: store.schedule.starredTalks,
-    localNotifications: store.notifications.localNotifications,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     setSelectedEvent: data => dispatch(ScheduleActions.setSelectedEvent(data)),
-    starTalk: title => dispatch(ScheduleActions.starTalk(title)),
-    unstarTalk: title => dispatch(ScheduleActions.unstarTalk(title)),
-    trackLocalNotification: (id, title) =>
-      dispatch(NotificationActions.trackLocalNotification(id, title)),
-    untrackLocalNotification: (id) => dispatch(NotificationActions.untrackLocalNotification(id)),
   };
 };
 

@@ -6,7 +6,7 @@ import styles from './Styles/TalkInfoStyle';
 
 export default class TalkInfo extends React.PureComponent {
   render() {
-    const { start, duration, starred, toggleReminder } = this.props;
+    const { start, duration, showToggleReminder, toggleReminderData } = this.props;
 
     return (
       <View style={styles.container}>
@@ -27,9 +27,9 @@ export default class TalkInfo extends React.PureComponent {
               {duration}
             </Text>
           </View>
-          { toggleReminder &&
+          { showToggleReminder &&
             <View style={styles.remindMe}>
-                <RemindMeButton onPress={toggleReminder} on={starred} />
+                <RemindMeButton data={toggleReminderData} />
             </View>
           }
         </View>
