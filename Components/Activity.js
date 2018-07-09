@@ -72,7 +72,6 @@ export default class Activity extends React.PureComponent {
 
   renderContent() {
     const {
-      type,
       title,
       duration,
       isCurrentDay,
@@ -80,12 +79,6 @@ export default class Activity extends React.PureComponent {
       start,
       end,
     } = this.props;
-
-    const containerStyles = [
-      styles.container,
-      isCurrentDay && styles.currentDay,
-      isActive && styles.active,
-    ];
 
     // const video = Videos[type];
     
@@ -137,8 +130,10 @@ export default class Activity extends React.PureComponent {
   }
 
   render() {
+    const { onPress } = this.props;
+    
     return (
-      <Card>
+      <Card onPress={onPress}>
         { this.renderContent() }
       </Card>
     );
