@@ -29,7 +29,7 @@ export default class Talk extends React.PureComponent {
   }
 
   render() {
-    const { name, title, start, duration, venue, onPress, starred, toggleReminder } = this.props;
+    const { name, title, start, duration, venue, onPress } = this.props;
 
     const themeColor = themeColors[(title || '').length % themeColors.length];
 
@@ -56,7 +56,7 @@ export default class Talk extends React.PureComponent {
           </View>
         }
         <View style={styles.talkInfo}>
-          <TalkInfo start={start} duration={duration} starred={starred} toggleReminder={toggleReminder} />
+          <TalkInfo start={start} duration={duration} showToggleReminder toggleReminderData={{ title }} />
         </View>
       </Card>
     );

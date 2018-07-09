@@ -18,6 +18,7 @@ import styles from './Styles/EventDetailScreenStyles';
 
 class EventDetailScreen extends React.Component {
   static navigationOptions = {
+    title: 'EventDetail',
     tabBarLabel: 'Schedule',
     tabBarIcon: ({ focused }) => (
       <MaterialIcons name="schedule" size={24} color="white" />
