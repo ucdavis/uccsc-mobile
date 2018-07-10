@@ -1,73 +1,76 @@
 import React from 'react';
 
-export function withTimers(WrappedComponent) {
-  return class WithTimers extends React.Component {
+export function withTimer(WrappedComponent) {
+  return class WithTimer extends React.Component {
+
+    componentDidMount() {
+      this._timeouts = [];
+      this._intervals = [];
+      this._immediates = [];
+      this._rafs = [];
+    }
 
     componentWillUnmount() {
       // cancel all timers
-      this[_timeouts] && this[_timeouts].forEach(function(id) {
+      this._timeouts && this._timeouts.forEach(function(id) {
         clearTimeout(id);
       });
-      this[_timeouts] = null;
+      this._timeouts = null;
 
       // cancel all intervals
-      this[_intervals] && this[_intervals].forEach(function(id) {
+      this._intervals && this._intervals.forEach(function(id) {
         clearInterval(id);
       });
-      this[_intervals] = null;
+      this._intervals = null;
 
       // cancel all immediates
-      this[_immediates] && this[_immediates].forEach(function(id) {
+      this._immediates && this._immediates.forEach(function(id) {
         clearImmediate(id);
       });
-      this[_immediates] = null;
+      this._immediates = null;
 
       // cancel all animation frames
-      this[_rafs] && this[_rafs].forEach(function(id) {
+      this._rafs && this._rafs.forEach(function(id) {
         cancelAnimationFrame(id);
       });
-      this[_rafs] = null;
+      this._rafs = null;
     }
 
-    // track all setters in an array
+    // track all timers in an array
     setter = (_setter, _clearer, array) => (callback, delta) => {
       const id = _setter(function() {
         _clearer.call(this, id);
         callback.apply(this, arguments);
       }.bind(this), delta);
 
-      if (!this[array]) {
-        this[array] = [id];
+      if (!array) {
+        array = [id];
       } else {
-        this[array].push(id);
+        array.push(id);
       }
       return id;
     }
   
-    // stop tracking function
+    // stop tracking the timer as you clear it
     clearer = (_clearer, array) => (id) => {
-      if (this[array]) {
-        const index = this[array].indexOf(id);
+      if (array) {
+        const index = array.indexOf(id);
         if (index !== -1) {
-          this[array].splice(index, 1);
+          array.splice(index, 1);
         }
       }
       _clearer(id);
     }
   
-    _timeouts = 'WithTimers_timeouts';
     _clearTimeout = this.clearer(clearTimeout, this._timeouts);
     _setTimeout = this.setter(setTimeout, this._clearTimeout, this._timeouts);
   
-    _intervals = 'WithTimers_intervals';
     _clearInterval = this.clearer(clearInterval, this._intervals);
     _setInterval = this.setter(setInterval, function() {/* noop */}, this._intervals);
   
-    _immediates = 'WithTimers_immediates';
     _clearImmediate = this.clearer(clearImmediate, this._immediates);
     _setImmediate = this.setter(setImmediate, this._clearImmediate, this._immediates);
   
-    _rafs = 'WithTimers_rafs';
     _cancelAnimationFrame = this.clearer(cancelAnimationFrame, this._rafs);
     _requestAnimationFrame = this.setter(requestAnimationFrame, this._cancelAnimationFrame, this._rafs);
 
