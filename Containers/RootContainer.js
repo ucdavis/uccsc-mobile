@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, StatusBar } from 'react-native';
+import { AppState, View, StatusBar } from 'react-native';
 import { Notifications } from 'expo';
 import { connect } from 'react-redux';
 import { StackActions } from 'react-navigation';
+import { isFuture, addMinutes } from 'date-fns';
 
 import AnnouncementActions from '../Redux/AnnouncementsRedux';
 import NotificationActions from '../Redux/NotificationRedux';
@@ -21,31 +22,19 @@ import * as NavigationService from '../Services/NavigationService';
 const sessionDeepLinkRegex = /^\/\/session\/(.*)$/gi;
 
 class RootContainer extends React.Component {
+
+  state = {
+    appState: AppState.currentState
+  }
+
   async componentDidMount() {
-    const { updateActivities, updateTalks, updateNews } = this.props;
     // if redux persist is not active fire startup action
     if (!ReduxPersistConfig.active) {
       this.props.startup();
     }
 
-    // start schedule update requests
-    const activitiesTask = getActivities();
-    const talksTask = getTalks();
-    const newsTask = getNews();
-
+    // prompt user for permissions, get device id, etc
     await registerForPushNotificationsAsync();
-
-    // process requests
-    try {
-      const activities = await activitiesTask;
-      updateActivities(activities);
-      const talks = await talksTask;
-      updateTalks(talks);
-      const news = await newsTask;
-      updateNews(news);
-    } catch (err) {
-      console.error(err);
-    }
 
     // Handle notifications that are received or selected while the app
     // is open. If the app was closed and then opened by tapping the
@@ -53,6 +42,16 @@ class RootContainer extends React.Component {
     // this function will fire on the next tick after the app starts
     // with the notification data.
     this._notificationSubscription = Notifications.addListener(this._handleNotification);
+
+    // listen for app foreground loading
+    AppState.addEventListener('change', this._handleAppStateChange);
+
+    // try to fetch api data
+    this.tryUpdateData();
+  }
+
+  componentWillUnmount() {
+    AppState.removeEventListener('change', this._handleAppStateChange);
   }
 
   _handleNotification = (notification) => {
@@ -87,6 +86,47 @@ class RootContainer extends React.Component {
       return true;
     }
     return false;
+  }
+
+  _handleAppStateChange = (nextAppState) => {
+    if (this.state.appState.match(/inactive|background/) && nextAppState === 'active') {
+      this.tryUpdateData();
+    }
+
+    this.setState({appState: nextAppState});
+  }
+
+  // track last time we updated the api data
+  // default to the year 2000!~
+  lastUpdateData = new Date(2000);
+
+  tryUpdateData = async () => {
+    // don't call the function more than once per 5 minutes
+    if (isFuture(addMinutes(this.lastUpdateData, 5))) {
+      return;
+    }
+    // update our tracking date
+    this.lastUpdateData = new Date();
+
+    console.log('fetching data');
+
+    const activitiesTask = getActivities();
+    const talksTask = getTalks();
+    const newsTask = getNews();
+
+    // process requests
+    try {
+      const { updateActivities, updateTalks, updateNews } = this.props;
+
+      const activities = await activitiesTask;
+      updateActivities(activities);
+      const talks = await talksTask;
+      updateTalks(talks);
+      const news = await newsTask;
+      updateNews(news);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   render() {
