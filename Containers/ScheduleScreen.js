@@ -58,6 +58,7 @@ const DayTabNavigatorOptions = {
 
 export default class ScheduleScreen extends React.PureComponent {
   static navigationOptions = {
+    title: 'Home',
     tabBarLabel: 'Schedule',
     tabBarIcon: ({ focused }) => (
       <MaterialIcons

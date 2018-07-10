@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { NavigationActions } from 'react-navigation';
+import { StackActions } from 'react-navigation';
 import {
   BackHandler,
   ScrollView,
@@ -35,8 +35,13 @@ class EventDetailScreen extends React.Component {
     BackHandler.addEventListener('hardwareBackPress', this.goBack);
   }
 
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.goBack);
+  }
+
   goBack = () => {
-    this.props.navigation.dispatch(NavigationActions.back());
+    this.props.navigation.dispatch(StackActions.popToTop());
+    return true;
   };
 
   onLinkPress = (url) => {
