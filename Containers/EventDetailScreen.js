@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { NavigationActions } from 'react-navigation';
 import {
   BackHandler,
@@ -6,14 +7,19 @@ import {
   Text,
   View,
   Image,
+  Linking,
   TouchableOpacity,
+  StyleSheet,
 } from 'react-native';
+import { MarkdownView } from 'react-native-markdown-view';
 import { MaterialIcons } from '@expo/vector-icons';
+
 import AppConfig from '../Config/AppConfig';
+
 import Gradient from '../Components/Gradient';
 import RoomInfo from '../Components/RoomInfo';
 import TalkInfo from '../Components/TalkInfo';
-import { connect } from 'react-redux';
+
 import styles from './Styles/EventDetailScreenStyles';
 
 class EventDetailScreen extends React.Component {
@@ -32,6 +38,16 @@ class EventDetailScreen extends React.Component {
   goBack = () => {
     this.props.navigation.dispatch(NavigationActions.back());
   };
+
+  onLinkPress = (url) => {
+    if (!url.startsWith('http')) {
+      url = `${AppConfig.conferenceUrl}${url}`;
+    }
+
+    if (Linking.canOpenURL(url)) {
+      Linking.openURL(url);
+    }
+  }
 
   renderTalkInfo() {
     const { title, time, duration, eventType } = this.props;
@@ -94,6 +110,10 @@ class EventDetailScreen extends React.Component {
   render() {
     const { title, description, venue, eventType } = this.props;
 
+    const descriptionStyles = {
+      link: StyleSheet.flatten(styles.descriptionLink),
+      paragraph: StyleSheet.flatten(styles.descriptionText),
+    };
 
     return (
       <Gradient style={styles.gradient}>
@@ -118,7 +138,13 @@ class EventDetailScreen extends React.Component {
               </View>
             }
             <View style={[styles.section, styles.lastSection]}>
-              <Text style={styles.description}>{ description }</Text>
+              <MarkdownView
+                style={styles.descriptionView}
+                styles={descriptionStyles}
+                onLinkPress={this.onLinkPress}
+              >
+                { description }
+              </MarkdownView>
             </View>
             { this.renderSpeakers() }
           </View>

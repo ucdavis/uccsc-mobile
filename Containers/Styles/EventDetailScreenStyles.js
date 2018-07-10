@@ -80,13 +80,19 @@ export default StyleSheet.create({
     borderBottomLeftRadius: Metrics.cardRadius,
     borderBottomRightRadius: Metrics.cardRadius,
   },
-  description: {
+  descriptionView: {
+  },
+  descriptionText: {
     fontFamily: 'Montserrat-Light',
     fontSize: 16,
     letterSpacing: 0,
     lineHeight: 24,
     color: Colors.lightText,
     backgroundColor: Colors.transparent,
+  },
+  descriptionLink: {
+    fontFamily: 'Montserrat-SemiBold',
+    color: Colors.blue,
   },
   speakers: {
     marginBottom: Metrics.baseMargin,
