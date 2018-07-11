@@ -100,7 +100,7 @@ class TalkDetailScreen extends React.Component {
   }
 
   render() {
-    const { title, duration, time, description, venue, track, knowledge, software } = this.props;
+    const { title, duration, time, description, venue, track, level, knowledge, software } = this.props;
 
     const descriptionStyles = {
       link: StyleSheet.flatten(styles.descriptionLink),
@@ -140,16 +140,22 @@ class TalkDetailScreen extends React.Component {
               >
                 { description }
               </MarkdownView>
+              { level &&
+                <View style={styles.detailContainer}>
+                  <Text style={styles.detailLabel}>LEVEL</Text>
+                  <Text style={styles.detailText}>{ level.name }</Text>
+                </View>
+              }
               { knowledge &&
-                <View>
-                  <Text style={styles.sectionHeading}>PREVIOUS KNOWLEDGE</Text>
-                  <Text style={styles.descriptionText}>{ knowledge }</Text>
+                <View style={styles.detailContainer}>
+                  <Text style={styles.detailLabel}>PREVIOUS KNOWLEDGE</Text>
+                  <Text style={styles.detailText}>{ knowledge }</Text>
                 </View>
               }
               { software &&
-                <View>
-                  <Text style={styles.sectionHeading}>SOFTWARE INSTALLATION EXPECTATION</Text>
-                  <Text style={styles.descriptionText}>{ software }</Text>
+                <View style={styles.detailContainer}>
+                  <Text style={styles.detailLabel}>SOFTWARE</Text>
+                  <Text style={styles.detailText}>{ software }</Text>
                 </View>
               }
             </View>

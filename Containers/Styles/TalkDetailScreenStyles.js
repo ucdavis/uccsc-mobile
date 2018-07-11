@@ -121,6 +121,22 @@ export default StyleSheet.create({
     fontFamily: 'Montserrat-SemiBold',
     color: Colors.blue,
   },
+  detailContainer: {
+    marginBottom: Metrics.baseMargin,
+  },
+  detailLabel: {
+    fontFamily: 'Montserrat-Light',
+    fontSize: 13,
+    letterSpacing: 3,
+    color: Colors.lightText,
+  },
+  detailText: {
+    fontFamily: 'Montserrat-Light',
+    fontSize: 16,
+    letterSpacing: 0,
+    lineHeight: 24,
+    color: Colors.lightText,
+  },
   speakers: {
     marginBottom: Metrics.baseMargin,
     borderRadius: Metrics.cardRadius,
