@@ -53,9 +53,23 @@ export default StyleSheet.create({
     borderTopRightRadius: Metrics.cardRadius,
     backgroundColor: Colors.snow,
   },
-  sectionHeading: {
-    alignSelf: 'flex-start',
+  sectionHeadingContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     marginBottom: 12,
+  },
+  sectionHeading: {
+    flex: 1,
+    alignSelf: 'flex-start',
+    fontFamily: 'Montserrat-Light',
+    fontSize: 11,
+    letterSpacing: 3,
+    color: Colors.lightText,
+  },
+  sectionTrackHeading: {
+    flex: 2,
+    alignSelf: 'flex-end',
+    textAlign: 'right',
     fontFamily: 'Montserrat-Light',
     fontSize: 11,
     letterSpacing: 3,

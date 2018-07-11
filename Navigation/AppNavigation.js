@@ -1,6 +1,7 @@
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import AboutScreen from '../Components/AboutScreen';
 import EventDetailScreen from '../Containers/EventDetailScreen';
+import TalkDetailScreen from '../Containers/TalkDetailScreen';
 import LocationScreen from '../Containers/LocationScreen';
 import ScheduleScreen from '../Containers/ScheduleScreen';
 import styles from './styles/NavigationStyles';
@@ -8,6 +9,7 @@ import styles from './styles/NavigationStyles';
 const ScheduleStack = createStackNavigator({
   Home: { screen: ScheduleScreen },
   EventDetail: { screen: EventDetailScreen },
+  TalkDetail: { screen: TalkDetailScreen },
 }, {
   headerMode: 'none',
   initialRouteName: 'Home',
