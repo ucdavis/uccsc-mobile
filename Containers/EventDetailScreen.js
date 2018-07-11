@@ -6,7 +6,6 @@ import {
   ScrollView,
   Text,
   View,
-  Image,
   Linking,
   TouchableOpacity,
   StyleSheet,
@@ -54,34 +53,8 @@ class EventDetailScreen extends React.Component {
     }
   }
 
-  renderTalkInfo() {
-    const { title, time, duration, eventType } = this.props;
-
-    let showToggleReminder = false;
-    if (!eventType) {
-      showToggleReminder = true;
-    }
-
-    return (
-      <TalkInfo showDay start={time} duration={duration} showToggleReminder={showToggleReminder} toggleReminderData={{ title }} />
-    );
-  }
-
-  renderAvatar(speaker) {
-    if (!speaker.photo) {
-      return null;
-    }
-
-    return (
-      <Image
-        style={styles.avatar}
-        source={{ uri: `${AppConfig.conferenceUrl}/${speaker.photo.url}` }}
-      />
-    );
-  }
-
   render() {
-    const { title, description, venue, eventType } = this.props;
+    const { title, description, venue, eventType, time, duration } = this.props;
 
     const descriptionStyles = {
       link: StyleSheet.flatten(styles.descriptionLink),
@@ -103,7 +76,7 @@ class EventDetailScreen extends React.Component {
               <Text style={styles.heading}>{ title }</Text>
             </View>
             <View style={styles.section}>
-              { this.renderTalkInfo() }
+              <TalkInfo showDay start={time} duration={duration} />
             </View>
             { venue && 
               <View style={styles.section}>
@@ -133,8 +106,4 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(EventDetailScreen);
+export default connect(mapStateToProps)(EventDetailScreen);

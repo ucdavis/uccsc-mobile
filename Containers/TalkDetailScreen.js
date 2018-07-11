@@ -54,19 +54,6 @@ class TalkDetailScreen extends React.Component {
     }
   }
 
-  renderTalkInfo() {
-    const { title, time, duration, eventType } = this.props;
-
-    let showToggleReminder = false;
-    if (!eventType) {
-      showToggleReminder = true;
-    }
-
-    return (
-      <TalkInfo showDay start={time} duration={duration} showToggleReminder={showToggleReminder} toggleReminderData={{ title }} />
-    );
-  }
-
   renderAvatar(speaker) {
     if (!speaker.photo) {
       return null;
@@ -113,7 +100,7 @@ class TalkDetailScreen extends React.Component {
   }
 
   render() {
-    const { title, description, venue, track, knowledge, software } = this.props;
+    const { title, duration, time, description, venue, track, knowledge, software } = this.props;
 
     const descriptionStyles = {
       link: StyleSheet.flatten(styles.descriptionLink),
@@ -138,7 +125,7 @@ class TalkDetailScreen extends React.Component {
               <Text style={styles.heading}>{ title }</Text>
             </View>
             <View style={styles.section}>
-              { this.renderTalkInfo() }
+              <TalkInfo showDay start={time} duration={duration} showToggleReminder toggleReminderData={{ title }} />
             </View>
             { venue && 
               <View style={styles.section}>
@@ -181,8 +168,4 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(TalkDetailScreen);
+export default connect(mapStateToProps)(TalkDetailScreen);
