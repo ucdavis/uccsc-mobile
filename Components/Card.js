@@ -42,6 +42,7 @@ export default class Card extends React.PureComponent {
       isCurrentDay && styles.currentDay,
       isActive && styles.active,
       animatedStyle,
+      this.props.style,
     ];
 
     return (
