@@ -46,7 +46,7 @@ export default class Activity extends React.PureComponent {
     else if (title.indexOf('Yoga') > -1) {
       background = Images.morningYoga;
     }
-    else if (title.indexOf('Jog') > -1) {
+    else if (/jog/i.test(title) || /walk/i.test(title)) {
       background = Images.morningJog;
     }
     else if (title.indexOf('Bus') > -1) {
