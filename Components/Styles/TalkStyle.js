@@ -1,15 +1,8 @@
-import { StyleSheet } from 'react-native'
-import { Colors, Metrics } from '../../Themes/'
+import { StyleSheet } from 'react-native';
+import { Colors, Metrics } from '../../Themes/';
 
 export default StyleSheet.create({
-  container: {
-    flex: 1,
-    marginVertical: Metrics.baseMargin,
-    marginHorizontal: Metrics.doubleBaseMargin,
-    // shadowRadius: 5,
-    // shadowColor: 'black',
-    // shadowOpacity: 0.8,
-  },
+
   currentDay: {
     marginLeft: 16,
     marginRight: 24

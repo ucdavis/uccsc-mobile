@@ -111,6 +111,7 @@ class ScheduleList extends React.Component {
         duration={item.duration}
         onPress={this.createOnEventPress(item)}
         venue={item.venue}
+        track={item.track}
       />
     );
   }

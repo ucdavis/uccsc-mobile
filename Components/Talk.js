@@ -8,12 +8,17 @@ import Card from './Card';
 import RoomInfo from './RoomInfo';
 import TalkInfo from './TalkInfo';
 import styles from './Styles/TalkStyle';
+
 import { Colors } from '../Themes/';
 
+const tracks = require('../Fixtures/tracks.json');
+
 const themeColors = [
-  Colors.darkGreen1,
-  Colors.darkBlue1,
-  Colors.darkPurple1,
+  Colors.sunnyGrass,
+  Colors.recpoolBlue,
+  Colors.wineGrape,
+  Colors.unitransRed,
+  Colors.californiaPoppy,
 ];
 
 export default class Talk extends React.PureComponent {
@@ -29,17 +34,19 @@ export default class Talk extends React.PureComponent {
   }
 
   render() {
-    const { name, title, start, duration, venue, onPress } = this.props;
+    const { name, title, start, duration, venue, onPress, track } = this.props;
 
-    const themeColor = themeColors[(title || '').length % themeColors.length];
+    let containerStyles;
 
-    const containerStyles = [
-      styles.container,
+    const trackIndex = tracks.findIndex((t) => t.name === (track ? track.name : ''));
+    if (trackIndex > -1) {
+      containerStyles =
       {
         borderTopWidth: 15,
-        borderTopColor: themeColor,
-      },
-    ];
+        borderTopColor: themeColors[trackIndex],
+      };
+    }
+    
 
     return (
       <Card style={containerStyles} onPress={onPress}>
