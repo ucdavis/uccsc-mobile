@@ -60,6 +60,14 @@ class ScheduleList extends React.Component {
     rootNavigation.navigate('EventDetail');
   }
 
+  createOnTalkPress = (item) => () => {
+    const { screenProps, setSelectedEvent } = this.props;
+    setSelectedEvent(item);
+    
+    const { rootNavigation } = screenProps;
+    rootNavigation.navigate('TalkDetail');
+  }
+
   getItemLayout = GetItemLayout({
     getItemHeight: (item) => {
       if (item.type === 'talk') {
@@ -109,7 +117,7 @@ class ScheduleList extends React.Component {
         title={item.title}
         start={item.time}
         duration={item.duration}
-        onPress={this.createOnEventPress(item)}
+        onPress={this.createOnTalkPress(item)}
         venue={item.venue}
         track={item.track}
       />

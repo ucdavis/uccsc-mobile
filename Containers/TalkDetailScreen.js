@@ -6,6 +6,7 @@ import {
   ScrollView,
   Text,
   View,
+  Image,
   Linking,
   TouchableOpacity,
   StyleSheet,
@@ -19,11 +20,11 @@ import Gradient from '../Components/Gradient';
 import RoomInfo from '../Components/RoomInfo';
 import TalkInfo from '../Components/TalkInfo';
 
-import styles from './Styles/EventDetailScreenStyles';
+import styles from './Styles/TalkDetailScreenStyles';
 
-class EventDetailScreen extends React.Component {
+class TalkDetailScreen extends React.Component {
   static navigationOptions = {
-    title: 'EventDetail',
+    title: 'TalkDetail',
     tabBarLabel: 'Schedule',
     tabBarIcon: ({ focused }) => (
       <MaterialIcons name="schedule" size={24} color="white" />
@@ -53,8 +54,53 @@ class EventDetailScreen extends React.Component {
     }
   }
 
+  renderAvatar(speaker) {
+    if (!speaker.photo) {
+      return null;
+    }
+
+    return (
+      <Image
+        style={styles.avatar}
+        source={{ uri: `${AppConfig.conferenceUrl}/${speaker.photo.url}` }}
+      />
+    );
+  }
+
+  renderSpeakers() {
+    const { speakers } = this.props;
+    if (!speakers || !speakers.length) {
+      return null;
+    }
+
+    return (
+      <View style={[styles.section, styles.speakers]}>
+        <Text style={styles.sectionHeading}>ABOUT</Text>
+        { speakers.map(s => {
+          const id = '00000000000000000000000000000000';
+          return (
+            <View key={s.name} style={styles.speakerContainer}>
+              <View style={styles.speakerInfo}>
+                <View style={styles.avatarContainer}>
+                  { this.renderAvatar(s) }
+                </View>
+                <View style={styles.nameContainer}>
+                  <Text style={styles.speakerName}>{s.name}</Text>
+                  <Text style={styles.speakerCompany}>{s.company}</Text>
+                </View>
+              </View>
+              <View style={styles.bioContainer}>
+                <Text style={styles.speakerBio}>{s.bio}</Text>
+              </View>
+            </View>
+          );
+        }) }
+      </View>
+    );
+  }
+
   render() {
-    const { title, description, venue, eventType, time, duration } = this.props;
+    const { title, duration, time, description, venue, track, knowledge, software } = this.props;
 
     const descriptionStyles = {
       link: StyleSheet.flatten(styles.descriptionLink),
@@ -72,11 +118,14 @@ class EventDetailScreen extends React.Component {
             <View style={styles.cardShadow1} />
             <View style={styles.cardShadow2} />
             <View style={styles.card}>
-              <Text style={styles.sectionHeading}>{ eventType }</Text>
+              <View style={styles.sectionHeadingContainer}>
+                <Text style={styles.sectionHeading}>TALK</Text>
+                <Text style={styles.sectionTrackHeading}>{track.name}</Text>
+              </View>
               <Text style={styles.heading}>{ title }</Text>
             </View>
             <View style={styles.section}>
-              <TalkInfo showDay start={time} duration={duration} />
+              <TalkInfo showDay start={time} duration={duration} showToggleReminder toggleReminderData={{ title }} />
             </View>
             { venue && 
               <View style={styles.section}>
@@ -91,7 +140,20 @@ class EventDetailScreen extends React.Component {
               >
                 { description }
               </MarkdownView>
+              { knowledge &&
+                <View>
+                  <Text style={styles.sectionHeading}>PREVIOUS KNOWLEDGE</Text>
+                  <Text style={styles.descriptionText}>{ knowledge }</Text>
+                </View>
+              }
+              { software &&
+                <View>
+                  <Text style={styles.sectionHeading}>SOFTWARE INSTALLATION EXPECTATION</Text>
+                  <Text style={styles.descriptionText}>{ software }</Text>
+                </View>
+              }
             </View>
+            { this.renderSpeakers() }
           </View>
         </ScrollView>
       </Gradient>
@@ -106,4 +168,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(EventDetailScreen);
+export default connect(mapStateToProps)(TalkDetailScreen);
