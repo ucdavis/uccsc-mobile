@@ -664,7 +664,7 @@
     {
         "type": "talk",
         "speaker": "Briandy Walden, Ray Vadnais",
-        "title": " The Compass Project: Comprehensive Analytics for Student Success",
+        "title": "The Compass Project: Comprehensive Analytics for Student Success",
         "description": "When UC Irvine realized that advisors had access to the right data in the wrong way, we harnessed business intelligence tools to provide richer and more timely reporting through a new self-service application called Compass. In this presentation we will explore how business analysis, advisor interviews, and user experience design were employed to bring about student data reporting tools that met the real needs of campus advising units.\n\nIn partnership, our central IT organization works collaboratively with advisors to ensure that intervention and outreach occur with reduced manual processes, greater flexibility in data access, and easy to use filters to target specific populations rapidly. Advisors spend less time wrangling spreadsheets and more time working with students.\n\nThis presentation will cover the background of the Compass project, including its origins in the University of California, Irvine’s earlier student success initiatives. We’ll also provide a look into the reports that have been created for our academic advisors, including ways to look at bulk student data in ways not previously feasible in existing reports.",
         "knowledge": "None",
         "software": "None",
@@ -905,7 +905,7 @@
     {
         "type": "talk",
         "speaker": "Steve Miley",
-        "title": "We built a Curriculum planner for our Master's program, was it worth it? ",
+        "title": "We built a Curriculum planner for our Master's program, was it worth it?",
         "description": "Higher education needs to graduate students on time. Some benefits include: decreasing the student's cost of education and more space for new students.   \n  \nTo achieve this, one component includes helping students understand what their schedules might look like for the degree they are considering. Another component is giving academic staff visibility on course demand so they can plan appropriately.  \nOffering 30 class seats when the demand is 90 in a required course leads to delayed graduation. Providing students with an easy to use planner to map their academic career empowers them to view realistic scenarios of graduating with a specific degree. Allowing students to easily see what it takes to have an emphasis, concentration or a minor without having to meet with an undergraduate/graduate advisor. The rules for degree requirements, the prerequisites of courses, the availability of classes in a student's schedule is complicated. This is not an easy problem to solve. Our campus is about five years out from integrating a schedule planning solution. At UC Santa Barbara, Bren School of Environmental Science & Management, we developed a custom, easy to use schedule planner for our Master's Program called Myplan. Myplan allows creating multiple scenarios, trying out different emphasis, concentrations and specializations with an automated requirement check. This has enabled our Student Affairs staff to only review schedule submissions that have exceptions. Students can now easily update their planned schedule when they decide to change courses during their academic career. Empowering students to create and visualize a schedule meeting the requirements of their degree should be a requirement of our higher education institutions.",
         "knowledge": "I've been involved with software engineering, IT system administration at UCSB and numerous private industry companies for over 25 years.  I'm very familiar with University academic business rules due to my work on our course management system and waiting list. \n\nPreviously, I designed and built UCSB's successful course management system (GauchoSpace) and UCSB's first wait list system.",
         "software": "This application is a PHP / MySQL application, with generic tables and rules so that it could be used by others with a little modification.   We are using Moodle to handle authentication and authorization of this application.",
@@ -1202,7 +1202,7 @@
     {
         "type": "talk",
         "speaker": "Ray Vadnais, Alissa Powers",
-        "title": " The ScoreShare Story: How & why we used Canvas as a data source to build an application for our advisors",
+        "title": "The ScoreShare Story: How & why we used Canvas as a data source to build an application for our advisors",
         "description": "ScoreShare is a tool that provides academic advisors with student assignment performance data to better inform their decision-making processes and streamline advising sessions. We (UCI’s Academic Web Technologies team) partnered with academic advising units around campus to design and pilot ScoreShare in 2017.\n\nIn this session, we will share our experience building a web application that relies on assignment and grade data from Canvas, as well as the challenges in combining this with data from our legacy learning management system.\n\nWe will also provide background about the tool, why we built it, and our process for designing the tool in partnership with our advisors.",
         "knowledge": "None",
         "software": "None",
