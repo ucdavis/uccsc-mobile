@@ -1,30 +1,27 @@
-import { format, addMinutes, addSeconds } from 'date-fns';
-import { Platform } from 'react-native';
+import { format, addMinutes, addSeconds, setYear, setMonth, setDate } from 'date-fns';
 import DebugConfig from '../Config/DebugConfig';
-import Config from '../Config/AppConfig';
-import { hash } from '../Utils/String';
-
-const fifteenMinutes = 15 * 60 * 1000;
 
 const pushMessage = (title, start) => `${title} begins at ${format(start, 'h:mmA')}.`;
 
 // Returns 15 minutes before talk time, unless in debug
 const notificationTime = (talkTime) => {
+
   if (DebugConfig.hotwirePush) {
     return addSeconds(new Date(), 5);
   }
 
-  // Pretending the day we open the app is day 1
-  if (DebugConfig.hotwireDate) {
-    const today = new Date();
-    talkTime.setFullYear(today.getFullYear());
-    talkTime.setMonth(today.getMonth());
+  // offset timezone
+  const today = new Date();
+  // var offset = today.getTimezoneOffset();
+  // talkTime = addMinutes(talkTime, offset);
 
-    // Add days as needed
-    const firstDay = new Date(Config.conferenceDates[0]);
-    const dayDiff = talkTime.getDate() - firstDay.getDate();
-    talkTime.setDate(today.getDate() + dayDiff);
+  // set the reminder time for today
+  if (DebugConfig.hotwireDate) {
+    talkTime = setYear(talkTime, today.getFullYear()); 
+    talkTime = setMonth(talkTime, today.getMonth());
+    talkTime = setDate(talkTime, today.getDate());
   }
+  
   return addMinutes(talkTime, -15);
 };
 

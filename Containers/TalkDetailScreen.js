@@ -125,7 +125,13 @@ class TalkDetailScreen extends React.Component {
               <Text style={styles.heading}>{ title }</Text>
             </View>
             <View style={styles.section}>
-              <TalkInfo showDay start={time} duration={duration} showToggleReminder toggleReminderData={{ title }} />
+              <TalkInfo
+                showDay
+                start={time}
+                duration={duration}
+                showToggleReminder
+                toggleReminderData={{ title, start }}
+              />
             </View>
             { venue && 
               <View style={styles.section}>

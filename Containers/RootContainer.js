@@ -81,7 +81,7 @@ class RootContainer extends React.Component {
 
       // setup navigation and go
       this.props.setSelectedEvent(talk);
-      NavigationService.navigate({ routeName: 'Schedule', action: StackActions.push({ routeName: 'EventDetail' }) });
+      NavigationService.navigate({ routeName: 'Schedule', action: StackActions.push({ routeName: 'TalkDetail' }) });
       
       return true;
     }

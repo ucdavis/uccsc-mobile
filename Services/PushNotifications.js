@@ -1,4 +1,5 @@
 import { Permissions, Notifications } from 'expo';
+import { isPast } from 'date-fns';
 import Config from '../Config/ServerConfig';
 import PNHelpers from '../Helpers/PushNotificationHelpers';
 
@@ -67,6 +68,11 @@ export async function scheduleTalkReminder(talk) {
 
   const { title, start } = talk;
   const message = PNHelpers.pushMessage(title, start);
+  const fireTime = PNHelpers.notificationTime(start);
+  if (isPast(fireTime)) {
+    return 0;
+  }
+
   const id = await Notifications.scheduleLocalNotificationAsync({
     title: message,
     body: message,
@@ -75,7 +81,7 @@ export async function scheduleTalkReminder(talk) {
       link: `//session/${title}`,
     },
   }, {
-    time: PNHelpers.notificationTime(start),
+    time: fireTime,
   });
 
   return id;

@@ -63,7 +63,12 @@ export default class Talk extends React.PureComponent {
           </View>
         }
         <View style={styles.talkInfo}>
-          <TalkInfo start={start} duration={duration} showToggleReminder toggleReminderData={{ title }} />
+          <TalkInfo
+            start={start}
+            duration={duration}
+            showToggleReminder
+            toggleReminderData={{ title, start }}
+          />
         </View>
       </Card>
     );
