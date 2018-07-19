@@ -100,7 +100,7 @@ class TalkDetailScreen extends React.Component {
   }
 
   render() {
-    const { title, duration, time, description, venue, track, level, knowledge, software } = this.props;
+    const { title, start, duration, time, description, venue, track, level, knowledge, software } = this.props;
 
     const descriptionStyles = {
       link: StyleSheet.flatten(styles.descriptionLink),
