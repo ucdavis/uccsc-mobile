@@ -22,6 +22,7 @@ const images = {
   coffeeBreak: require('../Images/bg-coffee-break.jpg'),
   lunch: require('../Images/bg-lunch-break.jpg'),
   partyBreak: require('../Images/bg-party.jpg'),
+  welcome: require('../Images/bg-welcome.png'),
 
   // nearby
   plutos: require('../Images/Nearby/plutos.jpg'),
