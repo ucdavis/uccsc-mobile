@@ -24,10 +24,18 @@ const images = {
   partyBreak: require('../Images/bg-party.jpg'),
 
   // nearby
+  plutos: require('../Images/Nearby/plutos.jpg'),
+  mikuni: require('../Images/Nearby/mikuni.jpg'),
+  burgersAndBrew: require('../Images/Nearby/burgerAndBrew.jpg'),
+  samsMediterranean: require('../Images/Nearby/samsMediterranean.jpg'),
   commonGroundsCoffee: require('../Images/Nearby/commonGroundsCoffee.jpg'),
   mishkasCafe: require('../Images/Nearby/mishkasCafe.jpg'),
   philzCoffee: require('../Images/Nearby/philzCoffee.jpg'),
   templeCoffeeRoasters: require('../Images/Nearby/templeCoffeeRoasters.jpg'),
+  sweetAndShavery: require('../Images/Nearby/sweetAndShavery.jpg'),
+  theGoodScoop: require('../Images/Nearby/theGoodScope.jpg'),
+  davisCreamery: require('../Images/Nearby/davisCreamery.jpg'),
+  cream: require('../Images/Nearby/cream.jpg'),
 
   // sponsors
   cisco: require('../Images/Sponsors/cisco.png'),

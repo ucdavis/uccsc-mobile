@@ -38,6 +38,7 @@ export default class Gallery extends React.Component {
         </Text>
         { tab === 'Food' && <FontAwesome name="cutlery" style={[textStyle, { marginLeft: 5 }]}/> }
         { tab === 'Coffee' && <FontAwesome name="coffee" style={[textStyle, { marginLeft: 5 }]}/> }
+        { tab === 'Dessert' && <FontAwesome name="birthday-cake" style={[textStyle, { marginLeft: 5 }]}/> }
       </TouchableOpacity>
     );
   }

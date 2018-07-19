@@ -1,10 +1,28 @@
 {
     "Food": [
         {
-            "name": "Sam’s Mediterranean Cuisine ",
+            "name": "Sam’s Mediterranean Cuisine",
             "image": "samsMediterranean",
             "address": "301 B St, Davis, CA 95616",
-            "link": "https://www.yelp.com/biz/sams-mediterranean-cuisine-davis?frvs=True&osq=Restaurants"
+            "link": "https://www.yelp.com/biz/sams-mediterranean-cuisine-davis"
+        },
+        {
+            "name": "Mikuni Japanese Restaurant and Sushi Bar",
+            "image": "mikuni",
+            "address": "500 1st St, Ste 11, Davis, CA 95616",
+            "link": "https://www.yelp.com/biz/mikuni-japanese-restaurant-and-sushi-bar-davis-2"
+        },
+        {
+            "name": "Burgers and Brew",
+            "image": "burgersAndBrew",
+            "address": "403 3rd St, Davis, CA 95616",
+            "link": "https://www.yelp.com/biz/burgers-and-brew-davis"
+        },
+        {
+            "name": "Pluto's",
+            "image": "plutos",
+            "address": "500 1st St, Ste 13, Davis, CA 95616",
+            "link": "https://www.yelp.com/biz/plutos-davis-2"
         }
     ],
     "Coffee": [
@@ -12,25 +30,51 @@
             "name": "Philz Coffee",
             "image": "philzCoffee",
             "address": "521 2nd St, Davis, CA 95616",
-            "link": "https://www.yelp.com/biz/philz-coffee-davis-3?osq=coffee"
+            "link": "https://www.yelp.com/biz/philz-coffee-davis-3"
         },
         {
             "name": "Temple Coffee Roasters",
             "image": "templeCoffeeRoasters",
             "address": "239 G St, Davis, CA 95616",
-            "link": "https://www.yelp.com/biz/temple-coffee-roasters-davis?osq=coffee"
+            "link": "https://www.yelp.com/biz/temple-coffee-roasters-davis"
         },
         {
             "name": "Common Grounds Coffee",
             "image": "commonGroundsCoffee",
             "address": "2171 Cowell Blvd, Davis, CA 95618",
-            "link": "https://www.yelp.com/biz/common-grounds-coffee-davis?osq=coffee"
+            "link": "https://www.yelp.com/biz/common-grounds-coffee-davis"
         },
         {
             "name": "Mishka's Cafe",
             "image": "mishkasCafe",
             "address": "610 2nd St, Davis, CA 95616",
-            "link": "https://www.yelp.com/biz/mishkas-cafe-davis?osq=coffee"
+            "link": "https://www.yelp.com/biz/mishkas-cafe-davis"
+        }
+    ],
+    "Dessert": [
+        {
+            "name": "Sweet and Shavery",
+            "image": "sweetAndShavery",
+            "address": "210 E St, Davis, CA 95616",
+            "link": "https://www.yelp.com/biz/sweet-and-shavery-davis"
+        },
+        {
+            "name": "The Good Scoop",
+            "image": "theGoodScoop",
+            "address": "130 G St, Ste C, Davis, CA 95616",
+            "link": "https://www.yelp.com/biz/the-good-scoop-davis-2"
+        },
+        {
+            "name": "Davis Creamery",
+            "image": "davisCreamery",
+            "address": "113 E St, Davis, CA 95616",
+            "link": "https://www.yelp.com/biz/davis-creamery-davis"
+        },
+        {
+            "name": "CREAM",
+            "image": "cream",
+            "address": "110 F St, Ste A, Davis, CA 95616",
+            "link": "https://www.yelp.com/biz/cream-davis-3"
         }
     ]
 }
