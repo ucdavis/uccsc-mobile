@@ -7,7 +7,7 @@ export default StyleSheet.create({
     paddingVertical: 50,
     paddingHorizontal: Metrics.doubleBaseMargin,
   },
-  liveHelpPhone: {
+  header: {
     color: Colors.snow,
     fontFamily: Fonts.type.bold,
     fontSize: 31,
