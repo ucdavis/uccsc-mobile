@@ -19,6 +19,7 @@ const themeColors = [
   Colors.wineGrape,
   Colors.unitransRed,
   Colors.californiaPoppy,
+  Colors.goldenLupine,
 ];
 
 export default class Talk extends React.PureComponent {
