@@ -124,5 +124,23 @@
         "articleType": "News",
         "category": "",
         "organizer": []
+    },
+    {
+        "type": "article",
+        "title": "UCCSC registration update",
+        "body": "Registration sold out very quickly! Over 500 people are now registered for UCCSC at UC Davis.\n\nHere are some things to keep in mind: \n\n*   The wait list is first-come, first served.\n*   Creating an account on the UCCSC website is not the same as registering for the conference.\n*   If you selected a comped option, we are validating those, but if you received a automated response, you are currently on the registration list.\n*   If you're a session presenter, UCCSC Ambassador, or a draft registrant, we are saving a spot for you. UCCSC Registration Chair, Jason Fearing, will send you the registration link so you can complete it no later than this Friday, June 15.\n    \n*   Note that if you paid with a campus recharge account, it takes longer to validate than paying by credit card. \n    \n*   You will receive an individual email with further instructions, and if applicable, a user-specific registration link. The email will come from Jason Fearing (jfearing@ucdavis.edu). In the meantime, please send your inquiries to UCCSC2018-registration@ucdavis.edu.",
+        "image": null,
+        "articleType": "News",
+        "category": "",
+        "organizer": []
+    },
+    {
+        "type": "article",
+        "title": "UCCSC Registration is closed",
+        "body": "Registration closed as of 5 p.m. on June 27th. There are 600+ attendees registered for the event. If you have any questions, email uccsc2018-registration@ucdavis.edu.",
+        "image": null,
+        "articleType": "News",
+        "category": "",
+        "organizer": []
     }
 ]

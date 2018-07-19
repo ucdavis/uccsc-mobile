@@ -9,7 +9,7 @@
         },
         "time": "2018-08-14T01:00:00.000Z",
         "end": "2018-08-14T04:00:00.000Z",
-        "rsvp": "[UCCSC registration](/schedule/2018-08-13/registration) will be available at the Monday night reception.",
+        "rsvp": "[UCCSC registration](/schedule/2018-08-13/registration) will be available at the Monday night reception.\n\nParking is available at the [Gateway Structure](https://uccsc.ucdavis.edu/venue/gateway-parking-structure) across the street.",
         "eventType": "Meal/Snack",
         "sponsors": [
             "Cisco Systems, Inc."
@@ -45,7 +45,21 @@
         "eventType": "Activity",
         "sponsors": [],
         "organizer": [],
-        "venue": null
+        "venue": {
+            "title": "Yoga Lawn",
+            "building": "Yoga Lawn",
+            "room": null,
+            "address": {
+                "street": "530 Alumni Lane 530 Alumni Lane",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.534962725374,
+                "lng": -121.74672160273
+            }
+        }
     },
     {
         "type": "event",
@@ -68,21 +82,7 @@
                 "photo": null
             }
         ],
-        "venue": {
-            "title": "Founders Board Room - Alumni Center",
-            "building": "Walter A. Buehler Alumni Center",
-            "room": "104 / Founders Board Room",
-            "address": {
-                "street": "530 Alumni Lane 530 Alumni Lane",
-                "city": "Davis",
-                "state": "CA",
-                "postalCode": "95616"
-            },
-            "location": {
-                "lat": 38.5349753,
-                "lng": -121.7481516
-            }
-        }
+        "venue": null
     },
     {
         "type": "event",
@@ -98,12 +98,26 @@
         "eventType": "Activity",
         "sponsors": [],
         "organizer": [],
-        "venue": null
+        "venue": {
+            "title": "Yoga Lawn",
+            "building": "Yoga Lawn",
+            "room": null,
+            "address": {
+                "street": "530 Alumni Lane 530 Alumni Lane",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.534962725374,
+                "lng": -121.74672160273
+            }
+        }
     },
     {
         "type": "event",
         "title": "Breakfast",
-        "description": "Energize yourself for a full day of sessions and activities. Tuesday morning breakfast - sponsored by Amazon Web Services - will be held in the Grand Foyer of Gallagher Hall.",
+        "description": "Energize yourself for a full day of sessions and activities. Tuesday morning breakfast - sponsored by Amazon Web Services - will be held in the Grand Foyer of Gallagher Hall. Seating is available in Moss Patio, Conference Center, and at the Mondavi Center.",
         "image": null,
         "time": "2018-08-14T14:30:00.000Z",
         "end": "2018-08-14T15:45:00.000Z",
@@ -439,11 +453,25 @@
         },
         "time": "2018-08-15T13:15:00.000Z",
         "end": "2018-08-15T14:00:00.000Z",
-        "rsvp": "",
+        "rsvp": "Meeting point at [Vanderhoef Quad](https://uccsc.ucdavis.edu/venue/vanderhoef-quad-north).",
         "eventType": "Activity",
         "sponsors": [],
         "organizer": [],
-        "venue": null
+        "venue": {
+            "title": "Vanderhoef Quad North",
+            "building": "Vanderhoef Quad North",
+            "room": null,
+            "address": {
+                "street": "523 Mrak Hall Drive 523 Mrak Hall Drive",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.534834470519,
+                "lng": -121.74809543061
+            }
+        }
     },
     {
         "type": "event",
@@ -459,16 +487,30 @@
         "eventType": "Activity",
         "sponsors": [],
         "organizer": [],
-        "venue": null
+        "venue": {
+            "title": "Vanderhoef Quad North",
+            "building": "Vanderhoef Quad North",
+            "room": null,
+            "address": {
+                "street": "523 Mrak Hall Drive 523 Mrak Hall Drive",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.534834470519,
+                "lng": -121.74809543061
+            }
+        }
     },
     {
         "type": "event",
         "title": "Lunch",
-        "description": "Fortify yourself for an afternoon of conference sessions and networking with your colleagues. Lunch sponsored by [Microsoft](/sponsor/microsoft). Desserts sponsored by [Intervision Systems](/sponsor/intervision-systems).",
+        "description": "Fortify yourself for an afternoon of conference sessions and networking with your colleagues. Lunch sponsored by [Microsoft](/sponsor/microsoft). Desserts sponsored by [Intervision Systems](/sponsor/intervision-systems). \n\nSeating is available in Moss Patio, Conference Center, and at the Mondavi Center.",
         "image": null,
         "time": "2018-08-14T18:30:00.000Z",
         "end": "2018-08-14T20:00:00.000Z",
-        "rsvp": "Lunch seating available in the Conference Center, and if you prefer outdoors, the Alumni Center Moss Patio.",
+        "rsvp": "",
         "eventType": "Meal/Snack",
         "sponsors": [
             "InterVision Systems",
@@ -584,11 +626,11 @@
     {
         "type": "event",
         "title": "Lunch",
-        "description": "Fortify yourself for an afternoon of conference sessions and networking with your colleagues. Lunch sponsored by [Dasher Technologies](/sponsor/dasher-technologies). Desserts sponsored by [ePlus](/sponsor/eplus).",
+        "description": "Fortify yourself for an afternoon of conference sessions and networking with your colleagues. Lunch sponsored by [Dasher Technologies](/sponsor/dasher-technologies). Desserts sponsored by [ePlus](/sponsor/eplus).\n\nSeating is available in Moss Patio, Conference Center, and at the Mondavi Center.",
         "image": null,
         "time": "2018-08-15T18:30:00.000Z",
         "end": "2018-08-15T20:00:00.000Z",
-        "rsvp": "Lunch seating available in the Conference Center. If you prefer eating outdoors, the Alumni Center Moss Patio is open and shady.",
+        "rsvp": "",
         "eventType": "Meal/Snack",
         "sponsors": [
             "Dasher Technologies",
@@ -616,8 +658,8 @@
         "title": "Birds of a Feather: All UC DocuSign Meet Up",
         "description": "DocuSign is being used in one way or another at all UC locations for electronic signature processes and forms automation. The UC-wide DocuSign special-interest-group continues to meet on monthly conference calls and via Slack. This forum will provide a face-to-face meet-up similar to the one held last year at UCCSC in San Diego. This forum will be open to any interested UCCSC attendees and will focus on sharing recent DocuSign activities, issues and directions from the reps each location. Please note there is a separate introductory session for DocuSign on the program where people who are not already active in the DocuSign SIG can learn more about the product and uses across UC.",
         "image": null,
-        "time": "2018-08-14T18:30:00.000Z",
-        "end": "2018-08-14T19:30:00.000Z",
+        "time": "2018-08-14T18:45:00.000Z",
+        "end": "2018-08-14T19:45:00.000Z",
         "rsvp": "Contact Eric Taggart for more information: [etaggart@uci.edu](mailto:etaggart@uci.edu)",
         "eventType": "Birds of a Feather",
         "sponsors": [],
@@ -636,8 +678,8 @@
         "title": "Birds of a Feather: Documentation for a Product or Service",
         "description": "For departments/teams who provide a technical product or service for the campus (for example, a website platform or hosting service, a learning management system, document management, etc.), and who also provide documentation on how to use that product or service. Discussion could include what platforms are used for documentation, how often documentation is updated, how it's organized, and more. The goal of this discussion would be to share tips and ideas so that we can better serve our customers with our documentation.",
         "image": null,
-        "time": "2018-08-14T18:30:00.000Z",
-        "end": "2018-08-14T19:30:00.000Z",
+        "time": "2018-08-14T18:45:00.000Z",
+        "end": "2018-08-14T19:45:00.000Z",
         "rsvp": "",
         "eventType": "Birds of a Feather",
         "sponsors": [],
@@ -656,8 +698,8 @@
         "title": "Birds of a Feather: Business Continuity Planners (BCP) and IT Disaster Recovery (ITDR) Planners at UC",
         "description": "Meet with other Business Continuity Planners and IT Disaster Recovery Planners from UC campuses and Medical Centers to discuss trends, experiences, tools and more.",
         "image": null,
-        "time": "2018-08-15T18:30:00.000Z",
-        "end": "2018-08-15T19:30:00.000Z",
+        "time": "2018-08-15T18:45:00.000Z",
+        "end": "2018-08-15T19:45:00.000Z",
         "rsvp": "Contact Louis Zeoli for more information or to suggest additional discussion topics: [louis.zeoli@ucop.edu](mailto:louis.zeoli@ucop.edu)",
         "eventType": "Birds of a Feather",
         "sponsors": [],
@@ -674,9 +716,9 @@
     {
         "type": "event",
         "title": "Registration",
-        "description": "Conference registration will be offered at the Good Life Garden during the [Welcome Dinner event](/schedule/2018-08-13/welcome-dinner).",
+        "description": "Conference registration will be offered at the Good Life Garden during the [Welcome Dinner event](/schedule/2018-08-13/welcome-dinner).\n\nParking is available at [Gateway Parking Structure](https://uccsc.ucdavis.edu/venue/gateway-parking-structure).",
         "image": null,
-        "time": "2018-08-13T23:00:00.000Z",
+        "time": "2018-08-14T00:00:00.000Z",
         "end": "2018-08-14T04:00:00.000Z",
         "rsvp": "",
         "eventType": "General",
@@ -701,10 +743,10 @@
     {
         "type": "event",
         "title": "Breakfast",
-        "description": "Energize yourself for a full day of sessions and activities. Wednesday morning breakfast, sponsored by Laserfiche, will be held in the Grand Foyer of Gallagher Hall.",
+        "description": "Energize yourself for a full day of sessions and activities. Wednesday morning breakfast, sponsored by Laserfiche, will be held in the Grand Foyer of Gallagher Hall. Seating is available in Moss Patio, Conference Center, and at the Mondavi Center.",
         "image": null,
         "time": "2018-08-15T14:30:00.000Z",
-        "end": "2018-08-15T15:30:00.000Z",
+        "end": "2018-08-15T15:45:00.000Z",
         "rsvp": "",
         "eventType": "Meal/Snack",
         "sponsors": [
@@ -730,7 +772,7 @@
     {
         "type": "event",
         "title": "Lunch and Learn: Women in Technology Panel - Creating Change",
-        "description": "[Register to attend](https://docs.google.com/forms/d/e/1FAIpQLSdZAaql9Oa6mfXeSgps3bpKdRRlVFiZWG1YLm90Q42OgvgE-A/viewform)\n\nJoin a panel of UC IT women leaders for lunch and be part of a movement for positive change. Facilitated by UC Davis CIO Viji Murali, panel discussions will range from challenges women encounter, to combatting unconscious bias, to building self-confidence, to raising a voice for change. The panel will highlight recommendations for pragmatic actions to ensure UC supports and promotes women in IT. A working group will be formed to follow up on some of the ideas raised in this session and build an empowering work environment for UC women in IT. The panel will be followed by another WIT session: Empowering Women: From History to Practical Change.\n\nLunch will be provided in the Vanderhoef Lobby for up to 60 attendees as part of the session. Because of limited space, people must submit a [registration form](https://docs.google.com/forms/d/e/1FAIpQLSdZAaql9Oa6mfXeSgps3bpKdRRlVFiZWG1YLm90Q42OgvgE-A/viewform) to attend. The form provides an opportunity to submit questions for panelists in advance; submitters’ names will be kept anonymous. Confirmation of registration will be sent to attendees closer to the event.",
+        "description": "_**Women in Technology is full. No more registrations accepted.**_\n\nJoin a panel of UC IT women leaders for lunch and be part of a movement for positive change. Facilitated by UC Davis CIO Viji Murali, panel discussions will range from challenges women encounter, to combatting unconscious bias, to building self-confidence, to raising a voice for change. The panel will highlight recommendations for pragmatic actions to ensure UC supports and promotes women in IT. A working group will be formed to follow up on some of the ideas raised in this session and build an empowering work environment for UC women in IT. The panel will be followed by another WIT session: Empowering Women: From History to Practical Change.\n\nLunch will be provided in lobby outside the Vanderhoef Studio for up to 60 attendees as part of the session. The form provides an opportunity to submit questions for panelists in advance; submitters’ names will be kept anonymous. Confirmation of registration will be sent to attendees closer to the event.",
         "image": null,
         "time": "2018-08-14T18:30:00.000Z",
         "end": "2018-08-14T20:00:00.000Z",
@@ -744,7 +786,21 @@
                 "company": "UC Office of the President"
             }
         ],
-        "venue": null
+        "venue": {
+            "title": "Mondavi Center, Vanderhoef Studio",
+            "building": "Mondavi Center, Vanderhoef Studio",
+            "room": null,
+            "address": {
+                "street": "Mrak Hall Drive Mrak Hall Drive",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.534723,
+                "lng": -121.7491336
+            }
+        }
     },
     {
         "type": "event",
@@ -784,12 +840,26 @@
         "eventType": "General",
         "sponsors": [],
         "organizer": [],
-        "venue": null
+        "venue": {
+            "title": "Ballroom - Conference Center",
+            "building": "Conference Center",
+            "room": "Ballroom",
+            "address": {
+                "street": "550 Alumni Lane 550 Alumni Lane",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.5344429,
+                "lng": -121.7473024
+            }
+        }
     },
     {
         "type": "event",
         "title": "Desserts & Door Prizes",
-        "description": "Come to the Vendor Fair area in the Conference Center for some dessert, and stay for the UCCSC Door Prize drawing. We have fabulous prizes to award, including an XBox 1S, 3D Printer, Chromebook, Amazon Echo, Beats headphones, Apple Watch, and more.  You'll get tickets for the drawing at registration. Yes, you do need to be present to win!",
+        "description": "Come to the Vendor Fair area in the Conference Center for some dessert - sponsored by InterVision Systems - and stay for the UCCSC Door Prize drawing. We have fabulous prizes to award, including an XBox 1S, 3D Printer, Chromebook, Amazon Echo, Beats headphones, Apple Watch, and more. Yes, you do need to be present to win!",
         "image": null,
         "time": "2018-08-14T19:15:00.000Z",
         "end": "2018-08-14T19:45:00.000Z",
@@ -816,7 +886,7 @@
     {
         "type": "event",
         "title": "Dessert & Door Prizes",
-        "description": "Come to the Vendor Fair area in the Conference Center for some dessert, and stay for the UCCSC Door Prize drawing. We have fabulous prizes to award, including an XBox 1S, 3D Printer, Chromebook, Amazon Echo, Beats headphones, Apple Watch, and more.  You'll get tickets for the drawing at registration. Yes, you do need to be present to win!",
+        "description": "Come to the Vendor Fair area in the Conference Center for some dessert - sponsored by ePlus - and stay for the UCCSC Door Prize drawing. We have fabulous prizes to award, including an XBox 1S, 3D Printer, Chromebook, Amazon Echo, Beats headphones, Apple Watch, and more. Yes, you do need to be present to win!",
         "image": null,
         "time": "2018-08-15T19:15:00.000Z",
         "end": "2018-08-15T19:45:00.000Z",
@@ -872,8 +942,8 @@
         "title": "Birds of a Feather: UC Health Profiles and Research Networking",
         "description": "In May 2018, five UC campuses joined a research networking system called UC Health Profiles, which shows researchers contact information, publications, grants and clinical trials - and connects researchers to their coauthors. UCSF has had the system for years and wants to meet up to discuss faculty engagement, product features and enhancements, and any other topics that might come up for techies supporting researchers with consumer-grade products.",
         "image": null,
-        "time": "2018-08-14T18:30:00.000Z",
-        "end": "2018-08-14T19:30:00.000Z",
+        "time": "2018-08-14T18:45:00.000Z",
+        "end": "2018-08-14T19:45:00.000Z",
         "rsvp": "For more information, please contact Brian Turner: [brian.turner@ucsf.edu](mailto:brian.turner@ucsf.edu).",
         "eventType": "Birds of a Feather",
         "sponsors": [],
@@ -889,6 +959,106 @@
                 "company": "UC San Francisco"
             }
         ],
+        "venue": null
+    },
+    {
+        "type": "event",
+        "title": "Birds of a Feather: UC Web Developers",
+        "description": "This is a conference after all... it would be nice to meet fellow web developers.",
+        "image": null,
+        "time": "2018-08-15T18:45:00.000Z",
+        "end": "2018-08-15T19:45:00.000Z",
+        "rsvp": "",
+        "eventType": "Birds of a Feather",
+        "sponsors": [],
+        "organizer": [
+            {
+                "name": "Jeffrey Rosczyk",
+                "bio": "Lead web and mobile application developer at UC Santa Cruz.",
+                "company": "UC Santa Cruz",
+                "photo": null
+            }
+        ],
+        "venue": null
+    },
+    {
+        "type": "event",
+        "title": "Larry L. Sautter Award Ceremony",
+        "description": "Come celebrate your colleagues as they collect Larry L. Sautter Awards that recognize information technology projects that advance the University's mission of teaching, research, public service, and patient care.\n\nSelection criteria reflect the ITLC’s commitment to promoting IT innovation and collaboration in support of the UC mission by using resources efficiently across the University system. All award applications are posted on the program website after the award announcement each year to encourage the exchange of innovative ideas and solutions.",
+        "image": null,
+        "time": "2018-08-14T23:00:00.000Z",
+        "end": "2018-08-14T23:45:00.000Z",
+        "rsvp": "All award applications are posted on the [program website](https://www.ucop.edu/information-technology-services/initiatives/sautter-award-program/index.html) after the award announcement each year to encourage the exchange of innovative ideas and solutions.",
+        "eventType": "General",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Mondavi Center, Jackson Hall",
+            "building": "Mondavi Center",
+            "room": "Jackson Hall",
+            "address": {
+                "street": "Mrak Hall Drive Mrak Hall Drive",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.534634,
+                "lng": -121.748777
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "CIO Panel: Ask me anything!",
+        "description": "Join UC CIOs for direct interaction and discussion. At last year's UCCSC, the conversations centered around operating philosophies and career aspirations.  It was lively and fun and we encourage everyone to participate. Come with your questions!",
+        "image": null,
+        "time": "2018-08-14T22:00:00.000Z",
+        "end": "2018-08-14T23:00:00.000Z",
+        "rsvp": "",
+        "eventType": "General",
+        "sponsors": [],
+        "organizer": [],
+        "venue": {
+            "title": "Mondavi Center, Vanderhoef Studio",
+            "building": "Mondavi Center, Vanderhoef Studio",
+            "room": null,
+            "address": {
+                "street": "Mrak Hall Drive Mrak Hall Drive",
+                "city": "Davis",
+                "state": "CA",
+                "postalCode": "95616"
+            },
+            "location": {
+                "lat": 38.534723,
+                "lng": -121.7491336
+            }
+        }
+    },
+    {
+        "type": "event",
+        "title": "Registration & Swag",
+        "description": "Registration and swag will be outside in front of the Conference Center during breakfast and will move inside later in the morning. If you didn't register on Monday evening, stop by and pick up your name badge. Don't forget to get your UCCSC 2018 swag too!",
+        "image": null,
+        "time": "2018-08-14T14:30:00.000Z",
+        "end": "2018-08-14T23:00:00.000Z",
+        "rsvp": "",
+        "eventType": "General",
+        "sponsors": [],
+        "organizer": [],
+        "venue": null
+    },
+    {
+        "type": "event",
+        "title": "Registration & Swag",
+        "description": "Registration and swag will be inside at the Conference Center Information Booth on Wednesday. Stop by and pick up your name badge. You won't want to miss out on the UCCSC 2018 swag either!",
+        "image": null,
+        "time": "2018-08-15T14:30:00.000Z",
+        "end": "2018-08-15T18:30:00.000Z",
+        "rsvp": "",
+        "eventType": "General",
+        "sponsors": [],
+        "organizer": [],
         "venue": null
     }
 ]
