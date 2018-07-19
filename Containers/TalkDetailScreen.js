@@ -54,6 +54,19 @@ class TalkDetailScreen extends React.Component {
     }
   }
 
+  renderDetail(label, detail) {
+    if (!detail) {
+      return null;
+    }
+
+    return (
+      <View style={styles.detailContainer}>
+        <Text style={styles.detailLabel}>{ label }</Text>
+        <Text style={styles.detailText}>{ detail }</Text>
+      </View>
+    );
+  }
+
   renderAvatar(speaker) {
     if (!speaker.photo) {
       return null;
@@ -101,7 +114,7 @@ class TalkDetailScreen extends React.Component {
 
   render() {
     const { title, start, duration, time, description, venue, track, level, knowledge, software } = this.props;
-
+    
     const descriptionStyles = {
       link: StyleSheet.flatten(styles.descriptionLink),
       paragraph: StyleSheet.flatten(styles.descriptionText),
@@ -146,24 +159,9 @@ class TalkDetailScreen extends React.Component {
               >
                 { description }
               </MarkdownView>
-              { level &&
-                <View style={styles.detailContainer}>
-                  <Text style={styles.detailLabel}>LEVEL</Text>
-                  <Text style={styles.detailText}>{ level.name }</Text>
-                </View>
-              }
-              { knowledge &&
-                <View style={styles.detailContainer}>
-                  <Text style={styles.detailLabel}>PREVIOUS KNOWLEDGE</Text>
-                  <Text style={styles.detailText}>{ knowledge }</Text>
-                </View>
-              }
-              { software &&
-                <View style={styles.detailContainer}>
-                  <Text style={styles.detailLabel}>SOFTWARE</Text>
-                  <Text style={styles.detailText}>{ software }</Text>
-                </View>
-              }
+              { this.renderDetail('LEVEL', level && level.name) }
+              { this.renderDetail('PREVIOUS KNOWLEDGE', knowledge) }
+              { this.renderDetail('SOFTWARE', software) }
             </View>
             { this.renderSpeakers() }
           </View>
