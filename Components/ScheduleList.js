@@ -70,11 +70,16 @@ class ScheduleList extends React.Component {
 
   getItemLayout = GetItemLayout({
     getItemHeight: (item) => {
-      if (item.type === 'talk') {
-        // use best guess for variable height rows
-        return 205 + (1.002936 * item.title.length + 6.77378);
+      if (item.eventType === "Activity") {
+        return 145;
       }
-      return 145;
+  
+      if (item.eventType === "Meal/Snack") {
+        return 145;
+      }
+
+      // use best guess for variable height rows
+      return 205 + (1.002936 * item.title.length + 6.77378);
     },
     getSectionHeaderHeight: () => 39,
   });
