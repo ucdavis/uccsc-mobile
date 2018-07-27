@@ -161,8 +161,8 @@ export default class ScheduleList extends React.Component {
   }
 
   render () {
-    const { events } = this.props;
-    if (!events || !events.length) {
+    const { schedule } = this.props;
+    if (!schedule || !schedule.length) {
       return null;
     }
 
@@ -170,7 +170,7 @@ export default class ScheduleList extends React.Component {
       <SectionList
         renderItem={this.renderItem}
         renderSectionHeader={this.renderSectionHeader}
-        sections={events}
+        sections={schedule}
         keyExtractor={(item, idx) => item.title}
         contentContainerStyle={styles.listContent}
         getItemLayout={this.getItemLayout}

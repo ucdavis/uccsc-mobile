@@ -86,11 +86,11 @@ const mapStoreToProps = (store) => {
   talks = talks.filter(t => {
     return store.schedule.starredTalks.indexOf(t.title) > -1;
   });
-  const events = buildScheduleList(talks);
+  const schedule = buildScheduleList(talks);
 
   return {
     currentTime: new Date(store.schedule.currentTime),
-    events: events,
+    schedule,
   };
 };
 

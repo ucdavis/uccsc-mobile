@@ -7,7 +7,7 @@ import { isFuture, addMinutes } from 'date-fns';
 
 import AnnouncementActions from '../Redux/AnnouncementsRedux';
 import NotificationActions from '../Redux/NotificationRedux';
-import ScheduleActions from '../Redux/ScheduleRedux';
+import ScheduleActions, { updateSchedule } from '../Redux/ScheduleRedux';
 import StartupActions from '../Redux/StartupRedux';
 
 import AppNavigation from '../Navigation/AppNavigation';
@@ -108,20 +108,18 @@ class RootContainer extends React.Component {
     // update our tracking date
     this.lastUpdateData = new Date();
 
-    console.log('fetching data');
-
     const activitiesTask = getActivities();
     const talksTask = getTalks();
     const newsTask = getNews();
 
     // process requests
     try {
-      const { updateActivities, updateTalks, updateNews } = this.props;
+      const { updateSchedule, updateNews } = this.props;
 
       const activities = await activitiesTask;
-      updateActivities(activities);
       const talks = await talksTask;
-      updateTalks(talks);
+      updateSchedule(activities, talks);
+
       const news = await newsTask;
       updateNews(news);
     } catch (err) {
@@ -156,9 +154,8 @@ const mapDispatchToProps = (dispatch) => ({
   startup: () => dispatch(StartupActions.startup()),
   addNotification: (notification) => dispatch(NotificationActions.addNotification(notification)),
   clearNotifications: () => dispatch(NotificationActions.clearNotifications()),
-  updateActivities: (activities) => dispatch(ScheduleActions.updateActivities(activities)),
+  updateSchedule: (activities, talks) => dispatch(ScheduleActions.updateSchedule(activities, talks)),
   updateNews: (news) => dispatch(AnnouncementActions.updateNews(news)),
-  updateTalks: (talks) => dispatch(ScheduleActions.updateTalks(talks)),
   setSelectedEvent: (talk) => dispatch(ScheduleActions.setSelectedEvent(talk)),
 });
 

@@ -5,11 +5,10 @@ import {
 import { connect } from 'react-redux';
 import { createMaterialTopTabNavigator } from 'react-navigation';
 import { MaterialIcons } from '@expo/vector-icons';
-import { isSameDay, isBefore } from 'date-fns';
+import { isSameDay } from 'date-fns';
 
 import Config from '../Config/AppConfig';
 import { Colors, Metrics } from '../Themes';
-import { GroupBy } from '../Utils/Array';
 import ScheduleActions from '../Redux/ScheduleRedux';
 
 import Gradient from '../Components/Gradient';
@@ -18,88 +17,11 @@ import FavoritesScreen from './FavoritesScreen';
 
 import styles from './Styles/ScheduleScreenStyles';
 
-buildScheduleList = (activities, talks, dayIndex) => {
-  // fetch day
-  const day = new Date(Config.conferenceDates[dayIndex]);
-
-  // combine events
-  let events = [
-    ...activities,
-    ...talks,
-  ];
-
-  // filter events
-  events = events.filter(e => isSameDay(day, e.time));
-
-  // group events by time slot
-  let timeslots = GroupBy(events, e => e.time);
-
-  // map the events, and sort the timeslot by title
-  // use property data for sectionlists
-  timeslots = timeslots.map(g => {
-    const data = g.values;
-    data.sort((a, b) => {
-      // sort by type first
-      if (a.eventType === 'Meal/Snack') {
-        return -1;
-      }
-      if (b.eventType === 'Meal/Snack') {
-        return 1;
-      }
-
-      if (a.eventType === 'Keynote') {
-        return -1;
-      }
-      if (b.eventType === 'Keynote') {
-        return 1;
-      }
-
-      if (a.eventType === 'Activity' && b.type === 'talk') {
-        return -1;
-      }
-      if (b.eventType === 'Activity' && a.type === 'talk') {
-        return 1;
-      }
-
-      if (a.title < b.title) {
-        return -1;
-      }
-      if (a.title > b.title) {
-        return 1;
-      }
-      return 0;
-    });
-
-    return {
-      time: g.key,
-      data,
-    };
-  });
-
-  // sort timeslots
-  timeslots.sort((a, b) => {
-    if (isBefore(new Date(a.time), new Date(b.time))) {
-      return -1;
-    }
-    if (isBefore(new Date(b.time), new Date(a.time))) {
-      return 1;
-    }
-    return 0;
-  });
-
-  return timeslots;
-};
-
 const mapStoreToPropsForList = (dayIndex) => (store) => {
-  const activities = store.schedule.activities;
-  const talks = store.schedule.talks;
-
-  const events = buildScheduleList(activities, talks, dayIndex);
-
   return {
     currentTime: new Date(store.schedule.currentTime),
     isCurrentDay: isSameDay(store.schedule.currentTime, new Date(Config.conferenceDates[dayIndex])),
-    events,
+    schedule: store.schedule.schedule[dayIndex],
   };
 };
 
