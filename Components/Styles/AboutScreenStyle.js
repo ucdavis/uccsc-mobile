@@ -6,6 +6,9 @@ export default StyleSheet.create({
   container: {
     flex: 1,
   },
+  scroll: {
+    flexGrow: 1,
+  },
   heading: {
     marginTop: 14,
     fontFamily: Fonts.type.bold,

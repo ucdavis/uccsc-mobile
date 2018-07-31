@@ -1,17 +1,16 @@
 import { StyleSheet, ViewStyle, TextStyle } from 'react-native';
 import { Colors, Fonts, Metrics } from '../../Themes/';
 
-const AnnouncementStyle: AnnouncementStyleType = {
+const AnnouncementStyle = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     backgroundColor: Colors.transparent,
+    marginVertical: Metrics.baseMargin,
+    paddingHorizontal: Metrics.baseMargin,
   },
   header: {
-    flex: 2,
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginBottom: Metrics.baseMargin,
   },
   headerText: {
     fontSize: 20,
@@ -19,37 +18,19 @@ const AnnouncementStyle: AnnouncementStyleType = {
     color: Colors.snow,
     letterSpacing: 2,
     fontWeight: '600',
-    marginTop: Metrics.doubleBaseMargin,
-    marginHorizontal: Metrics.baseMargin,
     textAlign: 'center',
   },
-  info: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+  bodyContainer: {
   },
-  button: {
-    width: 200,
-    top: -20,
-    left: (Metrics.screenWidth - 200) / 2,
-    backgroundColor: Colors.snow,
-  },
-  buttonText: {
-    fontSize: 11,
-    fontFamily: Fonts.type.base,
-    color: Colors.lightText,
-    letterSpacing: 1,
-    fontWeight: '600',
-  },
-  
-  partyDescription: {
+  body: {
     fontSize: 13,
     fontFamily: Fonts.type.base,
     color: Colors.snow,
     letterSpacing: 2,
     fontWeight: '600',
     lineHeight: 24,
+    textAlign: 'center',
   },
-};
+});
 
 export default AnnouncementStyle;
