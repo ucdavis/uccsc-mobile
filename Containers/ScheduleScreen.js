@@ -1,15 +1,39 @@
 import React from 'react';
 import {
-  Animated,
+  Image, View,
 } from 'react-native';
+import { connect } from 'react-redux';
 import { createMaterialTopTabNavigator } from 'react-navigation';
 import { MaterialIcons } from '@expo/vector-icons';
+import { isSameDay } from 'date-fns';
+
+import Config from '../Config/AppConfig';
 import { Colors, Metrics } from '../Themes';
+import ScheduleActions from '../Redux/ScheduleRedux';
 
 import Gradient from '../Components/Gradient';
-import { MondayScheduleList, TuesdayScheduleList, WednesdayScheduleList } from '../Components/ScheduleList';
+import ScheduleList from '../Components/ScheduleList';
+import FavoritesScreen from './FavoritesScreen';
 
 import styles from './Styles/ScheduleScreenStyles';
+
+const mapStoreToPropsForList = (dayIndex) => (store) => {
+  return {
+    currentTime: new Date(store.schedule.currentTime),
+    isCurrentDay: isSameDay(store.schedule.currentTime, new Date(Config.conferenceDates[dayIndex])),
+    schedule: store.schedule.schedule[dayIndex],
+  };
+};
+
+const mapDispatchToPropsForList = (dispatch) => {
+  return {
+    setSelectedEvent: data => dispatch(ScheduleActions.setSelectedEvent(data)),
+  };
+};
+
+const MondayScheduleList = connect(mapStoreToPropsForList(0), mapDispatchToPropsForList)(ScheduleList);
+const TuesdayScheduleList = connect(mapStoreToPropsForList(1), mapDispatchToPropsForList)(ScheduleList);
+const WednesdayScheduleList = connect(mapStoreToPropsForList(2), mapDispatchToPropsForList)(ScheduleList);
 
 const DayTabs = {
   Monday: {
@@ -24,6 +48,9 @@ const DayTabs = {
     screen: WednesdayScheduleList,
     navigationOptions: { tabBarLabel: 'Wed' },
   },
+  Favorites: {
+    screen: FavoritesScreen,
+  }
 };
 
 const DayTabNavigatorOptions = {
@@ -33,6 +60,7 @@ const DayTabNavigatorOptions = {
   tabBarOptions: {
     activeTintColor: Colors.snow,
     inactiveTintColor: 'rgba(255,255,255,0.80)',
+    showIcon: true,
     indicatorStyle: {
       backgroundColor: Colors.snow
     },
@@ -42,11 +70,14 @@ const DayTabNavigatorOptions = {
       fontFamily: 'Montserrat-Light',
       backgroundColor: Colors.clear,
     },
+    iconStyle: {
+      marginBottom: 8,
+    },
     tabStyle: {
       flex: 1,
       height: 70,
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'flex-end',
       borderBottomWidth: 1,
       borderBottomColor: 'rgba(253,229,255,0.5)',
     },
@@ -69,14 +100,6 @@ export default class ScheduleScreen extends React.PureComponent {
     ),
   }
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      scrollY: new Animated.Value(0),
-    };
-  }
-
   renderHeader = () => {
     const headerStyle = [
       styles.headerContainer,
@@ -92,9 +115,9 @@ export default class ScheduleScreen extends React.PureComponent {
     ];
 
     return (
-      <Animated.View style={headerStyle}>
-        <Animated.Image source={require('../Images/gradient.png')} style={backgroundStyle} resizeMode="cover" />
-      </Animated.View>
+      <View style={headerStyle}>
+        <Image source={require('../Images/gradient.png')} style={backgroundStyle} resizeMode="cover" />
+      </View>
     );
   }
 
