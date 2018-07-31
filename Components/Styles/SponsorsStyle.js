@@ -50,6 +50,10 @@ const SponsorsStyles = {
     alignItems: 'center',
     width: '80%',
   },
+  imageStyle: {
+    backgroundColor: Colors.snow,
+    padding: Metrics.baseMargin,
+  },
   lowTier: {
     marginHorizontal: 25,
   },
