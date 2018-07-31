@@ -7,7 +7,7 @@ import { isFuture, addMinutes } from 'date-fns';
 
 import AnnouncementActions from '../Redux/AnnouncementsRedux';
 import NotificationActions from '../Redux/NotificationRedux';
-import ScheduleActions, { updateSchedule } from '../Redux/ScheduleRedux';
+import ScheduleActions from '../Redux/ScheduleRedux';
 import StartupActions from '../Redux/StartupRedux';
 
 import AppNavigation from '../Navigation/AppNavigation';
