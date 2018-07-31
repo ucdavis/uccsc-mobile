@@ -11,9 +11,7 @@ const Sponsors = () => {
     <View style={styles.sponsors}>
       <Text style={styles.heading}>Our Sponsors</Text>
       <Text style={styles.description}>
-        We love the sponsors for this conference.
-        They make all of this fun stuff possible, and we
-        couldn’t have done it without them.
+        Thank you to our generous sponsors for helping to make UCCSC possible. We couldn't have done it without you!
       </Text>
 
       <Text style={styles.sponsorTierTitle}>
