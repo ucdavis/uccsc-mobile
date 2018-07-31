@@ -25,7 +25,7 @@ export default class ScheduleList extends React.Component {
 
   shouldComponentUpdate(nextProps) {
 
-    if (nextProps.events !== this.props.events) {
+    if (nextProps.schedule !== this.props.schedule) {
       return true;
     }
 
