@@ -29,13 +29,13 @@ export default class LiveHelp extends React.Component {
           <FontAwesome name="slack" size={31} color="white" /> UC Tech Slack
         </Text>
         <Text style={styles.liveHelpText}>
-          Chat on the UCTech Slack at anytime for directions, suspicious activity, violations of our <Text style={styles.link} onPress={() => Linking.openURL('https://occr.ucdavis.edu/poc/')}>Principles of Community</Text>, or any other concern.
+          Stay in touch with conference organizers and attendees on the #UCCSC channel at uctech.slack.com. Anyone with a University of California email address can join automatically.
         </Text>
         <Text style={styles.liveHelpText}>
           Find us in the #uccsc channel!
         </Text>
         <RoundedButton
-          text='Send Us A Message'
+          text='Join or Login'
           onPress={this.onSlackClick}
           style={styles.liveHelpButton}
         />

@@ -62,14 +62,14 @@ export default class AboutScreen extends React.Component {
             style={liveHelpStyles}
             onPress={() => this.setActiveTab('liveHelp')}>
             <Text style={liveHelpTextStyles}>
-              Live Help
+              Slack
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={sponsorStyles}
             onPress={() => this.setActiveTab('sponsors')}>
             <Text style={sponsorTextStyles}>
-              Sponsors
+              UCCSC Sponsors
             </Text>
           </TouchableOpacity>
         </View>
@@ -89,8 +89,8 @@ export default class AboutScreen extends React.Component {
         <ScrollView>
           <ConferenceAnnouncements />
           <Twitter />
-          <SeeProcess />
           {this.renderTabs()}
+          <SeeProcess />
         </ScrollView>
       </Gradient>
     );

@@ -20,8 +20,7 @@ const Twitter = (props) => {
         </Text>
       </TouchableOpacity>
       <Text style={styles.description}>
-        Make your friends jealous by tweeting, posting,
-        or whatever it is you do with the hashtag&nbsp;
+        Whenever you tweet about the conference, please use &nbsp;
         <Text style={styles.hashtag} onPress={() => tweetWithHashtag()}>
           #UCCSC
         </Text>.
