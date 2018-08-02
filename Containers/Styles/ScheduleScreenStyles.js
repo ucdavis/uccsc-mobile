@@ -7,6 +7,12 @@ export default StyleSheet.create({
     flex: 1,
     zIndex: 0,
   },
+  safeArea: {
+    flex: 1,
+    backgroundColor: Colors.transparent,
+    paddingTop: Metrics.statusBarHeight,
+    zIndex: 11,
+  },
   headerContainer: {
     justifyContent: 'flex-start',
     alignItems: 'stretch',
@@ -15,7 +21,7 @@ export default StyleSheet.create({
     left: 0,
     right: 0,
     overflow: 'hidden',
-    height: 150,
+    height: 100,
     zIndex: 10,
   },
   headerBackground: {
@@ -23,33 +29,8 @@ export default StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
+    height: 100,
     width: '100%',
     zIndex: 10,
-  },
-  headerLogoContainer: {
-    justifyContent: 'flex-start',
-    alignItems: 'stretch',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    width: '100%',
-    zIndex: 20,
-    paddingTop: Platform.OS === 'ios' ? 28 : 38,
-  },
-  headerLogo: {
-    padding: Metrics.baseMargin,
-    width: 100,
-    height: 100,
-  },
-  dayToggle: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    zIndex: 20,
-  },
-  listContent: {
-    // paddingBottom: Metrics.baseMargin * 8,
   },
 });
