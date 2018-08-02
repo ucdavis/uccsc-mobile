@@ -1,5 +1,5 @@
-import { StyleSheet, Platform } from 'react-native';
-import { ApplicationStyles, Colors, Fonts, Metrics } from '../../Themes/';
+import { StyleSheet } from 'react-native';
+import { Colors, Metrics } from '../../Themes/';
 
 export default StyleSheet.create({
   // ...ApplicationStyles.screen,
@@ -21,7 +21,7 @@ export default StyleSheet.create({
     left: 0,
     right: 0,
     overflow: 'hidden',
-    height: 100,
+    height: 80,
     zIndex: 10,
   },
   headerBackground: {
@@ -29,7 +29,7 @@ export default StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    height: 100,
+    height: 80,
     width: '100%',
     zIndex: 10,
   },

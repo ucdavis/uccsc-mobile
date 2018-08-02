@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View,
+  Text, View,
 } from 'react-native';
 import { connect } from 'react-redux';
 import { FontAwesome } from '@expo/vector-icons';
@@ -30,6 +30,25 @@ class FavoritesScreen extends React.Component {
   }
 
   render() {
+    const { schedule } = this.props;
+    if (!schedule || !schedule.length) {
+      return (
+        <View style={styles.emptyContainer}>
+          <Text style={styles.emptyText}>
+            Hey! You haven’t saved any sessions!
+          </Text>
+          <FontAwesome
+            name="meh-o"
+            size={48}
+            color="white"
+          />
+          <Text style={styles.emptyText}>
+            Go find some!
+          </Text>
+        </View>
+      );
+    }
+
     return (
       <ScheduleList
         {...this.props}
