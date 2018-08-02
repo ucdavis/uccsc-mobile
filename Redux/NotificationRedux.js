@@ -3,9 +3,7 @@ import Immutable from 'seamless-immutable';
 
 /* ------------- Initial State ------------- */
 export const INITIAL_STATE = new Immutable({
-  notifications: [
-    { message: 'This is my new message' },
-  ],
+  notifications: [],
   localNotifications: [],
 });
 
@@ -23,13 +21,13 @@ export default Creators;
 
 /* ------------- Reducer ------------- */
 
-export const addNotification = (state = INITIAL_STATE, { message }) => 
+export const addNotification = (state, { message }) => 
   Immutable.merge(state, { notifications: [...state.notifications, message] });
 
-export const clearAllNotifications = (state ) =>
+export const clearAllNotifications = (state) =>
   Immutable.merge(state, { notifications: [] });
 
-export const trackLocalNotification = (state = INITIAL_STATE, { id, title }) =>
+export const trackLocalNotification = (state, { id, title }) =>
   Immutable.merge(state, { localNotifications: [...state.localNotifications, { id, title }] });
 
 export const untrackLocalNotification = (state, { id }) =>

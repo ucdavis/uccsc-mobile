@@ -9,6 +9,11 @@
     "platforms": ["ios", "android"],
     "orientation": "portrait",
     "githubUrl": "https://github.com/ucdavis/uccsc-mobile",
+    "splash": {
+      "image": "./Images/splash.png",
+      "backgroundColor": "#004987",
+      "resizeMode": "contain"
+    },
     "ios": {
       "bundleIdentifier": "edu.ucdavis.uccsc",
       "buildNumber": "0.1.0",
