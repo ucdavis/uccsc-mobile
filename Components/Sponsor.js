@@ -14,7 +14,7 @@ const Sponsor = (props) => {
     >
       <Image style={styles.imageStyle} source={props.image} resizeMode="center" />
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 export default Sponsor;
