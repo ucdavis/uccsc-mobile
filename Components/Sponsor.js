@@ -7,14 +7,12 @@ import {
 import styles from './Styles/SponsorsStyle';
 
 const Sponsor = (props) => {
-  const imageStyle = props.isLow ? styles.lowTier : {};
-
   return (
     <TouchableOpacity
       style={styles.sponsor}
       onPress={() => Linking.openURL(props.url)}
     >
-      <Image style={imageStyle} source={props.image} resizeMode="center" />
+      <Image style={styles.imageStyle} source={props.image} resizeMode="center" />
     </TouchableOpacity>
   )
 }

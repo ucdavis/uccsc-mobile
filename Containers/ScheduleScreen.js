@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  Image, View,
+  Image, Text, View,
 } from 'react-native';
 import { connect } from 'react-redux';
-import { createMaterialTopTabNavigator } from 'react-navigation';
+import { createMaterialTopTabNavigator, SafeAreaView } from 'react-navigation';
 import { MaterialIcons } from '@expo/vector-icons';
 import { isSameDay } from 'date-fns';
 
@@ -101,22 +101,9 @@ export default class ScheduleScreen extends React.PureComponent {
   }
 
   renderHeader = () => {
-    const headerStyle = [
-      styles.headerContainer,
-      {
-        height: Metrics.statusBarHeight,
-      }];
-
-    const backgroundStyle = [
-      styles.headerBackground,
-      {
-        height: Metrics.statusBarHeight,
-      },
-    ];
-
     return (
-      <View style={headerStyle}>
-        <Image source={require('../Images/gradient.png')} style={backgroundStyle} resizeMode="cover" />
+      <View style={styles.headerContainer}>
+        <Image source={require('../Images/gradient.png')} style={styles.headerBackground} resizeMode="cover" />
       </View>
     );
   }
@@ -127,17 +114,12 @@ export default class ScheduleScreen extends React.PureComponent {
       initialRouteName: 'Monday',
     });
 
-    const containerStyle = [
-      styles.container,
-      {
-        paddingTop: Metrics.statusBarHeight,
-      }
-    ];
-
     return (
-      <Gradient style={containerStyle}>
+      <Gradient style={styles.container}>
         { this.renderHeader() }
-        <DayTabNavigator screenProps={{ rootNavigation: this.props.navigation }} />
+        <SafeAreaView style={styles.safeArea}>
+          <DayTabNavigator screenProps={{ rootNavigation: this.props.navigation }} />
+        </SafeAreaView>
       </Gradient>
     );
   }

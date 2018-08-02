@@ -2,9 +2,9 @@ import './Config';
 import './Config/ReactotronConfig';
 
 import DebugConfig from './Config/DebugConfig';
-import { AppLoading, Asset, Font } from 'expo';
+import { AppLoading, Asset, Font, SplashScreen } from 'expo';
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { Animated, Image } from 'react-native';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import RootContainer from './Containers/RootContainer';
@@ -46,8 +46,14 @@ class App extends Component {
 
   state = {
     isReady: false,
+    splashAnimation: new Animated.Value(0),
+    splashAnimationComplete: false,
     notification: null,
   };
+
+  componentDidMount() {
+    SplashScreen.preventAutoHide();
+  }
 
   async _loadResources() {
     if (DebugConfig.useReactotron) {
@@ -63,6 +69,7 @@ class App extends Component {
       Images.morningJog,
       Images.morningYoga,
       Images.busTour,
+      require('./Images/splash.png'),
     ]);
 
     const fontAssets = cacheFonts([
@@ -73,6 +80,64 @@ class App extends Component {
 
     await Promise.all([...imageAssets, ...fontAssets]);
   }
+
+  _maybeRenderLoadingImage = () => {
+    if (this.state.splashAnimationComplete) {
+      return null;
+    }
+
+    return (
+      <Animated.View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          bottom: 0,
+          right: 0,
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#fff',
+          opacity: this.state.splashAnimation.interpolate({
+            inputRange: [0, 1],
+            outputRange: [1, 0],
+          }),
+        }}>
+        <Animated.Image
+          source={require('./Images/splash.png')}
+          style={{
+            width: undefined,
+            height: undefined,
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            bottom: 0,
+            right: 0,
+            resizeMode: 'contain',
+            transform: [
+              {
+                scale: this.state.splashAnimation.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [1, 4],
+                }),
+              },
+            ],
+          }}
+          onLoadEnd={this._animateOut}
+        />
+      </Animated.View>
+    );
+  };
+
+  _animateOut = () => {
+    SplashScreen.hide();
+    Animated.timing(this.state.splashAnimation, {
+      toValue: 1,
+      duration: 700,
+      useNativeDriver: true,
+    }).start(() => {
+      this.setState({ splashAnimationComplete: true });
+    });
+};
 
   render() {
     if (!this.state.isReady) {
@@ -89,6 +154,7 @@ class App extends Component {
       <Provider store={store}>
         <PersistLoader loading={null} persistor={persistor}>
           <RootContainer />
+          {this._maybeRenderLoadingImage()}
         </PersistLoader>
       </Provider>
     );

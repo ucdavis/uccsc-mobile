@@ -16,13 +16,6 @@ import AppConfig from '../Config/AppConfig';
 
 export default class ScheduleList extends React.Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-    };
-  }
-
   shouldComponentUpdate(nextProps) {
 
     if (nextProps.schedule !== this.props.schedule) {
@@ -47,22 +40,6 @@ export default class ScheduleList extends React.Component {
     const { rootNavigation } = screenProps;
     rootNavigation.navigate('TalkDetail');
   }
-
-  getItemLayout = GetItemLayout({
-    getItemHeight: (item) => {
-      if (item.eventType === "Activity") {
-        return 145;
-      }
-  
-      if (item.eventType === "Meal/Snack") {
-        return 145;
-      }
-
-      // use best guess for variable height rows
-      return 205 + (1.002936 * item.title.length + 6.77378);
-    },
-    getSectionHeaderHeight: () => 39,
-  });
 
   renderSectionHeader = ({ section }) => { 
     return ( 
@@ -173,7 +150,6 @@ export default class ScheduleList extends React.Component {
         sections={schedule}
         keyExtractor={(item, idx) => item.title}
         contentContainerStyle={styles.listContent}
-        getItemLayout={this.getItemLayout}
         stickySectionHeadersEnabled
         ref={(r) => this.scheduleList = r}
       />

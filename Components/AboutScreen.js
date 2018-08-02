@@ -7,12 +7,14 @@ import {
   LayoutAnimation,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+
 import Gradient from '../Components/Gradient';
 import SeeProcess from '../Components/SeeProcess';
 import Twitter from '../Components/Twitter';
 import Sponsors from '../Components/Sponsors';
 import LiveHelp from '../Components/LiveHelp';
 import ConferenceAnnouncements from '../Containers/ConferenceAnnouncements';
+
 import styles from './Styles/AboutScreenStyle';
 
 export default class AboutScreen extends React.Component {
