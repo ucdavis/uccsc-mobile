@@ -2,7 +2,7 @@
   "expo": {
     "name": "UCCSC Mobile",
     "slug": "uccsc-mobile-2018",
-    "sdkVersion": "27.0.0",
+    "sdkVersion": "29.0.0",
     "privacy": "public",
     "icon": "./Images/Logo/logo.png",
     "primaryColor": "#002855",
@@ -16,7 +16,7 @@
     },
     "ios": {
       "bundleIdentifier": "edu.ucdavis.uccsc",
-      "buildNumber": "0.1.0",
+      "buildNumber": "0.2.0",
       "config": {
         "googleMapsApiKey": "AIzaSyCGAQAUVoqMwccWP7-bbQUiDZo4DsHczSY"
       }
@@ -25,12 +25,13 @@
       "package": "edu.ucdavis.uccsc",
       "permissions": [
       ],
-      "versionCode": 4,
+      "versionCode": 5,
       "config": {
         "googleMaps": {
           "apiKey": "AIzaSyCGAQAUVoqMwccWP7-bbQUiDZo4DsHczSY"
         }
-      }
+      },
+      "googleServicesFile": "./google-services.json"
     }
   }
 }
