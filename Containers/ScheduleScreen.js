@@ -38,18 +38,30 @@ const WednesdayScheduleList = connect(mapStoreToPropsForList(2), mapDispatchToPr
 const DayTabs = {
   Monday: {
     screen: MondayScheduleList,
-    navigationOptions: { tabBarLabel: 'Mon' },
+    navigationOptions: {
+      tabBarLabel: 'Mon',
+      tabBarAccessibilityLabel: 'Monday Schedule',
+    },
   },
   Tuesday: {
     screen: TuesdayScheduleList,
-    navigationOptions: { tabBarLabel: 'Tue' },
+    navigationOptions: {
+      tabBarLabel: 'Tue',
+      tabBarAccessibilityLabel: 'Tuesday Schedule',
+    },
   },
   Wednesday: {
     screen: WednesdayScheduleList,
-    navigationOptions: { tabBarLabel: 'Wed' },
+    navigationOptions: {
+      tabBarLabel: 'Wed',
+      tabBarAccessibilityLabel: 'Wednesday Schedule',
+    },
   },
   Favorites: {
     screen: FavoritesScreen,
+    navigationOptions: {
+      tabBarAccessibilityLabel: 'Favorited Talks',
+    },
   }
 };
 
@@ -91,6 +103,7 @@ export default class ScheduleScreen extends React.PureComponent {
   static navigationOptions = {
     title: 'Home',
     tabBarLabel: 'Schedule',
+    tabBarAccessibilityLabel: 'Schedule Tab. Button.',
     tabBarIcon: ({ focused }) => (
       <MaterialIcons
         name="schedule"

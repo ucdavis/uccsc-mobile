@@ -17,6 +17,7 @@ import styles from './Styles/LocationScreenStyle';
 class LocationScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Location',
+    tabBarAccessibilityLabel: 'Location Tab. Button.',
     tabBarIcon: ({ focused }) => (
       <MaterialIcons name="location-on" size={24} color="white" />
     ),
