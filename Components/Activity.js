@@ -34,10 +34,7 @@ export default class Activity extends React.PureComponent {
 
     let background = '';
     
-    if (title.indexOf('Welcome Dinner') > -1) {
-      background = Images.partyBreak;
-    }
-    else if (title.indexOf('Breakfast') > -1) {
+    if (title.indexOf('Breakfast') > -1) {
       background = Images.breakfast;
     }
     if (title.indexOf('Lunch') > -1) {
