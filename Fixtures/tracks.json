@@ -1,20 +1,26 @@
 [
     {
-        "name": "Professional Development"
+        "name": "Professional Development",
+        "color": "#78be20"
     },
     {
-        "name": "Web Development and Applications"
+        "name": "Web Development and Applications",
+        "color": "#008eaa"
     },
     {
-        "name": "Women in Technology"
+        "name": "Women in Technology",
+        "color": "#642667"
     },
     {
-        "name": "Security and Privacy"
+        "name": "Security and Privacy",
+        "color": "#ba0c2f"
     },
     {
-        "name": "Teaching, Learning, and Research"
+        "name": "Teaching, Learning, and Research",
+        "color": "#ed8800"
     },
     {
-        "name": "Technology and Security Policy"
+        "name": "Technology and Security Policy",
+        "color": "#ffcd00"
     }
 ]

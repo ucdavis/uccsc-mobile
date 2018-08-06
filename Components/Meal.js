@@ -44,6 +44,9 @@ export default class Meal extends React.PureComponent {
     else if (title.indexOf('Lunch') > -1) {
       background = Images.lunch;
     }
+    else if (title.indexOf('Happy Hour') > -1) {
+      background = Images.partyBreak;
+    }
     else {
       background = Images.lunch;
     }

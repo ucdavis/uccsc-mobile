@@ -1,55 +1,19 @@
-import { StyleSheet, Platform } from 'react-native';
-import { ApplicationStyles, Colors, Fonts, Metrics } from '../../Themes/';
+import { StyleSheet } from 'react-native';
+import { Colors, Metrics } from '../../Themes/';
 
 export default StyleSheet.create({
-  // ...ApplicationStyles.screen,
-  container: {
+  emptyContainer: {
     flex: 1,
-    zIndex: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  headerContainer: {
-    justifyContent: 'flex-start',
-    alignItems: 'stretch',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    overflow: 'hidden',
-    height: 150,
-    zIndex: 10,
-  },
-  headerBackground: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    width: '100%',
-    zIndex: 10,
-  },
-  headerLogoContainer: {
-    justifyContent: 'flex-start',
-    alignItems: 'stretch',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    width: '100%',
-    zIndex: 20,
-    paddingTop: Platform.OS === 'ios' ? 28 : 38,
-  },
-  headerLogo: {
-    padding: Metrics.baseMargin,
-    width: 100,
-    height: 100,
-  },
-  dayToggle: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    zIndex: 20,
-  },
-  listContent: {
-    // paddingBottom: Metrics.baseMargin * 8,
+  emptyText: {
+    textAlign: 'center',
+    fontFamily: 'Montserrat-Medium',
+    fontSize: 15,
+    color: Colors.snow,
+    letterSpacing: 0.47,
+    lineHeight: 23,
+    padding: Metrics.doubleBaseMargin * 2,
   },
 });

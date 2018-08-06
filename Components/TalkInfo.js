@@ -41,12 +41,12 @@ export default class TalkInfo extends React.PureComponent {
               </Text>
             </View>
           }
-          { showToggleReminder &&
-            <View style={styles.remindMe}>
-                <RemindMeButton data={toggleReminderData} />
-            </View>
-          }
         </View>
+        { showToggleReminder &&
+          <View style={styles.remindMe}>
+              <RemindMeButton data={toggleReminderData} />
+          </View>
+        }
       </View>
     );
   }

@@ -9,18 +9,7 @@ import RoomInfo from './RoomInfo';
 import TalkInfo from './TalkInfo';
 import styles from './Styles/TalkStyle';
 
-import { Colors } from '../Themes/';
-
 const tracks = require('../Fixtures/tracks.json');
-
-const themeColors = [
-  Colors.sunnyGrass,
-  Colors.recpoolBlue,
-  Colors.wineGrape,
-  Colors.unitransRed,
-  Colors.californiaPoppy,
-  Colors.goldenLupine,
-];
 
 export default class Talk extends React.PureComponent {
   renderAvatar() {
@@ -44,7 +33,7 @@ export default class Talk extends React.PureComponent {
       containerStyles =
       {
         borderTopWidth: 15,
-        borderTopColor: themeColors[trackIndex],
+        borderTopColor: tracks[trackIndex].color,
       };
     }
     

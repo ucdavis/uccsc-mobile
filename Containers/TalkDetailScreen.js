@@ -14,6 +14,8 @@ import {
 import { MarkdownView } from 'react-native-markdown-view';
 import { MaterialIcons } from '@expo/vector-icons';
 
+const tracks = require('../Fixtures/tracks.json');
+
 import AppConfig from '../Config/AppConfig';
 
 import Gradient from '../Components/Gradient';
@@ -120,6 +122,13 @@ class TalkDetailScreen extends React.Component {
       paragraph: StyleSheet.flatten(styles.descriptionText),
     };
 
+    // shadows
+    let cardShadow1Style = styles.cardShadow1;
+    const trackIndex = tracks.findIndex((t) => t.name === (track ? track.name : ''));
+    if (trackIndex > -1) {
+      cardShadow1Style = [cardShadow1Style, { backgroundColor: tracks[trackIndex].color }];
+    }
+
     return (
       <Gradient style={styles.gradient}>
         <ScrollView>
@@ -128,8 +137,7 @@ class TalkDetailScreen extends React.Component {
               <MaterialIcons name="chevron-left" size={24} style={styles.backButtonIcon} />
               <Text style={styles.backButtonText}>Back</Text>
             </TouchableOpacity>
-            <View style={styles.cardShadow1} />
-            <View style={styles.cardShadow2} />
+            <View style={cardShadow1Style} />
             <View style={styles.card}>
               <View style={styles.sectionHeadingContainer}>
                 <Text style={styles.sectionHeading}>TALK</Text>

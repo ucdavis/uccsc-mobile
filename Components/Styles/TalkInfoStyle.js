@@ -3,13 +3,13 @@ import { Colors, Metrics } from '../../Themes/';
 
 export default StyleSheet.create({
   container: {
-    flex: 2,
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     backgroundColor: Colors.snow,
   },
   details: {
-    flex: 1,
+    flex: 2,
     flexDirection: 'row'
   },
   detail: {
@@ -29,10 +29,6 @@ export default StyleSheet.create({
   },
   remindMe: {
     flex: 1,
-    alignItems: 'stretch'
-  },
-  socialButtons: {
-    alignItems: 'center',
-    flexDirection: 'row'
+    alignItems: 'stretch',
   }
-})
+});
