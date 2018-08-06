@@ -135,7 +135,10 @@ class TalkDetailScreen extends React.Component {
 
     return (
       <Gradient style={styles.gradient}>
-        <ScrollView>
+        <ScrollView
+          accessibilityViewIsModal
+          importantForAccessibility='yes'
+        >
           <View style={styles.container}>
             <TouchableOpacity style={styles.backButton} onPress={this.goBack}>
               <MaterialIcons name="chevron-left" size={24} style={styles.backButtonIcon} />

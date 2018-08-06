@@ -63,7 +63,10 @@ class EventDetailScreen extends React.Component {
 
     return (
       <Gradient style={styles.gradient}>
-        <ScrollView>
+        <ScrollView
+          accessibilityViewIsModal
+          importantForAccessibility='yes'
+        >
           <View style={styles.container}>
             <TouchableOpacity style={styles.backButton} onPress={this.goBack}>
               <MaterialIcons name="chevron-left" size={24} style={styles.backButtonIcon} />
@@ -80,7 +83,7 @@ class EventDetailScreen extends React.Component {
             </View>
             { venue && 
               <View style={styles.section}>
-                  <RoomInfo building={venue.building} room={venue.room} />
+                <RoomInfo building={venue.building} room={venue.room} />
               </View>
             }
             <View style={[styles.section, styles.lastSection]}>

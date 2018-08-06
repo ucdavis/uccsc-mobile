@@ -99,6 +99,11 @@ const DayTabNavigatorOptions = {
   }
 };
 
+const DayTabNavigator = createMaterialTopTabNavigator(DayTabs, {
+  ...DayTabNavigatorOptions,
+  initialRouteName: 'Monday',
+});
+
 export default class ScheduleScreen extends React.PureComponent {
   static navigationOptions = {
     title: 'Home',
@@ -113,25 +118,59 @@ export default class ScheduleScreen extends React.PureComponent {
     ),
   }
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isFocused: this.props.navigation.isFocused(),
+    };
+  }
+
+  componentDidMount() {
+    this.navigationBlurListener =  this.props.navigation.addListener('didBlur', this.onNavigationChanged);
+    this.navigationFocusListener =  this.props.navigation.addListener('didFocus', this.onNavigationChanged);
+  } 
+  
+  componentWillUnmount() {
+    if (this.navigationBlurListener) {
+      this.navigationBlurListener.remove();
+    }
+
+    if (this.navigationFocusListener) {
+      this.navigationFocusListener.remove();
+    }
+  }
+
+  onNavigationChanged = (payload) => {
+    const isFocused = this.props.navigation.isFocused();
+    this.setState({
+      isFocused,
+    });
+  }
   renderHeader = () => {
     return (
-      <View style={styles.headerContainer}>
+      <View style={styles.headerContainer} importantForAccessibility='no-hide-descendants'>
         <Image source={require('../Images/gradient.png')} style={styles.headerBackground} resizeMode="cover" />
       </View>
     );
   }
 
   render() {
-    const DayTabNavigator = createMaterialTopTabNavigator(DayTabs, {
-      ...DayTabNavigatorOptions,
-      initialRouteName: 'Monday',
-    });
+    const { isFocused } = this.state;
 
     return (
       <Gradient style={styles.container}>
         { this.renderHeader() }
         <SafeAreaView style={styles.safeArea}>
-          <DayTabNavigator screenProps={{ rootNavigation: this.props.navigation }} />
+          <View
+            style={{flex: 1}}
+            accessibilityElementsHidden={!isFocused}
+            importantForAccessibility={isFocused ? 'auto' : 'no-hide-descendants'}
+          >
+            <DayTabNavigator
+              screenProps={{ rootNavigation: this.props.navigation }}
+            />
+          </View>
         </SafeAreaView>
       </Gradient>
     );
