@@ -86,7 +86,13 @@ class LocationScreen extends React.Component {
     ];
 
     return (
-      <Animated.Image style={style} source={Images.Arboretum} resizeMode="cover" />
+      <Animated.Image
+        style={style}
+        source={Images.Arboretum}
+        resizeMode="cover"
+        accessibilityElementsHidden
+        importantForAccessibility='no'
+      />
     );
   }
 
@@ -112,7 +118,11 @@ class LocationScreen extends React.Component {
       }
     ]
     return (
-      <Animated.View style={style}>
+      <Animated.View
+        style={style}
+        accessibilityElementsHidden
+        importantForAccessibility='no-hide-descendants'
+      >
         <View style={styles.headingContainer}>
           <Text style={styles.mainHeading}>UC Davis</Text>
           <Text style={styles.address}>
@@ -150,6 +160,8 @@ class LocationScreen extends React.Component {
             zoomEnabled={false}
             pitchEnabled={false}
             rotateEnabled={false}
+            accessibilityElementsHidden
+            importantForAccessibility='no-hide-descendants'
           />
           <View style={styles.mapActions}>
             <TouchableOpacity

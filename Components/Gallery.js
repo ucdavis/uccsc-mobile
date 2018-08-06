@@ -6,7 +6,7 @@ import styles from './Styles/GalleryStyle';
 
 export default class Gallery extends React.Component {
   constructor (props) {
-    super(props)
+    super(props);
 
     this.state = {
       activeTab: Object.keys(props.data)[0],
@@ -32,6 +32,10 @@ export default class Gallery extends React.Component {
         key={tab}
         style={[styles.tab, isActive && styles.activeTab]}
         onPress={() => this.setActiveTab(tab)}
+        accessible
+        accessibilityLabel={tab}
+        accessibilityTraits='button'
+        accessibilityComponentType='button'
       >
         <Text style={textStyle}>
           {tab}
@@ -49,7 +53,12 @@ export default class Gallery extends React.Component {
     return (
       <TouchableWithoutFeedback
         key={name}
-        onPress={() => onItemPress(link)}>
+        onPress={() => onItemPress(link)}
+        accessible
+        accessibilityLabel={name}
+        accessibilityTraits='button'
+        accessibilityComponentType='button'
+      >
         <View style={styles.item}>
           <Image source={Images[image]} resizeMode={'cover'} style={styles.itemImage} />
           <View style={styles.itemDetail}>
