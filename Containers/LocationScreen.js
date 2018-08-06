@@ -152,7 +152,14 @@ class LocationScreen extends React.Component {
             rotateEnabled={false}
           />
           <View style={styles.mapActions}>
-            <TouchableOpacity onPress={() => this.openMaps()} style={styles.getDirections}>
+            <TouchableOpacity
+              onPress={() => this.openMaps()}
+              style={styles.getDirections}
+              accessible
+              accessibilityLabel={`The UCCSC Conference is located at the UC Davis Conference Center on 550 Alumni Ln, Davis, CA 95616. Click to open on maps.`}
+              accessibilityTraits='button'
+              accessibilityComponentType='button'
+            >
               <View style={styles.addressContainer}>
                 <Text style={styles.venueName}>
                   UC Davis
@@ -167,7 +174,10 @@ class LocationScreen extends React.Component {
               </View>
             </TouchableOpacity>
           </View>
-          <View style={styles.sectionHeader}>
+          <View style={styles.sectionHeader}
+            accessible
+            accessibilityLabel='Nearby food and drink'
+          >
             <Text style={styles.sectionHeaderText}>
               Nearby
             </Text>

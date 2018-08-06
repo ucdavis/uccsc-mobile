@@ -20,6 +20,7 @@ import styles from './Styles/AboutScreenStyle';
 export default class AboutScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Info',
+    tabBarAccessibilityLabel: 'Conference Information Tab. Button.',
     tabBarIcon: ({ focused }) => (
       <MaterialIcons name="info" size={24} color="white" />
     ),
@@ -62,14 +63,20 @@ export default class AboutScreen extends React.Component {
         <View style={styles.tabs}>
           <TouchableOpacity
             style={liveHelpStyles}
-            onPress={() => this.setActiveTab('liveHelp')}>
+            onPress={() => this.setActiveTab('liveHelp')}
+            accessibilityLabel='Slack information tab.'
+            accessibilityTraits='button'
+          >
             <Text style={liveHelpTextStyles}>
               Slack
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={sponsorStyles}
-            onPress={() => this.setActiveTab('sponsors')}>
+            onPress={() => this.setActiveTab('sponsors')}
+            accessibilityLabel='UCCSC sponsors tab.'
+            accessibilityTraits='button'
+          >
             <Text style={sponsorTextStyles}>
               UCCSC Sponsors
             </Text>

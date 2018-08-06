@@ -12,7 +12,11 @@ const RoomInfo = (props) => {
   return (
     <View style={styles.container}>
       { building &&
-        <View style={styles.detail}>
+        <View
+          style={styles.detail}
+          accessible
+          accessibilityLabel={`Building: ${building}.`}
+        >
           <Text style={styles.detailLabel}>
             Building
           </Text>
@@ -22,7 +26,11 @@ const RoomInfo = (props) => {
         </View>
       }
       { room && 
-        <View style={styles.detail}>
+        <View
+          style={styles.detail}
+          accessible
+          accessibilityLabel={`Room: ${room}.`}
+        >
           <Text style={styles.detailLabel}>
             Room
           </Text>

@@ -12,17 +12,25 @@ export default class TalkInfo extends React.PureComponent {
       <View style={styles.container}>
         <View style={styles.details}>
           { showDay &&
-              <View style={styles.detail}>
-                <Text style={styles.detailLabel}>
-                  Day
-                </Text>
-                <Text style={styles.detailText}>
-                  { format(new Date(start), 'ddd') }
-                </Text>
-              </View>
-            }
+            <View
+              style={styles.detail}
+              accessible
+              accessibilityLabel={`Day: ${format(new Date(start), 'dddd')}.`}
+            >
+              <Text style={styles.detailLabel}>
+                Day
+              </Text>
+              <Text style={styles.detailText}>
+                { format(new Date(start), 'ddd') }
+              </Text>
+            </View>
+          }
           { start &&
-            <View style={styles.detail}>
+            <View
+              style={styles.detail}
+              accessible
+              accessibilityLabel={`Start time: ${format(new Date(start), 'h:mma')}.`}
+            >
               <Text style={styles.detailLabel}>
                 Start
               </Text>
@@ -32,7 +40,11 @@ export default class TalkInfo extends React.PureComponent {
             </View>
           }
           { duration &&
-            <View style={styles.detail}>
+            <View
+              style={styles.detail}
+              accessible
+              accessibilityLabel={`Duration: ${duration}.`}
+            >
               <Text style={styles.detailLabel}>
                 Duration
               </Text>

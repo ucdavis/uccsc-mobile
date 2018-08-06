@@ -62,7 +62,11 @@ class TalkDetailScreen extends React.Component {
     }
 
     return (
-      <View style={styles.detailContainer}>
+      <View
+        style={styles.detailContainer}
+        accessible
+        accessibilityLabel={`${label}. ${detail}.`}
+      >
         <Text style={styles.detailLabel}>{ label }</Text>
         <Text style={styles.detailText}>{ detail }</Text>
       </View>
