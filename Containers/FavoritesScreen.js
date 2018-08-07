@@ -51,6 +51,7 @@ class FavoritesScreen extends React.Component {
 
     return (
       <ScheduleList
+        routeName='Favorites'
         {...this.props}
       />
     );
