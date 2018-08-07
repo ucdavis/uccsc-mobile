@@ -4,19 +4,21 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { createMaterialTopTabNavigator, SafeAreaView } from 'react-navigation';
-import { MaterialIcons } from '@expo/vector-icons';
 import { isSameDay } from 'date-fns';
+import { compose, withProps } from 'recompose';
 
 import Config from '../Config/AppConfig';
 import { Colors } from '../Themes';
 import ScheduleActions from '../Redux/ScheduleRedux';
 import { accessibilityFocusRef } from '../Helpers/AccessibilityHelpers';
+import { addActionListener, emitAction } from '../Services/NavigationService';
 
 import Gradient from '../Components/Gradient';
 import ScheduleList from '../Components/ScheduleList';
 import FavoritesScreen from './FavoritesScreen';
 
 import styles from './Styles/ScheduleScreenStyles';
+import { withTimer } from '../Helpers/WithTimer';
 
 const mapStoreToPropsForList = (dayIndex) => (store) => {
   return {
@@ -32,9 +34,23 @@ const mapDispatchToPropsForList = (dispatch) => {
   };
 };
 
-const MondayScheduleList = connect(mapStoreToPropsForList(0), mapDispatchToPropsForList)(ScheduleList);
-const TuesdayScheduleList = connect(mapStoreToPropsForList(1), mapDispatchToPropsForList)(ScheduleList);
-const WednesdayScheduleList = connect(mapStoreToPropsForList(2), mapDispatchToPropsForList)(ScheduleList);
+const MondayScheduleList = 
+  compose(
+    withProps({ routeName: 'Monday' }),
+    connect(mapStoreToPropsForList(0), mapDispatchToPropsForList))
+  (ScheduleList);
+
+const TuesdayScheduleList =
+  compose(
+    withProps({ routeName: 'Tuesday' }),
+    connect(mapStoreToPropsForList(1), mapDispatchToPropsForList))
+  (ScheduleList);
+
+const WednesdayScheduleList =
+  compose(
+    withProps({ routeName: 'Wednesday' }),
+    connect(mapStoreToPropsForList(2), mapDispatchToPropsForList))
+  (ScheduleList);
 
 const DayTabs = {
   Monday: {
@@ -42,6 +58,7 @@ const DayTabs = {
     navigationOptions: {
       tabBarLabel: 'Mon',
       tabBarAccessibilityLabel: 'Monday Schedule',
+      tabBarOnPress: ({ navigation, defaultHandler }) => { emitAction(navigation.state); defaultHandler(); },
     },
   },
   Tuesday: {
@@ -49,6 +66,7 @@ const DayTabs = {
     navigationOptions: {
       tabBarLabel: 'Tue',
       tabBarAccessibilityLabel: 'Tuesday Schedule',
+      tabBarOnPress: ({ navigation, defaultHandler }) => { emitAction(navigation.state); defaultHandler(); },
     },
   },
   Wednesday: {
@@ -56,12 +74,14 @@ const DayTabs = {
     navigationOptions: {
       tabBarLabel: 'Wed',
       tabBarAccessibilityLabel: 'Wednesday Schedule',
+      tabBarOnPress: ({ navigation, defaultHandler }) => { emitAction(navigation.state); defaultHandler(); },
     },
   },
   Favorites: {
     screen: FavoritesScreen,
     navigationOptions: {
       tabBarAccessibilityLabel: 'Favorited Talks',
+      tabBarOnPress: ({ navigation, defaultHandler }) => { emitAction(navigation.state); defaultHandler(); },
     },
   }
 };
@@ -105,24 +125,7 @@ const DayTabNavigator = createMaterialTopTabNavigator(DayTabs, {
   initialRouteName: 'Monday',
 });
 
-onTabBarPressListeners = [];
-function onTabBarPress(navigation) {
-  onTabBarPressListeners.forEach(l => l(navigation));
-}
-
-export default class ScheduleScreen extends React.PureComponent {
-  static navigationOptions = {
-    title: 'Home',
-    tabBarLabel: 'Schedule',
-    tabBarAccessibilityLabel: 'Schedule Tab. Button.',
-    tabBarIcon: ({ focused }) => (
-      <MaterialIcons
-        name="schedule"
-        size={24}
-        color="white"
-      />
-    ),
-  }
+class ScheduleScreen extends React.PureComponent {
 
   constructor(props) {
     super(props);
@@ -133,30 +136,27 @@ export default class ScheduleScreen extends React.PureComponent {
   }
 
   componentDidMount() {
-    this.navigationBlurListener =  this.props.navigation.addListener('didBlur', this.onNavigationChanged);
-    this.navigationFocusListener =  this.props.navigation.addListener('didFocus', this.onNavigationChanged);
-  } 
-  
-  componentWillUnmount() {
-    if (this.navigationBlurListener) {
-      this.navigationBlurListener.remove();
-    }
+    this.navigationFocusListener = addActionListener((payload) => this.onNavigationChanged(payload));
 
+    if (this.props.navigation.isFocused()) {
+      this.accessibilityFocusTop();
+    }
+  }
+
+  componentWillUnmount() {
     if (this.navigationFocusListener) {
       this.navigationFocusListener.remove();
     }
   }
 
   onNavigationChanged = (payload) => {
-    const isFocused = this.props.navigation.isFocused();
-    this.setState({
-      isFocused,
-    });
-
-    const isInit = payload.action.type === 'Navigation/INIT';
-    if (!isInit && isFocused) {
-      accessibilityFocusRef(this._dayTabNavigator);
+    if (payload.key === 'Schedule') {
+      this.accessibilityFocusTop();
     }
+  }
+
+  accessibilityFocusTop = () => {
+    this.props.timer.setTimeout(() => accessibilityFocusRef(this._dayTabNavigator), 100);
   }
 
   renderHeader = () => {
@@ -189,3 +189,5 @@ export default class ScheduleScreen extends React.PureComponent {
     );
   }
 }
+
+export default withTimer(ScheduleScreen);

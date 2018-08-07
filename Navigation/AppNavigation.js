@@ -4,6 +4,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import { MaterialIcons } from '@expo/vector-icons';
 
 import AppConfig from '../Config/AppConfig';
+import { emitAction } from '../Services/NavigationService';
 
 import AboutScreen from '../Components/AboutScreen';
 import EventDetailScreen from '../Containers/EventDetailScreen';
@@ -52,7 +53,22 @@ const ScheduleStack = createStackNavigator({
 }, ScheduleStackOptions);
 
 const createAppNavigator = (options = {}) => createBottomTabNavigator({
-  Schedule: { screen: ScheduleStack, navigationOptions: ScheduleScreen.navigationOptions },
+  Schedule: {
+    screen: ScheduleStack,
+    navigationOptions: {
+      title: 'Home',
+      tabBarLabel: 'Schedule',
+      tabBarAccessibilityLabel: 'Schedule Tab. Button.',
+      tabBarIcon: ({ focused }) => (
+        <MaterialIcons
+          name="schedule"
+          size={24}
+          color="white"
+        />
+      ),
+      tabBarOnPress: ({ navigation, defaultHandler }) => { emitAction(navigation.state); defaultHandler(); },
+    }
+  },
   Location: {
     screen: LocationScreen,
     navigationOptions: {
@@ -61,6 +77,7 @@ const createAppNavigator = (options = {}) => createBottomTabNavigator({
       tabBarIcon: ({ focused }) => (
         <MaterialIcons name="location-on" size={24} color="white" />
       ),
+      tabBarOnPress: ({ navigation, defaultHandler }) => { emitAction(navigation.state); defaultHandler(); },
     },
   },
   About: {
@@ -71,6 +88,7 @@ const createAppNavigator = (options = {}) => createBottomTabNavigator({
       tabBarIcon: ({ focused }) => (
         <MaterialIcons name="info" size={24} color="white" />
       ),
+      tabBarOnPress: ({ navigation, defaultHandler }) => { emitAction(navigation.state); defaultHandler(); },
     },
   },
 }, {

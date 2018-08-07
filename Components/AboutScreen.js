@@ -9,6 +9,7 @@ import {
 
 import { accessibilityFocusRef } from '../Helpers/AccessibilityHelpers';
 import { withTimer } from '../Helpers/WithTimer';
+import { addActionListener } from '../Services/NavigationService';
 
 import Gradient from '../Components/Gradient';
 import SeeProcess from '../Components/SeeProcess';
@@ -26,10 +27,10 @@ class AboutScreen extends React.PureComponent {
   }
 
   componentDidMount() {
-    this.navigationFocusListener =  this.props.navigation.addListener('didFocus', this.onNavigationFocused);
+    this.navigationFocusListener = addActionListener((payload) => this.onNavigationChanged(payload));
 
     if (this.props.navigation.isFocused()) {
-      this.onNavigationFocused();
+      this.accessibilityFocusTop();
     }
   }
 
@@ -39,11 +40,14 @@ class AboutScreen extends React.PureComponent {
     }
   }
 
-  onNavigationFocused = (payload) => {
-    const isInit = payload && payload.action && payload.action.type === 'Navigation/INIT';
-    if (!isInit) {
-      this.props.timer.setTimeout(() => accessibilityFocusRef(this._annoucementsRef), 100);
+  onNavigationChanged = (payload) => {
+    if (payload.key === 'About') {
+      this.accessibilityFocusTop();
     }
+  }
+
+  accessibilityFocusTop = () => {
+    this.props.timer.setTimeout(() => accessibilityFocusRef(this._annoucementsRef), 100);
   }
 
   setActiveTab = (tab) => {

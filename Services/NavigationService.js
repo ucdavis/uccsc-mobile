@@ -11,3 +11,19 @@ export function navigate(target) {
     NavigationActions.navigate(target)
   );
 }
+
+export function emitAction(state) {
+  console.log(state);
+  actionSubscribers.forEach(s => s(state));
+}
+
+const actionSubscribers = new Set();
+
+export function addActionListener(handler) {
+  actionSubscribers.add(handler);
+  return {
+    remove: () => {
+      actionSubscribers.delete(handler);
+    }
+  };
+}

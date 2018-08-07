@@ -11,18 +11,43 @@ import ScheduleSectionHeader from '../Components/ScheduleSectionHeader';
 
 import styles from './Styles/ScheduleListStyles';
 
-import { GetItemLayout } from '../Utils/SectionList';
 import AppConfig from '../Config/AppConfig';
+import { accessibilityFocusRef } from '../Helpers/AccessibilityHelpers';
+import { withTimer } from '../Helpers/WithTimer';
+import { addActionListener } from '../Services/NavigationService';
 
-export default class ScheduleList extends React.Component {
+class ScheduleList extends React.Component {
 
+  componentDidMount() {
+    this.navigationFocusListener = addActionListener((payload) => this.onNavigationChanged(payload));
+
+    if (this.props.navigation.isFocused()) {
+      this.accessibilityFocusTop();
+    }
+  }
+  
   shouldComponentUpdate(nextProps) {
-
     if (nextProps.schedule !== this.props.schedule) {
       return true;
     }
-
+    
     return false;
+  }
+
+  componentWillUnmount() {
+    if (this.navigationFocusListener) {
+      this.navigationFocusListener.remove();
+    }
+  }
+
+  onNavigationChanged = (payload) => {
+    if (payload.routeName === this.props.routeName) {
+      this.accessibilityFocusTop();
+    }
+  }
+
+  accessibilityFocusTop = () => {
+    this.props.timer.setTimeout(() => accessibilityFocusRef(this._scheduleList), 100);
   }
 
   createOnEventPress = (item) => () => {
@@ -151,8 +176,10 @@ export default class ScheduleList extends React.Component {
         keyExtractor={(item, idx) => item.title}
         contentContainerStyle={styles.listContent}
         stickySectionHeadersEnabled
-        ref={(r) => this.scheduleList = r}
+        ref={(r) => this._scheduleList = r}
       />
     );
   }
 }
+
+export default withTimer(ScheduleList);
