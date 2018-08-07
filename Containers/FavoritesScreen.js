@@ -101,7 +101,7 @@ function buildScheduleList(talks) {
 }
 
 const mapStoreToProps = (store) => {
-  let talks = store.schedule.talks;
+  let talks = store.schedule.talks || [];
   talks = talks.filter(t => {
     return store.schedule.starredTalks.indexOf(t.title) > -1;
   });
