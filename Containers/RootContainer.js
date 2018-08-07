@@ -22,6 +22,15 @@ import { accessibilityFocusRef } from '../Helpers/AccessibilityHelpers';
 
 const sessionDeepLinkRegex = /^\/\/session\/(.*)$/gi;
 
+// get ref so we can focus it on first load
+// do the create out here so we don't recreate the nav on state change
+let _tabBarRef;
+const AppNavigation = createAppNavigator({
+  tabBarOptions: {
+    ref: (r) => _tabBarRef = r,
+  },
+});
+
 class RootContainer extends React.Component {
 
   state = {
@@ -35,7 +44,7 @@ class RootContainer extends React.Component {
     }
 
     // focus bottom tab on first load
-    accessibilityFocusRef(this._tabBarRef);
+    accessibilityFocusRef(_tabBarRef);
 
     // prompt user for permissions, get device id, etc
     await registerForPushNotificationsAsync();
@@ -133,13 +142,6 @@ class RootContainer extends React.Component {
 
   render() {
     const { notifications, clearNotifications } = this.props;
-
-    // get ref so we can focus it on first load
-    const AppNavigation = createAppNavigator({
-      tabBarOptions: {
-        ref: (r) => this._tabBarRef = r,
-      },
-    });
 
     return (
       <View style={styles.applicationView} ref={r => this._rootRef = r}>
