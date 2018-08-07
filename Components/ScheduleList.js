@@ -20,10 +20,6 @@ class ScheduleList extends React.Component {
 
   componentDidMount() {
     this.navigationFocusListener = addActionListener((payload) => this.onNavigationChanged(payload));
-
-    if (this.props.navigation.isFocused()) {
-      this.accessibilityFocusTop();
-    }
   }
   
   shouldComponentUpdate(nextProps) {

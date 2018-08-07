@@ -137,10 +137,6 @@ class ScheduleScreen extends React.PureComponent {
 
   componentDidMount() {
     this.navigationFocusListener = addActionListener((payload) => this.onNavigationChanged(payload));
-
-    if (this.props.navigation.isFocused()) {
-      this.accessibilityFocusTop();
-    }
   }
 
   componentWillUnmount() {
