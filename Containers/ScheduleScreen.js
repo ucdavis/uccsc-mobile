@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Image, Text, View,
+  Image, View,
 } from 'react-native';
 import { connect } from 'react-redux';
 import { createMaterialTopTabNavigator, SafeAreaView } from 'react-navigation';
@@ -8,8 +8,9 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { isSameDay } from 'date-fns';
 
 import Config from '../Config/AppConfig';
-import { Colors, Metrics } from '../Themes';
+import { Colors } from '../Themes';
 import ScheduleActions from '../Redux/ScheduleRedux';
+import { accessibilityFocusRef } from '../Helpers/AccessibilityHelpers';
 
 import Gradient from '../Components/Gradient';
 import ScheduleList from '../Components/ScheduleList';
@@ -104,6 +105,11 @@ const DayTabNavigator = createMaterialTopTabNavigator(DayTabs, {
   initialRouteName: 'Monday',
 });
 
+onTabBarPressListeners = [];
+function onTabBarPress(navigation) {
+  onTabBarPressListeners.forEach(l => l(navigation));
+}
+
 export default class ScheduleScreen extends React.PureComponent {
   static navigationOptions = {
     title: 'Home',
@@ -146,7 +152,13 @@ export default class ScheduleScreen extends React.PureComponent {
     this.setState({
       isFocused,
     });
+
+    const isInit = payload.action.type === 'Navigation/INIT';
+    if (!isInit && isFocused) {
+      accessibilityFocusRef(this._dayTabNavigator);
+    }
   }
+
   renderHeader = () => {
     return (
       <View style={styles.headerContainer} importantForAccessibility='no-hide-descendants'>
@@ -169,6 +181,7 @@ export default class ScheduleScreen extends React.PureComponent {
           >
             <DayTabNavigator
               screenProps={{ rootNavigation: this.props.navigation }}
+              ref={r => this._dayTabNavigator = r}
             />
           </View>
         </SafeAreaView>

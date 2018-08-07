@@ -17,6 +17,8 @@ import { MaterialIcons } from '@expo/vector-icons';
 const tracks = require('../Fixtures/tracks.json');
 
 import AppConfig from '../Config/AppConfig';
+import { accessibilityFocusRef } from '../Helpers/AccessibilityHelpers';
+import { withTimer } from '../Helpers/WithTimer';
 
 import Gradient from '../Components/Gradient';
 import RoomInfo from '../Components/RoomInfo';
@@ -25,16 +27,12 @@ import TalkInfo from '../Components/TalkInfo';
 import styles from './Styles/TalkDetailScreenStyles';
 
 class TalkDetailScreen extends React.Component {
-  static navigationOptions = {
-    title: 'TalkDetail',
-    tabBarLabel: 'Schedule',
-    tabBarIcon: ({ focused }) => (
-      <MaterialIcons name="schedule" size={24} color="white" />
-    ),
-  };
 
   componentDidMount() {
     BackHandler.addEventListener('hardwareBackPress', this.goBack);
+    
+    // focus on top of page, the back button
+    this.props.timer.setTimeout(() => accessibilityFocusRef(this._backButton), 100);
   }
 
   componentWillUnmount() {
@@ -140,7 +138,11 @@ class TalkDetailScreen extends React.Component {
           importantForAccessibility='yes'
         >
           <View style={styles.container}>
-            <TouchableOpacity style={styles.backButton} onPress={this.goBack}>
+            <TouchableOpacity
+              style={styles.backButton}
+              onPress={this.goBack}
+              ref={r => this._backButton = r}
+            >
               <MaterialIcons name="chevron-left" size={24} style={styles.backButtonIcon} />
               <Text style={styles.backButtonText}>Back</Text>
             </TouchableOpacity>
@@ -193,4 +195,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(TalkDetailScreen);
+export default withTimer(connect(mapStateToProps)(TalkDetailScreen));

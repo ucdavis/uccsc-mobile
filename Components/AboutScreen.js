@@ -6,7 +6,9 @@ import {
   View,
   LayoutAnimation,
 } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+
+import { accessibilityFocusRef } from '../Helpers/AccessibilityHelpers';
+import { withTimer } from '../Helpers/WithTimer';
 
 import Gradient from '../Components/Gradient';
 import SeeProcess from '../Components/SeeProcess';
@@ -17,21 +19,31 @@ import ConferenceAnnouncements from '../Containers/ConferenceAnnouncements';
 
 import styles from './Styles/AboutScreenStyle';
 
-export default class AboutScreen extends React.Component {
-  static navigationOptions = {
-    tabBarLabel: 'Info',
-    tabBarAccessibilityLabel: 'Conference Information Tab. Button.',
-    tabBarIcon: ({ focused }) => (
-      <MaterialIcons name="info" size={24} color="white" />
-    ),
+class AboutScreen extends React.PureComponent {
+
+  state = {
+    activeTab: 'liveHelp',
   }
 
-  constructor(props) {
-    super(props);
+  componentDidMount() {
+    this.navigationFocusListener =  this.props.navigation.addListener('didFocus', this.onNavigationFocused);
 
-    this.state = {
-      activeTab: 'liveHelp',
-    };
+    if (this.props.navigation.isFocused()) {
+      this.onNavigationFocused();
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.navigationFocusListener) {
+      this.navigationFocusListener.remove();
+    }
+  }
+
+  onNavigationFocused = (payload) => {
+    const isInit = payload && payload.action && payload.action.type === 'Navigation/INIT';
+    if (!isInit) {
+      this.props.timer.setTimeout(() => accessibilityFocusRef(this._annoucementsRef), 100);
+    }
   }
 
   setActiveTab = (tab) => {
@@ -95,7 +107,7 @@ export default class AboutScreen extends React.Component {
   render() {
     return (
       <Gradient style={styles.container}>
-        <ScrollView>
+        <ScrollView ref={r => this._annoucementsRef = r}>
           <ConferenceAnnouncements />
           <Twitter />
           {this.renderTabs()}
@@ -105,3 +117,5 @@ export default class AboutScreen extends React.Component {
     );
   }
 }
+
+export default withTimer(AboutScreen);
