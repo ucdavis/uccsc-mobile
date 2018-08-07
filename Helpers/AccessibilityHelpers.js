@@ -7,7 +7,6 @@ import {
 
 export function accessibilityFocusRef(ref) {
   const nodeHandle = findNodeHandle(ref);
-  console.log(nodeHandle);
   if (Platform.OS === 'ios') {
     AccessibilityInfo.setAccessibilityFocus(nodeHandle);
   } else {
