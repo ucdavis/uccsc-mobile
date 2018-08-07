@@ -54,17 +54,22 @@ class ConferenceAnnouncements extends React.Component {
           sliderWidth={viewportWidth}
           onSnapToItem={(index) => this.setState({ activeSlide: index })}
         />
-        <Pagination
-          tappableDots={!!this._carousel}
-          carouselRef={this._carousel}
-          dotsLength={data.length}
-          activeDotIndex={activeSlide}
-          containerStyle={styles.pagination}
-          dotContainerStyle={styles.dotContainer}
-          dotStyle={styles.dot}
-          inactiveDotOpacity={0.4}
-          inactiveDotScale={0.6}
-        />
+        <View
+          accessibilityElementsHidden
+          importantForAccessibility='no-hide-descendants'
+        >
+          <Pagination
+            tappableDots={!!this._carousel}
+            carouselRef={this._carousel}
+            dotsLength={data.length}
+            activeDotIndex={activeSlide}
+            containerStyle={styles.pagination}
+            dotContainerStyle={styles.dotContainer}
+            dotStyle={styles.dot}
+            inactiveDotOpacity={0.4}
+            inactiveDotScale={0.6}
+          />
+        </View>
       </View>
     );
   }

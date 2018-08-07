@@ -19,7 +19,14 @@ class SeeProcess extends React.Component {
 
   render() {
     return (
-      <TouchableOpacity style={styles.processContainer} onPress={this.onPress}>
+      <TouchableOpacity
+        style={styles.processContainer}
+        onPress={this.onPress}
+        accessible
+        accessibilityLabel='See the process behind making our app. Click to view the talk details. Button.'
+        accessibilityTraits='button'
+        accessibilityComponentType='button'
+      >
         <FontAwesome name="code-fork" size={24} color="white" style={styles.codeIcon} />
         <Text style={styles.text}>See the process behind making our app</Text>
         <FontAwesome name="long-arrow-right" size={24} color="white" style={styles.rightArrow} />

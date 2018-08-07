@@ -46,8 +46,17 @@ class RemindMeButton extends React.PureComponent {
     const starStyle = [styles.text, starred && styles.activeText];
     const textStyle = [styles.text, starred && styles.activeText];
 
+    const accessibilityLabel = starred ? 'Favorite Talk. On. Double tap to unfavorite.' : 'Favorite Talk. Off. Double tap to favorite.';
+
     return (
-      <TouchableOpacity onPress={this.onTogglePress} style={[styles.button, starred && styles.activeButton]}>
+      <TouchableOpacity
+        onPress={this.onTogglePress}
+        style={[styles.button, starred && styles.activeButton]}
+        accessible
+        accessibilityLabel={accessibilityLabel}
+        accessibilityTraits='button'
+        accessibilityComponentType='button'
+      >
         <FontAwesome name={icon} style={starStyle} />
         <Text style={textStyle}>
           {buttonText}
