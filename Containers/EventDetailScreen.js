@@ -14,6 +14,8 @@ import { MarkdownView } from 'react-native-markdown-view';
 import { MaterialIcons } from '@expo/vector-icons';
 
 import AppConfig from '../Config/AppConfig';
+import { accessibilityFocusRef } from '../Helpers/AccessibilityHelpers';
+import { withTimer } from '../Helpers/WithTimer';
 
 import Gradient from '../Components/Gradient';
 import RoomInfo from '../Components/RoomInfo';
@@ -22,16 +24,11 @@ import TalkInfo from '../Components/TalkInfo';
 import styles from './Styles/EventDetailScreenStyles';
 
 class EventDetailScreen extends React.Component {
-  static navigationOptions = {
-    title: 'EventDetail',
-    tabBarLabel: 'Schedule',
-    tabBarIcon: ({ focused }) => (
-      <MaterialIcons name="schedule" size={24} color="white" />
-    ),
-  };
-
   componentDidMount() {
     BackHandler.addEventListener('hardwareBackPress', this.goBack);
+
+    // focus on top of page, the back button
+    this.props.timer.setTimeout(() => accessibilityFocusRef(this._backButton), 100);
   }
 
   componentWillUnmount() {
@@ -63,9 +60,16 @@ class EventDetailScreen extends React.Component {
 
     return (
       <Gradient style={styles.gradient}>
-        <ScrollView>
+        <ScrollView
+          accessibilityViewIsModal
+          importantForAccessibility='yes'
+        >
           <View style={styles.container}>
-            <TouchableOpacity style={styles.backButton} onPress={this.goBack}>
+            <TouchableOpacity
+              style={styles.backButton}
+              onPress={this.goBack}
+              ref={r => this._backButton = r}
+            >
               <MaterialIcons name="chevron-left" size={24} style={styles.backButtonIcon} />
               <Text style={styles.backButtonText}>Back</Text>
             </TouchableOpacity>
@@ -80,7 +84,7 @@ class EventDetailScreen extends React.Component {
             </View>
             { venue && 
               <View style={styles.section}>
-                  <RoomInfo building={venue.building} room={venue.room} />
+                <RoomInfo building={venue.building} room={venue.room} />
               </View>
             }
             <View style={[styles.section, styles.lastSection]}>
@@ -106,4 +110,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(EventDetailScreen);
+export default withTimer(connect(mapStateToProps)(EventDetailScreen));

@@ -1,21 +1,43 @@
 import React from 'react';
-import { TouchableOpacity, Image, View, Text, LayoutAnimation, TouchableWithoutFeedback } from 'react-native';
+import {
+  TouchableOpacity,
+  Image,
+  View,
+  Text,
+  LayoutAnimation,
+  Linking,
+  TouchableWithoutFeedback
+} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+
+import AppConfig from '../Config/AppConfig';
+import { accessibilityFocusRef } from '../Helpers/AccessibilityHelpers';
+import { withTimer } from '../Helpers/WithTimer';
+
 import { Colors, Images } from '../Themes';
 import styles from './Styles/GalleryStyle';
 
-export default class Gallery extends React.Component {
-  constructor (props) {
-    super(props)
+const nearby = require('../Fixtures/nearby.json');
 
-    this.state = {
-      activeTab: Object.keys(props.data)[0],
-    };
+class Gallery extends React.PureComponent {
+
+  state = {
+    activeTab: Object.keys(nearby)[0],
+  }
+
+  openLink = async (url) => {
+    const supported = Linking.canOpenURL(url);
+    if (supported) {
+      Linking.openURL(url);
+    }
   }
 
   setActiveTab = (tab) => {
-    LayoutAnimation.configureNext({ ...LayoutAnimation.Presets.linear, duration: 250 });
+    if (!AppConfig.disableAnimations) {
+      LayoutAnimation.configureNext({ ...LayoutAnimation.Presets.linear, duration: 250 });
+    }
     this.setState({ activeTab: tab });
+    this.props.timer.setTimeout(() => accessibilityFocusRef(this._itemsContainer), 100);
   }
 
   renderTab = (tab) => {
@@ -32,6 +54,10 @@ export default class Gallery extends React.Component {
         key={tab}
         style={[styles.tab, isActive && styles.activeTab]}
         onPress={() => this.setActiveTab(tab)}
+        accessible
+        accessibilityLabel={tab}
+        accessibilityTraits='button'
+        accessibilityComponentType='button'
       >
         <Text style={textStyle}>
           {tab}
@@ -44,12 +70,16 @@ export default class Gallery extends React.Component {
   }
 
   renderItem = (itemData) => {
-    const { onItemPress } = this.props;
     const { name, image, link } = itemData;
     return (
       <TouchableWithoutFeedback
         key={name}
-        onPress={() => onItemPress(link)}>
+        onPress={() => this.openLink(link)}
+        accessible
+        accessibilityLabel={name}
+        accessibilityTraits='button'
+        accessibilityComponentType='button'
+      >
         <View style={styles.item}>
           <Image source={Images[image]} resizeMode={'cover'} style={styles.itemImage} />
           <View style={styles.itemDetail}>
@@ -68,16 +98,17 @@ export default class Gallery extends React.Component {
 
   render() {
     const { activeTab } = this.state;
-    const { data } = this.props;
     return (
       <View style={styles.container}>
         <View style={styles.tabs}>
-          { Object.keys(data).map((t) => this.renderTab(t)) }
+          { Object.keys(nearby).map((t) => this.renderTab(t)) }
         </View>
-        <View style={styles.gallery}>
-          { data[activeTab].map(this.renderItem) }
+        <View style={styles.gallery} ref={r => this._itemsContainer = r}>
+          { nearby[activeTab].map(this.renderItem) }
         </View>
       </View>
     );
   }
 }
+
+export default withTimer(Gallery);

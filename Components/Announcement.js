@@ -16,7 +16,10 @@ class Announcement extends React.PureComponent {
     if (!title) return null;
 
     return (
-      <View style={styles.container}>
+      <View
+        style={styles.container}
+        accessible
+      >
         <View style={styles.header}>
           <Text style={styles.headerText}>
             {title}

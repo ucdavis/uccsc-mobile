@@ -33,7 +33,7 @@ class FavoritesScreen extends React.Component {
     const { schedule } = this.props;
     if (!schedule || !schedule.length) {
       return (
-        <View style={styles.emptyContainer}>
+        <View style={styles.emptyContainer} accessible>
           <Text style={styles.emptyText}>
             Hey! You haven’t saved any sessions!
           </Text>
@@ -51,6 +51,7 @@ class FavoritesScreen extends React.Component {
 
     return (
       <ScheduleList
+        routeName='Favorites'
         {...this.props}
       />
     );
@@ -101,7 +102,7 @@ function buildScheduleList(talks) {
 }
 
 const mapStoreToProps = (store) => {
-  let talks = store.schedule.talks;
+  let talks = store.schedule.talks || [];
   talks = talks.filter(t => {
     return store.schedule.starredTalks.indexOf(t.title) > -1;
   });

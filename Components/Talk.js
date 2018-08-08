@@ -42,8 +42,8 @@ export default class Talk extends React.PureComponent {
       <Card style={containerStyles} onPress={onPress}>
         <View style={styles.info}>
           <View style={styles.infoText}>
-            <Text style={styles.title}>{title}</Text>
-            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.title} accessibilityLabel={`Session Title: ${title}.`}>{title}</Text>
+            <Text style={styles.name} accessibilityLabel={`Session Speakers: ${name}.`}>{name}</Text>
           </View>
           { this.renderAvatar() }
         </View>

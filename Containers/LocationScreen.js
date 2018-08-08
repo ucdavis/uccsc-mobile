@@ -8,20 +8,17 @@ import {
 } from 'react-native';
 import { MapView } from 'expo';
 import { MaterialIcons } from '@expo/vector-icons';
-import { connect } from 'react-redux';
+
+import { accessibilityFocusRef } from '../Helpers/AccessibilityHelpers';
+import { withTimer } from '../Helpers/WithTimer';
+import { addActionListener } from '../Services/NavigationService';
+
 import { Colors, Images, Metrics } from '../Themes';
 import Gradient from '../Components/Gradient';
 import Gallery from '../Components/Gallery';
 import styles from './Styles/LocationScreenStyle';
 
 class LocationScreen extends React.Component {
-  static navigationOptions = {
-    tabBarLabel: 'Location',
-    tabBarIcon: ({ focused }) => (
-      <MaterialIcons name="location-on" size={24} color="white" />
-    ),
-  }
-
   constructor(props) {
     super(props);
 
@@ -30,7 +27,31 @@ class LocationScreen extends React.Component {
     };
   }
 
-  openMaps = async (daddr = 'Mrak+One+Shields+Ave+Davis,+CA+95695') => {
+  componentDidMount() {
+    this.navigationFocusListener = addActionListener((payload) => this.onNavigationChanged(payload));
+
+    if (this.props.navigation.isFocused()) {
+      this.accessibilityFocusTop();
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.navigationFocusListener) {
+      this.navigationFocusListener.remove();
+    }
+  }
+
+  onNavigationChanged = (payload) => {
+    if (payload.key === 'Location') {
+      this.accessibilityFocusTop();
+    }
+  }
+
+  accessibilityFocusTop = () => {
+    this.props.timer.setTimeout(() => accessibilityFocusRef(this._directionsLink), 100);
+  }
+
+  openMaps = async (daddr = '550+Alumni+Ln+Davis+CA+95616') => {
     const googleMaps = `geo://?daddr=${daddr}`;
     const appleMaps = `http://maps.apple.com?daddr=${daddr}`;
 
@@ -47,13 +68,7 @@ class LocationScreen extends React.Component {
     }
   }
 
-  openLink = async (url) => {
-    const supported = Linking.canOpenURL(url);
-    if (supported) {
-      Linking.openURL(url);
-    }
-  }
-
+  
   renderBackground() {
     const height = Metrics.locationBackgroundHeight;
     const { scrollY } = this.state;
@@ -77,7 +92,6 @@ class LocationScreen extends React.Component {
         }, {
           scale: scrollY.interpolate({
             inputRange: [-height, 0, height],
-            // outputRange: [0.9, 1, 1.5],
             outputRange: [1.3, 1.5, 2],
           }),
         }],
@@ -85,7 +99,13 @@ class LocationScreen extends React.Component {
     ];
 
     return (
-      <Animated.Image style={style} source={Images.Arboretum} resizeMode="cover" />
+      <Animated.Image
+        style={style}
+        source={Images.Arboretum}
+        resizeMode="cover"
+        accessibilityElementsHidden
+        importantForAccessibility='no'
+      />
     );
   }
 
@@ -111,12 +131,17 @@ class LocationScreen extends React.Component {
       }
     ]
     return (
-      <Animated.View style={style}>
+      <Animated.View
+        style={style}
+        accessibilityElementsHidden
+        importantForAccessibility='no-hide-descendants'
+      >
         <View style={styles.headingContainer}>
           <Text style={styles.mainHeading}>UC Davis</Text>
           <Text style={styles.address}>
-            One Shields Ave{'\n'}
-            Davis, CA 95695
+            Conference Center{'\n'}
+            550 Alumni Ln{'\n'}
+            Davis, CA 95616
           </Text>
         </View>
       </Animated.View>
@@ -124,8 +149,6 @@ class LocationScreen extends React.Component {
   }
 
   render() {
-    const { nearbyData } = this.props;
-
     return (
       <Gradient style={styles.container}>
         <Animated.ScrollView
@@ -149,15 +172,25 @@ class LocationScreen extends React.Component {
             zoomEnabled={false}
             pitchEnabled={false}
             rotateEnabled={false}
+            accessibilityElementsHidden
+            importantForAccessibility='no-hide-descendants'
           />
           <View style={styles.mapActions}>
-            <TouchableOpacity onPress={() => this.openMaps()} style={styles.getDirections}>
+            <TouchableOpacity
+              onPress={() => this.openMaps()}
+              style={styles.getDirections}
+              accessible
+              accessibilityLabel={`The UCCSC Conference is located at the UC Davis Conference Center on 550 Alumni Ln, Davis, CA 95616. Click to open on maps.`}
+              accessibilityTraits='button'
+              accessibilityComponentType='button'
+              ref={r => this._directionsLink = r}
+            >
               <View style={styles.addressContainer}>
                 <Text style={styles.venueName}>
                   UC Davis
                 </Text>
                 <Text style={styles.venueAddress}>
-                  Mrak{'\n'}One Shields Ave.{'\n'}Davis, CA 95695
+                  550 Alumni Ln{'\n'}Davis, CA 95616
                 </Text>
               </View>
               <View style={styles.directionsIcon}>
@@ -166,30 +199,19 @@ class LocationScreen extends React.Component {
               </View>
             </TouchableOpacity>
           </View>
-          <View style={styles.sectionHeader}>
+          <View style={styles.sectionHeader}
+            accessible
+            accessibilityLabel='Nearby food and drink'
+          >
             <Text style={styles.sectionHeaderText}>
               Nearby
             </Text>
           </View>
-          <Gallery
-            data={nearbyData}
-            onItemPress={(link) => this.openLink(link)}
-          />
+          <Gallery />
         </Animated.ScrollView>
       </Gradient>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    nearbyData: state.location.nearby,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-  }
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(LocationScreen);
+export default withTimer(LocationScreen);

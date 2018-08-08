@@ -12,7 +12,10 @@ const tweetWithHashtag = async () => {
 
 const Twitter = (props) => {
   return (
-    <View style={styles.container}>
+    <View
+      style={styles.container}
+      accessible
+    >
       <FontAwesome name="twitter" size={48} color="white" />
       <TouchableOpacity onPress={() => tweetWithHashtag()}>
         <Text style={styles.heading}>
@@ -21,7 +24,7 @@ const Twitter = (props) => {
       </TouchableOpacity>
       <Text style={styles.description}>
         Whenever you tweet about the conference, please use &nbsp;
-        <Text style={styles.hashtag} onPress={() => tweetWithHashtag()}>
+        <Text style={styles.hashtag} onPress={() => tweetWithHashtag()} accessible>
           #UCCSC
         </Text>.
       </Text>

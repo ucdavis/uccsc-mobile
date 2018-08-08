@@ -10,7 +10,7 @@ import NotificationActions from '../Redux/NotificationRedux';
 import ScheduleActions from '../Redux/ScheduleRedux';
 import StartupActions from '../Redux/StartupRedux';
 
-import AppNavigation from '../Navigation/AppNavigation';
+import createAppNavigator from '../Navigation/AppNavigation';
 import NotificationsBar from '../Components/NotificationsBar';
 import ReduxPersistConfig from '../Config/ReduxPersistConfig';
 import styles from './Styles/RootContainerStyles';
@@ -18,8 +18,18 @@ import styles from './Styles/RootContainerStyles';
 import { getActivities, getTalks, getNews } from '../Services/Api';
 import { registerForPushNotificationsAsync } from '../Services/PushNotifications';
 import * as NavigationService from '../Services/NavigationService';
+import { accessibilityFocusRef } from '../Helpers/AccessibilityHelpers';
 
 const sessionDeepLinkRegex = /^\/\/session\/(.*)$/gi;
+
+// get ref so we can focus it on first load
+// do the create out here so we don't recreate the nav on state change
+let _tabBarRef;
+const AppNavigation = createAppNavigator({
+  tabBarOptions: {
+    ref: (r) => _tabBarRef = r,
+  },
+});
 
 class RootContainer extends React.Component {
 
@@ -32,6 +42,9 @@ class RootContainer extends React.Component {
     if (!ReduxPersistConfig.active) {
       this.props.startup();
     }
+
+    // focus bottom tab on first load
+    accessibilityFocusRef(_tabBarRef);
 
     // prompt user for permissions, get device id, etc
     await registerForPushNotificationsAsync();
@@ -131,7 +144,7 @@ class RootContainer extends React.Component {
     const { notifications, clearNotifications } = this.props;
 
     return (
-      <View style={styles.applicationView}>
+      <View style={styles.applicationView} ref={r => this._rootRef = r}>
         <StatusBar barStyle="light-content" />
         <NotificationsBar
           notifications={notifications}

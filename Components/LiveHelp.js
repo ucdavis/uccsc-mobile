@@ -25,19 +25,25 @@ export default class LiveHelp extends React.Component {
   render() {
     return (
       <View style={styles.liveHelp}>
-        <Text style={styles.header} onPress={this.onSlackClick}>
-          <FontAwesome name="slack" size={31} color="white" /> UC Tech Slack
-        </Text>
-        <Text style={styles.liveHelpText}>
-          Stay in touch with conference organizers and attendees on the #UCCSC channel at uctech.slack.com. Anyone with a University of California email address can join automatically.
-        </Text>
-        <Text style={styles.liveHelpText}>
-          Find us in the #uccsc channel!
-        </Text>
+        <View style={styles.liveHelp} accessible>
+          <Text style={styles.header} onPress={this.onSlackClick}>
+            <FontAwesome name="slack" size={31} color="white" /> UC Tech Slack
+          </Text>
+          <Text style={styles.liveHelpText}>
+            Stay in touch with conference organizers and attendees on the #UCCSC channel at uctech.slack.com. Anyone with a University of California email address can join automatically.
+          </Text>
+          <Text style={styles.liveHelpText}>
+            Find us in the #UCCSC channel!
+          </Text>
+        </View>
         <RoundedButton
           text='Join or Login'
           onPress={this.onSlackClick}
           style={styles.liveHelpButton}
+          accessible
+          accessibilityLabel='Click to join or login to the uc tech slack workgroup.'
+          accessibilityTraits='button'
+          accessibilityComponentType='button'
         />
       </View>
     );

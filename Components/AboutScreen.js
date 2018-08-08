@@ -6,7 +6,10 @@ import {
   View,
   LayoutAnimation,
 } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+
+import { accessibilityFocusRef } from '../Helpers/AccessibilityHelpers';
+import { withTimer } from '../Helpers/WithTimer';
+import { addActionListener } from '../Services/NavigationService';
 
 import Gradient from '../Components/Gradient';
 import SeeProcess from '../Components/SeeProcess';
@@ -17,20 +20,34 @@ import ConferenceAnnouncements from '../Containers/ConferenceAnnouncements';
 
 import styles from './Styles/AboutScreenStyle';
 
-export default class AboutScreen extends React.Component {
-  static navigationOptions = {
-    tabBarLabel: 'Info',
-    tabBarIcon: ({ focused }) => (
-      <MaterialIcons name="info" size={24} color="white" />
-    ),
+class AboutScreen extends React.PureComponent {
+
+  state = {
+    activeTab: 'liveHelp',
   }
 
-  constructor(props) {
-    super(props);
+  componentDidMount() {
+    this.navigationFocusListener = addActionListener((payload) => this.onNavigationChanged(payload));
 
-    this.state = {
-      activeTab: 'liveHelp',
-    };
+    if (this.props.navigation.isFocused()) {
+      this.accessibilityFocusTop();
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.navigationFocusListener) {
+      this.navigationFocusListener.remove();
+    }
+  }
+
+  onNavigationChanged = (payload) => {
+    if (payload.key === 'About') {
+      this.accessibilityFocusTop();
+    }
+  }
+
+  accessibilityFocusTop = () => {
+    this.props.timer.setTimeout(() => accessibilityFocusRef(this._annoucementsRef), 100);
   }
 
   setActiveTab = (tab) => {
@@ -62,14 +79,20 @@ export default class AboutScreen extends React.Component {
         <View style={styles.tabs}>
           <TouchableOpacity
             style={liveHelpStyles}
-            onPress={() => this.setActiveTab('liveHelp')}>
+            onPress={() => this.setActiveTab('liveHelp')}
+            accessibilityLabel='Slack information tab.'
+            accessibilityTraits='button'
+          >
             <Text style={liveHelpTextStyles}>
               Slack
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={sponsorStyles}
-            onPress={() => this.setActiveTab('sponsors')}>
+            onPress={() => this.setActiveTab('sponsors')}
+            accessibilityLabel='UCCSC sponsors tab.'
+            accessibilityTraits='button'
+          >
             <Text style={sponsorTextStyles}>
               UCCSC Sponsors
             </Text>
@@ -88,7 +111,7 @@ export default class AboutScreen extends React.Component {
   render() {
     return (
       <Gradient style={styles.container}>
-        <ScrollView>
+        <ScrollView ref={r => this._annoucementsRef = r}>
           <ConferenceAnnouncements />
           <Twitter />
           {this.renderTabs()}
@@ -98,3 +121,5 @@ export default class AboutScreen extends React.Component {
     );
   }
 }
+
+export default withTimer(AboutScreen);

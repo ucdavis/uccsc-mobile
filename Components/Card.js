@@ -49,7 +49,7 @@ export default class Card extends React.PureComponent {
       <TouchableWithoutFeedback
         onPressIn={this.handlePressIn}
         onPressOut={this.handlePressOut}
-        onPress={this.props.onPress}
+        {...this.props}
       >
         <Animated.View style={containerStyles}>
           { this.props.children }

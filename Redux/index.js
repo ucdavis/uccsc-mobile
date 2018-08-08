@@ -6,7 +6,6 @@ export default () => {
   const rootReducer = combineReducers({
     announcements: require('./AnnouncementsRedux').reducer,
     schedule: require('./ScheduleRedux').reducer,
-    location: require('./LocationRedux').reducer,
     notifications: require('./NotificationRedux').reducer,
   });
 
