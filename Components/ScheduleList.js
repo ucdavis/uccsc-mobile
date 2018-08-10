@@ -77,7 +77,7 @@ class ScheduleList extends React.Component {
       return this.renderActivity(item);
     }
 
-    if (item.eventType === "Meal/Snack") {
+    if (item.eventType === "Meal/Snack" || item.eventType === "Meal/Refreshment") {
       return this.renderMeal(item);
     }
 
