@@ -1,7 +1,11 @@
+import { Platform } from 'react-native';
 import { Permissions, Notifications } from 'expo';
 import { isPast } from 'date-fns';
+
 import Config from '../Config/ServerConfig';
 import PNHelpers from '../Helpers/PushNotificationHelpers';
+
+const presetNotifications = require('../Fixtures/notifications.json');
 
 export async function checkNotificationPermission() {
   const { status: existingStatus } = await Permissions.getAsync(
@@ -42,7 +46,7 @@ export async function registerForPushNotificationsAsync() {
   }
   
   // POST the token to your backend server from where you can retrieve it to send push notifications.
-  await fetch(Config.notificationsEndpoint, {
+  const response = await fetch(Config.notificationsEndpoint, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -59,40 +63,86 @@ export async function registerForPushNotificationsAsync() {
   });
 }
 
+export function setupNotificationChannels() {
+  if (Platform.OS === 'android') {
+    Notifications.createChannelAndroidAsync('default', {
+      name: 'Notifications',
+      sound: false,
+    });
+  }
+}
+
 export async function scheduleTalkReminder(talk) {
+  // build notification object and ship it
+  const { title, start } = talk;
+  const notification = { 
+    message: PNHelpers.pushMessage(title, start),
+    link: `//session/${title}`,
+    time: start,
+  };
+
+  const id = await scheduleNotification(notification);
+  return id;
+}
+
+export async function schedulePresetNotifications() {
+  for (var i = 0; i < presetNotifications.length; i++) {
+    const notification = presetNotifications[i];
+    if (!notification.enabled) {
+      return;
+    }
+
+    await scheduleNotification({
+      message: notification.title,
+      link: notification.data.link,
+      time: notification.time,
+    });
+  }
+}
+
+export async function scheduleNotification(notification) {
+
   // Stop here if the user did not grant permissions
   const permission = await checkNotificationPermission();
   if (permission !== 'granted') {
     return 0;
   }
 
-  const { title, start } = talk;
-  const message = PNHelpers.pushMessage(title, start);
-  const fireTime = PNHelpers.notificationTime(start);
-  if (isPast(fireTime)) {
+  const time = PNHelpers.notificationTime(notification.time);
+  if (isPast(time)) {
     return 0;
   }
 
   const id = await Notifications.scheduleLocalNotificationAsync({
-    title: message,
-    body: message,
+    title: notification.message,
+    body: notification.message,
     data: {
-      message,
-      link: `//session/${title}`,
+      message: notification.message,
+      link: notification.link,
+    },
+    android: {
+      channelId: 'default',
     },
   }, {
-    time: fireTime,
+    time: time,
   });
 
   return id;
 }
 
-export async function cancelTalkReminder(id) {
+export async function cancelNotification(id) {
   await Notifications.cancelScheduledNotificationAsync(id);
+}
+
+export async function cancelAllNotifications() {
+  await Notifications.cancelAllScheduledNotificationsAsync();
 }
 
 export default {
   registerForPushNotificationsAsync,
+  setupNotificationChannels,
+  schedulePresetNotifications,
   scheduleTalkReminder,
-  cancelTalkReminder,
+  cancelNotification,
+  cancelAllNotifications,
 };
