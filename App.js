@@ -1,15 +1,19 @@
 import './Config';
 import './Config/ReactotronConfig';
+import './Config/SentryConfig';
 
-import DebugConfig from './Config/DebugConfig';
 import { AppLoading, Asset, Font, SplashScreen } from 'expo';
 import React, { Component } from 'react';
 import { Animated, Image } from 'react-native';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+
 import RootContainer from './Containers/RootContainer';
 import createStore from './Redux';
 import { Images } from './Themes';
+
+import DebugConfig from './Config/DebugConfig';
+
 
 // Allow layoutanimations for android
 // import { UIManager } from 'NativeModules'

@@ -32,6 +32,18 @@
         }
       },
       "googleServicesFile": "./google-services.json"
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "university-of-california-davis",
+            "project": "uccsc-2018",
+            "authToken": "cea75957a555479d8756b6e261ab1e0d0fb9c05dfbfd4bb792e251a86d84f657"
+          }
+        }
+      ]
     }
   }
 }
