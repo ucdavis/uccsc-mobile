@@ -1,0 +1,74 @@
+[
+    {
+        "title": "See you at the Good Life Garden at 5pm. Pick up your name badge and enjoy the evening!",
+        "data": {
+            "link": "//event/Welcome Dinner"
+        },
+        "time": "2018-08-14T23:00:00.000Z",
+        "enabled": true
+    },
+    {
+        "title": "Registration is in front of the conference center until 10 a.m. and moves inside after 10.",
+        "data": {
+            "link": "//event/Registration"
+        },
+        "time": "2018-08-15T15:00:00.000Z",
+        "enabled": false
+    },
+    {
+        "title": "Breakfast is served in Gallagher Hall.  Wear your badge to get your food!",
+        "data": {
+            "link": "//event/Breakfast"
+        },
+        "time": "2018-08-15T15:30:00.000Z",
+        "enabled": false
+    },
+    {
+        "title": "Get fortified because sessions start at 8:45. Check your schedule for session location.",
+        "data": {
+            "link": "//event/Breakfast"
+        },
+        "time": "2018-08-15T16:00:00.000Z",
+        "enabled": false
+    },
+    {
+        "title": "Make your way to Jackson Hall for Diane Bryant’s 10 a.m. keynote speech!",
+        "data": {
+            "link": "//event/Keynote Speaker: Diane Bryant"
+        },
+        "time": "2018-08-15T17:45:00.000Z",
+        "enabled": true
+    },
+    {
+        "title": "Vendor Fair opens in the Conference Center. Get your SWAG!",
+        "data": {
+            "link": "//event/Vendor Fair"
+        },
+        "time": "2018-08-15T19:15:00.000Z",
+        "enabled": true
+    },
+    {
+        "title": "Lunch is served in Gallagher Hall starting at 11:30. Seating is available at the Alumni Center Moss Patio.",
+        "data": {
+            "link": "//event/Lunch"
+        },
+        "time": "2018-08-15T19:30:00.000Z",
+        "enabled": true
+    },
+    {
+        "title": "Fantastic door prize drawing in the Conference Center ballroom at 12:15. Must be present to win!",
+        "data": {
+            "link": "//event/Desserts & Door Prizes"
+        },
+        "time": "2018-08-15T20:00:00.000Z",
+        "enabled": true
+    },
+    {
+        "title": "Don’t miss it! The Larry Sautter Award ceremony is at 4 p.m. at Jackson Hall in the Mondavi Center.",
+        "data": {
+            "link": "//event/Lunch"
+        },
+        "time": "2018-08-15T20:00:00.000Z",
+        "enabled": true
+    }
+]

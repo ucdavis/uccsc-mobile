@@ -1,53 +1,128 @@
 import React, { Component } from 'react';
 import { View, Modal, Text, TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux';
+import { StackActions } from 'react-navigation';
+import { Notifications } from 'expo';
 import { FontAwesome } from '@expo/vector-icons';
-import styles from './Styles/NotificationBarStyle';
+
+import * as NavigationService from '../Services/NavigationService';
 import NotificationScreen from './NotificationScreen';
+import ScheduleActions from '../Redux/ScheduleRedux';
+
+import styles from './Styles/NotificationBarStyle';
+
+const eventDeepLinkRegex = /^\/\/event\/(.*)$/gi;
+const sessionDeepLinkRegex = /^\/\/session\/(.*)$/gi;
 
 class NotificationsBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { showModal: false };
+
+  state = {
+    showModal: false,
+    notification: null
+  };
+
+  componentDidMount() {
+    // Handle notifications that are received or selected while the app
+    // is open. If the app was closed and then opened by tapping the
+    // notification (rather than just tapping the app icon to open it),
+    // this function will fire on the next tick after the app starts
+    // with the notification data.
+    this._notificationSubscription = Notifications.addListener(this._handleNotification);
   }
 
-  onPressStatusBarAlert = (notification) => {
-    const data = notification.data;
-    if (data && data.link) {
-      const handled = this.handleDeepLink(data.link);
+  _handleNotification = (notification) => {
+    console.log(notification);
+
+    // show the banner
+    this.setState({
+      notification: notification.data,
+    });
+
+    // if the notification was selected
+    if (notification.origin === 'selected') {
+      // try to handle the notification's deeplink
+      const handled = this._handleDeepLink(notification.data.link);
       if (handled) {
-        this.props.clearNotifications();
+        this.onDismiss();
+      }
+    }
+  }
+
+  _handleDeepLink = (link) => {
+    // try to match event
+    const eventMatch = eventDeepLinkRegex.exec(link);
+    if (eventMatch && eventMatch.length > 1) {
+      // find event
+      const title = eventMatch[1];
+      const activity = this.props.activities.find( a=> a.title === title);
+      if (!activity) {
+        return false;
+      }
+
+      // setup navigation and go!
+      this.props.setSelectedEvent(activity);
+      NavigationService.navigate({ routeName: 'Schedule', action: StackActions.push({ routeName: 'EventDetail' }) });
+
+      return true;
+    }
+
+    // try to match session
+    const sessionMatch = sessionDeepLinkRegex.exec(link);
+    if (sessionMatch && sessionMatch.length > 1) {
+      // find talk
+      const title = sessionMatch[1];
+      const talk = this.props.talks.find(t => t.title === title);
+      if (!talk) {
+        return false;
+      }
+
+      // setup navigation and go!
+      this.props.setSelectedEvent(talk);
+      NavigationService.navigate({ routeName: 'Schedule', action: StackActions.push({ routeName: 'TalkDetail' }) });
+      
+      return true;
+    }
+
+    // no link matches found
+    return false;
+  }
+
+  onPressStatusBarAlert = () => {
+    const { notification } = this.state;
+
+    if (notification && notification.link) {
+      const handled = this._handleDeepLink(notification.link);
+      if (handled) {
+        this.onDismiss();
+        return;
+      } else {
+        this.setState({
+          notification: null,
+        });
         return;
       }
     }
 
-    this.setState({ showModal: true });
+    this.onDismiss();
   }
 
   onDismiss = () => {
-    this.setState({ showModal: false });
-    this.props.clearNotifications();
-  }
-
-  handleDeepLink = (link) => {
-    if (this.props.handleDeepLink) {
-      return this.props.handleDeepLink(link);
-    }
-    return false;
+    this.setState({
+      showModal: false,
+      notification: null,
+    });
   }
 
   renderBar(notification) {
-    if (this.state.showModal) {
-      return null;
-    }
-
     const message = notification.message || 'You have a notification!';
-    const onPress = this.onPressStatusBarAlert.bind(this, notification);
+
+    const tap = notification.link ? <Text style={styles.statusBarTextMinor}>(tap for details)</Text> : null;
 
     return (
       <View style={styles.statusBar}>
-        <TouchableOpacity style={styles.detailsButton} onPress={onPress}>
+        <TouchableOpacity style={styles.detailsButton} onPress={this.onPressStatusBarAlert}>
           <Text style={styles.statusBarText}>{ message }</Text>
-          <Text style={styles.statusBarTextMinor}>(tap for details)</Text>
+          { tap }
         </TouchableOpacity>
         <TouchableOpacity style={styles.dismissButton} onPress={this.onDismiss}>
           <FontAwesome name="close" style={styles.dismissIcon} />
@@ -57,13 +132,11 @@ class NotificationsBar extends Component {
   }
 
   render() {
-    const { notifications } = this.props;
+    const { notification } = this.state;
 
-    if (notifications.length === 0) {
+    if (!notification) {
       return null;
     }
-
-    const notification = notifications[notifications.length - 1];
 
     return (
       <View style={styles.container}>
@@ -72,10 +145,11 @@ class NotificationsBar extends Component {
           transparent
           animationType={'slide'}
           visible={this.state.showModal}
-          onRequestClose={this.onDismiss}>
+          onRequestClose={this.onDismiss}
+        >
           <NotificationScreen
             onDismissModal={this.onDismiss}
-            notifications={notifications}
+            notification={notification}
           />
         </Modal>
       </View>
@@ -83,4 +157,13 @@ class NotificationsBar extends Component {
   }
 }
 
-export default NotificationsBar;
+const mapStateToProps = (state) => ({
+  activities: state.schedule.activities || [],
+  talks: state.schedule.talks || [],
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setSelectedEvent: (talk) => dispatch(ScheduleActions.setSelectedEvent(talk)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(NotificationsBar);
