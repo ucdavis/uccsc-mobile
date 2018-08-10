@@ -31,8 +31,6 @@ class NotificationsBar extends Component {
   }
 
   _handleNotification = (notification) => {
-    console.log(notification);
-
     // show the banner
     this.setState({
       notification: notification.data,
