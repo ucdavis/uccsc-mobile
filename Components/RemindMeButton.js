@@ -33,7 +33,7 @@ class RemindMeButton extends React.PureComponent {
   
     // find local notification, cancel it
     if (notification) {
-      await PushNotifications.cancelTalkReminder(notification.id);
+      await PushNotifications.cancelNotification(notification.id);
       untrackLocalNotification(notification.id);
     }
   }
