@@ -13,7 +13,6 @@ export function navigate(target) {
 }
 
 export function emitAction(state) {
-  console.log(state);
   actionSubscribers.forEach(s => s(state));
 }
 
