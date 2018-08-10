@@ -24,6 +24,7 @@
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-29.0.0.tar.gz",
     "react-native-markdown-view": "^1.1.4",
+    "react-native-sentry": "^0.39.0",
     "react-native-snap-carousel": "^3.7.2",
     "react-navigation": "~2.9.3",
     "react-navigation-redux-helpers": "^1",
@@ -34,6 +35,7 @@
     "redux": "^3.7.2",
     "redux-persist": "^5.9.1",
     "reduxsauce": "^0.7.0",
-    "seamless-immutable": "^7.1.2"
+    "seamless-immutable": "^7.1.2",
+    "sentry-expo": "^1.9.0"
   }
 }
