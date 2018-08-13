@@ -144,6 +144,14 @@ export async function scheduleNotification(notification) {
   }
 }
 
+export async function dismissNotifications() {
+  try {
+    await Notifications.dismissAllNotificationsAsync();
+  } catch (err) {
+    Sentry.captureException(err);
+  }
+}
+
 export async function cancelNotification(id) {
   try {
     await Notifications.cancelScheduledNotificationAsync(id);
