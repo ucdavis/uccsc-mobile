@@ -4,7 +4,15 @@
         "data": {
             "link": "//event/Welcome Dinner"
         },
-        "time": "2018-08-13T23:00:00.000Z",
+        "time": "2018-08-13T22:30:00.000Z",
+        "enabled": true
+    },
+    {
+        "title": "Submissions are opened for UCCSC Quest! Explore! Network! Win! https://uccsc.ucdavis.edu/uccsc-quest",
+        "data": {
+            "link": "https://uccsc.ucdavis.edu/uccsc-quest"
+        },
+        "time": "2018-08-14T01:30:00.000Z",
         "enabled": true
     },
     {
@@ -12,7 +20,7 @@
         "data": {
             "link": "//event/Registration"
         },
-        "time": "2018-08-14T15:00:00.000Z",
+        "time": "2018-08-14T14:00:00.000Z",
         "enabled": false
     },
     {
@@ -20,7 +28,7 @@
         "data": {
             "link": "//event/Breakfast"
         },
-        "time": "2018-08-14T15:30:00.000Z",
+        "time": "2018-08-14T14:30:00.000Z",
         "enabled": false
     },
     {
@@ -28,7 +36,7 @@
         "data": {
             "link": "//event/Breakfast"
         },
-        "time": "2018-08-14T16:00:00.000Z",
+        "time": "2018-08-14T15:00:00.000Z",
         "enabled": false
     },
     {
@@ -36,7 +44,7 @@
         "data": {
             "link": "//event/Keynote Speaker: Diane Bryant"
         },
-        "time": "2018-08-14T17:45:00.000Z",
+        "time": "2018-08-14T16:45:00.000Z",
         "enabled": true
     },
     {
@@ -44,7 +52,7 @@
         "data": {
             "link": "//event/Vendor Fair"
         },
-        "time": "2018-08-14T19:15:00.000Z",
+        "time": "2018-08-14T18:15:00.000Z",
         "enabled": true
     },
     {
@@ -52,7 +60,15 @@
         "data": {
             "link": "//event/Lunch"
         },
-        "time": "2018-08-14T19:30:00.000Z",
+        "time": "2018-08-14T18:30:00.000Z",
+        "enabled": true
+    },
+    {
+        "title": "Do you like adventures? Don't forget about UCCSC Quest. Explore UC Davis while competing for a prize! https://uccsc.ucdavis.edu/uccsc-quest",
+        "data": {
+            "link": "https://uccsc.ucdavis.edu/uccsc-quest"
+        },
+        "time": "2018-08-14T18:45:00.000Z",
         "enabled": true
     },
     {
@@ -60,7 +76,7 @@
         "data": {
             "link": "//event/Desserts & Door Prizes"
         },
-        "time": "2018-08-14T20:00:00.000Z",
+        "time": "2018-08-14T19:00:00.000Z",
         "enabled": true
     },
     {
@@ -68,7 +84,15 @@
         "data": {
             "link": "//event/Larry L. Sautter Award Ceremony"
         },
-        "time": "2018-08-14T20:00:00.000Z",
+        "time": "2018-0822:00:00.000Z",
+        "enabled": true
+    },
+    {
+        "title": "Wondering what to do with your evening? Compete in UCCSC Quest! https://uccsc.ucdavis.edu/uccsc-quest",
+        "data": {
+            "link": "https://uccsc.ucdavis.edu/uccsc-quest"
+        },
+        "time": "2018-08-15T00:30:00.000Z",
         "enabled": true
     },
     {
@@ -76,7 +100,7 @@
         "data": {
             "link": "//event/Breakfast"
         },
-        "time": "2018-08-15T15:30:00.000Z",
+        "time": "2018-08-15T14:30:00.000Z",
         "enabled": false
     },
     {
@@ -84,7 +108,7 @@
         "data": {
             "link": "//event/Breakfast"
         },
-        "time": "2018-08-15T16:30:00.000Z",
+        "time": "2018-08-15T15:30:00.000Z",
         "enabled": true
     },
     {
@@ -92,7 +116,7 @@
         "data": {
             "link": "//event/Keynote Speaker: Andrew Isaacs"
         },
-        "time": "2018-08-15T17:45:00.000Z",
+        "time": "2018-08-15T16:45:00.000Z",
         "enabled": true
     },
     {
@@ -100,7 +124,7 @@
         "data": {
             "link": ""
         },
-        "time": "2018-08-15T19:30:00.000Z",
+        "time": "2018-08-15T18:30:00.000Z",
         "enabled": true
     },
     {
@@ -108,15 +132,15 @@
         "data": {
             "link": "//event/Lunch"
         },
-        "time": "2018-08-15T20:00:00.000Z",
+        "time": "2018-08-15T19:00:00.000Z",
         "enabled": true
     },
     {
         "title": "Fantastic door prize drawing in the Conference Center ballroom at 12:15. Must be present to win!",
         "data": {
-            "link": "//event/Lunch1"
+            "link": "//event/Lunch"
         },
-        "time": "2018-08-15T20:00:00.000Z",
+        "time": "2018-08-15T19:05:00.000Z",
         "enabled": true
     },
     {
@@ -124,14 +148,14 @@
         "data": {
             "link": "//event/Ice Cream Cart"
         },
-        "time": "2018-08-15T22:00:00.000Z",
+        "time": "2018-08-15T21:00:00.000Z",
         "enabled": true
     },
     {
         "title": "Thank you for coming to UCCSC 2018 and we hope to see you at UC Santa Barbara in July 2019!",
         "data": {
         },
-        "time": "2018-08-15T24:30:00.000Z",
+        "time": "2018-08-15T23:30:00.000Z",
         "enabled": true
     }
 ]
