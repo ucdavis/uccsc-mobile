@@ -4,10 +4,12 @@ import { connect } from 'react-redux';
 import { StackActions } from 'react-navigation';
 import { Notifications } from 'expo';
 import { FontAwesome } from '@expo/vector-icons';
+import { closestIndexTo } from 'date-fns';
 
 import * as NavigationService from '../Services/NavigationService';
 import NotificationScreen from './NotificationScreen';
 import ScheduleActions from '../Redux/ScheduleRedux';
+import { dismissNotifications } from '../Services/PushNotifications';
 
 import styles from './Styles/NotificationBarStyle';
 
@@ -51,11 +53,16 @@ class NotificationsBar extends Component {
     const eventMatch = eventDeepLinkRegex.exec(link);
     if (eventMatch && eventMatch.length > 1) {
       // find event
-      const title = eventMatch[1];
-      const activity = this.props.activities.find( a=> a.title === title);
-      if (!activity) {
+      let title = eventMatch[1];
+      const activities = this.props.activities.filter(a=> a.title === title);
+      if (!activities.length) {
         return false;
       }
+
+      // pick the activity closest to now
+      const dates = activities.map(a => a.time);
+      const closest = closestIndexTo(new Date(), dates);
+      activity = activities[closest];
 
       // setup navigation and go!
       this.props.setSelectedEvent(activity);
@@ -109,6 +116,8 @@ class NotificationsBar extends Component {
       showModal: false,
       notification: null,
     });
+
+    dismissNotifications();
   }
 
   renderBar(notification) {
