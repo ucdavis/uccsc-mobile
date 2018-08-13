@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Modal, Text, TouchableOpacity } from 'react-native';
+import { Linking, View, Modal, Text, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { StackActions } from 'react-navigation';
 import { Notifications } from 'expo';
@@ -49,6 +49,19 @@ class NotificationsBar extends Component {
   }
 
   _handleDeepLink = (link) => {
+    if (!link) {
+      return false;
+    }
+
+    // check for http url
+    if (link.startsWith('http')) {
+      if (Linking.canOpenURL(link)) {
+        Linking.openURL(link);
+        return true;
+      }
+      return false;
+    }
+
     // try to match event
     const eventMatch = eventDeepLinkRegex.exec(link);
     if (eventMatch && eventMatch.length > 1) {
