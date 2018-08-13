@@ -16,7 +16,7 @@ const Styles = StyleSheet.create({
     zIndex: 100,
   },
   statusBar: {
-    height: 75,
+    // height: 75,
     flex: 1,
     flexDirection: 'row',
     alignItems: 'stretch',
