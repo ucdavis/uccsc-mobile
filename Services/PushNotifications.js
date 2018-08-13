@@ -146,7 +146,9 @@ export async function scheduleNotification(notification) {
 
 export async function dismissNotifications() {
   try {
-    await Notifications.dismissAllNotificationsAsync();
+    if (Platform.OS === 'android') {
+      await Notifications.dismissAllNotificationsAsync();
+    }
   } catch (err) {
     Sentry.captureException(err);
   }
